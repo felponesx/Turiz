@@ -111,3 +111,26 @@ def test_enderecos_nao_sobrescreve_nem_inventa_numero():
     assert enderecos.aplicar(l2, d) is False and l2.endereco == "Rua B 5"
     cli = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, json={"address": {"suburb": "Mooca"}})))
     assert enderecos.reverso(-23.5, -46.6, cli)["bairro"] == "Mooca"
+
+
+def test_instagram_vinculos_e_verificacao():
+    import httpx
+    from app.sources import instagram as ig
+    assert ig.normalizar_usuario("https://www.instagram.com/Casa.do.Porco/?hl=pt") == "casa.do.porco"
+    assert ig.normalizar_usuario("@cincopizzas") == "cincopizzas"
+    assert ig.normalizar_usuario("https://instagram.com/p/ABC123/") is None
+    html = '<a href="https://instagram.com/bar_do_ze/">ig</a><a href="https://instagram.com/p/xyz">post</a><a href="/contato">c</a>'
+    assert ig.usuarios_do_html(html) == ["bar_do_ze"]
+    lugar = {"fonte": "osm", "fonte_id": "node/1", "extra": {"contact:instagram": "barzinho"}}
+    v = ig.vinculos_osm(lugar)[0]
+    assert v["status"] == "confirmado" and v["origem"] == "osm_tag" and v["url"].endswith("/barzinho/")
+    assert ig.vinculos_osm({"fonte": "osm", "fonte_id": "node/2", "extra": {}}) == []
+    resp = {"business_discovery": {"username": "barzinho_sp", "name": "Barzinho SP", "website": "https://www.barzinho.com.br/", "followers_count": 1200}}
+    cli = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, json=resp)))
+    r = ig.verificar("barzinho_sp", "Barzinho", "barzinho.com.br", "t", "1", cli)
+    assert r["confere"] and r["site_confere"] and r["seguidores"] == 1200
+    cli2 = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(400, json={"error": {}})))
+    assert ig.verificar("pessoal", "X", "", "t", "1", cli2) is None
+    r3 = ig.verificar("outro", "Restaurante Totalmente Diferente", "", "t", "1", httpx.Client(transport=httpx.MockTransport(
+        lambda r: httpx.Response(200, json={"business_discovery": {"username": "zzzqqq", "name": "Loja de Pneus"}}))))
+    assert r3["confere"] is False

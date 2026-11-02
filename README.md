@@ -41,3 +41,10 @@ Workflow: `.github/workflows/imagens.yml` (terças, ou manual).
 ## Automação (pipeline semanal)
 Toda segunda 06:00 UTC: **Coleta agendada** (OSM + sites) → **Bot de enderecos** (bairro/CEP/rua) → **Bot de imagens**, encadeados e sem sobreposição (`concurrency: dados`). Cada etapa commita seus arquivos em `data/`. Depois, uma tarefa agendada do Claude sincroniza `data/` com o banco do app e avisa por push.
 Qualquer etapa também roda manualmente em Actions → *Run workflow*.
+
+## Bot de Instagram
+`python coletar_instagram.py` vincula perfis do Instagram aos lugares **sem raspar o Instagram** (viola os termos e é bloqueado):
+- `osm_tag`: tag `contact:instagram` do OpenStreetMap (confiança 0,90, `confirmado`);
+- `site`: link para o Instagram no site oficial do lugar, respeitando robots.txt (0,70, `provavel`);
+- `api_oficial`: com `INSTAGRAM_TOKEN` e `INSTAGRAM_USER_ID` (conta profissional sua ligada a uma página do Facebook), confere nome/site do perfil via Business Discovery e eleva para `confirmado` (0,98).
+A API oficial não tem busca por nome: sem handle vindo do OSM ou do site, não há vínculo automático. `GET /lugares/{id}/redes` lista os perfis. Roda depois do bot de imagens no pipeline semanal.

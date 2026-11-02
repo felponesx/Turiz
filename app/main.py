@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from . import ingest
 from .restaurar import restaurar
 from .db import Base, engine, get_db
-from .models import Evento, Imagem, Lugar
+from .models import Evento, Imagem, Lugar, RedeSocial
 
 Base.metadata.create_all(engine)
 app = FastAPI(title="Turiz API", description="Restaurantes, bares e eventos de São Paulo")
@@ -94,6 +94,17 @@ def moderar_imagem(imagem_id: int, status: str = Query(..., pattern="^(aprovada|
     i.status = status
     db.commit()
     return {"id": i.id, "status": i.status}
+
+
+@app.get("/lugares/{lugar_id}/redes")
+def redes_do_lugar(lugar_id: int, db: Session = Depends(get_db)):
+    """Perfis de rede social (Instagram) vinculados ao lugar, com origem e confiança."""
+    l = db.get(Lugar, lugar_id)
+    if not l:
+        raise HTTPException(404, "Não encontrado")
+    st = select(RedeSocial).where(RedeSocial.lugar_fonte == l.fonte, RedeSocial.lugar_fonte_id == l.fonte_id,
+                                  RedeSocial.status != "rejeitado").order_by(RedeSocial.confianca.desc())
+    return [{c.name: getattr(r, c.name) for c in RedeSocial.__table__.columns} for r in db.scalars(st)]
 
 
 @app.get("/eventos")

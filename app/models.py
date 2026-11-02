@@ -71,3 +71,23 @@ class Imagem(Base):
     # aprovada = licença livre identificada; pendente = precisa de revisão/permissão antes de publicar
     status: Mapped[str] = mapped_column(String(20), index=True, default="pendente")
     atualizado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=agora, onupdate=agora)
+
+
+class RedeSocial(Base):
+    """Perfil de rede social (Instagram) associado a um lugar, com a origem e a confiança do vínculo."""
+    __tablename__ = "redes_sociais"
+    __table_args__ = (UniqueConstraint("lugar_fonte", "lugar_fonte_id", "rede", "usuario"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    lugar_fonte: Mapped[str] = mapped_column(String(30), index=True)
+    lugar_fonte_id: Mapped[str] = mapped_column(String(200), index=True)
+    rede: Mapped[str] = mapped_column(String(20), default="instagram")
+    usuario: Mapped[str] = mapped_column(String(60))
+    url: Mapped[str] = mapped_column(String(200), default="")
+    origem: Mapped[str] = mapped_column(String(30))  # osm_tag | site | api_oficial | manual
+    confianca: Mapped[float] = mapped_column(Float, default=0.5)
+    status: Mapped[str] = mapped_column(String(20), index=True, default="provavel")  # confirmado | provavel | rejeitado
+    nome_perfil: Mapped[str] = mapped_column(String(200), default="")
+    seguidores: Mapped[int | None] = mapped_column(nullable=True)
+    extra: Mapped[dict] = mapped_column(JSON, default=dict)
+    atualizado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=agora, onupdate=agora)
