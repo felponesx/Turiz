@@ -38,18 +38,25 @@ def main():
     a = ap.parse_args()
     Base.metadata.create_all(engine)
     with SessionLocal() as db:
+        falhas = []
         for f in a.fontes:
-            if f == "osm":
-                print("osm", upsert(db, Lugar, osm.coletar()))
-            elif f == "google":
-                cs = [tuple(map(float, c.split(","))) for c in a.centros.split(";")] if a.centros else list(centros_padrao())
-                print("google", upsert(db, Lugar, google_places.coletar(cs)))
-            elif f == "eventbrite":
-                print("eventbrite", upsert(db, Evento, eventbrite.coletar(a.orgs)))
-            elif f == "sites":
-                l, e, ign = sites.coletar()
-                print("sites", upsert(db, Lugar, l), upsert(db, Evento, e), "bloqueados por robots.txt:", ign)
+            try:
+                if f == "osm":
+                    print("osm", upsert(db, Lugar, osm.coletar()))
+                elif f == "google":
+                    cs = [tuple(map(float, c.split(","))) for c in a.centros.split(";")] if a.centros else list(centros_padrao())
+                    print("google", upsert(db, Lugar, google_places.coletar(cs)))
+                elif f == "eventbrite":
+                    print("eventbrite", upsert(db, Evento, eventbrite.coletar(a.orgs)))
+                elif f == "sites":
+                    l, e, ign = sites.coletar()
+                    print("sites", upsert(db, Lugar, l), upsert(db, Evento, e), "bloqueados por robots.txt:", ign)
+            except Exception as exc:  # cada fonte é independente
+                db.rollback()
+                falhas.append(f)
+                print(f"::warning::fonte {f} falhou: {type(exc).__name__}: {exc}")
         exportar(db)
+        print("falhas:", falhas or "nenhuma")
 
 
 if __name__ == "__main__":
