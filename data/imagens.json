@@ -12,7 +12,7 @@
   "autor": "",
   "creditos_url": "https://www.lacaballeriza.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.564745"
+  "atualizado_em": "2026-11-02T15:10:22.222364"
  },
  {
   "id": 2,
@@ -27,7 +27,7 @@
   "autor": "",
   "creditos_url": "https://www.nakato.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.565440"
+  "atualizado_em": "2026-11-02T15:10:22.222993"
  },
  {
   "id": 3,
@@ -42,7 +42,7 @@
   "autor": "",
   "creditos_url": "https://www.fazendachurrascada.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.565946"
+  "atualizado_em": "2026-11-02T15:10:22.223391"
  },
  {
   "id": 4,
@@ -57,7 +57,7 @@
   "autor": "",
   "creditos_url": "https://www.leiriense.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.566308"
+  "atualizado_em": "2026-11-02T15:10:22.223708"
  },
  {
   "id": 5,
@@ -72,7 +72,7 @@
   "autor": "",
   "creditos_url": "https://www.cocobambu.com/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.566643"
+  "atualizado_em": "2026-11-02T15:10:22.223980"
  },
  {
   "id": 6,
@@ -87,7 +87,7 @@
   "autor": "",
   "creditos_url": "https://www.baroriginal.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.566991"
+  "atualizado_em": "2026-11-02T15:10:22.224232"
  },
  {
   "id": 7,
@@ -102,7 +102,7 @@
   "autor": "",
   "creditos_url": "https://thegarden.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.567304"
+  "atualizado_em": "2026-11-02T15:10:22.224478"
  },
  {
   "id": 8,
@@ -117,7 +117,7 @@
   "autor": "",
   "creditos_url": "http://www.cantinhonobremooca.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.567612"
+  "atualizado_em": "2026-11-02T15:10:22.224729"
  },
  {
   "id": 9,
@@ -132,7 +132,7 @@
   "autor": "",
   "creditos_url": "https://www.ibotiramabar.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.567935"
+  "atualizado_em": "2026-11-02T15:10:22.224958"
  },
  {
   "id": 10,
@@ -147,7 +147,7 @@
   "autor": "",
   "creditos_url": "https://www.coffeelab.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.568235"
+  "atualizado_em": "2026-11-02T15:10:22.225185"
  },
  {
   "id": 11,
@@ -162,7 +162,7 @@
   "autor": "",
   "creditos_url": "https://subastor.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.568535"
+  "atualizado_em": "2026-11-02T15:10:22.225404"
  },
  {
   "id": 12,
@@ -177,7 +177,37 @@
   "autor": "",
   "creditos_url": "http://www.tollocos.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.568852"
+  "atualizado_em": "2026-11-02T15:10:22.225644"
+ },
+ {
+  "id": 18,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/4305213694",
+  "fonte": "commons",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Paribar_and_S%C3%A3o_Paulo_city_downtown_area_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "thumb_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Paribar_and_S%C3%A3o_Paulo_city_downtown_area_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "largura": 565,
+  "altura": 768,
+  "licenca": "Public domain",
+  "autor": "Unknown author Unknown author",
+  "creditos_url": "https://commons.wikimedia.org/wiki/File:Paribar_and_S%C3%A3o_Paulo_city_downtown_area_10.jpg",
+  "status": "aprovada",
+  "atualizado_em": "2026-11-02T15:11:35.468452"
+ },
+ {
+  "id": 19,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/4394024912",
+  "fonte": "commons",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Webysther_20160305155145_-_Bar_e_Lanches_Estad%C3%A3o.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Webysther_20160305155145_-_Bar_e_Lanches_Estad%C3%A3o.jpg/960px-Webysther_20160305155145_-_Bar_e_Lanches_Estad%C3%A3o.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "largura": 4570,
+  "altura": 2571,
+  "licenca": "CC BY-SA 4.0",
+  "autor": "Webysther",
+  "creditos_url": "https://commons.wikimedia.org/wiki/File:Webysther_20160305155145_-_Bar_e_Lanches_Estad%C3%A3o.jpg",
+  "status": "aprovada",
+  "atualizado_em": "2026-11-02T15:11:35.469108"
  },
  {
   "id": 13,
@@ -192,7 +222,22 @@
   "autor": "",
   "creditos_url": "https://www.elkabong.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.569156"
+  "atualizado_em": "2026-11-02T15:10:22.225865"
+ },
+ {
+  "id": 20,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/5278298946",
+  "fonte": "commons",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Edif%C3%ADcio_It%C3%A1lia_views_2018_033.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Edif%C3%ADcio_It%C3%A1lia_views_2018_033.jpg/960px-Edif%C3%ADcio_It%C3%A1lia_views_2018_033.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "largura": 5184,
+  "altura": 3456,
+  "licenca": "CC BY-SA 4.0",
+  "autor": "Photograph by Mike Peel ( www.mikepeel.net ).",
+  "creditos_url": "https://commons.wikimedia.org/wiki/File:Edif%C3%ADcio_It%C3%A1lia_views_2018_033.jpg",
+  "status": "aprovada",
+  "atualizado_em": "2026-11-02T15:11:35.469425"
  },
  {
   "id": 14,
@@ -207,7 +252,22 @@
   "autor": "",
   "creditos_url": "https://www.donamanjerico.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.569452"
+  "atualizado_em": "2026-11-02T15:10:22.226085"
+ },
+ {
+  "id": 21,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/1251674385",
+  "fonte": "commons",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Resid%C3%AAncia_Vilanova_Artigas_II_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Resid%C3%AAncia_Vilanova_Artigas_II_09.jpg/960px-Resid%C3%AAncia_Vilanova_Artigas_II_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "largura": 4288,
+  "altura": 2848,
+  "licenca": "CC BY-SA 4.0",
+  "autor": "Giulia Granchi",
+  "creditos_url": "https://commons.wikimedia.org/wiki/File:Resid%C3%AAncia_Vilanova_Artigas_II_09.jpg",
+  "status": "aprovada",
+  "atualizado_em": "2026-11-02T15:11:35.469757"
  },
  {
   "id": 15,
@@ -222,7 +282,7 @@
   "autor": "",
   "creditos_url": "https://quintaldoespeto.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.569762"
+  "atualizado_em": "2026-11-02T15:10:22.226304"
  },
  {
   "id": 16,
@@ -237,7 +297,37 @@
   "autor": "",
   "creditos_url": "http://wa.me/5511958450983",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.570061"
+  "atualizado_em": "2026-11-02T15:10:22.226521"
+ },
+ {
+  "id": 22,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/450691341",
+  "fonte": "osm_image",
+  "url": "https://scontent.fgru5-1.fna.fbcdn.net/v/t1.0-9/13769586_584916811681545_3177275089171351659_n.png?oh=2bfbaa3a489ad0cd499d40383fe1b421&oe=58CC76C2",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "",
+  "autor": "",
+  "creditos_url": "",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T15:11:35.470041"
+ },
+ {
+  "id": 23,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/520695555",
+  "fonte": "osm_image",
+  "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhs8_Ivvy_swq_wMLrw8ufgaQdFGlgcaPKDqVBWVumeja0hVEzT5n-Rzstp3XJIWvYpgfHaxQ2-MaBMkBbaWHHYbvjM4PrgDgdBUkA8ZfdID06qq_nVxdSo1zWKxQl1rPeYgF6lo7ZEHcOneElp80cjMyoTRN7c8UKmI-udEhjKfGc37-PeCNyRdeUe_Wj7/s1600",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "",
+  "autor": "",
+  "creditos_url": "",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T15:11:35.470307"
  },
  {
   "id": 17,
@@ -252,6 +342,21 @@
   "autor": "",
   "creditos_url": "https://www.sisenor.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:09:32.570296"
+  "atualizado_em": "2026-11-02T15:10:22.226714"
+ },
+ {
+  "id": 24,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/931152807",
+  "fonte": "osm_image",
+  "url": "https://media.linklist.bio/avatars/CDwvgkaTEr9WPr2RKnfr3EX1yXPS9s3L2Yq4oiGU.webp",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "",
+  "autor": "",
+  "creditos_url": "",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T15:11:35.470508"
  }
 ]
