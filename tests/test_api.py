@@ -40,3 +40,9 @@ def test_ingest_e_consulta():
     assert j["total"] == 1 and j["itens"][0]["nome"] == "Bar do Zé"
     assert c.get("/eventos").json()["total"] == 0
     assert c.get("/health").json()["ok"]
+
+
+def test_geo_e_front():
+    assert isinstance(c.get("/lugares/geo").json(), list)
+    r = c.get("/")
+    assert r.status_code == 200 and "Turiz" in r.text

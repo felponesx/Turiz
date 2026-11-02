@@ -1,4 +1,4 @@
-# Guia SP API
+# Turiz
 
 API que coleta restaurantes, bares e eventos de São Paulo de várias fontes, guarda num banco (SQLite por padrão, Postgres via `DATABASE_URL`) e expõe endpoints para os bots.
 
@@ -16,11 +16,12 @@ Obs.: a Eventbrite não tem mais busca pública, e o Sympla não tem API públic
 ```bash
 pip install -r requirements.txt
 cp .env.example .env
-python restaurar.py            # carrega data/*.json no banco
 python coletar.py osm sites    # coleta e atualiza data/*.json
 API_KEY=segredo uvicorn app.main:app --reload
 ```
-Endpoints: `GET /lugares`, `/lugares/{id}`, `/eventos`, `/health`; `POST /ingest/lugares` (header `x-api-key`).
+A API carrega `data/*.json` sozinha no primeiro start (banco vazio). Abra `http://localhost:8000/` para o app (busca, filtros, mapa) e `/docs` para a API.
+
+Endpoints: `GET /lugares`, `/lugares/geo`, `/lugares/{id}`, `/eventos`, `/health`; `POST /ingest/lugares` (header `x-api-key`).
 
 ## Git
 `.github/workflows/coleta.yml` roda toda segunda (ou manualmente) e commita os snapshots em `data/`. Configure os secrets `GOOGLE_PLACES_API_KEY` e `EVENTBRITE_TOKEN` no repositório.

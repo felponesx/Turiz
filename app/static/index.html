@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turiz</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+:root{--bg:#fff;--fg:#1c1c1e;--mut:#6b6b73;--card:#f4f4f6;--acc:#e8590c;--bd:#e2e2e6}
+@media (prefers-color-scheme:dark){:root{--bg:#121214;--fg:#f2f2f4;--mut:#9a9aa3;--card:#1e1e22;--bd:#2c2c32}}
+*{box-sizing:border-box}body{margin:0;font:15px/1.4 system-ui,sans-serif;background:var(--bg);color:var(--fg)}
+header{padding:14px 16px;border-bottom:1px solid var(--bd);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+h1{margin:0;font-size:20px;color:var(--acc)}
+input,select{padding:9px 11px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}
+input{flex:1;min-width:160px}
+nav{display:flex;gap:6px}nav button{padding:8px 14px;border:1px solid var(--bd);background:none;color:var(--fg);border-radius:8px;cursor:pointer;font:inherit}
+nav button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+main{display:grid;grid-template-columns:minmax(300px,420px) 1fr;height:calc(100vh - 66px)}
+#lista{overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.item{background:var(--card);border-radius:10px;padding:11px 13px;cursor:pointer}
+.item b{display:block}.item small{color:var(--mut)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;background:var(--acc);color:#fff;margin-right:6px}
+#mapa{height:100%}#total{color:var(--mut);padding:0 4px}
+button.mais{padding:10px;border-radius:8px;border:1px solid var(--bd);background:none;color:var(--fg);cursor:pointer}
+@media(max-width:760px){main{grid-template-columns:1fr;grid-template-rows:45vh 1fr}#mapa{order:-1}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Turiz</h1>
+  <input id="q" type="search" placeholder="Buscar por nome…" aria-label="Buscar">
+  <select id="tipo" aria-label="Tipo"><option value="">Todos</option><option value="restaurante">Restaurantes</option><option value="bar">Bares</option></select>
+  <input id="culinaria" placeholder="Culinária (pizza, japanese…)" aria-label="Culinária">
+</header>
+<main>
+  <section id="lista" aria-live="polite"></section>
+  <div id="mapa"></div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = t => String(t ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let offset = 0, mapa, camada;
+const LIMIT = 40;
+
+function iniciarMapa() {
+  if (!window.L) { $("#mapa").textContent = "Mapa indisponível (sem acesso ao Leaflet)."; return; }
+  mapa = L.map("mapa").setView([-23.5505, -46.6333], 11);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: "© OpenStreetMap"}).addTo(mapa);
+  camada = L.layerGroup().addTo(mapa);
+}
+async function desenharMapa() {
+  if (!mapa) return;
+  const tipo = $("#tipo").value;
+  const pts = await (await fetch("/lugares/geo" + (tipo ? "?tipo=" + tipo : ""))).json();
+  camada.clearLayers();
+  for (const [id, nome, t, lat, lon] of pts)
+    L.circleMarker([lat, lon], {radius: 4, color: t === "bar" ? "#6741d9" : "#e8590c", weight: 1, fillOpacity: .7})
+      .bindPopup(esc(nome)).addTo(camada);
+}
+function params() {
+  const p = new URLSearchParams({limit: LIMIT, offset});
+  for (const [k, id] of [["q","q"],["tipo","tipo"],["culinaria","culinaria"]]) if ($("#"+id).value) p.set(k, $("#"+id).value);
+  return p;
+}
+async function carregar(reset) {
+  if (reset) { offset = 0; $("#lista").innerHTML = ""; }
+  const d = await (await fetch("/lugares?" + params())).json();
+  $("#lista").querySelector("#total")?.remove();
+  $("#lista").querySelector(".mais")?.remove();
+  for (const l of d.itens) {
+    const el = document.createElement("div");
+    el.className = "item";
+    el.innerHTML = `<b>${esc(l.nome)}</b><span class="tag">${esc(l.tipo)}</span><small>${esc([l.culinaria, l.endereco, l.bairro].filter(Boolean).join(" · "))}</small>`;
+    el.onclick = () => l.lat && mapa && mapa.setView([l.lat, l.lon], 17);
+    $("#lista").append(el);
+  }
+  offset += d.itens.length;
+  const t = document.createElement("div"); t.id = "total"; t.textContent = `${d.total} locais`;
+  $("#lista").prepend(t);
+  if (offset < d.total) {
+    const b = document.createElement("button"); b.className = "mais"; b.textContent = "Carregar mais";
+    b.onclick = () => carregar(false); $("#lista").append(b);
+  }
+}
+let timer;
+for (const id of ["q","tipo","culinaria"]) $("#"+id).addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(() => { carregar(true); if (id === "tipo") desenharMapa(); }, 250); });
+iniciarMapa(); carregar(true); desenharMapa();
+</script>
+</body>
+</html>

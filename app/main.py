@@ -3,12 +3,24 @@ from datetime import datetime, timezone
 from fastapi import Depends, FastAPI, Header, HTTPException, Query
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
+from fastapi.staticfiles import StaticFiles
 from . import ingest
+from .restaurar import restaurar
 from .db import Base, engine, get_db
 from .models import Evento, Lugar
 
 Base.metadata.create_all(engine)
-app = FastAPI(title="Guia SP API", description="Restaurantes, bares e eventos de São Paulo")
+app = FastAPI(title="Turiz API", description="Restaurantes, bares e eventos de São Paulo")
+
+
+@app.on_event("startup")
+def carregar_dados_iniciais():
+    """Se o banco estiver vazio, carrega os snapshots versionados em data/."""
+    from .db import SessionLocal
+    with SessionLocal() as db:
+        vazio = db.scalar(select(func.count(Lugar.id))) == 0
+    if vazio:
+        restaurar()
 
 
 def exigir_chave(x_api_key: str | None = Header(default=None)):
@@ -45,6 +57,14 @@ def lugares(tipo: str | None = Query(None, pattern="^(restaurante|bar)$"), q: st
     return {"total": total, "itens": [lugar_dict(i) for i in itens]}
 
 
+@app.get("/lugares/geo")
+def lugares_geo(tipo: str | None = Query(None, pattern="^(restaurante|bar)$"), db: Session = Depends(get_db)):
+    """Lista compacta [id, nome, tipo, lat, lon] para desenhar o mapa."""
+    st = select(Lugar.id, Lugar.nome, Lugar.tipo, Lugar.lat, Lugar.lon).where(Lugar.lat.is_not(None))
+    if tipo: st = st.where(Lugar.tipo == tipo)
+    return [list(r) for r in db.execute(st)]
+
+
 @app.get("/lugares/{lugar_id}")
 def lugar(lugar_id: int, db: Session = Depends(get_db)):
     l = db.get(Lugar, lugar_id)
@@ -69,3 +89,6 @@ def eventos(q: str | None = None, a_partir_de: datetime | None = None, fonte: st
 def ingest_lugares(registros: list[dict], db: Session = Depends(get_db)):
     """Permite que os bots enviem lugares já normalizados."""
     return ingest.upsert(db, Lugar, registros)
+
+
+app.mount("/", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static"), html=True), name="static")
