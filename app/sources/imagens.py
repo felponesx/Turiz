@@ -18,7 +18,7 @@ from . import osm
 from .sites import permitido, UA
 
 # A Wikimedia exige User-Agent descritivo com contato (aqui, o repositório).
-UA_WIKI = "TurizImagensBot/1.0 (https://github.com/felponesx/Turiz; bot que coleta referências de imagens com licença)"
+UA_WIKI = "TurizImagensBot/1.0 (https://github.com/felponesx/Turiz; image reference bot)"
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 # Licenças consideradas livres para uso com atribuição (confira a lista antes de publicar).
