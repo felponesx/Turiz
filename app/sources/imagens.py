@@ -17,6 +17,8 @@ from bs4 import BeautifulSoup
 from . import osm
 from .sites import permitido, UA
 
+# A Wikimedia exige User-Agent descritivo com contato (aqui, o repositório).
+UA_WIKI = "TurizImagensBot/1.0 (https://github.com/felponesx/Turiz; bot que coleta referências de imagens com licença)"
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 # Licenças consideradas livres para uso com atribuição (confira a lista antes de publicar).
@@ -45,9 +47,13 @@ def info_commons(titulos: list[str], client) -> dict[str, dict]:
     saida = {}
     for i in range(0, len(titulos), 50):
         lote = titulos[i:i + 50]
-        r = client.get(COMMONS_API, params={"action": "query", "format": "json", "titles": "|".join(lote), "prop": "imageinfo",
-                                            "iiprop": "url|size|extmetadata", "iiurlwidth": 800})
-        r.raise_for_status()
+        try:
+            r = client.get(COMMONS_API, params={"action": "query", "format": "json", "titles": "|".join(lote), "prop": "imageinfo",
+                                                "iiprop": "url|size|extmetadata", "iiurlwidth": 800})
+            r.raise_for_status()
+        except httpx.HTTPError as exc:
+            print(f"  aviso: lote do Commons falhou: {exc}")
+            continue
         for pg in r.json().get("query", {}).get("pages", {}).values():
             ii = (pg.get("imageinfo") or [None])[0]
             if not ii:
@@ -67,8 +73,12 @@ def p18_wikidata(qids: list[str], client) -> dict[str, str]:
     """{Qid: 'File:nome.jpg'} usando a propriedade P18 (imagem)."""
     saida = {}
     for i in range(0, len(qids), 50):
-        r = client.get(WIKIDATA_API, params={"action": "wbgetentities", "format": "json", "props": "claims", "ids": "|".join(qids[i:i + 50])})
-        r.raise_for_status()
+        try:
+            r = client.get(WIKIDATA_API, params={"action": "wbgetentities", "format": "json", "props": "claims", "ids": "|".join(qids[i:i + 50])})
+            r.raise_for_status()
+        except httpx.HTTPError as exc:
+            print(f"  aviso: lote da Wikidata falhou: {exc}")
+            continue
         for q, ent in r.json().get("entities", {}).items():
             for c in ent.get("claims", {}).get("P18", [])[:1]:
                 v = c.get("mainsnak", {}).get("datavalue", {}).get("value")
@@ -81,7 +91,7 @@ def p18_wikidata(qids: list[str], client) -> dict[str, str]:
 def coletar_commons(post=None, client=None):
     """Retorna lista de imagens normalizadas ligadas aos lugares do OSM."""
     post = post or osm._post
-    client = client or httpx.Client(timeout=60, headers={"User-Agent": UA})
+    client = client or httpx.Client(timeout=60, headers={"User-Agent": UA_WIKI})
     elementos = post(query_tags()).get("elements", [])
     pedidos = []  # (lugar_fonte_id, titulo_ou_qid, origem)
     qids = {}
