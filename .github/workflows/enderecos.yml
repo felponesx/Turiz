@@ -1,5 +1,8 @@
 name: Bot de enderecos
 on:
+  workflow_run:
+    workflows: ["Coleta agendada"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       max_minutos:
@@ -7,8 +10,12 @@ on:
         default: "150"
 permissions:
   contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
 jobs:
   enderecos:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:

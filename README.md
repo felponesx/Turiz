@@ -37,3 +37,7 @@ Endpoints: `GET /lugares`, `/lugares/geo`, `/lugares/{id}`, `/eventos`, `/health
 
 `GET /lugares/{id}/imagens` devolve só as `aprovada` por padrão (`?status=todas`). `PATCH /imagens/{id}?status=aprovada|rejeitada` (header `x-api-key`) modera. Mostre sempre autor e licença ao exibir imagens do Commons. Fotos do Google Places têm termos próprios (não armazenar), por isso ficam de fora por enquanto.
 Workflow: `.github/workflows/imagens.yml` (terças, ou manual).
+
+## Automação (pipeline semanal)
+Toda segunda 06:00 UTC: **Coleta agendada** (OSM + sites) → **Bot de enderecos** (bairro/CEP/rua) → **Bot de imagens**, encadeados e sem sobreposição (`concurrency: dados`). Cada etapa commita seus arquivos em `data/`. Depois, uma tarefa agendada do Claude sincroniza `data/` com o banco do app e avisa por push.
+Qualquer etapa também roda manualmente em Actions → *Run workflow*.

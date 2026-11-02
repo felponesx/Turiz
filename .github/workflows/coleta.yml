@@ -9,6 +9,9 @@ on:
         default: "osm sites"
 permissions:
   contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
 jobs:
   coletar:
     runs-on: ubuntu-latest

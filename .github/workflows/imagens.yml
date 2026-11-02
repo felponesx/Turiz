@@ -1,7 +1,8 @@
 name: Bot de imagens
 on:
-  schedule:
-    - cron: "0 7 * * 2"   # terças, 07:00 UTC (depois da coleta de segunda)
+  workflow_run:
+    workflows: ["Bot de enderecos"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       fontes:
@@ -12,8 +13,12 @@ on:
         default: ""
 permissions:
   contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
 jobs:
   imagens:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
