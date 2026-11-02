@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from . import ingest
 from .restaurar import restaurar
 from .db import Base, engine, get_db
-from .models import Evento, Lugar
+from .models import Evento, Imagem, Lugar
 
 Base.metadata.create_all(engine)
 app = FastAPI(title="Turiz API", description="Restaurantes, bares e eventos de São Paulo")
@@ -71,6 +71,29 @@ def lugar(lugar_id: int, db: Session = Depends(get_db)):
     if not l:
         raise HTTPException(404, "Não encontrado")
     return lugar_dict(l)
+
+
+@app.get("/lugares/{lugar_id}/imagens")
+def imagens_do_lugar(lugar_id: int, status: str = Query("aprovada", pattern="^(aprovada|pendente|todas)$"), db: Session = Depends(get_db)):
+    """Imagens de um lugar. Por padrão só as de licença livre identificada (status=aprovada)."""
+    l = db.get(Lugar, lugar_id)
+    if not l:
+        raise HTTPException(404, "Não encontrado")
+    st = select(Imagem).where(Imagem.lugar_fonte == l.fonte, Imagem.lugar_fonte_id == l.fonte_id)
+    if status != "todas":
+        st = st.where(Imagem.status == status)
+    return [{c.name: getattr(i, c.name) for c in Imagem.__table__.columns} for i in db.scalars(st)]
+
+
+@app.patch("/imagens/{imagem_id}", dependencies=[Depends(exigir_chave)])
+def moderar_imagem(imagem_id: int, status: str = Query(..., pattern="^(aprovada|pendente|rejeitada)$"), db: Session = Depends(get_db)):
+    """Moderação: aprova (você tem permissão/licença) ou rejeita uma imagem."""
+    i = db.get(Imagem, imagem_id)
+    if not i:
+        raise HTTPException(404, "Não encontrada")
+    i.status = status
+    db.commit()
+    return {"id": i.id, "status": i.status}
 
 
 @app.get("/eventos")

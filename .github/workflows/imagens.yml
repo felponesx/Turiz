@@ -1,0 +1,34 @@
+name: Bot de imagens
+on:
+  schedule:
+    - cron: "0 7 * * 2"   # terças, 07:00 UTC (depois da coleta de segunda)
+  workflow_dispatch:
+    inputs:
+      fontes:
+        description: "Fontes (commons site)"
+        default: "commons site"
+      limite_sites:
+        description: "Máximo de sites a visitar (vazio = todos)"
+        default: ""
+permissions:
+  contents: write
+jobs:
+  imagens:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Coletar imagens
+        run: |
+          python coletar_imagens.py ${{ inputs.fontes || 'commons site' }} ${{ inputs.limite_sites && format('--limite-sites {0}', inputs.limite_sites) || '' }}
+      - name: Commitar dados
+        run: |
+          git config user.name "imagens-bot"
+          git config user.email "imagens-bot@users.noreply.github.com"
+          git pull --rebase origin main
+          git add data/imagens.json
+          git diff --cached --quiet || git commit -m "dados: imagens $(date -u +%F)"
+          git push

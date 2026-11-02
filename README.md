@@ -25,3 +25,15 @@ Endpoints: `GET /lugares`, `/lugares/geo`, `/lugares/{id}`, `/eventos`, `/health
 
 ## Git
 `.github/workflows/coleta.yml` roda toda segunda (ou manualmente) e commita os snapshots em `data/`. Configure os secrets `GOOGLE_PLACES_API_KEY` e `EVENTBRITE_TOKEN` no repositório.
+
+## Bot de imagens
+`python coletar_imagens.py commons site` reúne **referências** de fotos (url, autor, licença) em `data/imagens.json`; não baixa nem republica arquivos.
+
+| Fonte | Origem | Status padrão |
+|---|---|---|
+| `commons` | Wikimedia Commons via tags `wikimedia_commons`/`wikidata` do OSM | `aprovada` se a licença for livre, senão `pendente` |
+| `osm_image` | tag `image` do OSM (URL de outro site) | `pendente` |
+| `site` | `og:image` do site do próprio estabelecimento (respeita robots.txt) | `pendente` |
+
+`GET /lugares/{id}/imagens` devolve só as `aprovada` por padrão (`?status=todas`). `PATCH /imagens/{id}?status=aprovada|rejeitada` (header `x-api-key`) modera. Mostre sempre autor e licença ao exibir imagens do Commons. Fotos do Google Places têm termos próprios (não armazenar), por isso ficam de fora por enquanto.
+Workflow: `.github/workflows/imagens.yml` (terças, ou manual).

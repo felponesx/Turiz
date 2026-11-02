@@ -42,7 +42,7 @@ def normalizar(el: dict) -> dict | None:
         "telefone": t.get("phone") or t.get("contact:phone", ""),
         "site": t.get("website") or t.get("contact:website", ""),
         "horario": t.get("opening_hours", ""),
-        "extra": {k: t[k] for k in ("contact:instagram", "delivery", "takeaway", "diet:vegan", "diet:vegetarian") if k in t},
+        "extra": {k: t[k] for k in ("contact:instagram", "delivery", "takeaway", "diet:vegan", "diet:vegetarian", "image", "wikimedia_commons", "wikidata") if k in t},
     }
 
 

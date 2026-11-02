@@ -50,3 +50,24 @@ class Evento(Base):
     url: Mapped[str] = mapped_column(String(500), default="")
     extra: Mapped[dict] = mapped_column(JSON, default=dict)
     atualizado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=agora, onupdate=agora)
+
+
+class Imagem(Base):
+    """Referência a uma imagem de um lugar (guardamos só a URL + licença/autor, não o arquivo)."""
+    __tablename__ = "imagens"
+    __table_args__ = (UniqueConstraint("lugar_fonte", "lugar_fonte_id", "url"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    lugar_fonte: Mapped[str] = mapped_column(String(30), index=True)
+    lugar_fonte_id: Mapped[str] = mapped_column(String(200), index=True)
+    fonte: Mapped[str] = mapped_column(String(30), index=True)  # commons | osm_image | site
+    url: Mapped[str] = mapped_column(String(600))
+    thumb_url: Mapped[str] = mapped_column(String(600), default="")
+    largura: Mapped[int | None] = mapped_column(nullable=True)
+    altura: Mapped[int | None] = mapped_column(nullable=True)
+    licenca: Mapped[str] = mapped_column(String(120), default="")
+    autor: Mapped[str] = mapped_column(String(300), default="")
+    creditos_url: Mapped[str] = mapped_column(String(600), default="")
+    # aprovada = licença livre identificada; pendente = precisa de revisão/permissão antes de publicar
+    status: Mapped[str] = mapped_column(String(20), index=True, default="pendente")
+    atualizado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=agora, onupdate=agora)

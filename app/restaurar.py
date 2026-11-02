@@ -4,14 +4,14 @@ import os
 from datetime import datetime
 from .db import Base, SessionLocal, engine
 from .ingest import upsert
-from .models import Evento, Lugar
+from .models import Evento, Imagem, Lugar
 
 
 def restaurar(pasta="data"):
     Base.metadata.create_all(engine)
     saida = {}
     with SessionLocal() as db:
-        for nome, modelo in (("lugares", Lugar), ("eventos", Evento)):
+        for nome, modelo in (("lugares", Lugar), ("eventos", Evento), ("imagens", Imagem)):
             p = os.path.join(pasta, f"{nome}.json")
             if not os.path.exists(p):
                 continue
