@@ -94,3 +94,20 @@ def test_api_imagens_e_moderacao():
     assert c.patch(f"/imagens/{iid}", params={"status": "aprovada"}).status_code == 401
     assert c.patch(f"/imagens/{iid}", params={"status": "aprovada"}, headers=h).json()["status"] == "aprovada"
     assert len(c.get(f"/lugares/{lid}/imagens").json()) == 1
+
+
+def test_enderecos_nao_sobrescreve_nem_inventa_numero():
+    import httpx
+    from types import SimpleNamespace
+    from app.sources import enderecos
+    d = enderecos.extrair({"address": {"road": "Rua A", "house_number": "99", "suburb": "Pinheiros", "postcode": "05428-000"}})
+    assert d == {"bairro": "Pinheiros", "cep": "05428-000", "rua": "Rua A"}
+    l = SimpleNamespace(bairro="", cep="01000-000", endereco="", extra={})
+    assert enderecos.aplicar(l, d) is True
+    assert l.bairro == "Pinheiros" and l.cep == "01000-000"      # cep existente preservado
+    assert l.endereco == "Rua A" and "99" not in l.endereco      # sem número da casa
+    assert l.extra["endereco_aproximado"] is True
+    l2 = SimpleNamespace(bairro="Moema", cep="1", endereco="Rua B 5", extra={})
+    assert enderecos.aplicar(l2, d) is False and l2.endereco == "Rua B 5"
+    cli = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, json={"address": {"suburb": "Mooca"}})))
+    assert enderecos.reverso(-23.5, -46.6, cli)["bairro"] == "Mooca"
