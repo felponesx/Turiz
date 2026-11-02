@@ -1,0 +1,71 @@
+import os
+from datetime import datetime, timezone
+from fastapi import Depends, FastAPI, Header, HTTPException, Query
+from sqlalchemy import func, select
+from sqlalchemy.orm import Session
+from . import ingest
+from .db import Base, engine, get_db
+from .models import Evento, Lugar
+
+Base.metadata.create_all(engine)
+app = FastAPI(title="Guia SP API", description="Restaurantes, bares e eventos de São Paulo")
+
+
+def exigir_chave(x_api_key: str | None = Header(default=None)):
+    esperada = os.getenv("API_KEY")
+    if not esperada or x_api_key != esperada:
+        raise HTTPException(401, "API key inválida")
+
+
+def lugar_dict(l: Lugar):
+    return {c.name: getattr(l, c.name) for c in Lugar.__table__.columns}
+
+
+def evento_dict(e: Evento):
+    return {c.name: getattr(e, c.name) for c in Evento.__table__.columns}
+
+
+@app.get("/health")
+def health(db: Session = Depends(get_db)):
+    return {"ok": True, "lugares": db.scalar(select(func.count(Lugar.id))), "eventos": db.scalar(select(func.count(Evento.id)))}
+
+
+@app.get("/lugares")
+def lugares(tipo: str | None = Query(None, pattern="^(restaurante|bar)$"), q: str | None = None,
+            bairro: str | None = None, culinaria: str | None = None, fonte: str | None = None,
+            limit: int = Query(50, le=500), offset: int = 0, db: Session = Depends(get_db)):
+    st = select(Lugar)
+    if tipo: st = st.where(Lugar.tipo == tipo)
+    if q: st = st.where(Lugar.nome.ilike(f"%{q}%"))
+    if bairro: st = st.where(Lugar.bairro.ilike(f"%{bairro}%"))
+    if culinaria: st = st.where(Lugar.culinaria.ilike(f"%{culinaria}%"))
+    if fonte: st = st.where(Lugar.fonte == fonte)
+    total = db.scalar(select(func.count()).select_from(st.subquery()))
+    itens = db.scalars(st.order_by(Lugar.nome).limit(limit).offset(offset)).all()
+    return {"total": total, "itens": [lugar_dict(i) for i in itens]}
+
+
+@app.get("/lugares/{lugar_id}")
+def lugar(lugar_id: int, db: Session = Depends(get_db)):
+    l = db.get(Lugar, lugar_id)
+    if not l:
+        raise HTTPException(404, "Não encontrado")
+    return lugar_dict(l)
+
+
+@app.get("/eventos")
+def eventos(q: str | None = None, a_partir_de: datetime | None = None, fonte: str | None = None,
+            limit: int = Query(50, le=500), offset: int = 0, db: Session = Depends(get_db)):
+    st = select(Evento)
+    if q: st = st.where(Evento.titulo.ilike(f"%{q}%"))
+    st = st.where(Evento.inicio >= (a_partir_de or datetime.now(timezone.utc)))
+    if fonte: st = st.where(Evento.fonte == fonte)
+    total = db.scalar(select(func.count()).select_from(st.subquery()))
+    itens = db.scalars(st.order_by(Evento.inicio).limit(limit).offset(offset)).all()
+    return {"total": total, "itens": [evento_dict(i) for i in itens]}
+
+
+@app.post("/ingest/lugares", dependencies=[Depends(exigir_chave)])
+def ingest_lugares(registros: list[dict], db: Session = Depends(get_db)):
+    """Permite que os bots enviem lugares já normalizados."""
+    return ingest.upsert(db, Lugar, registros)

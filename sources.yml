@@ -1,0 +1,7 @@
+# Sites extras para raspagem (lê JSON-LD schema.org: Restaurant, BarOrPub, Event).
+# Só adicione sites cujos termos de uso permitam; o coletor respeita robots.txt.
+sites: []
+#  - url: https://exemplo.com.br/agenda
+#    tipo: evento          # evento | restaurante | bar
+#  - url: https://exemplo.com.br/bares-sp
+#    tipo: bar
