@@ -101,6 +101,8 @@ def coletar_commons(post=None, client=None):
         if q in p18:
             pedidos.append((fid, p18[q]))
     infos = info_commons(sorted({t for _, t in pedidos}), client)
+    print(f"  commons: {len(elementos)} lugares com tag de imagem | {len(qids)} com wikidata | "
+          f"{len(p18)} com P18 | {len(pedidos)} arquivos pedidos | {len(infos)} resolvidos")
     saida, vistos = [], set()
     for fid, tit in pedidos:
         i = infos.get(tit)
