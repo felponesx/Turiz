@@ -1,6 +1,6 @@
 [
  {
-  "id": 67,
+  "id": 1,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10015683256",
   "fonte": "site",
@@ -12,10 +12,25 @@
   "autor": "",
   "creditos_url": "https://www.gopalarestaurante.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.850880"
+  "atualizado_em": "2026-11-02T17:41:47.885745"
  },
  {
-  "id": 68,
+  "id": 118,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/10235748146",
+  "fonte": "site",
+  "url": "https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://urbanitycoffee.com.br/",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.468017"
+ },
+ {
+  "id": 2,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10274164429",
   "fonte": "site",
@@ -27,10 +42,10 @@
   "autor": "",
   "creditos_url": "https://1900.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.851355"
+  "atualizado_em": "2026-11-02T17:41:47.886596"
  },
  {
-  "id": 1,
+  "id": 3,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/1059511085",
   "fonte": "site",
@@ -42,10 +57,10 @@
   "autor": "",
   "creditos_url": "https://www.lacaballeriza.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.505328"
+  "atualizado_em": "2026-11-02T17:41:47.887171"
  },
  {
-  "id": 69,
+  "id": 4,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10598908336",
   "fonte": "site",
@@ -57,10 +72,10 @@
   "autor": "",
   "creditos_url": "https://cervejariadogma.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.851859"
+  "atualizado_em": "2026-11-02T17:41:47.887685"
  },
  {
-  "id": 70,
+  "id": 5,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10605504425",
   "fonte": "site",
@@ -72,10 +87,10 @@
   "autor": "",
   "creditos_url": "http://www.samosa.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.852341"
+  "atualizado_em": "2026-11-02T17:41:47.888217"
  },
  {
-  "id": 2,
+  "id": 6,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10784434370",
   "fonte": "site",
@@ -87,10 +102,25 @@
   "autor": "",
   "creditos_url": "https://www.nakato.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.506293"
+  "atualizado_em": "2026-11-02T17:41:47.888711"
  },
  {
-  "id": 71,
+  "id": 124,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/10812435805",
+  "fonte": "site",
+  "url": "https://gateriacatcafe.com.br/wp-content/uploads/2022/05/pet-cafe-1-112730.jpg",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://www.gateriacatcafe.com.br/",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.494871"
+ },
+ {
+  "id": 7,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10969885713",
   "fonte": "site",
@@ -102,10 +132,10 @@
   "autor": "",
   "creditos_url": "https://selvagemibirapuera.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.852849"
+  "atualizado_em": "2026-11-02T17:41:47.889243"
  },
  {
-  "id": 72,
+  "id": 8,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11079440680",
   "fonte": "site",
@@ -117,10 +147,10 @@
   "autor": "",
   "creditos_url": "https://www.primobasilico.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.853330"
+  "atualizado_em": "2026-11-02T17:41:47.889727"
  },
  {
-  "id": 73,
+  "id": 9,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11237064553",
   "fonte": "site",
@@ -132,10 +162,10 @@
   "autor": "",
   "creditos_url": "https://www.oakberry.com/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.853835"
+  "atualizado_em": "2026-11-02T17:41:47.890237"
  },
  {
-  "id": 74,
+  "id": 10,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11281793604",
   "fonte": "site",
@@ -147,10 +177,10 @@
   "autor": "",
   "creditos_url": "https://bio.site/allsanduba",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.854310"
+  "atualizado_em": "2026-11-02T17:41:47.890722"
  },
  {
-  "id": 75,
+  "id": 11,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11410165869",
   "fonte": "site",
@@ -162,10 +192,10 @@
   "autor": "",
   "creditos_url": "https://truecoffeeinc.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.854816"
+  "atualizado_em": "2026-11-02T17:41:47.891237"
  },
  {
-  "id": 76,
+  "id": 12,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11412057269",
   "fonte": "site",
@@ -177,10 +207,10 @@
   "autor": "",
   "creditos_url": "https://patoreisp.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.855309"
+  "atualizado_em": "2026-11-02T17:41:47.891721"
  },
  {
-  "id": 25,
+  "id": 13,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11780964655",
   "fonte": "commons",
@@ -192,10 +222,25 @@
   "autor": "いなり男",
   "creditos_url": "https://commons.wikimedia.org/wiki/File:Sukiya_Aioi_Kakiuchi.jpg",
   "status": "aprovada",
-  "atualizado_em": "2026-11-02T16:03:19.258182"
+  "atualizado_em": "2026-11-02T17:41:47.892227"
  },
  {
-  "id": 77,
+  "id": 125,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/11810594906",
+  "fonte": "site",
+  "url": "http://cdn.shopify.com/s/files/1/0252/1048/6847/files/logo_alyah_horiz_Prancheta_1_1200x1200.png?v=1614911362",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://alyahsweets.com.br/",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.497931"
+ },
+ {
+  "id": 14,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11810594906",
   "fonte": "site",
@@ -207,10 +252,10 @@
   "autor": "",
   "creditos_url": "https://alyahsweets.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.855815"
+  "atualizado_em": "2026-11-02T17:41:47.892705"
  },
  {
-  "id": 78,
+  "id": 15,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11885025890",
   "fonte": "site",
@@ -222,10 +267,10 @@
   "autor": "",
   "creditos_url": "https://www.dbresciachurrascaria.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.856294"
+  "atualizado_em": "2026-11-02T17:41:47.893212"
  },
  {
-  "id": 79,
+  "id": 16,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12409668701",
   "fonte": "site",
@@ -237,10 +282,10 @@
   "autor": "",
   "creditos_url": "https://tascadaesquina.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.856791"
+  "atualizado_em": "2026-11-02T17:41:47.893688"
  },
  {
-  "id": 3,
+  "id": 17,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12469595301",
   "fonte": "site",
@@ -252,10 +297,10 @@
   "autor": "",
   "creditos_url": "https://www.fazendachurrascada.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.507021"
+  "atualizado_em": "2026-11-02T17:41:47.894190"
  },
  {
-  "id": 80,
+  "id": 18,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12469626101",
   "fonte": "site",
@@ -267,10 +312,10 @@
   "autor": "",
   "creditos_url": "https://www.hotelunique.com/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.857263"
+  "atualizado_em": "2026-11-02T17:41:47.894720"
  },
  {
-  "id": 81,
+  "id": 19,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12750164559",
   "fonte": "site",
@@ -282,10 +327,10 @@
   "autor": "",
   "creditos_url": "https://www.lepainquotidien.com/br/pt/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.857762"
+  "atualizado_em": "2026-11-02T17:41:47.895244"
  },
  {
-  "id": 82,
+  "id": 20,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12861662077",
   "fonte": "site",
@@ -297,10 +342,10 @@
   "autor": "",
   "creditos_url": "https://www.tamashiiramen.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.858238"
+  "atualizado_em": "2026-11-02T17:41:47.895726"
  },
  {
-  "id": 117,
+  "id": 21,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13134879736",
   "fonte": "site",
@@ -312,10 +357,10 @@
   "autor": "",
   "creditos_url": "https://pediraqui.com/acaidomonge/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.875364"
+  "atualizado_em": "2026-11-02T17:41:47.896230"
  },
  {
-  "id": 83,
+  "id": 22,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13186393184",
   "fonte": "site",
@@ -327,10 +372,10 @@
   "autor": "",
   "creditos_url": "https://www.pecorino.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.858738"
+  "atualizado_em": "2026-11-02T17:41:47.896699"
  },
  {
-  "id": 84,
+  "id": 23,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13255955101",
   "fonte": "site",
@@ -342,10 +387,10 @@
   "autor": "",
   "creditos_url": "https://chestmaids.carrd.co/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.859221"
+  "atualizado_em": "2026-11-02T17:41:47.897201"
  },
  {
-  "id": 85,
+  "id": 24,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13277367201",
   "fonte": "site",
@@ -357,10 +402,10 @@
   "autor": "",
   "creditos_url": "http://carlospizza.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.859728"
+  "atualizado_em": "2026-11-02T17:41:47.897668"
  },
  {
-  "id": 86,
+  "id": 25,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13869864806",
   "fonte": "site",
@@ -372,10 +417,10 @@
   "autor": "",
   "creditos_url": "https://www.lojalocal.com/amstel/08691819000154",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.860226"
+  "atualizado_em": "2026-11-02T17:41:47.898175"
  },
  {
-  "id": 87,
+  "id": 26,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/14165229975",
   "fonte": "site",
@@ -387,10 +432,10 @@
   "autor": "",
   "creditos_url": "https://restaurantepastissimo.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.860732"
+  "atualizado_em": "2026-11-02T17:41:47.898662"
  },
  {
-  "id": 4,
+  "id": 27,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/1424327243",
   "fonte": "site",
@@ -402,10 +447,10 @@
   "autor": "",
   "creditos_url": "https://www.leiriense.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.507571"
+  "atualizado_em": "2026-11-02T17:41:47.899160"
  },
  {
-  "id": 5,
+  "id": 28,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/1654663498",
   "fonte": "site",
@@ -417,10 +462,10 @@
   "autor": "",
   "creditos_url": "https://www.cocobambu.com/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.508127"
+  "atualizado_em": "2026-11-02T17:41:47.899631"
  },
  {
-  "id": 6,
+  "id": 29,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/1738042648",
   "fonte": "site",
@@ -432,10 +477,10 @@
   "autor": "",
   "creditos_url": "https://www.baroriginal.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.508647"
+  "atualizado_em": "2026-11-02T17:41:47.900128"
  },
  {
-  "id": 7,
+  "id": 30,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2283621582",
   "fonte": "site",
@@ -447,10 +492,10 @@
   "autor": "",
   "creditos_url": "https://thegarden.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.509182"
+  "atualizado_em": "2026-11-02T17:41:47.900602"
  },
  {
-  "id": 8,
+  "id": 31,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2312081049",
   "fonte": "site",
@@ -462,10 +507,10 @@
   "autor": "",
   "creditos_url": "http://www.cantinhonobremooca.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.509713"
+  "atualizado_em": "2026-11-02T17:41:47.901104"
  },
  {
-  "id": 9,
+  "id": 32,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2360726173",
   "fonte": "site",
@@ -477,10 +522,10 @@
   "autor": "",
   "creditos_url": "https://www.ibotiramabar.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.510216"
+  "atualizado_em": "2026-11-02T17:41:47.901579"
  },
  {
-  "id": 10,
+  "id": 33,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2380731344",
   "fonte": "site",
@@ -492,10 +537,10 @@
   "autor": "",
   "creditos_url": "https://www.coffeelab.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.510754"
+  "atualizado_em": "2026-11-02T17:41:47.902073"
  },
  {
-  "id": 11,
+  "id": 34,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2558589778",
   "fonte": "site",
@@ -507,10 +552,10 @@
   "autor": "",
   "creditos_url": "https://subastor.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.511243"
+  "atualizado_em": "2026-11-02T17:41:47.902552"
  },
  {
-  "id": 12,
+  "id": 35,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2637739286",
   "fonte": "site",
@@ -522,10 +567,10 @@
   "autor": "",
   "creditos_url": "http://www.tollocos.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.511751"
+  "atualizado_em": "2026-11-02T17:41:47.903071"
  },
  {
-  "id": 27,
+  "id": 36,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2939956125",
   "fonte": "site",
@@ -537,10 +582,10 @@
   "autor": "",
   "creditos_url": "https://www.fundacaooscaramericano.org.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.830671"
+  "atualizado_em": "2026-11-02T17:41:47.903549"
  },
  {
-  "id": 28,
+  "id": 37,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2972400179",
   "fonte": "site",
@@ -552,10 +597,10 @@
   "autor": "",
   "creditos_url": "https://www.reservacultural.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.831182"
+  "atualizado_em": "2026-11-02T17:41:47.904049"
  },
  {
-  "id": 29,
+  "id": 38,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/3107981695",
   "fonte": "site",
@@ -567,10 +612,10 @@
   "autor": "",
   "creditos_url": "https://jazznosfundos.net/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.831795"
+  "atualizado_em": "2026-11-02T17:41:47.904522"
  },
  {
-  "id": 30,
+  "id": 39,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/3873686200",
   "fonte": "site",
@@ -582,10 +627,10 @@
   "autor": "",
   "creditos_url": "http://www.cafepiupiu.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.832356"
+  "atualizado_em": "2026-11-02T17:41:47.905020"
  },
  {
-  "id": 31,
+  "id": 40,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4124598111",
   "fonte": "site",
@@ -597,10 +642,10 @@
   "autor": "",
   "creditos_url": "https://ogatoqueri.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.832895"
+  "atualizado_em": "2026-11-02T17:41:47.905512"
  },
  {
-  "id": 32,
+  "id": 41,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4150329895",
   "fonte": "site",
@@ -612,10 +657,10 @@
   "autor": "",
   "creditos_url": "https://www.lanchonetedacidade.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.833396"
+  "atualizado_em": "2026-11-02T17:41:47.906048"
  },
  {
-  "id": 33,
+  "id": 42,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4210898997",
   "fonte": "site",
@@ -627,10 +672,10 @@
   "autor": "",
   "creditos_url": "https://www.starbucks.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.833931"
+  "atualizado_em": "2026-11-02T17:41:47.906537"
  },
  {
-  "id": 13,
+  "id": 43,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4305213694",
   "fonte": "commons",
@@ -642,10 +687,10 @@
   "autor": "Unknown author Unknown author",
   "creditos_url": "https://commons.wikimedia.org/wiki/File:Paribar_and_S%C3%A3o_Paulo_city_downtown_area_10.jpg",
   "status": "aprovada",
-  "atualizado_em": "2026-11-02T15:52:01.512239"
+  "atualizado_em": "2026-11-02T17:41:47.907061"
  },
  {
-  "id": 34,
+  "id": 44,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4341891590",
   "fonte": "site",
@@ -657,10 +702,10 @@
   "autor": "",
   "creditos_url": "https://davvero.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.834427"
+  "atualizado_em": "2026-11-02T17:41:47.907551"
  },
  {
-  "id": 35,
+  "id": 45,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4369789880",
   "fonte": "site",
@@ -672,10 +717,10 @@
   "autor": "",
   "creditos_url": "https://www.apizzaria.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.834954"
+  "atualizado_em": "2026-11-02T17:41:47.908050"
  },
  {
-  "id": 14,
+  "id": 46,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4394024912",
   "fonte": "commons",
@@ -687,10 +732,10 @@
   "autor": "Webysther",
   "creditos_url": "https://commons.wikimedia.org/wiki/File:Webysther_20160305155145_-_Bar_e_Lanches_Estad%C3%A3o.jpg",
   "status": "aprovada",
-  "atualizado_em": "2026-11-02T15:52:01.512751"
+  "atualizado_em": "2026-11-02T17:41:47.908523"
  },
  {
-  "id": 36,
+  "id": 47,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4528875793",
   "fonte": "site",
@@ -702,10 +747,10 @@
   "autor": "",
   "creditos_url": "https://www.starbucks.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.835449"
+  "atualizado_em": "2026-11-02T17:41:47.909020"
  },
  {
-  "id": 37,
+  "id": 48,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4528907291",
   "fonte": "site",
@@ -717,10 +762,10 @@
   "autor": "",
   "creditos_url": "https://www.starbucks.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.835990"
+  "atualizado_em": "2026-11-02T17:41:47.909492"
  },
  {
-  "id": 38,
+  "id": 49,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4567326571",
   "fonte": "site",
@@ -732,10 +777,10 @@
   "autor": "",
   "creditos_url": "https://www.sofacafe.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.836474"
+  "atualizado_em": "2026-11-02T17:41:47.909987"
  },
  {
-  "id": 26,
+  "id": 50,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/465994688",
   "fonte": "site",
@@ -747,10 +792,25 @@
   "autor": "",
   "creditos_url": "https://www.elkabong.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.826188"
+  "atualizado_em": "2026-11-02T17:41:47.910484"
  },
  {
-  "id": 15,
+  "id": 119,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/465994688",
+  "fonte": "site",
+  "url": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tyhuj6Ih9UrWaK7zytkuuPQHU_DefMXKMvEpgHflOxzV_6w-8fMGl1mD5SwYo_0IJ3leNi7IMnybnKoeOn141GeXPYKVhwd2bulf1aQTKUtIy1BsBTrbDcv9ssXS0Rf0P63lSNHxgPZD5wHDLslplOCfEwfZSa8K6-ujY11HcmzQ4myctylSRAXqOm=w16383",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://www.elkabong.com.br/",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.470539"
+ },
+ {
+  "id": 51,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/465994688",
   "fonte": "site",
@@ -762,10 +822,10 @@
   "autor": "",
   "creditos_url": "https://www.elkabong.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.513257"
+  "atualizado_em": "2026-11-02T17:41:47.910989"
  },
  {
-  "id": 39,
+  "id": 52,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4709741589",
   "fonte": "site",
@@ -777,10 +837,10 @@
   "autor": "",
   "creditos_url": "https://www.padariaartesanal.com.br/home",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.837001"
+  "atualizado_em": "2026-11-02T17:41:47.911504"
  },
  {
-  "id": 40,
+  "id": 53,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4915679021",
   "fonte": "site",
@@ -792,10 +852,10 @@
   "autor": "",
   "creditos_url": "https://www.hamburgueriacalifornia.com/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.837480"
+  "atualizado_em": "2026-11-02T17:41:47.912032"
  },
  {
-  "id": 41,
+  "id": 54,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4962188946",
   "fonte": "site",
@@ -807,10 +867,10 @@
   "autor": "",
   "creditos_url": "https://www.reidomate.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.837986"
+  "atualizado_em": "2026-11-02T17:41:47.912514"
  },
  {
-  "id": 42,
+  "id": 55,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4969386621",
   "fonte": "site",
@@ -822,10 +882,10 @@
   "autor": "",
   "creditos_url": "https://www.lafranttine.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.838465"
+  "atualizado_em": "2026-11-02T17:41:47.913021"
  },
  {
-  "id": 43,
+  "id": 56,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4979826272",
   "fonte": "site",
@@ -837,10 +897,10 @@
   "autor": "",
   "creditos_url": "https://www.athenasrestaurante.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.838977"
+  "atualizado_em": "2026-11-02T17:41:47.913497"
  },
  {
-  "id": 44,
+  "id": 57,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4979826276",
   "fonte": "site",
@@ -852,10 +912,10 @@
   "autor": "",
   "creditos_url": "https://www.athenasrestaurante.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.839456"
+  "atualizado_em": "2026-11-02T17:41:47.914004"
  },
  {
-  "id": 45,
+  "id": 58,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5049076690",
   "fonte": "site",
@@ -867,10 +927,10 @@
   "autor": "",
   "creditos_url": "https://www.paradismacarons.com/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.839963"
+  "atualizado_em": "2026-11-02T17:41:47.914484"
  },
  {
-  "id": 46,
+  "id": 59,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5103818949",
   "fonte": "site",
@@ -882,10 +942,10 @@
   "autor": "",
   "creditos_url": "https://gruporubaiyat.com/casa/a-figueira-rubaiyat/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.840438"
+  "atualizado_em": "2026-11-02T17:41:47.914988"
  },
  {
-  "id": 47,
+  "id": 60,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5138039022",
   "fonte": "site",
@@ -897,10 +957,25 @@
   "autor": "",
   "creditos_url": "https://www.cafemartinellimidi.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.840940"
+  "atualizado_em": "2026-11-02T17:41:47.915456"
  },
  {
-  "id": 48,
+  "id": 120,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/5160291825",
+  "fonte": "site",
+  "url": "https://burdog.com.br/wp-content/uploads/2024/01/Burdog_18set23_Feltran-Foto-92-1024x683.jpg",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://www.burdog.com.br",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.483445"
+ },
+ {
+  "id": 61,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5278298946",
   "fonte": "site",
@@ -912,10 +987,10 @@
   "autor": "",
   "creditos_url": "http://www.terracoitalia.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.841420"
+  "atualizado_em": "2026-11-02T17:41:47.915952"
  },
  {
-  "id": 16,
+  "id": 62,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5278298946",
   "fonte": "commons",
@@ -927,10 +1002,25 @@
   "autor": "Photograph by Mike Peel ( www.mikepeel.net ).",
   "creditos_url": "https://commons.wikimedia.org/wiki/File:Edif%C3%ADcio_It%C3%A1lia_views_2018_033.jpg",
   "status": "aprovada",
-  "atualizado_em": "2026-11-02T15:52:01.513815"
+  "atualizado_em": "2026-11-02T17:41:47.916434"
  },
  {
-  "id": 49,
+  "id": 121,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/5323842922",
+  "fonte": "site",
+  "url": "https://jucalemao.com.br/wp-content/uploads/2024/11/chucrute2.jpg",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://www.jucalemao.com.br/",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.484412"
+ },
+ {
+  "id": 63,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5480974134",
   "fonte": "site",
@@ -942,10 +1032,10 @@
   "autor": "",
   "creditos_url": "https://www.subway.com/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.841932"
+  "atualizado_em": "2026-11-02T17:41:47.916933"
  },
  {
-  "id": 50,
+  "id": 64,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5573896421",
   "fonte": "site",
@@ -957,10 +1047,10 @@
   "autor": "",
   "creditos_url": "https://www.futurorefeitorio.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.842413"
+  "atualizado_em": "2026-11-02T17:41:47.917419"
  },
  {
-  "id": 51,
+  "id": 65,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5595301022",
   "fonte": "site",
@@ -972,10 +1062,10 @@
   "autor": "",
   "creditos_url": "https://www.tchecafe.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.842922"
+  "atualizado_em": "2026-11-02T17:41:47.917918"
  },
  {
-  "id": 52,
+  "id": 66,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5648011827",
   "fonte": "site",
@@ -987,10 +1077,10 @@
   "autor": "",
   "creditos_url": "https://www.lanchonetedacidade.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.843423"
+  "atualizado_em": "2026-11-02T17:41:47.918400"
  },
  {
-  "id": 53,
+  "id": 67,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6109038386",
   "fonte": "site",
@@ -1002,10 +1092,10 @@
   "autor": "",
   "creditos_url": "https://www.pastificioprimo.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.843931"
+  "atualizado_em": "2026-11-02T17:41:47.918897"
  },
  {
-  "id": 54,
+  "id": 68,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6129501838",
   "fonte": "site",
@@ -1017,10 +1107,10 @@
   "autor": "",
   "creditos_url": "https://www.subway.com",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.844411"
+  "atualizado_em": "2026-11-02T17:41:47.919375"
  },
  {
-  "id": 55,
+  "id": 69,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6422063345",
   "fonte": "site",
@@ -1032,10 +1122,10 @@
   "autor": "",
   "creditos_url": "https://www.tasteandsee.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.844926"
+  "atualizado_em": "2026-11-02T17:41:47.919867"
  },
  {
-  "id": 56,
+  "id": 70,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6443914041",
   "fonte": "site",
@@ -1047,10 +1137,25 @@
   "autor": "",
   "creditos_url": "https://www.letsbeer.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.845414"
+  "atualizado_em": "2026-11-02T17:41:47.920340"
  },
  {
-  "id": 57,
+  "id": 122,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/6463706717",
+  "fonte": "site",
+  "url": "https://fasano.com.br/wp-content/uploads/2024/05/Google-Fasano.jpg",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://www.fasano.com.br/",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.488130"
+ },
+ {
+  "id": 71,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6670536620",
   "fonte": "site",
@@ -1062,10 +1167,10 @@
   "autor": "",
   "creditos_url": "https://bullguer.com/v2/vila-madalena/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.845938"
+  "atualizado_em": "2026-11-02T17:41:47.920841"
  },
  {
-  "id": 58,
+  "id": 72,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6736650585",
   "fonte": "site",
@@ -1077,10 +1182,10 @@
   "autor": "",
   "creditos_url": "https://www.barcharles.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.846422"
+  "atualizado_em": "2026-11-02T17:41:47.921315"
  },
  {
-  "id": 59,
+  "id": 73,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6789357704",
   "fonte": "site",
@@ -1092,10 +1197,10 @@
   "autor": "",
   "creditos_url": "https://losteriadopiero.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.846944"
+  "atualizado_em": "2026-11-02T17:41:47.921822"
  },
  {
-  "id": 60,
+  "id": 74,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6873217915",
   "fonte": "site",
@@ -1107,10 +1212,10 @@
   "autor": "",
   "creditos_url": "https://www.botecotodosossantos.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.847427"
+  "atualizado_em": "2026-11-02T17:41:47.922295"
  },
  {
-  "id": 61,
+  "id": 75,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/7004330307",
   "fonte": "site",
@@ -1122,10 +1227,10 @@
   "autor": "",
   "creditos_url": "https://www.barastor.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.847934"
+  "atualizado_em": "2026-11-02T17:41:47.922758"
  },
  {
-  "id": 62,
+  "id": 76,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/7234959580",
   "fonte": "site",
@@ -1137,10 +1242,10 @@
   "autor": "",
   "creditos_url": "https://www.restaurantemaraja.com/contato",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.848424"
+  "atualizado_em": "2026-11-02T17:41:47.923251"
  },
  {
-  "id": 63,
+  "id": 77,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/7850807416",
   "fonte": "site",
@@ -1152,10 +1257,10 @@
   "autor": "",
   "creditos_url": "http://www.karaokekampai.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.848929"
+  "atualizado_em": "2026-11-02T17:41:47.923726"
  },
  {
-  "id": 64,
+  "id": 78,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/8425982197",
   "fonte": "site",
@@ -1167,10 +1272,10 @@
   "autor": "",
   "creditos_url": "http://www.lafortunata.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.849405"
+  "atualizado_em": "2026-11-02T17:41:47.924221"
  },
  {
-  "id": 65,
+  "id": 79,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/8791812381",
   "fonte": "site",
@@ -1182,10 +1287,25 @@
   "autor": "",
   "creditos_url": "https://www.thecoffee.jp/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.849905"
+  "atualizado_em": "2026-11-02T17:41:47.924714"
  },
  {
-  "id": 116,
+  "id": 123,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/8825298645",
+  "fonte": "site",
+  "url": "https://mais1cafe.com.br/wp-content/uploads/2025/10/Banner-Und-1-1.png",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://www.mais1cafe.com.br",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.492254"
+ },
+ {
+  "id": 80,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/9674272030",
   "fonte": "site",
@@ -1197,10 +1317,10 @@
   "autor": "",
   "creditos_url": "https://labraciera.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.874951"
+  "atualizado_em": "2026-11-02T17:41:47.925430"
  },
  {
-  "id": 17,
+  "id": 81,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/9842072720",
   "fonte": "site",
@@ -1212,10 +1332,10 @@
   "autor": "",
   "creditos_url": "https://www.donamanjerico.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.514303"
+  "atualizado_em": "2026-11-02T17:41:47.925976"
  },
  {
-  "id": 66,
+  "id": 82,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/9848226599",
   "fonte": "site",
@@ -1227,10 +1347,10 @@
   "autor": "",
   "creditos_url": "https://www.crio.cafe/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.850381"
+  "atualizado_em": "2026-11-02T17:41:47.926471"
  },
  {
-  "id": 97,
+  "id": 83,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1058336450",
   "fonte": "site",
@@ -1242,10 +1362,10 @@
   "autor": "",
   "creditos_url": "https://degaspompeia.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.865646"
+  "atualizado_em": "2026-11-02T17:41:47.926999"
  },
  {
-  "id": 98,
+  "id": 84,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1062175770",
   "fonte": "site",
@@ -1257,10 +1377,10 @@
   "autor": "",
   "creditos_url": "https://www.pastificioprimo.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.866145"
+  "atualizado_em": "2026-11-02T17:41:47.927490"
  },
  {
-  "id": 99,
+  "id": 85,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1087736689",
   "fonte": "site",
@@ -1272,10 +1392,10 @@
   "autor": "",
   "creditos_url": "https://www.pontochicperdizes.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.866614"
+  "atualizado_em": "2026-11-02T17:41:47.928033"
  },
  {
-  "id": 100,
+  "id": 86,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1125862168",
   "fonte": "site",
@@ -1287,10 +1407,10 @@
   "autor": "",
   "creditos_url": "https://cervejariadogma.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.867118"
+  "atualizado_em": "2026-11-02T17:41:47.928528"
  },
  {
-  "id": 101,
+  "id": 87,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1148905649",
   "fonte": "site",
@@ -1302,10 +1422,10 @@
   "autor": "",
   "creditos_url": "https://doryosushibar.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.867590"
+  "atualizado_em": "2026-11-02T17:41:47.929049"
  },
  {
-  "id": 102,
+  "id": 88,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1169949480",
   "fonte": "site",
@@ -1317,10 +1437,10 @@
   "autor": "",
   "creditos_url": "https://www.santograo.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.868091"
+  "atualizado_em": "2026-11-02T17:41:47.929527"
  },
  {
-  "id": 103,
+  "id": 89,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1171316458",
   "fonte": "site",
@@ -1332,10 +1452,10 @@
   "autor": "",
   "creditos_url": "http://www.ludusluderia.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.868558"
+  "atualizado_em": "2026-11-02T17:41:47.930032"
  },
  {
-  "id": 104,
+  "id": 90,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1171316459",
   "fonte": "site",
@@ -1347,10 +1467,10 @@
   "autor": "",
   "creditos_url": "https://pizzaria.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.869059"
+  "atualizado_em": "2026-11-02T17:41:47.930515"
  },
  {
-  "id": 105,
+  "id": 91,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1180734344",
   "fonte": "site",
@@ -1362,10 +1482,10 @@
   "autor": "",
   "creditos_url": "https://piraja.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.869527"
+  "atualizado_em": "2026-11-02T17:41:47.931013"
  },
  {
-  "id": 106,
+  "id": 92,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1214538180",
   "fonte": "site",
@@ -1377,10 +1497,10 @@
   "autor": "",
   "creditos_url": "https://thecoffee.jp/shortcut/brasil/sao-paulo/the-coffee-alameda-jau",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.870029"
+  "atualizado_em": "2026-11-02T17:41:47.931491"
  },
  {
-  "id": 107,
+  "id": 93,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1217908989",
   "fonte": "site",
@@ -1392,10 +1512,10 @@
   "autor": "",
   "creditos_url": "https://www.lellis.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.870503"
+  "atualizado_em": "2026-11-02T17:41:47.931999"
  },
  {
-  "id": 108,
+  "id": 94,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1218157405",
   "fonte": "site",
@@ -1407,10 +1527,25 @@
   "autor": "",
   "creditos_url": "https://www.starbucks.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.871005"
+  "atualizado_em": "2026-11-02T17:41:47.932474"
  },
  {
-  "id": 109,
+  "id": 128,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/1219671767",
+  "fonte": "site",
+  "url": "https://wecoffee.com.br/wp-content/uploads/2022/03/WE-COFFEE-1682-scaled-e1648147343580.jpg",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://wecoffee.com.br/",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.511344"
+ },
+ {
+  "id": 95,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1225726934",
   "fonte": "site",
@@ -1422,10 +1557,10 @@
   "autor": "",
   "creditos_url": "https://www.sushimarvegano.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.871481"
+  "atualizado_em": "2026-11-02T17:41:47.932973"
  },
  {
-  "id": 110,
+  "id": 96,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1227203767",
   "fonte": "site",
@@ -1437,10 +1572,10 @@
   "autor": "",
   "creditos_url": "http://www.labraciera.com.br/;https://labraciera.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.871984"
+  "atualizado_em": "2026-11-02T17:41:47.933443"
  },
  {
-  "id": 111,
+  "id": 97,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1227212494",
   "fonte": "site",
@@ -1452,10 +1587,10 @@
   "autor": "",
   "creditos_url": "https://www.suplicycafes.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.872464"
+  "atualizado_em": "2026-11-02T17:41:47.933931"
  },
  {
-  "id": 18,
+  "id": 98,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1251674385",
   "fonte": "commons",
@@ -1467,10 +1602,10 @@
   "autor": "Giulia Granchi",
   "creditos_url": "https://commons.wikimedia.org/wiki/File:Resid%C3%AAncia_Vilanova_Artigas_II_09.jpg",
   "status": "aprovada",
-  "atualizado_em": "2026-11-02T15:52:01.514811"
+  "atualizado_em": "2026-11-02T17:41:47.934399"
  },
  {
-  "id": 112,
+  "id": 99,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1353488907",
   "fonte": "site",
@@ -1482,10 +1617,10 @@
   "autor": "",
   "creditos_url": "https://www.restaurantehospedaria.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.872972"
+  "atualizado_em": "2026-11-02T17:41:47.934887"
  },
  {
-  "id": 19,
+  "id": 100,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1376188419",
   "fonte": "site",
@@ -1497,10 +1632,10 @@
   "autor": "",
   "creditos_url": "https://quintaldoespeto.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.515292"
+  "atualizado_em": "2026-11-02T17:41:47.935358"
  },
  {
-  "id": 113,
+  "id": 101,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1422562001",
   "fonte": "site",
@@ -1512,10 +1647,25 @@
   "autor": "",
   "creditos_url": "http://www.eltranvia.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.873451"
+  "atualizado_em": "2026-11-02T17:41:47.935843"
  },
  {
-  "id": 114,
+  "id": 129,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/1442932704",
+  "fonte": "site",
+  "url": "https://achapa.com.br/wp-content/uploads/2022/02/THUMBS-SITE.jpg",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://www.achapa.com.br",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.513863"
+ },
+ {
+  "id": 102,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1442932707",
   "fonte": "site",
@@ -1527,10 +1677,10 @@
   "autor": "",
   "creditos_url": "https://www.ilpastaio.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.873960"
+  "atualizado_em": "2026-11-02T17:41:47.936312"
  },
  {
-  "id": 115,
+  "id": 103,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1557419754",
   "fonte": "site",
@@ -1542,10 +1692,10 @@
   "autor": "",
   "creditos_url": "https://oizumisushi.com",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.874433"
+  "atualizado_em": "2026-11-02T17:41:47.936815"
  },
  {
-  "id": 20,
+  "id": 104,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1563600198",
   "fonte": "site",
@@ -1557,10 +1707,10 @@
   "autor": "",
   "creditos_url": "http://wa.me/5511958450983",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.515798"
+  "atualizado_em": "2026-11-02T17:41:47.937293"
  },
  {
-  "id": 88,
+  "id": 105,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/222065667",
   "fonte": "site",
@@ -1572,10 +1722,25 @@
   "autor": "",
   "creditos_url": "http://www.pracasaolourenco.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.861210"
+  "atualizado_em": "2026-11-02T17:41:47.937754"
  },
  {
-  "id": 89,
+  "id": 126,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/372287478",
+  "fonte": "site",
+  "url": "https://novilhodeprata.com.br/wp-content/uploads/2022/09/cropped-Logo_NovilhodePrata-original.png",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://novilhodeprata.com.br/",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.502774"
+ },
+ {
+  "id": 106,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/421541761",
   "fonte": "site",
@@ -1587,10 +1752,10 @@
   "autor": "",
   "creditos_url": "https://labraciera.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.861700"
+  "atualizado_em": "2026-11-02T17:41:47.938242"
  },
  {
-  "id": 90,
+  "id": 107,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/423241877",
   "fonte": "site",
@@ -1602,10 +1767,10 @@
   "autor": "",
   "creditos_url": "https://www.dbrescia.com.br",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.862188"
+  "atualizado_em": "2026-11-02T17:41:47.938709"
  },
  {
-  "id": 91,
+  "id": 108,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/427410157",
   "fonte": "site",
@@ -1617,10 +1782,25 @@
   "autor": "",
   "creditos_url": "https://acasamadal.com/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.862701"
+  "atualizado_em": "2026-11-02T17:41:47.939208"
  },
  {
-  "id": 21,
+  "id": 127,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/440962614",
+  "fonte": "site",
+  "url": "https://chefbenon.com.br/wp-content/uploads/2026/02/cropped-cropped-cropped-CHEF-BENON-LOGO-AZUL.png",
+  "thumb_url": "",
+  "largura": null,
+  "altura": null,
+  "licenca": "direitos do estabelecimento",
+  "autor": "",
+  "creditos_url": "https://chefbenon.com.br/",
+  "status": "pendente",
+  "atualizado_em": "2026-11-02T18:12:35.504522"
+ },
+ {
+  "id": 109,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/450691341",
   "fonte": "osm_image",
@@ -1632,10 +1812,10 @@
   "autor": "",
   "creditos_url": "",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.516280"
+  "atualizado_em": "2026-11-02T17:41:47.939687"
  },
  {
-  "id": 92,
+  "id": 110,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/464247862",
   "fonte": "site",
@@ -1647,10 +1827,10 @@
   "autor": "",
   "creditos_url": "http://jokerclub.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.863187"
+  "atualizado_em": "2026-11-02T17:41:47.940193"
  },
  {
-  "id": 22,
+  "id": 111,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/520695555",
   "fonte": "osm_image",
@@ -1662,10 +1842,10 @@
   "autor": "",
   "creditos_url": "",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.516787"
+  "atualizado_em": "2026-11-02T17:41:47.940669"
  },
  {
-  "id": 23,
+  "id": 112,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/553187300",
   "fonte": "site",
@@ -1677,10 +1857,10 @@
   "autor": "",
   "creditos_url": "https://www.sisenor.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.517267"
+  "atualizado_em": "2026-11-02T17:41:47.941180"
  },
  {
-  "id": 93,
+  "id": 113,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/563892004",
   "fonte": "site",
@@ -1692,10 +1872,10 @@
   "autor": "",
   "creditos_url": "https://francispizzas.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.863691"
+  "atualizado_em": "2026-11-02T17:41:47.941656"
  },
  {
-  "id": 94,
+  "id": 114,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/696032967",
   "fonte": "site",
@@ -1707,10 +1887,10 @@
   "autor": "",
   "creditos_url": "https://www.tembui.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.864171"
+  "atualizado_em": "2026-11-02T17:41:47.942155"
  },
  {
-  "id": 95,
+  "id": 115,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/714078089",
   "fonte": "site",
@@ -1722,10 +1902,10 @@
   "autor": "",
   "creditos_url": "https://www.jardineiragrill.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.864642"
+  "atualizado_em": "2026-11-02T17:41:47.942633"
  },
  {
-  "id": 96,
+  "id": 116,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/749867552",
   "fonte": "site",
@@ -1737,10 +1917,10 @@
   "autor": "",
   "creditos_url": "https://www.chinalake.com.br/",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T16:36:10.865169"
+  "atualizado_em": "2026-11-02T17:41:47.943124"
  },
  {
-  "id": 24,
+  "id": 117,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/931152807",
   "fonte": "osm_image",
@@ -1752,6 +1932,6 @@
   "autor": "",
   "creditos_url": "",
   "status": "pendente",
-  "atualizado_em": "2026-11-02T15:52:01.517646"
+  "atualizado_em": "2026-11-02T17:41:47.943500"
  }
 ]
