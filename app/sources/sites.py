@@ -5,9 +5,11 @@ JSON-LD nas páginas de evento, então basta listar a URL; confira os termos de 
 """
 import hashlib
 import json
+import re
+import time
 import urllib.robotparser
 from datetime import datetime
-from urllib.parse import urlparse
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 import httpx
 import yaml
 from bs4 import BeautifulSoup
@@ -17,15 +19,22 @@ TIPOS_LUGAR = {"Restaurant": "restaurante", "FoodEstablishment": "restaurante", 
                "FastFoodRestaurant": "restaurante", "BarOrPub": "bar", "NightClub": "bar"}
 
 
-def permitido(url, client) -> bool:
+def robots(url, client) -> str:
+    """'ok' | 'proibido' | 'erro'. Segue o RFC 9309: robots.txt 4xx = sem restrições; 5xx ou sem resposta = não visitar."""
     p = urlparse(url)
     rp = urllib.robotparser.RobotFileParser()
     try:
         r = client.get(f"{p.scheme}://{p.netloc}/robots.txt")
-        rp.parse(r.text.splitlines() if r.status_code == 200 else [])
     except httpx.HTTPError:
-        return False
-    return rp.can_fetch(UA, url)
+        return "erro"
+    if r.status_code >= 500:
+        return "erro"
+    rp.parse(r.text.splitlines() if r.status_code == 200 else [])
+    return "ok" if rp.can_fetch(UA, url) else "proibido"
+
+
+def permitido(url, client) -> bool:
+    return robots(url, client) == "ok"
 
 
 def itens_jsonld(html: str):
@@ -130,7 +139,24 @@ def extrair(html: str, url: str, tipo_padrao: str):
     return lugares, eventos
 
 
-def coletar(config_path="sources.yml", client=None):
+def links_listagem(html: str, base_url: str, padrao: str, limite: int = 30) -> list[str]:
+    """Links (mesmo site) de uma página de listagem que casam com `padrao` (regex no caminho). Sem duplicados."""
+    rx = re.compile(padrao)
+    host = urlparse(base_url).netloc.lower().removeprefix("www.")
+    vistos, saida = set(), []
+    for a in BeautifulSoup(html, "html.parser").find_all("a", href=True):
+        pu = urlparse(urljoin(base_url, a["href"].strip()))
+        q = [(k, v) for k, v in parse_qsl(pu.query) if not k.lower().startswith("utm_") and k.lower() not in ("fbclid", "gclid", "ref")]
+        u = urlunparse(pu._replace(query=urlencode(q), fragment=""))  # tira rastreamento, mantém ?id=123
+        if pu.scheme in ("http", "https") and pu.netloc.lower().removeprefix("www.") == host and rx.search(pu.path) and u not in vistos:
+            vistos.add(u)
+            saida.append(u)
+            if len(saida) >= limite:
+                break
+    return saida
+
+
+def coletar(config_path="sources.yml", client=None, pausa=1.0):
     client = client or httpx.Client(timeout=30, headers={"User-Agent": UA}, follow_redirects=True)
     cfg = yaml.safe_load(open(config_path, encoding="utf-8")) or {}
     lugares, eventos, ignorados = [], [], []
@@ -144,4 +170,18 @@ def coletar(config_path="sources.yml", client=None):
         l, e = extrair(r.text, url, s.get("tipo", "evento"))
         lugares += l
         eventos += e
+        if s.get("listagem"):  # a lista não tem JSON-LD: segue os links das páginas de cada evento
+            for u in links_listagem(r.text, str(r.url), s["padrao_link"], int(s.get("limite", 30))):
+                if not permitido(u, client):
+                    ignorados.append(u)
+                    continue
+                try:
+                    rd = client.get(u)
+                    rd.raise_for_status()
+                except httpx.HTTPError:
+                    continue
+                l, e = extrair(rd.text, u, s.get("tipo", "evento"))
+                lugares += l
+                eventos += e
+                time.sleep(pausa)
     return lugares, eventos, ignorados

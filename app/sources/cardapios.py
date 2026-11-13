@@ -13,7 +13,7 @@ import time
 from urllib.parse import urljoin, urlparse
 import httpx
 from bs4 import BeautifulSoup
-from .sites import UA, itens_jsonld, permitido
+from .sites import UA, itens_jsonld, robots
 
 PLATAFORMAS = {
     "goomer": ("goomer.app", "goomer.com.br"), "menudino": ("menudino.com",), "anotaai": ("anota.ai",),
@@ -123,7 +123,7 @@ def buscar(html: str, base_url: str, menu_osm: str = "") -> list[dict]:
 def coletar(lugares: list[dict], client=None, pausa=1.0, limite=None):
     """lugares: [{'fonte','fonte_id','site','menu_osm'}]. Retorna (registros, stats)."""
     client = client or httpx.Client(timeout=20, headers={"User-Agent": UA}, follow_redirects=True)
-    saida, st = [], {"visitados": 0, "bloqueados_robots": 0, "falhas": 0, "ignorados_rede_social": 0, "com_cardapio": 0}
+    saida, st = [], {"visitados": 0, "bloqueados_robots": 0, "robots_sem_resposta": 0, "falhas": 0, "ignorados_rede_social": 0, "com_cardapio": 0}
     for l in lugares[:limite]:
         site = (l.get("site") or "").strip()
         osm_menu = (l.get("menu_osm") or "").strip()
@@ -134,8 +134,9 @@ def coletar(lugares: list[dict], client=None, pausa=1.0, limite=None):
                 st["ignorados_rede_social"] += 1
             else:
                 try:
-                    if not permitido(url, client):
-                        st["bloqueados_robots"] += 1
+                    rb = robots(url, client)
+                    if rb != "ok":
+                        st["bloqueados_robots" if rb == "proibido" else "robots_sem_resposta"] += 1
                     else:
                         r = client.get(url)
                         r.raise_for_status()

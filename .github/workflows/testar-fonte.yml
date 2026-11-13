@@ -1,0 +1,50 @@
+name: Testar fonte
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "URL(s) a testar, separadas por espaço"
+        required: true
+      listagem:
+        description: "A página é uma lista de eventos? (true = seguir os links de cada evento)"
+        default: "false"
+      padrao_link:
+        description: "Regex do caminho dos links dos eventos (modo listagem), ex.: ^/evento/"
+        default: "/evento"
+      limite:
+        description: "Máximo de páginas de evento a visitar"
+        default: "15"
+permissions:
+  contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Testar
+        env:
+          URLS: ${{ inputs.urls }}
+          LISTAGEM: ${{ inputs.listagem }}
+          PADRAO: ${{ inputs.padrao_link }}
+          LIMITE: ${{ inputs.limite }}
+        run: |
+          args=""
+          if [ "$LISTAGEM" = "true" ]; then args="--listagem"; fi
+          python testar_fonte.py $URLS $args --padrao "$PADRAO" --limite "$LIMITE"
+      - name: Commitar resultado
+        if: always()
+        run: |
+          git config user.name "teste-bot"
+          git config user.email "teste-bot@users.noreply.github.com"
+          git add data/teste_fonte.md
+          git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
+          git commit -m "teste: fonte $(date -u +%F-%H%M)"
+          git pull --rebase origin main
+          git push

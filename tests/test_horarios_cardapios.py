@@ -99,3 +99,23 @@ def test_upsert_preserva_extra_de_outros_bots_e_cardapio_idempotente():
         c = {"lugar_fonte": "osm", "lugar_fonte_id": "node/9", "url": "https://x.com/cardapio", "plataforma": "proprio"}
         assert upsert(db, Cardapio, [c]) == {"novos": 1, "atualizados": 0}
         assert upsert(db, Cardapio, [c]) == {"novos": 0, "atualizados": 1}
+
+
+def test_robots_distingue_proibido_de_erro():
+    import httpx
+    from app.sources.sites import robots
+    def com(status, texto=""):
+        return httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(status, text=texto)))
+    assert robots("https://a.com/x", com(404)) == "ok"                                   # sem robots.txt: livre (RFC 9309)
+    assert robots("https://a.com/x", com(200, "User-agent: *\nDisallow: /")) == "proibido"
+    assert robots("https://a.com/x", com(503)) == "erro"                                  # servidor com problema: não visitar
+    def boom(req):
+        raise httpx.ConnectTimeout("lento")
+    assert robots("https://a.com/x", httpx.Client(transport=httpx.MockTransport(boom))) == "erro"
+
+
+def test_listagem_segue_links_de_eventos():
+    from app.sources import sites
+    html = '<a href="/evento/show-1">a</a><a href="/evento/show-2?id=7&utm_source=x">b</a><a href="/sobre">c</a><a href="https://outro.com/evento/z">d</a><a href="/evento/show-1">dup</a>'
+    assert sites.links_listagem(html, "https://s.com/lista", r"^/evento/") == ["https://s.com/evento/show-1", "https://s.com/evento/show-2?id=7"]
+    assert sites.links_listagem(html, "https://s.com/lista", r"^/evento/", limite=1) == ["https://s.com/evento/show-1"]
