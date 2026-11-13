@@ -34,10 +34,10 @@ def main():
                 ls.append({"fonte": l.fonte, "fonte_id": l.fonte_id, "site": l.site, "menu_osm": menu})
         regs, stats = cardapios.coletar(ls, limite=a.limite_sites)
         if a.dry_run:
-            print("DRY-RUN", stats, "| plataformas:", {p: sum(1 for r in regs if r["plataforma"] == p) for p in sorted({r["plataforma"] for r in regs})},
+            print("DRY-RUN", {**stats, "motivos_sem_resposta": dict(stats["motivos_sem_resposta"])}, "| plataformas:", {p: sum(1 for r in regs if r["plataforma"] == p) for p in sorted({r["plataforma"] for r in regs})},
                   "| com itens (JSON-LD):", sum(1 for r in regs if r["itens"]))
             return
-        print("cardapios", upsert(db, Cardapio, regs), stats)
+        print("cardapios", upsert(db, Cardapio, regs), {**stats, "motivos_sem_resposta": dict(stats["motivos_sem_resposta"])})
         exportar(db)
         tot = {s: db.query(Cardapio).filter(Cardapio.status == s).count() for s in ("confirmado", "provavel")}
         print("cardapios no banco:", tot)

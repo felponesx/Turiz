@@ -19,18 +19,23 @@ TIPOS_LUGAR = {"Restaurant": "restaurante", "FoodEstablishment": "restaurante", 
                "FastFoodRestaurant": "restaurante", "BarOrPub": "bar", "NightClub": "bar"}
 
 
-def robots(url, client) -> str:
-    """'ok' | 'proibido' | 'erro'. Segue o RFC 9309: robots.txt 4xx = sem restrições; 5xx ou sem resposta = não visitar."""
+def robots_detalhe(url, client):
+    """-> (resultado, motivo). resultado: 'ok' | 'proibido' | 'erro'. Segue o RFC 9309:
+    robots.txt 4xx = sem restrições; 5xx ou sem resposta = não visitar (motivo diz qual)."""
     p = urlparse(url)
     rp = urllib.robotparser.RobotFileParser()
     try:
         r = client.get(f"{p.scheme}://{p.netloc}/robots.txt")
-    except httpx.HTTPError:
-        return "erro"
+    except httpx.HTTPError as exc:
+        return "erro", type(exc).__name__
     if r.status_code >= 500:
-        return "erro"
+        return "erro", f"HTTP {r.status_code}"
     rp.parse(r.text.splitlines() if r.status_code == 200 else [])
-    return "ok" if rp.can_fetch(UA, url) else "proibido"
+    return ("ok", "") if rp.can_fetch(UA, url) else ("proibido", "robots.txt")
+
+
+def robots(url, client) -> str:
+    return robots_detalhe(url, client)[0]
 
 
 def permitido(url, client) -> bool:
