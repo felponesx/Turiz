@@ -69,7 +69,8 @@ def parse(oh: str):
     if oh == "24/7":
         return {"dias": {n: [["00:00", "24:00"]] for n in NOMES}, "feriados": None, "bruto": oh}
     dias, feriados = {}, None
-    for regra in (r.strip() for r in oh.split(";")):
+    # regras separadas por ";" (ou por "," logo depois de uma hora e antes de um dia: "Mo-Fr 07:00-23:00, Sa 08:00-24:00")
+    for regra in (r.strip() for r in re.split(r";|(?<=\d),\s*(?=(?:Mo|Tu|We|Th|Fr|Sa|Su|PH)\b)", oh)):
         if not regra:
             continue
         toks = regra.split()

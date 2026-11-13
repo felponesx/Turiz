@@ -37,6 +37,14 @@ def test_horario_sem_dias_e_feriado():
     assert h["feriados"] == [] and h["dias"]["seg"] == [["10:00", "22:00"]]
 
 
+def test_horario_regras_separadas_por_virgula_sem_quebrar_lista_de_dias():
+    h = horarios.parse("Mo-Fr 07:00-23:00, Sa 08:00-24:00, Su 12:00-23:00")
+    assert h["dias"]["sex"] == [["07:00", "23:00"]] and h["dias"]["sab"] == [["08:00", "24:00"]] and h["dias"]["dom"] == [["12:00", "23:00"]]
+    h2 = horarios.parse("Mo,We 10:00-12:00")   # vírgula entre dias continua sendo lista de dias
+    assert h2["dias"]["seg"] == [["10:00", "12:00"]] and h2["dias"]["qua"] == [["10:00", "12:00"]] and h2["dias"]["ter"] == []
+    assert horarios.parse("Mo-Fr 11:00-14:00, 17:30-19:45")["dias"]["qui"] == [["11:00", "14:00"], ["17:30", "19:45"]]  # duas faixas, mesma regra
+
+
 def test_horario_complexo_devolve_none_em_vez_de_adivinhar():
     for oh in ("Mo-Fr sunrise-sunset", "Jan-Mar Mo-Fr 10:00-12:00", "week 1-3 Mo 10:00-12:00", "", "qualquer coisa"):
         assert horarios.parse(oh) is None
