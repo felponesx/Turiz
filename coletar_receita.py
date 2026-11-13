@@ -17,14 +17,16 @@ from app.sources import receita
 SEM_INDIVIDUAIS_AVISO = "MEIs e empresários individuais excluídos (privacidade)."
 
 
-def ultima_pasta() -> str:
+def ultima_pasta(cliente=None) -> str:
+    """Pasta mensal mais recente do compartilhamento da Receita (WebDAV público)."""
     import xml.etree.ElementTree as ET
-    r = httpx.request("PROPFIND", f"{receita.RECEITA}/", auth=(receita.TOKEN, ""), headers={"Depth": "1"}, timeout=60,
-                      transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=2))
+    cliente = cliente or httpx.Client(timeout=60, transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=2))
+    r = cliente.request("PROPFIND", f"{receita.RECEITA}/", auth=(receita.TOKEN, ""), headers={"Depth": "1"})
     r.raise_for_status()
-    pastas = sorted(h.replace("/public.php/webdav/", "").rstrip("/") for h in
-                    (x.findtext("{DAV:}href", "") for x in ET.fromstring(r.content).findall("{DAV:}response"))
-                    if re.search(r"/\d{4}-\d{2}/$", h))
+    hrefs = (x.findtext("{DAV:}href", "") for x in ET.fromstring(r.content).findall("{DAV:}response"))
+    pastas = sorted(h.replace("/public.php/webdav/", "").rstrip("/") for h in hrefs if re.search(r"/\d{4}-\d{2}/$", h))
+    if not pastas:
+        raise RuntimeError("nenhuma pasta mensal encontrada no compartilhamento da Receita")
     return pastas[-1]
 
 

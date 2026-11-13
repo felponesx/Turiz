@@ -126,3 +126,14 @@ def test_restaurar_carrega_base_da_receita_em_bloco(tmp_path, monkeypatch):
     assert restaurar(str(tmp_path))["lugares_receita"] == {"novos": 0, "atualizados": 2}   # segunda carga: upsert idempotente
     with SessionLocal() as db:
         assert db.scalar(select(Lugar.nome).where(Lugar.fonte == "receita", Lugar.nome == "Lanchonete Esquina")) == "Lanchonete Esquina"
+
+
+def test_ultima_pasta_le_o_webdav_da_receita():
+    import httpx
+    xml = ('<?xml version="1.0"?><d:multistatus xmlns:d="DAV:">'
+           + "".join(f"<d:response><d:href>/public.php/webdav/{h}</d:href></d:response>" for h in ("", "2026-08/", "2026-10/", "2026-09/", "leiame.txt"))
+           + "</d:multistatus>")
+    def h(req):
+        assert req.method == "PROPFIND" and req.headers["authorization"].startswith("Basic ")
+        return httpx.Response(207, content=xml.encode())
+    assert coletar_receita.ultima_pasta(httpx.Client(transport=httpx.MockTransport(h))) == "2026-10"

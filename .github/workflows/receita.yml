@@ -31,8 +31,8 @@ jobs:
         run: |
           git config user.name "receita-bot"
           git config user.email "receita-bot@users.noreply.github.com"
-          git add data/receita_resumo.md
-          if [ "${{ inputs.gravar_dados || 'true' }}" = "true" ]; then git add data/lugares_receita.json.gz; fi
+          git add data/receita_resumo.md || true
+          if [ "${{ inputs.gravar_dados || 'true' }}" = "true" ]; then git add data/lugares_receita.json.gz || true; fi
           git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
           git commit -m "dados: receita+ibge $(date -u +%F)"
           git pull --rebase origin main
