@@ -71,34 +71,43 @@ def links(cli, url, n=60):
     return nomes[:n]
 
 
-def webdav(cli, base, token, caminho="", n=40):
-    """PROPFIND em um compartilhamento público do Nextcloud (usuário = token, senha vazia)."""
-    import re as _re
+def webdav(cli, base, token, caminho=""):
+    """PROPFIND em um compartilhamento público do Nextcloud (usuário = token, senha vazia) -> [(caminho, bytes|None)]."""
+    import xml.etree.ElementTree as ET
     r = cli.request("PROPFIND", f"{base}/public.php/webdav/{caminho}", auth=(token, ""), headers={"Depth": "1"})
     if r.status_code not in (200, 207):
-        return [f"HTTP {r.status_code}"]
-    itens = _re.findall(r"<d:href>([^<]+)</d:href>.*?(?:<d:getcontentlength>(\d+)</d:getcontentlength>)?", r.text, _re.S)
-    return [f"{h} {int(t)/1e6:.0f}MB" if t else h for h, t in itens[:n]]
+        return [(f"HTTP {r.status_code}", None)]
+    ns = {"d": "DAV:"}
+    out = []
+    for resp in ET.fromstring(r.content).findall("d:response", ns):
+        h = resp.findtext("d:href", "", ns).replace("/public.php/webdav/", "")
+        t = resp.findtext(".//d:getcontentlength", None, ns)
+        out.append((h, int(t) if t else None))
+    return out
 
 
 def descobrir(cli):
     sec = ["\n## Descoberta de caminhos (listagens públicas)\n"]
     def bloco(titulo, linhas):
         sec.append(f"### {titulo}\n\n" + "\n".join(f"- `{x}`" for x in linhas) + "\n")
+    for url in ("https://ftp.ibge.gov.br/", "https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/",
+                "https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/",
+                "https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/Arquivos_CNEFE/",
+                "https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/Arquivos_CNEFE/CSV/UF/"):
+        try:
+            bloco(f"IBGE: {url.removeprefix('https://ftp.ibge.gov.br')}", links(cli, url, n=45))
+        except Exception as exc:
+            bloco(f"IBGE: {url}", [f"{type(exc).__name__}: {exc}"[:120]])
     try:
-        bloco("IBGE: raiz do Censo 2022", links(cli, "https://ftp.ibge.gov.br/Censo_Demografico_2022/"))
-        for pasta in ("Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/",):
-            bloco(f"IBGE: {pasta}", links(cli, "https://ftp.ibge.gov.br/Censo_Demografico_2022/" + pasta))
-    except Exception as exc:
-        bloco("IBGE", [f"{type(exc).__name__}: {exc}"[:120]])
-    try:
-        bloco("Receita (Nextcloud): raiz do compartilhamento", webdav(cli, "https://arquivos.receitafederal.gov.br", "YggdBLfdninEJX9"))
+        base, tok = "https://arquivos.receitafederal.gov.br", "YggdBLfdninEJX9"
+        raiz = [h for h, _ in webdav(cli, base, tok) if h.rstrip("/")]
+        pastas = sorted(h for h in raiz if h.endswith("/"))
+        bloco("Receita (Nextcloud): pastas mensais mais recentes", pastas[-6:])
+        ult = pastas[-1]
+        arqs = webdav(cli, base, tok, ult)
+        bloco(f"Receita: arquivos em {ult}", [f"{h} ({(t or 0) / 1e6:.0f} MB)" for h, t in arqs if t is not None])
     except Exception as exc:
         bloco("Receita (Nextcloud)", [f"{type(exc).__name__}: {exc}"[:120]])
-    try:
-        bloco("Espelho casadosdados: links da página", links(cli, "https://dados-abertos-rf-cnpj.casadosdados.com.br/"))
-    except Exception as exc:
-        bloco("Espelho casadosdados", [f"{type(exc).__name__}: {exc}"[:120]])
     return "\n".join(sec)
 
 
