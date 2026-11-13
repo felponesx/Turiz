@@ -1,6 +1,6 @@
 # Diagnóstico de fontes
 
-Gerado em 2026-11-13 17:41 (UTC) pelo GitHub Actions. Resultado de acesso por robô; a decisão de usar cada fonte ainda depende dos termos de uso do site.
+Gerado em 2026-11-13 17:54 (UTC) pelo GitHub Actions. Resultado de acesso por robô; a decisão de usar cada fonte ainda depende dos termos de uso do site.
 
 | Fonte | Categoria | Resultado | HTTP | Eventos JSON-LD | Observação |
 |---|---|---|---|---|---|
