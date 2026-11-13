@@ -1,0 +1,35 @@
+name: Diagnostico de fontes
+on:
+  workflow_dispatch:
+    inputs:
+      limite_sites:
+        description: "Sites de restaurantes a testar na busca de cardápios (medida de taxa de acerto)"
+        default: "80"
+permissions:
+  contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
+jobs:
+  diagnostico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Testar fontes candidatas
+        run: python diagnosticar_fontes.py | tee data/diagnostico_log.txt
+      - name: Medir taxa de cardápios nos sites dos lugares (sem gravar)
+        run: python coletar_cardapios.py --dry-run --limite-sites ${{ inputs.limite_sites || '80' }} | tee data/diagnostico_cardapios.txt
+      - name: Commitar relatório
+        if: always()
+        run: |
+          git config user.name "diagnostico-bot"
+          git config user.email "diagnostico-bot@users.noreply.github.com"
+          git add FONTES.md data/diagnostico_fontes.json data/diagnostico_log.txt data/diagnostico_cardapios.txt
+          git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
+          git commit -m "diagnostico: fontes $(date -u +%F)"
+          git pull --rebase origin main
+          git push

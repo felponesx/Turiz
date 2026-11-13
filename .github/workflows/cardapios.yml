@@ -1,0 +1,37 @@
+name: Bot de cardapios
+on:
+  workflow_run:
+    workflows: ["Bot de instagram"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      limite_sites:
+        description: "Máximo de sites a visitar (vazio = todos)"
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
+jobs:
+  cardapios:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Buscar cardápios oficiais
+        run: python coletar_cardapios.py ${{ inputs.limite_sites && format('--limite-sites {0}', inputs.limite_sites) || '' }}
+      - name: Commitar dados
+        if: always()
+        run: |
+          git config user.name "cardapios-bot"
+          git config user.email "cardapios-bot@users.noreply.github.com"
+          git add data/cardapios.json
+          git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
+          git commit -m "dados: cardapios $(date -u +%F)"
+          git pull --rebase origin main
+          git push

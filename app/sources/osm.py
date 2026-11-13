@@ -7,7 +7,15 @@ MIRRORS = ["https://overpass-api.de/api/interpreter",
            "https://overpass.private.coffee/api/interpreter"]
 BBOX_SP = (-24.01, -46.83, -23.35, -46.36)  # sul, oeste, norte, leste
 TIPO = {"restaurant": "restaurante", "fast_food": "restaurante", "cafe": "restaurante",
-        "food_court": "restaurante", "bar": "bar", "pub": "bar", "biergarten": "bar"}
+        "food_court": "restaurante", "bar": "bar", "pub": "bar", "biergarten": "bar", "nightclub": "bar"}
+
+
+# Tags do OSM guardadas em `extra` (o que o app pode usar: contato, acessibilidade, pagamento, cardápio...).
+TAGS_EXTRA = ("contact:instagram", "contact:facebook", "contact:whatsapp", "contact:email", "email", "delivery", "takeaway",
+              "drive_through", "diet:vegan", "diet:vegetarian", "diet:halal", "diet:kosher", "diet:gluten_free",
+              "image", "wikimedia_commons", "wikidata", "outdoor_seating", "wheelchair", "reservation", "internet_access",
+              "smoking", "payment:credit_cards", "payment:debit_cards", "payment:pix", "brand", "operator", "description",
+              "description:pt", "website:menu", "menu:url", "opening_hours:kitchen", "happy_hours", "capacity", "start_date")
 
 
 def query(bbox, amenities):
@@ -42,11 +50,11 @@ def normalizar(el: dict) -> dict | None:
         "telefone": t.get("phone") or t.get("contact:phone", ""),
         "site": t.get("website") or t.get("contact:website", ""),
         "horario": t.get("opening_hours", ""),
-        "extra": {k: t[k] for k in ("contact:instagram", "delivery", "takeaway", "diet:vegan", "diet:vegetarian", "image", "wikimedia_commons", "wikidata") if k in t},
+        "extra": {k: t[k] for k in TAGS_EXTRA if k in t},
     }
 
 
-def coletar(amenities=("restaurant", "fast_food", "cafe", "bar", "pub"), linhas=4, colunas=4, post=None):
+def coletar(amenities=("restaurant", "fast_food", "cafe", "bar", "pub", "nightclub"), linhas=4, colunas=4, post=None):
     """Retorna lista de lugares normalizados (sem duplicados)."""
     post = post or _post
     vistos = {}

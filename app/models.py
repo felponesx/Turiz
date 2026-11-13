@@ -1,5 +1,5 @@
 from datetime import datetime, timezone
-from sqlalchemy import String, Float, DateTime, Text, UniqueConstraint, JSON
+from sqlalchemy import Boolean, String, Float, DateTime, Text, UniqueConstraint, JSON
 from sqlalchemy.orm import Mapped, mapped_column
 from .db import Base
 
@@ -48,6 +48,14 @@ class Evento(Base):
     lat: Mapped[float | None] = mapped_column(Float, nullable=True)
     lon: Mapped[float | None] = mapped_column(Float, nullable=True)
     url: Mapped[str] = mapped_column(String(500), default="")
+    # vínculo com o restaurante/bar onde acontece (preenchido por app/sources/vincular.py)
+    lugar_fonte: Mapped[str] = mapped_column(String(30), default="", index=True)
+    lugar_fonte_id: Mapped[str] = mapped_column(String(200), default="", index=True)
+    categoria: Mapped[str] = mapped_column(String(60), default="", index=True)  # musica | gastronomia | teatro | comedia | festa | ...
+    imagem_url: Mapped[str] = mapped_column(String(600), default="")
+    preco_min: Mapped[float | None] = mapped_column(Float, nullable=True)
+    gratuito: Mapped[bool] = mapped_column(Boolean, default=False)
+    ingresso_url: Mapped[str] = mapped_column(String(600), default="")
     extra: Mapped[dict] = mapped_column(JSON, default=dict)
     atualizado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=agora, onupdate=agora)
 
@@ -91,3 +99,41 @@ class RedeSocial(Base):
     seguidores: Mapped[int | None] = mapped_column(nullable=True)
     extra: Mapped[dict] = mapped_column(JSON, default=dict)
     atualizado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=agora, onupdate=agora)
+
+
+class Cardapio(Base):
+    """Cardápio de um lugar: link para o cardápio oficial (e itens, quando o site publica em JSON-LD).
+    Só a referência pública do próprio estabelecimento; não guardamos PDFs nem imagens."""
+    __tablename__ = "cardapios"
+    __table_args__ = (UniqueConstraint("lugar_fonte", "lugar_fonte_id", "url"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    lugar_fonte: Mapped[str] = mapped_column(String(30), index=True)
+    lugar_fonte_id: Mapped[str] = mapped_column(String(200), index=True)
+    url: Mapped[str] = mapped_column(String(600))
+    plataforma: Mapped[str] = mapped_column(String(30), default="proprio")  # proprio | goomer | menudino | anotaai | cardapioweb | ifood | pdf | imagem | outro
+    origem: Mapped[str] = mapped_column(String(30), default="link_site")  # osm_tag | jsonld | link_site
+    itens: Mapped[list] = mapped_column(JSON, default=list)  # [{secao, nome, descricao, preco}]
+    status: Mapped[str] = mapped_column(String(20), index=True, default="provavel")  # confirmado (jsonld/osm) | provavel (link no site) | rejeitado
+    atualizado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=agora, onupdate=agora)
+
+
+class Avaliacao(Base):
+    """Avaliação feita por usuários do TURIZ depois de uma experiência registrada (dado próprio).
+    Não guardamos notas de terceiros (Google, TripAdvisor...): os termos desses serviços costumam proibir.
+    Esta tabela NÃO é exportada para data/ (repositório público): vive só no banco da API."""
+    __tablename__ = "avaliacoes"
+    __table_args__ = (UniqueConstraint("experiencia_ref"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    lugar_fonte: Mapped[str] = mapped_column(String(30), index=True)
+    lugar_fonte_id: Mapped[str] = mapped_column(String(200), index=True)
+    experiencia_ref: Mapped[str] = mapped_column(String(80))  # uma nota fiscal = uma experiência = uma avaliação
+    autor_ref: Mapped[str] = mapped_column(String(80), default="")  # id opaco do usuário, nunca e-mail/nome
+    nota_comida: Mapped[int] = mapped_column(default=0)
+    nota_ambiente: Mapped[int] = mapped_column(default=0)
+    nota_atendimento: Mapped[int] = mapped_column(default=0)
+    comentario: Mapped[str] = mapped_column(Text, default="")
+    validada: Mapped[bool] = mapped_column(Boolean, default=False)  # experiência confirmada por nota fiscal
+    status: Mapped[str] = mapped_column(String(20), index=True, default="pendente")  # publicada | pendente | rejeitada
+    criado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=agora)

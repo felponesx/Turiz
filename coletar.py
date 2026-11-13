@@ -8,7 +8,7 @@ from sqlalchemy import select
 from app.db import Base, SessionLocal, engine
 from app.ingest import upsert
 from app.models import Evento, Lugar
-from app.sources import eventbrite, google_places, osm, sites
+from app.sources import eventbrite, google_places, osm, sites, ticketmaster, vincular
 
 # Centros aproximados para varrer SP no Google (raio de 1,5 km cada ~ grade de 3 km).
 def centros_padrao():
@@ -32,7 +32,7 @@ def exportar(db):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("fontes", nargs="+", choices=["osm", "google", "eventbrite", "sites"])
+    ap.add_argument("fontes", nargs="+", choices=["osm", "google", "eventbrite", "sites", "ticketmaster"])
     ap.add_argument("--centros", help="lat,lon;lat,lon (Google). Padrão: grade de SP")
     ap.add_argument("--orgs", nargs="*", default=[], help="IDs de organização Eventbrite")
     a = ap.parse_args()
@@ -48,6 +48,8 @@ def main():
                     print("google", upsert(db, Lugar, google_places.coletar(cs)))
                 elif f == "eventbrite":
                     print("eventbrite", upsert(db, Evento, eventbrite.coletar(a.orgs)))
+                elif f == "ticketmaster":
+                    print("ticketmaster", upsert(db, Evento, ticketmaster.coletar()))
                 elif f == "sites":
                     l, e, ign = sites.coletar()
                     print("sites", upsert(db, Lugar, l), upsert(db, Evento, e), "bloqueados por robots.txt:", ign)
@@ -55,6 +57,7 @@ def main():
                 db.rollback()
                 falhas.append(f)
                 print(f"::warning::fonte {f} falhou: {type(exc).__name__}: {exc}")
+        print("vínculo evento->lugar:", vincular.vincular_eventos(db))
         exportar(db)
         print("falhas:", falhas or "nenhuma")
 

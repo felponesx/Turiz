@@ -59,6 +59,36 @@ def _endereco(a):
     return ""
 
 
+CATEGORIAS = {"MusicEvent": "musica", "TheaterEvent": "teatro", "ComedyEvent": "comedia", "FoodEvent": "gastronomia",
+              "Festival": "festival", "DanceEvent": "danca", "ExhibitionEvent": "exposicao", "SportsEvent": "esporte",
+              "ScreeningEvent": "cinema", "EducationEvent": "curso", "SocialEvent": "festa", "BusinessEvent": "negocios"}
+
+
+def _categoria(tipos):
+    return next((CATEGORIAS[t] for t in tipos if t in CATEGORIAS), "evento")
+
+
+def _imagem(i):
+    i = i[0] if isinstance(i, list) and i else i
+    if isinstance(i, dict):
+        i = i.get("url")
+    return i if isinstance(i, str) and i.startswith("http") else ""
+
+
+def _oferta(o, url_padrao):
+    """schema.org Offer(s) -> preço mínimo, gratuito e link de ingresso."""
+    ofs = [x for x in (o if isinstance(o, list) else [o]) if isinstance(x, dict)]
+    precos = []
+    for x in ofs:
+        for k in ("price", "lowPrice"):
+            try:
+                precos.append(float(str(x[k]).replace(",", ".")))
+            except (KeyError, ValueError):
+                pass
+    link = next((x["url"] for x in ofs if isinstance(x.get("url"), str) and x["url"].startswith("http")), "")
+    return {"preco_min": min(precos) if precos else None, "gratuito": bool(precos) and min(precos) == 0, "ingresso_url": link or ""}
+
+
 def _id(url, nome):
     return hashlib.sha1(f"{url}|{nome}".encode()).hexdigest()[:20]
 
@@ -83,6 +113,8 @@ def extrair(html: str, url: str, tipo_padrao: str):
                 "lat": float(geo["latitude"]) if geo.get("latitude") else None,
                 "lon": float(geo["longitude"]) if geo.get("longitude") else None,
                 "url": x.get("url") or url,
+                "categoria": _categoria(tipos), "imagem_url": _imagem(x.get("image")),
+                **_oferta(x.get("offers"), x.get("url") or url),
             })
         else:
             tipo = next((TIPOS_LUGAR[t] for t in tipos if t in TIPOS_LUGAR), None)

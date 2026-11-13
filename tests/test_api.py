@@ -1,4 +1,6 @@
 import os
+if os.path.exists("teste.db"):  # banco de teste limpo a cada rodada
+    os.remove("teste.db")
 os.environ["DATABASE_URL"] = "sqlite:///./teste.db"
 os.environ["API_KEY"] = "k"
 from fastapi.testclient import TestClient

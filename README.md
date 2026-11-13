@@ -21,7 +21,9 @@ API_KEY=segredo uvicorn app.main:app --reload
 ```
 A API carrega `data/*.json` sozinha no primeiro start (banco vazio). Abra `http://localhost:8000/` para o app (busca, filtros, mapa) e `/docs` para a API.
 
-Endpoints: `GET /lugares`, `/lugares/geo`, `/lugares/{id}`, `/eventos`, `/health`; `POST /ingest/lugares` (header `x-api-key`).
+Endpoints: `GET /lugares` (filtros `tipo`, `q`, `bairro`, `culinaria`, `aberto_agora`), `/lugares/geo`, `/lugares/{id}` (com `horario_estruturado` e `aberto_agora`),
+`/lugares/{id}/cardapios`, `/lugares/{id}/eventos`, `/lugares/{id}/avaliacoes`, `/lugares/{id}/imagens`, `/lugares/{id}/redes`, `/eventos`, `/health`;
+`POST /ingest/lugares`, `POST /avaliacoes`, `PATCH /avaliacoes/{id}`, `PATCH /imagens/{id}` (header `x-api-key`).
 
 ## Git
 `.github/workflows/coleta.yml` roda toda segunda (ou manualmente) e commita os snapshots em `data/`. Configure os secrets `GOOGLE_PLACES_API_KEY` e `EVENTBRITE_TOKEN` no repositório.
@@ -48,3 +50,27 @@ Qualquer etapa também roda manualmente em Actions → *Run workflow*.
 - `site`: link para o Instagram no site oficial do lugar, respeitando robots.txt (0,70, `provavel`);
 - `api_oficial`: com `INSTAGRAM_TOKEN` e `INSTAGRAM_USER_ID` (conta profissional sua ligada a uma página do Facebook), confere nome/site do perfil via Business Discovery e eleva para `confirmado` (0,98).
 A API oficial não tem busca por nome: sem handle vindo do OSM ou do site, não há vínculo automático. `GET /lugares/{id}/redes` lista os perfis. Roda depois do bot de imagens no pipeline semanal.
+
+## Bot de cardápios
+`python coletar_cardapios.py [--limite-sites N] [--dry-run]` acha o cardápio **oficial** no site de cada lugar e guarda a referência em `data/cardapios.json`:
+- `jsonld`: o site publica o cardápio em schema.org (itens e preços) → `confirmado`;
+- `osm_tag`: tag `website:menu`/`menu:url` do OpenStreetMap → `confirmado`;
+- `link_site`: link "Cardápio"/"Menu" na página inicial (próprio site, Goomer, MenuDino, Anota Aí, iFood, PDF ou imagem) → `provavel`.
+Respeita robots.txt, visita só a página inicial e **não** segue Instagram/Facebook nem raspa o conteúdo de iFood e similares (só o link). Workflow: `cardapios.yml` (depois do bot de Instagram).
+
+## Horários
+`GET /lugares/{id}` devolve `horario_estruturado` (dias e faixas) e `aberto_agora`, a partir do `opening_hours` do OSM. Só interpreta regras simples (dias, faixas, `off`, `24/7`, `PH`); se for complexo demais devolve `null` e o texto bruto fica em `horario`. `GET /lugares?aberto_agora=true` filtra quem está aberto (fuso America/Sao_Paulo).
+
+## Eventos
+- `sites`: JSON-LD (schema.org `Event`) das URLs de `sources.yml`, agora com preço, categoria, imagem e link de ingresso;
+- `ticketmaster` (opcional): API oficial, exige `TICKETMASTER_API_KEY`; só roda se você incluir a fonte (`python coletar.py ticketmaster`);
+- cada evento é **vinculado ao restaurante/bar** onde acontece (`app/sources/vincular.py`, por distância e nome; na dúvida não liga). `GET /lugares/{id}/eventos`.
+
+## Avaliações
+Só avaliações **do próprio TURIZ**, enviadas pelo backend do app depois de uma experiência (`POST /avaliacoes`): três notas (comida, ambiente, atendimento), uma por nota fiscal; só aparecem `publicada`s e, por padrão, só as `validada`s. A tabela **não** é exportada para `data/` (repositório público) e a API nunca devolve o autor. Não guardamos notas de terceiros (Google, TripAdvisor, Foursquare...): os termos desses serviços costumam proibir guardar e republicar.
+
+## Diagnóstico de fontes
+`python diagnosticar_fontes.py` (ou Actions → *Diagnostico de fontes*) testa cada fonte candidata a partir do GitHub Actions e gera `FONTES.md` + `data/diagnostico_fontes.json`: abre? robots.txt permite? tem JSON-LD de eventos? precisa de chave? Use o relatório para decidir quais URLs entram em `sources.yml`.
+
+## Segredos (opcionais)
+`GOOGLE_PLACES_API_KEY`, `EVENTBRITE_TOKEN`, `TICKETMASTER_API_KEY`, `INSTAGRAM_TOKEN`, `INSTAGRAM_USER_ID` em Settings → Secrets → Actions. Sem eles, a fonte correspondente é simplesmente ignorada.

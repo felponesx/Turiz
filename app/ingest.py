@@ -1,12 +1,14 @@
 """Upsert de registros normalizados no banco."""
 from sqlalchemy import select
 from sqlalchemy.orm import Session
-from .models import Lugar, Evento, Imagem, RedeSocial
+from .models import Avaliacao, Cardapio, Evento, Imagem, Lugar, RedeSocial
 
 _CAMPOS = {Lugar: {c.name for c in Lugar.__table__.columns} - {"id", "atualizado_em"},
            Evento: {c.name for c in Evento.__table__.columns} - {"id", "atualizado_em"},
            Imagem: {c.name for c in Imagem.__table__.columns} - {"id", "atualizado_em"},
-           RedeSocial: {c.name for c in RedeSocial.__table__.columns} - {"id", "atualizado_em"}}
+           RedeSocial: {c.name for c in RedeSocial.__table__.columns} - {"id", "atualizado_em"},
+           Cardapio: {c.name for c in Cardapio.__table__.columns} - {"id", "atualizado_em"},
+           Avaliacao: {c.name for c in Avaliacao.__table__.columns} - {"id"}}
 
 
 def upsert(db: Session, modelo, registros: list[dict]) -> dict:
@@ -18,6 +20,10 @@ def upsert(db: Session, modelo, registros: list[dict]) -> dict:
         elif modelo is RedeSocial:
             cond = (RedeSocial.lugar_fonte == r["lugar_fonte"], RedeSocial.lugar_fonte_id == r["lugar_fonte_id"],
                     RedeSocial.rede == r.get("rede", "instagram"), RedeSocial.usuario == r["usuario"])
+        elif modelo is Cardapio:
+            cond = (Cardapio.lugar_fonte == r["lugar_fonte"], Cardapio.lugar_fonte_id == r["lugar_fonte_id"], Cardapio.url == r["url"])
+        elif modelo is Avaliacao:
+            cond = (Avaliacao.experiencia_ref == r["experiencia_ref"],)
         else:
             cond = (modelo.fonte == r["fonte"], modelo.fonte_id == r["fonte_id"])
         obj = db.scalar(select(modelo).where(*cond))
@@ -26,6 +32,8 @@ def upsert(db: Session, modelo, registros: list[dict]) -> dict:
             novos += 1
         else:
             for k, v in r.items():
+                if k == "extra" and isinstance(v, dict) and isinstance(obj.extra, dict):
+                    v = {**obj.extra, **v}  # preserva chaves de outros bots (ex.: endereço do Nominatim)
                 setattr(obj, k, v)
             atualizados += 1
     db.commit()

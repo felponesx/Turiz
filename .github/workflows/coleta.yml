@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       fontes:
-        description: "Fontes (osm google eventbrite sites)"
+        description: "Fontes (osm google eventbrite sites ticketmaster)"
         default: "osm sites"
 permissions:
   contents: write
@@ -27,6 +27,7 @@ jobs:
         env:
           GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
           EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         run: python coletar.py ${{ inputs.fontes || 'osm sites' }}
       - name: Commitar dados
         run: |
