@@ -55,6 +55,53 @@ def espiar_zip(r: httpx.Response, nlinhas=2, limite=2_000_000):
     return {"arquivo": nome, "linhas": linhas}, ""
 
 
+def links(cli, url, n=60):
+    """Nomes dos links de uma página de listagem (autoindex/HTML). Só nomes de arquivos/pastas públicos."""
+    from bs4 import BeautifulSoup
+    from urllib.parse import urljoin
+    r = cli.get(url)
+    if r.status_code != 200:
+        return [f"HTTP {r.status_code}"]
+    nomes = []
+    for a in BeautifulSoup(r.text, "html.parser").find_all("a", href=True):
+        h = a["href"]
+        if h.startswith(("?", "#", "/", "..", "http")) and not h.startswith(("http",)):
+            continue
+        nomes.append(urljoin(url, h))
+    return nomes[:n]
+
+
+def webdav(cli, base, token, caminho="", n=40):
+    """PROPFIND em um compartilhamento público do Nextcloud (usuário = token, senha vazia)."""
+    import re as _re
+    r = cli.request("PROPFIND", f"{base}/public.php/webdav/{caminho}", auth=(token, ""), headers={"Depth": "1"})
+    if r.status_code not in (200, 207):
+        return [f"HTTP {r.status_code}"]
+    itens = _re.findall(r"<d:href>([^<]+)</d:href>.*?(?:<d:getcontentlength>(\d+)</d:getcontentlength>)?", r.text, _re.S)
+    return [f"{h} {int(t)/1e6:.0f}MB" if t else h for h, t in itens[:n]]
+
+
+def descobrir(cli):
+    sec = ["\n## Descoberta de caminhos (listagens públicas)\n"]
+    def bloco(titulo, linhas):
+        sec.append(f"### {titulo}\n\n" + "\n".join(f"- `{x}`" for x in linhas) + "\n")
+    try:
+        bloco("IBGE: raiz do Censo 2022", links(cli, "https://ftp.ibge.gov.br/Censo_Demografico_2022/"))
+        for pasta in ("Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/",):
+            bloco(f"IBGE: {pasta}", links(cli, "https://ftp.ibge.gov.br/Censo_Demografico_2022/" + pasta))
+    except Exception as exc:
+        bloco("IBGE", [f"{type(exc).__name__}: {exc}"[:120]])
+    try:
+        bloco("Receita (Nextcloud): raiz do compartilhamento", webdav(cli, "https://arquivos.receitafederal.gov.br", "YggdBLfdninEJX9"))
+    except Exception as exc:
+        bloco("Receita (Nextcloud)", [f"{type(exc).__name__}: {exc}"[:120]])
+    try:
+        bloco("Espelho casadosdados: links da página", links(cli, "https://dados-abertos-rf-cnpj.casadosdados.com.br/"))
+    except Exception as exc:
+        bloco("Espelho casadosdados", [f"{type(exc).__name__}: {exc}"[:120]])
+    return "\n".join(sec)
+
+
 def main():
     out = [f"# Sondagem de dados abertos\n\nGerado em {datetime.now(timezone.utc):%Y-%m-%d %H:%M} (UTC). Amostras mascaradas (dígitos = #).\n",
            "| Fonte | Resultado | Tamanho | Observação |", "|---|---|---|---|"]
@@ -82,7 +129,7 @@ def main():
             out.append(f"| {nome} | {'ok' if ok else 'falhou'} | {tam} | {obs} |")
         except Exception as exc:
             out.append(f"| {nome} | inacessível | - | {type(exc).__name__}: {str(exc)[:70]} |")
-    texto = "\n".join(out) + "\n\n" + "\n".join(detalhes)
+    texto = "\n".join(out) + "\n\n" + "\n".join(detalhes) + descobrir(cli)
     open("data/receita_sondagem.md", "w", encoding="utf-8").write(texto)
     print(texto)
 
