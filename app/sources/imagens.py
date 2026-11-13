@@ -15,7 +15,7 @@ from urllib.parse import quote, unquote, urlparse
 import httpx
 from bs4 import BeautifulSoup
 from . import osm
-from .sites import permitido, UA
+from .sites import permitido, UA, cliente_http
 
 # A Wikimedia exige User-Agent descritivo com contato (aqui, o repositório).
 UA_WIKI = "TurizImagensBot/1.0 (https://github.com/felponesx/Turiz; image reference bot)"
@@ -145,7 +145,7 @@ def og_image(html: str, base_url: str) -> str | None:
 
 def coletar_sites(lugares: list[dict], client=None, pausa=1.0, limite=None):
     """lugares: [{'fonte','fonte_id','site'}]. Pega o og:image do site oficial (status pendente)."""
-    client = client or httpx.Client(timeout=20, headers={"User-Agent": UA}, follow_redirects=True)
+    client = client or cliente_http(20)
     saida, bloqueados, falhas = [], 0, 0
     for l in lugares[:limite]:
         url = l["site"] if l["site"].startswith("http") else "https://" + l["site"]

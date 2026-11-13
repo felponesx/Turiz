@@ -16,7 +16,7 @@ from difflib import SequenceMatcher
 from urllib.parse import urlparse
 import httpx
 from bs4 import BeautifulSoup
-from .sites import permitido, UA
+from .sites import permitido, UA, cliente_http
 
 RESERVADOS = {"p", "reel", "reels", "explore", "accounts", "stories", "tv", "share", "direct", "about", "legal",
               "developer", "web", "challenge", "directory", "locations", "oauth", "privacy", "terms", "instagram"}
@@ -90,7 +90,7 @@ def _reg(lugar, usuario, origem, conf, status):
 
 
 def vinculos_sites(lugares: list[dict], client=None, pausa=1.0, limite=None):
-    client = client or httpx.Client(timeout=20, headers={"User-Agent": UA}, follow_redirects=True)
+    client = client or cliente_http(20)
     saida, bloqueados, falhas = [], 0, 0
     for l in lugares[:limite]:
         url = l["site"] if l["site"].startswith("http") else "https://" + l["site"]

@@ -12,7 +12,7 @@ from app.sources import diagnostico, sites
 
 
 def testar_url(url, listagem, padrao, limite, tipo, cidade=""):
-    client = httpx.Client(timeout=30, headers={"User-Agent": sites.UA}, follow_redirects=True)
+    client = sites.cliente_http(30)
     diag = diagnostico.testar({"id": url, "categoria": "evento", "tipo": "html", "url": url}, client)
     linhas = [f"## {url}", "", f"- Resultado: **{diag['resultado']}** (HTTP {diag.get('status')})",
               f"- robots.txt permite: {diag.get('robots_permite')}",

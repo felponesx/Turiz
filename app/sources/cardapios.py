@@ -14,7 +14,7 @@ from urllib.parse import urljoin, urlparse
 import httpx
 from bs4 import BeautifulSoup
 from collections import Counter
-from .sites import UA, itens_jsonld, robots_detalhe
+from .sites import cliente_http, itens_jsonld, robots_detalhe
 
 PLATAFORMAS = {
     "goomer": ("goomer.app", "goomer.com.br"), "menudino": ("menudino.com",), "anotaai": ("anota.ai",),
@@ -123,7 +123,7 @@ def buscar(html: str, base_url: str, menu_osm: str = "") -> list[dict]:
 
 def coletar(lugares: list[dict], client=None, pausa=1.0, limite=None):
     """lugares: [{'fonte','fonte_id','site','menu_osm'}]. Retorna (registros, stats)."""
-    client = client or httpx.Client(timeout=20, headers={"User-Agent": UA}, follow_redirects=True)
+    client = client or cliente_http(20)
     saida, st = [], {"visitados": 0, "bloqueados_robots": 0, "robots_sem_resposta": 0, "motivos_sem_resposta": Counter(), "falhas": 0, "ignorados_rede_social": 0, "com_cardapio": 0}
     for l in lugares[:limite]:
         site = (l.get("site") or "").strip()

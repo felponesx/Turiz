@@ -8,7 +8,7 @@ import re
 import time
 import httpx
 from urllib.parse import urljoin, urlparse
-from .sites import UA, itens_jsonld, permitido
+from .sites import cliente_http, itens_jsonld, permitido
 
 # categoria: evento | lugar | cardapio | avaliacao | dados_abertos | imagem. tipo: html | api | arquivo.
 FONTES = [
@@ -168,7 +168,7 @@ def relatorio_md(resultados: list[dict], quando: str) -> str:
 
 
 def diagnosticar(fontes=None, client=None, pausa=1.0):
-    client = client or httpx.Client(timeout=25, headers={"User-Agent": UA}, follow_redirects=True)
+    client = client or cliente_http(25)
     out = []
     for f in fontes or FONTES:
         out.append(testar(f, client))

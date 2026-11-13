@@ -27,7 +27,7 @@ def robots_detalhe(url, client):
     try:
         r = client.get(f"{p.scheme}://{p.netloc}/robots.txt")
     except httpx.HTTPError as exc:
-        return "erro", type(exc).__name__
+        return "erro", f"{type(exc).__name__}: {str(exc)[:70]}"
     if r.status_code >= 500:
         return "erro", f"HTTP {r.status_code}"
     rp.parse(r.text.splitlines() if r.status_code == 200 else [])
@@ -36,6 +36,12 @@ def robots_detalhe(url, client):
 
 def robots(url, client) -> str:
     return robots_detalhe(url, client)[0]
+
+
+def cliente_http(timeout=20) -> httpx.Client:
+    """Cliente dos bots. Força IPv4: o runner do GitHub Actions não tem rota IPv6 e sites com AAAA dão 'Network is unreachable'."""
+    return httpx.Client(timeout=timeout, headers={"User-Agent": UA}, follow_redirects=True,
+                        transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=1))
 
 
 def permitido(url, client) -> bool:
@@ -193,7 +199,7 @@ def links_listagem(html: str, base_url: str, padrao: str, limite: int = 30) -> l
 
 
 def coletar(config_path="sources.yml", client=None, pausa=1.0):
-    client = client or httpx.Client(timeout=30, headers={"User-Agent": UA}, follow_redirects=True)
+    client = client or cliente_http(30)
     cfg = yaml.safe_load(open(config_path, encoding="utf-8")) or {}
     lugares, eventos, ignorados = [], [], []
     for s in cfg.get("sites") or []:
