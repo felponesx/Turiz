@@ -129,7 +129,7 @@ def indexar_cnefe(caminho_zip: str, ceps: set[str]):
 
 def montar_registros(cands: dict, exato: dict, centro: dict, incluir_individuais: bool = False):
     """Candidatos -> registros `Lugar`. Sem CNPJ, sem razão social, sem telefone, sem e-mail. Retorna (registros, estatisticas)."""
-    st = {"candidatos": len(cands), "individuais_excluidos": 0, "sem_coordenada": 0, "coord_exata": 0, "coord_aproximada": 0}
+    st = {"candidatos": len(cands), "individuais_excluidos": 0, "sem_coordenada": 0, "coord_exata": 0, "coord_aproximada": 0, "descartados_privacidade": 0}
     out, vistos = [], set()
     for d in cands.values():
         if not incluir_individuais and (d.get("natureza") in INDIVIDUAIS or d.get("mei")):
@@ -151,16 +151,21 @@ def montar_registros(cands: dict, exato: dict, centro: dict, incluir_individuais
             continue
         vistos.add(fid)
         tipo, cul = CNAE_TIPO[d["cnae"]]
-        out.append({"fonte": "receita", "fonte_id": fid, "tipo": tipo, "nome": nome, "culinaria": cul, "lat": round(ll[0], 6), "lon": round(ll[1], 6),
-                    "endereco": endereco, "bairro": titulo(d["bairro"]), "cep": cep_fmt(cep), "telefone": "", "site": "", "horario": "",
-                    "extra": {"cnae": d["cnae"], "inicio_atividade": d["inicio"], "coordenada_aproximada": aprox,
-                              "origem": "Receita Federal (dados abertos) + IBGE CNEFE"}})
+        reg = {"fonte": "receita", "fonte_id": fid, "tipo": tipo, "nome": nome, "culinaria": cul, "lat": round(ll[0], 6), "lon": round(ll[1], 6),
+               "endereco": endereco, "bairro": titulo(d["bairro"]), "cep": cep_fmt(cep), "telefone": "", "site": "", "horario": "",
+               "extra": {"cnae": d["cnae"], "inicio_atividade": d["inicio"], "coordenada_aproximada": aprox,
+                         "origem": "Receita Federal (dados abertos) + IBGE CNEFE"}}
+        if tem_dado_pessoal(reg):   # nome/endereço com '@', documento etc.: descarta o registro (e conta) em vez de derrubar a coleta
+            st["descartados_privacidade"] += 1
+            continue
+        out.append(reg)
     return out, st
 
 
 _PADROES = [("CNPJ", re.compile(r"(?<!\d)\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2}(?!\d)")),
             ("CPF", re.compile(r"(?<!\d)\d{3}\.?\d{3}\.?\d{3}-?\d{2}(?!\d)")),
             ("e-mail", re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")),
+            ("arroba (e-mail ou perfil)", re.compile(r"@")),
             ("número longo", re.compile(r"\d{9,}"))]
 
 
@@ -181,6 +186,14 @@ def validar_privacidade(registros: list[dict]) -> None:
                     raise ValueError(f"número longo suspeito em {r.get('fonte_id')}")
             elif rx.search(texto):
                 raise ValueError(f"possível {nome} no registro {r.get('fonte_id')}")
+
+
+def tem_dado_pessoal(registro: dict) -> bool:
+    try:
+        validar_privacidade([registro])
+        return False
+    except ValueError:
+        return True
 
 
 def mesclar_com_osm(registros: list[dict], osm: list[dict]):

@@ -89,7 +89,7 @@ def main():
     resumo = (f"# Resumo da coleta Receita + IBGE\n\nGerado em {datetime.now(timezone.utc):%Y-%m-%d %H:%M} (UTC), pasta da Receita **{mes}**.\n\n"
               f"- Estabelecimentos candidatos (bar/restaurante/lanchonete ativos em São Paulo, com nome fantasia): {st['candidatos']}\n"
               f"- {'Incluídos MEI/individuais (modo de teste)' if a.incluir_individuais else SEM_INDIVIDUAIS_AVISO} Excluídos: {st['individuais_excluidos']}\n"
-              f"- Sem coordenada (descartados): {st['sem_coordenada']}\n- Coordenada exata (CEP + número): {st['coord_exata']}\n"
+              f"- Sem coordenada (descartados): {st['sem_coordenada']}\n- Descartados pela trava de privacidade (nome/endereço com '@', documento etc.): {st['descartados_privacidade']}\n- Coordenada exata (CEP + número): {st['coord_exata']}\n"
               f"- Coordenada aproximada (centro do CEP): {st['coord_aproximada']}\n- **Registros gravados: {len(regs)}**\n\n"
               "Não são gravados: CNPJ, razão social, telefone, e-mail, sócios. A trava de privacidade passou.\n")
     open("data/receita_resumo.md", "w", encoding="utf-8").write(resumo)

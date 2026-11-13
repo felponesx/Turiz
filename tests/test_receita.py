@@ -145,3 +145,17 @@ def test_hash_com_muitos_digitos_nao_e_falso_positivo_mas_documento_no_nome_cont
     receita.validar_privacidade([base])                                            # id com 10 dígitos seguidos: ok
     with pytest.raises(ValueError):
         receita.validar_privacidade([{**base, "nome": "Bar 0214252790"}])         # número longo no NOME: barrado
+
+
+def test_registro_suspeito_e_descartado_e_contado_sem_derrubar_a_coleta(tmp_path):
+    linhas = EST + "\n".join([
+        est("12121212", fantasia="@BURGERX SP"),                       # parece e-mail/perfil
+        est("13131313", fantasia="PIZZA contato@pizza.com.br"),        # e-mail de verdade no nome
+        est("14141414", fantasia="BAR DO CNPJ 12.345.678/0001-95"),    # CNPJ no nome
+    ]) + "\n"
+    e = _zip(tmp_path, "est2.zip", linhas)
+    _, emp, sim, cnefe = _arquivos(tmp_path)
+    regs, st = coletar_receita.processar([e], [emp], sim, cnefe)
+    assert sorted(r["nome"] for r in regs) == ["Lanchonete Esquina", "Restaurante do Ze"]      # os suspeitos sumiram
+    assert st["descartados_privacidade"] == 3
+    assert "burgerx" not in json.dumps(regs).lower() and "pizza.com" not in json.dumps(regs).lower()
