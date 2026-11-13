@@ -6,7 +6,7 @@ on:
     inputs:
       fontes:
         description: "Fontes (osm google eventbrite sites ticketmaster)"
-        default: "osm sites"
+        default: "osm sites ticketmaster"
 permissions:
   contents: write
 concurrency:
@@ -28,7 +28,7 @@ jobs:
           GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
           EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
-        run: python coletar.py ${{ inputs.fontes || 'osm sites' }}
+        run: python coletar.py ${{ inputs.fontes || 'osm sites ticketmaster' }}
       - name: Commitar dados
         run: |
           git config user.name "coleta-bot"

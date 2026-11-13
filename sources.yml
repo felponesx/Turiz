@@ -13,7 +13,7 @@
 #
 # Teste uma URL antes de ativar: Actions -> "Testar fonte" (resultado em data/teste_fonte.md).
 sites:
-  # Testado em 2026-11-13: 12 de 12 páginas com JSON-LD (título, data, local, preço). Site de empresa privada: confirme os termos.
+  # Testado em 2026-11-13: 12 de 12 páginas com JSON-LD (título, data, local, preço). Ligado por decisão do dono do projeto.
   - url: https://www.ticket360.com.br/
     tipo: evento
     cidade: São Paulo
@@ -21,7 +21,7 @@ sites:
     padrao_link: ^/evento/
     limite: 40
     pausa: 2
-    ativo: false
+    ativo: true
   # Páginas de evento têm JSON-LD (4 de 4), mas a lista respondeu 429 nos testes: use pausa alta. Turismo da cidade.
   - url: https://visitesaopaulo.com/eventos/
     tipo: evento
@@ -30,4 +30,4 @@ sites:
     padrao_link: ^/evento/
     limite: 30
     pausa: 4
-    ativo: false
+    ativo: true
