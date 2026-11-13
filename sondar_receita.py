@@ -19,22 +19,41 @@ def meses(n=3):
         yield f"{y}-{(m - 1) % 12 + 1:02d}"
 
 
-def candidatos():
-    c = []
-    for m in meses(3):
-        c += [("receita (arquivos) Estabelecimentos0", f"https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/{m}/Estabelecimentos0.zip"),
-              ("receita (dadosabertos) Estabelecimentos0", f"https://dadosabertos.rfb.gov.br/CNPJ/dados_abertos_cnpj/{m}/Estabelecimentos0.zip")]
-    c += [("receita (pasta raiz, antigo)", "https://dadosabertos.rfb.gov.br/CNPJ/Estabelecimentos0.zip"),
-          ("receita (nextcloud)", "https://arquivos.receitafederal.gov.br/index.php/s/YggdBLfdninEJX9"),
-          ("ibge CNEFE 2022 - SP", "https://ftp.ibge.gov.br/Censo_Demografico_2022/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/Arquivos_CNEFE/CSV/UF/35_SP.zip"),
-          ("ibge CNEFE 2022 - pasta", "https://ftp.ibge.gov.br/Censo_Demografico_2022/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/Arquivos_CNEFE/CSV/UF/"),
-          ("espelho casadosdados", "https://dados-abertos-rf-cnpj.casadosdados.com.br/"),
-          ("brasilapi (lista de CNAE)", "https://brasilapi.com.br/api/cnae/v1/5611201")]
-    return c
+RECEITA = "https://arquivos.receitafederal.gov.br/public.php/webdav"
+TOKEN = "YggdBLfdninEJX9"
+IBGE_SP = "https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/Arquivos_CNEFE/CSV/UF/35_SP.zip"
+
+
+def ultima_pasta(cli) -> str:
+    pastas = sorted(h for h, _ in webdav(cli, "https://arquivos.receitafederal.gov.br", TOKEN) if h.endswith("/") and h[:4].isdigit())
+    return pastas[-1].rstrip("/")
+
+
+def candidatos(mes: str):
+    """(nome, url, auth): Estrutura de cada arquivo que o pipeline vai ler."""
+    return [("Receita: Estabelecimentos0", f"{RECEITA}/{mes}/Estabelecimentos0.zip", (TOKEN, "")),
+            ("Receita: Empresas0", f"{RECEITA}/{mes}/Empresas0.zip", (TOKEN, "")),
+            ("Receita: Simples", f"{RECEITA}/{mes}/Simples.zip", (TOKEN, "")),
+            ("IBGE: CNEFE 2022 - SP", IBGE_SP, None)]
+
+
+def referencias(cli, mes: str) -> str:
+    """Tabelas de referência pequenas e públicas (códigos), para achar o código de São Paulo e os CNAEs de bares/restaurantes."""
+    import io
+    import zipfile
+    out = ["\n## Tabelas de referência\n"]
+    for arq, filtro in (("Municipios.zip", "SAO PAULO"), ("Cnaes.zip", "5611")):
+        r = httpx.get(f"{RECEITA}/{mes}/{arq}", auth=(TOKEN, ""), timeout=60, headers={"User-Agent": UA})
+        z = zipfile.ZipFile(io.BytesIO(r.content))
+        linhas = z.read(z.namelist()[0]).decode("latin-1").splitlines()
+        achados = [l for l in linhas if filtro in l.upper()]
+        out.append(f"### {arq} (linhas com '{filtro}')\n\n" + "\n".join(f"- `{l}`" for l in achados[:12]) + "\n")
+    return "\n".join(out)
 
 
 def mascarar(txt: str) -> str:
-    return re.sub(r"\d", "#", txt)
+    """Só a forma do dado: dígitos viram #, letras viram x (nada real vai para o log público)."""
+    return re.sub(r"[A-Za-zÀ-ÿ]", "x", re.sub(r"\d", "#", txt))
 
 
 def espiar_zip(r: httpx.Response, nlinhas=2, limite=2_000_000):
@@ -112,33 +131,39 @@ def descobrir(cli):
 
 
 def main():
-    out = [f"# Sondagem de dados abertos\n\nGerado em {datetime.now(timezone.utc):%Y-%m-%d %H:%M} (UTC). Amostras mascaradas (dígitos = #).\n",
+    out = [f"# Sondagem de dados abertos\n\nGerado em {datetime.now(timezone.utc):%Y-%m-%d %H:%M} (UTC). Amostras sem dados reais (dígitos=#, letras=x).\n",
            "| Fonte | Resultado | Tamanho | Observação |", "|---|---|---|---|"]
     detalhes = []
-    cli = httpx.Client(timeout=40, headers={"User-Agent": UA}, follow_redirects=True,
+    cli = httpx.Client(timeout=60, headers={"User-Agent": UA}, follow_redirects=True,
                        transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=1))
-    for nome, url in candidatos():
+    mes = ultima_pasta(cli)
+    out.insert(2, f"Pasta mais recente da Receita: **{mes}**\n")
+    for nome, url, auth in candidatos(mes):
         try:
-            with cli.stream("GET", url, headers={"Range": "bytes=0-2000000"}) as r:
+            with cli.stream("GET", url, auth=auth, headers={"Range": "bytes=0-3000000"}) as r:
                 tam = r.headers.get("content-range", "").split("/")[-1] or r.headers.get("content-length", "?")
-                tipo = r.headers.get("content-type", "")[:40]
                 ok = r.status_code in (200, 206)
-                obs = f"HTTP {r.status_code}, {tipo}" + (", aceita Range" if r.status_code == 206 else "")
-                if ok and url.endswith(".zip"):
+                obs = f"HTTP {r.status_code}" + (", aceita Range" if r.status_code == 206 else "")
+                if ok:
                     info, erro = espiar_zip(r)
                     if info:
                         l = info["linhas"]
-                        n = len(re.findall(r'"?;"?', l[0])) + 1 if l else 0
-                        detalhes.append(f"### {nome}\n\n- URL: `{url}`\n- 1º arquivo do zip: `{info['arquivo']}`\n- colunas na 1ª linha (separador `;`): {n}\n"
-                                        + "\n".join(f"- amostra: `{mascarar(x)[:300]}`" for x in l) + "\n")
+                        sep = ";" if l and l[0].count(";") >= l[0].count(",") else ","
+                        n = (l[0].count(sep) + 1) if l else 0
+                        cab = l[0] if nome.startswith("IBGE") else ""   # o cabeçalho do IBGE só tem nomes de colunas
+                        detalhes.append(f"### {nome}\n\n- 1º arquivo do zip: `{info['arquivo']}`\n- colunas (separador `{sep}`): {n}\n"
+                                        + (f"- cabeçalho: `{cab}`\n" if cab else "")
+                                        + "\n".join(f"- forma da linha {i}: `{mascarar(x)[:260]}`" for i, x in enumerate(l)) + "\n")
                     else:
                         obs += f", {erro}"
-                elif ok and "html" in tipo:
-                    obs += ", html"
             out.append(f"| {nome} | {'ok' if ok else 'falhou'} | {tam} | {obs} |")
         except Exception as exc:
             out.append(f"| {nome} | inacessível | - | {type(exc).__name__}: {str(exc)[:70]} |")
-    texto = "\n".join(out) + "\n\n" + "\n".join(detalhes) + descobrir(cli)
+    try:
+        ref = referencias(cli, mes)
+    except Exception as exc:
+        ref = f"\n(referências falharam: {type(exc).__name__}: {str(exc)[:80]})\n"
+    texto = "\n".join(out) + "\n\n" + "\n".join(detalhes) + ref
     open("data/receita_sondagem.md", "w", encoding="utf-8").write(texto)
     print(texto)
 
