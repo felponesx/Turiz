@@ -17,6 +17,9 @@ on:
       cidade:
         description: "Só eventos desta cidade (vazio = todas)"
         default: "São Paulo"
+      auto:
+        description: "Descobrir sozinho o padrão dos links de evento? (true/false)"
+        default: "false"
 permissions:
   contents: write
 concurrency:
@@ -38,9 +41,11 @@ jobs:
           PADRAO: ${{ inputs.padrao_link }}
           LIMITE: ${{ inputs.limite }}
           CIDADE: ${{ inputs.cidade }}
+          AUTO: ${{ inputs.auto }}
         run: |
           args=""
           if [ "$LISTAGEM" = "true" ]; then args="--listagem"; fi
+          if [ "$AUTO" = "true" ]; then args="$args --auto"; fi
           python testar_fonte.py $URLS $args --padrao "$PADRAO" --limite "$LIMITE" --cidade "$CIDADE"
       - name: Commitar resultado
         if: always()

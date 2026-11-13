@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from app.sources import diagnostico, sites
 
 
-def testar_url(url, listagem, padrao, limite, tipo, cidade=""):
+def testar_url(url, listagem, padrao, limite, tipo, cidade="", auto=False):
     client = sites.cliente_http(30)
     diag = diagnostico.testar({"id": url, "categoria": "evento", "tipo": "html", "url": url}, client)
     linhas = [f"## {url}", "", f"- Resultado: **{diag['resultado']}** (HTTP {diag.get('status')})",
@@ -19,6 +19,22 @@ def testar_url(url, listagem, padrao, limite, tipo, cidade=""):
               f"- JSON-LD na página: {diag.get('jsonld_eventos', 0)} eventos, {diag.get('jsonld_lugares', 0)} lugares"]
     if diag.get("detalhes_testados"):
         linhas.append(f"- Páginas de evento sondadas: {diag['detalhes_com_evento']}/{diag['detalhes_testados']} com JSON-LD (ex.: {', '.join(diag.get('detalhes_exemplos', []))})")
+    if auto:
+        try:
+            r = client.get(url)
+            grupos = diagnostico.descobrir_padroes(r.text, str(r.url), client)
+        except httpx.HTTPError as exc:
+            grupos = []
+            linhas.append(f"- Auto-descoberta falhou: `{type(exc).__name__}`")
+        boas = [g for g in grupos if g["com_evento"]]
+        linhas.append(f"- **Auto-descoberta:** {len(grupos)} formatos de link testados; **{len(boas)} com eventos**")
+        if boas:
+            linhas += ["", "| Formato do link | Links na página | Testadas | Com evento | Exemplo | `padrao_link` sugerido |", "|---|---|---|---|---|---|"]
+            linhas += [f"| `{g['modelo']}` | {g['links_na_lista']} | {g['testadas']} | {g['com_evento']} | {g['exemplo']} | `{g['padrao_sugerido']}` |" for g in boas[:5]]
+            if not listagem:
+                listagem, padrao = True, boas[0]["padrao_sugerido"]
+                linhas.append(f"\nUsando `{padrao}` para a coleta de teste abaixo.")
+        linhas.append("")
     cfg = {"sites": [{"url": url, "tipo": tipo, "pausa": 2, **({"cidade": cidade} if cidade else {}),
                       **({"listagem": True, "padrao_link": padrao, "limite": limite} if listagem else {})}]}
     with tempfile.NamedTemporaryFile("w", suffix=".yml", delete=False, encoding="utf-8") as f:
@@ -47,11 +63,12 @@ def main():
     ap.add_argument("--padrao", default=r"/evento", help="regex do caminho dos links dos eventos (modo listagem)")
     ap.add_argument("--limite", type=int, default=15)
     ap.add_argument("--tipo", default="evento", choices=["evento", "restaurante", "bar"])
+    ap.add_argument("--auto", action="store_true", help="descobrir sozinho o padrão dos links de evento")
     ap.add_argument("--cidade", default="São Paulo", help="só mantém eventos desta cidade ('' = todas)")
     a = ap.parse_args()
     texto = f"# Teste de fonte\n\nGerado em {datetime.now(timezone.utc):%Y-%m-%d %H:%M} (UTC).\n\n"
     for u in a.urls:
-        texto += testar_url(u, a.listagem, a.padrao, a.limite, a.tipo, a.cidade) + "\n"
+        texto += testar_url(u, a.listagem, a.padrao, a.limite, a.tipo, a.cidade, a.auto) + "\n"
     open("data/teste_fonte.md", "w", encoding="utf-8").write(texto)
     print(texto)
 

@@ -165,3 +165,19 @@ def test_coletar_sites_respeita_ativo_cidade_e_listagem(tmp_path, monkeypatch):
                    "  - {url: 'https://off.com/lista', listagem: true, padrao_link: '^/evento/', ativo: false}\n")
     l, e, ign = sites.coletar(str(cfg), client=httpx.Client(transport=httpx.MockTransport(h), follow_redirects=True), pausa=0)
     assert [x["titulo"] for x in e] == ["Evento SP"] and ign == []      # Rio filtrado, site desativado nem visitado
+
+
+def test_uma_fonte_com_erro_nao_derruba_as_outras(tmp_path, monkeypatch):
+    import httpx
+    from app.sources import sites
+    monkeypatch.setattr(sites.time, "sleep", lambda s: None)
+    ev = '<script type="application/ld+json">{"@type":"Event","name":"Bom","startDate":"2026-12-01T20:00:00-03:00"}</script>'
+    def h(req):
+        if req.url.path == "/robots.txt":
+            return httpx.Response(200, text="")
+        return httpx.Response(429) if req.url.host == "ruim.com" else httpx.Response(200, text=ev)
+    cfg = tmp_path / "s.yml"
+    cfg.write_text("sites:\n  - {url: 'https://ruim.com/agenda'}\n  - {url: 'https://bom.com/agenda'}\n")
+    l, e, ign = sites.coletar(str(cfg), client=httpx.Client(transport=httpx.MockTransport(h), follow_redirects=True), pausa=0)
+    assert [x["titulo"] for x in e] == ["Bom"]                    # o bom foi coletado
+    assert any("ruim.com" in i and "erro" in i for i in ign)      # o ruim ficou registrado como erro

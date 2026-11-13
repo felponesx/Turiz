@@ -65,3 +65,24 @@ def test_testar_fonte_relatorio(tmp_path, monkeypatch):
     monkeypatch.setattr(testar_fonte.httpx, "Client", lambda **kw: real(transport=httpx.MockTransport(h), follow_redirects=True))
     md = testar_fonte.testar_url("https://l.com/lista", True, r"^/evento/", 5, "evento")
     assert "1 eventos" in md and "Show Z" in md and "R$ 50.00" in md and "musica" in md
+
+
+def test_auto_descoberta_acha_o_padrao_dos_eventos():
+    ev = '<script type="application/ld+json">{"@type":"Event","name":"A"}</script>'
+    def h(req):
+        if req.url.path == "/robots.txt":
+            return httpx.Response(200, text="")
+        if req.url.path == "/agenda":
+            return httpx.Response(200, text='<a href="/espetaculo/1/a">a</a><a href="/espetaculo/2/b">b</a><a href="/espetaculo/3/c">c</a>'
+                                            '<a href="/blog/x">x</a><a href="/blog/y">y</a><a href="/img/a.jpg">i</a>')
+        return httpx.Response(200, text=ev if req.url.path.startswith("/espetaculo") else "<html></html>")
+    c = httpx.Client(transport=httpx.MockTransport(h), follow_redirects=True)
+    g = diagnostico.descobrir_padroes(c.get("https://s.com/agenda").text, "https://s.com/agenda", c, pausa=0)
+    assert g[0]["modelo"] == "/espetaculo/*/*" and g[0]["com_evento"] == 2 and g[0]["padrao_sugerido"] == "^/espetaculo/"
+    assert g[1]["modelo"] == "/blog/*" and g[1]["com_evento"] == 0       # blog não tem evento
+    import testar_fonte
+    real = httpx.Client
+    from unittest import mock
+    with mock.patch.object(testar_fonte.httpx, "Client", lambda **kw: real(transport=httpx.MockTransport(h), follow_redirects=True)):
+        md = testar_fonte.testar_url("https://s.com/agenda", False, "/evento", 5, "evento", "", auto=True)
+    assert "1 com eventos" in md and "`^/espetaculo/`" in md

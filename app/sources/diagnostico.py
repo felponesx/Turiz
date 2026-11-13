@@ -86,6 +86,48 @@ def candidatos_detalhe(html: str, base_url: str, n: int = 5) -> list[str]:
     return saida
 
 
+def _modelo(path: str) -> str:
+    """'/evento/33890/ingressos-para-x' -> '/evento/*/*'. Mantém só o primeiro trecho do caminho."""
+    partes = [p for p in path.split("/") if p]
+    return "/" + "/".join(partes[:1] + ["*"] * len(partes[1:])) if partes else "/"
+
+
+def descobrir_padroes(html: str, base_url: str, client, grupos: int = 8, amostra: int = 2, pausa: float = 1.0) -> list[dict]:
+    """Agrupa os links do mesmo site pelo formato do caminho e testa amostras de cada grupo (JSON-LD Event).
+    Devolve os grupos ordenados por acerto; `padrao_sugerido` é o regex para usar em `padrao_link`."""
+    from bs4 import BeautifulSoup
+    host = urlparse(base_url).netloc.lower().removeprefix("www.")
+    por_grupo: dict[str, list[str]] = {}
+    for a in BeautifulSoup(html, "html.parser").find_all("a", href=True):
+        u = urljoin(base_url, a["href"].strip()).split("#")[0]
+        pu = urlparse(u)
+        if pu.scheme in ("http", "https") and pu.netloc.lower().removeprefix("www.") == host and pu.path not in ("", "/"):
+            if not re.search(r"\.(jpe?g|png|gif|svg|css|js|pdf|webp)$", pu.path, re.I):
+                g = por_grupo.setdefault(_modelo(pu.path), [])
+                if u not in g:
+                    g.append(u)
+    ordem = sorted((g for g in por_grupo.items() if len(g[1]) >= 2), key=lambda g: -len(g[1]))[:grupos]
+    saida = []
+    for modelo, links in ordem:
+        com, testadas, exemplo = 0, 0, ""
+        for u in links[:amostra]:
+            try:
+                if not permitido(u, client):
+                    continue
+                ev, _ = contar_jsonld(client.get(u).text[:600_000])
+            except httpx.HTTPError:
+                continue
+            testadas += 1
+            if ev:
+                com += 1
+                exemplo = exemplo or u
+            time.sleep(pausa)
+        seg = modelo.strip("/").split("/")[0]
+        saida.append({"modelo": modelo, "links_na_lista": len(links), "testadas": testadas, "com_evento": com, "exemplo": exemplo,
+                      "padrao_sugerido": f"^/{re.escape(seg)}/" if seg != "*" else ""})
+    return sorted(saida, key=lambda g: (-g["com_evento"], -g["links_na_lista"]))
+
+
 def sondar_detalhes(html: str, base_url: str, client, n: int = 5, pausa: float = 1.0) -> dict:
     """Em listagens sem JSON-LD, testa algumas páginas de evento: o JSON-LD costuma estar lá."""
     cands = candidatos_detalhe(html, base_url, n)

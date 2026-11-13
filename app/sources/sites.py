@@ -206,26 +206,30 @@ def coletar(config_path="sources.yml", client=None, pausa=1.0):
         if s.get("ativo", True) is False:
             continue
         url, cidade, esp = s["url"], s.get("cidade", ""), float(s.get("pausa", pausa))
-        if not permitido(url, client):
-            ignorados.append(url)
-            continue
-        r = obter(client, url)
-        r.raise_for_status()
-        l, e = extrair(r.text, url, s.get("tipo", "evento"))
-        lugares += l
-        eventos += [x for x in e if da_cidade(x, cidade)]
-        if s.get("listagem"):  # a lista não tem JSON-LD: segue os links das páginas de cada evento
-            for u in links_listagem(r.text, str(r.url), s["padrao_link"], int(s.get("limite", 30))):
-                if not permitido(u, client):
-                    ignorados.append(u)
-                    continue
-                try:
-                    rd = obter(client, u)
-                    rd.raise_for_status()
-                except httpx.HTTPError:
-                    continue
-                l, e = extrair(rd.text, u, s.get("tipo", "evento"))
-                lugares += l
-                eventos += [x for x in e if da_cidade(x, cidade)]
-                time.sleep(esp)
+        try:  # uma fonte com problema não pode derrubar as outras
+            if not permitido(url, client):
+                ignorados.append(url)
+                continue
+            r = obter(client, url)
+            r.raise_for_status()
+            l, e = extrair(r.text, url, s.get("tipo", "evento"))
+            lugares += l
+            eventos += [x for x in e if da_cidade(x, cidade)]
+            if s.get("listagem"):  # a lista não tem JSON-LD: segue os links das páginas de cada evento
+                for u in links_listagem(r.text, str(r.url), s["padrao_link"], int(s.get("limite", 30))):
+                    if not permitido(u, client):
+                        ignorados.append(u)
+                        continue
+                    try:
+                        rd = obter(client, u)
+                        rd.raise_for_status()
+                    except httpx.HTTPError:
+                        continue
+                    l, e = extrair(rd.text, u, s.get("tipo", "evento"))
+                    lugares += l
+                    eventos += [x for x in e if da_cidade(x, cidade)]
+                    time.sleep(esp)
+        except httpx.HTTPError as exc:
+            print(f"::warning::fonte {url} falhou: {type(exc).__name__}: {exc}")
+            ignorados.append(f"{url} (erro: {type(exc).__name__})")
     return lugares, eventos, ignorados

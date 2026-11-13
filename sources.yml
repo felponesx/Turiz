@@ -22,8 +22,8 @@ sites:
     limite: 40
     pausa: 2
     ativo: true
-  # Páginas de evento têm JSON-LD (4 de 4), mas a lista respondeu 429 nos testes: use pausa alta. Turismo da cidade.
-  - url: https://visitesaopaulo.com/eventos/
+  # Páginas de evento têm JSON-LD (4 de 4). A página /eventos/ responde 429 a robôs; a página inicial funciona. Turismo da cidade.
+  - url: https://visitesaopaulo.com/
     tipo: evento
     cidade: São Paulo
     listagem: true
