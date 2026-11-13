@@ -1,32 +1,75 @@
 # Teste de fonte
 
-Gerado em 2026-11-13 17:40 (UTC).
+Gerado em 2026-11-13 23:13 (UTC).
 
-## https://visitesaopaulo.com/eventos/
+## https://www.prefeitura.sp.gov.br/cidade/secretarias/cultura/
 
-- Resultado: **bloqueado** (HTTP 429)
+- Resultado: **abre_sem_dados_estruturados** (HTTP 200)
 - robots.txt permite: True
 - JSON-LD na página: 0 eventos, 0 lugares
+- **Auto-descoberta:** 4 formatos de link testados; **0 com eventos**
 
-Falha ao coletar: `HTTPStatusError: Client error '429 Too Many Requests' for url 'https://visitesaopaulo.com/eventos/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429`
+- **Coleta de teste: 0 eventos, 0 lugares** (ignorados por robots/erro: 0)
 
-## https://www.ticket360.com.br/
 
-- Resultado: **ok_via_detalhes** (HTTP 200)
+## https://theatromunicipal.org.br/
+
+- Resultado: **abre_sem_dados_estruturados** (HTTP 200)
 - robots.txt permite: True
 - JSON-LD na página: 0 eventos, 0 lugares
-- Páginas de evento sondadas: 5/5 com JSON-LD (ex.: https://www.ticket360.com.br/evento/33890/ingressos-para-gilsons-convida-gilberto-gil, https://www.ticket360.com.br/evento/34067/ingressos-para-subete-e-mucho-apresenta-braza-baile-citrico-utropico-lunar)
-- **Coleta de teste: 12 eventos, 0 lugares** (ignorados por robots/erro: 0)
+- **Auto-descoberta:** 0 formatos de link testados; **0 com eventos**
 
-| Título | Início | Local | Preço | Categoria |
-|---|---|---|---|---|
-| Gilsons Convida Gilberto Gil | 13/11/2026 21:00 | Vivo Rio | R$ 198.00 | musica |
-| Súbete & Mucho apresenta Braza Baile Cítrico Utrópico Lunar | 13/11/2026 00:00 | Audio | R$ 60.00 | musica |
-| Alexandre Pires em Lavras | 14/11/2026 00:00 | Shopping Cidade da Serra | R$ 286.00 | musica |
-| Diego & Victor Hugo | 14/11/2026 00:30 | Stone House | R$ 88.00 | musica |
-| Gustavo Mioto Tour Inconfundível | 14/11/2026 22:00 | Espaço Unimed | R$ 204.00 | musica |
-| República Sertaneja com Bruninho & Davi mais João Gustavo & Murilo | 15/11/2026 00:00 | Varanda Estaiada | R$ 77.00 | musica |
-| Frozen | 15/11/2026 00:00 | Stone House | R$ 44.00 | teatro |
-| Swingueira da Bahia com Psirico, Rubynho e Filhos do Sol | 15/11/2026 17:00 | Juventus Live Hall | R$ 54.00 | musica |
+- **Coleta de teste: 0 eventos, 0 lugares** (ignorados por robots/erro: 0)
+
+
+## https://www.ingresso.com/
+
+- Resultado: **abre_sem_dados_estruturados** (HTTP 200)
+- robots.txt permite: True
+- JSON-LD na página: 0 eventos, 0 lugares
+- **Auto-descoberta:** 0 formatos de link testados; **0 com eventos**
+
+- **Coleta de teste: 0 eventos, 0 lugares** (ignorados por robots/erro: 0)
+
+
+## https://www.bilheteriadigital.com/
+
+- Resultado: **abre_sem_dados_estruturados** (HTTP 200)
+- robots.txt permite: True
+- JSON-LD na página: 0 eventos, 0 lugares
+- **Auto-descoberta:** 0 formatos de link testados; **0 com eventos**
+
+- **Coleta de teste: 0 eventos, 0 lugares** (ignorados por robots/erro: 0)
+
+
+## https://www.timeout.com/sao-paulo
+
+- Resultado: **abre_sem_dados_estruturados** (HTTP 200)
+- robots.txt permite: True
+- JSON-LD na página: 0 eventos, 0 lugares
+- **Auto-descoberta:** 2 formatos de link testados; **0 com eventos**
+
+- **Coleta de teste: 0 eventos, 0 lugares** (ignorados por robots/erro: 0)
+
+
+## https://guia.folha.uol.com.br/
+
+- Resultado: **abre_sem_dados_estruturados** (HTTP 200)
+- robots.txt permite: True
+- JSON-LD na página: 0 eventos, 0 lugares
+- Páginas de evento sondadas: 0/4 com JSON-LD (ex.: )
+- **Auto-descoberta:** 5 formatos de link testados; **0 com eventos**
+
+- **Coleta de teste: 0 eventos, 0 lugares** (ignorados por robots/erro: 0)
+
+
+## https://vejasp.abril.com.br/
+
+- Resultado: **abre_sem_dados_estruturados** (HTTP 200)
+- robots.txt permite: True
+- JSON-LD na página: 0 eventos, 0 lugares
+- **Auto-descoberta:** 8 formatos de link testados; **0 com eventos**
+
+- **Coleta de teste: 0 eventos, 0 lugares** (ignorados por robots/erro: 0)
+
 
