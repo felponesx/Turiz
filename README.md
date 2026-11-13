@@ -74,3 +74,17 @@ Só avaliações **do próprio TURIZ**, enviadas pelo backend do app depois de u
 
 ## Segredos (opcionais)
 `GOOGLE_PLACES_API_KEY`, `EVENTBRITE_TOKEN`, `TICKETMASTER_API_KEY`, `INSTAGRAM_TOKEN`, `INSTAGRAM_USER_ID` em Settings → Secrets → Actions. Sem eles, a fonte correspondente é simplesmente ignorada.
+
+## Bot da Receita (amplia a base de bares e restaurantes)
+`python coletar_receita.py [--arquivos 0,1,...,9]` lê os **dados abertos oficiais da Receita Federal** (CNPJ) e as coordenadas do **IBGE (CNEFE 2022)** e gera `data/lugares_receita.json.gz`: bares, restaurantes e lanchonetes (CNAE 5611-2/01 a 05) **ativos em São Paulo, com nome fantasia**. A coordenada vem do CNEFE por CEP + número (`extra.coordenada_aproximada` = `true` quando só há o centro do CEP). Workflow: `receita.yml` (todo dia 20 e manual).
+
+**Privacidade (regra do projeto): o CNPJ de ninguém é gravado, exibido ou devolvido pela API.**
+- O número do CNPJ existe só na memória, durante a ligação entre os arquivos da Receita, e é descartado. Os registros de saída nem têm esse campo.
+- Não são lidos nem guardados: razão social (em MEI costuma ter o CPF da pessoa), e-mail, telefone (pode ser pessoal) e sócios.
+- **MEIs e empresários individuais ficam de fora** por padrão: muitos funcionam na casa da própria pessoa e o endereço seria o endereço residencial dela.
+- Uma trava (`validar_privacidade`) examina todos os registros antes de gravar e **aborta** se achar padrão de CNPJ, CPF, e-mail ou número longo em qualquer campo.
+- O `fonte_id` é um hash do endereço e do nome (dados públicos), não do CNPJ. Os logs do Actions só mostram contagens.
+
+Limites: "ativo na Receita" não garante que o lugar esteja aberto (pode ser só escritório ou cozinha de delivery) e a coordenada aproximada pode errar algumas centenas de metros. Lugares que já existem no OSM são tratados em `mesclar_com_osm`.
+
+`python sondar_receita.py` (workflow *Sondagem Receita e IBGE*) mostra o formato dos arquivos sem imprimir nenhum dado real.
