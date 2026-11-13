@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-13 17:21",
+ "gerado_em": "2026-11-13 17:28",
  "fontes": [
   {
    "id": "overpass",
@@ -7,11 +7,10 @@
    "url": "https://overpass-api.de/api/status",
    "tipo": "api",
    "nota": "restaurantes e bares do OSM",
-   "status": 502,
-   "bytes": 534,
-   "segundos": 0.7,
-   "content_type": "text/plain",
-   "resultado": "erro_502"
+   "status": null,
+   "resultado": "inacessivel",
+   "detalhe": "ConnectError: [Errno 101] Network is unreachable",
+   "segundos": 50.2
   },
   {
    "id": "nominatim",
@@ -33,21 +32,21 @@
    "nota": "fotos com licença livre",
    "status": 200,
    "bytes": 3860,
-   "segundos": 0.2,
+   "segundos": 0.0,
    "content_type": "application/json; charset=utf-8",
    "resultado": "ok"
   },
   {
    "id": "wikidata",
    "categoria": "lugar",
-   "url": "https://query.wikidata.org/sparql?query=SELECT%201&format=json",
+   "url": "https://query.wikidata.org/sparql?query=SELECT%20%3Fs%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%201&format=json",
    "tipo": "api",
    "nota": "ligações com wikidata/P18",
-   "status": 400,
-   "bytes": 7098,
-   "segundos": 0.2,
-   "content_type": "text/plain",
-   "resultado": "erro_400"
+   "status": 200,
+   "bytes": 188,
+   "segundos": 0.1,
+   "content_type": "application/sparql-results+json;charset=utf-8",
+   "resultado": "ok"
   },
   {
    "id": "cnpj_receita",
@@ -58,7 +57,31 @@
    "status": null,
    "resultado": "inacessivel",
    "detalhe": "ConnectTimeout: timed out",
-   "segundos": 25.4
+   "segundos": 25.3
+  },
+  {
+   "id": "cnpj_receita_novo",
+   "categoria": "dados_abertos",
+   "url": "https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/",
+   "tipo": "arquivo",
+   "nota": "novo endereço dos mesmos dados",
+   "status": 404,
+   "bytes": 5824,
+   "segundos": 2.1,
+   "content_type": "text/html; charset=UTF-8",
+   "resultado": "erro_404"
+  },
+  {
+   "id": "cnpj_brasilapi",
+   "categoria": "dados_abertos",
+   "url": "https://brasilapi.com.br/api/cnpj/v1/00000000000191",
+   "tipo": "api",
+   "nota": "consulta de um CNPJ por vez",
+   "status": 200,
+   "bytes": 21563,
+   "segundos": 0.2,
+   "content_type": "application/json; charset=utf-8",
+   "resultado": "ok"
   },
   {
    "id": "brasilapi_cep",
@@ -68,7 +91,7 @@
    "nota": "CEP -> coordenadas",
    "status": 200,
    "bytes": 282,
-   "segundos": 0.4,
+   "segundos": 0.1,
    "content_type": "application/json; charset=utf-8",
    "resultado": "ok"
   },
@@ -79,8 +102,8 @@
    "tipo": "api",
    "nota": "CKAN da Prefeitura de SP",
    "status": 200,
-   "bytes": 22395,
-   "segundos": 1.1,
+   "bytes": 22457,
+   "segundos": 1.4,
    "content_type": "application/json;charset=utf-8",
    "resultado": "ok"
   },
@@ -92,7 +115,7 @@
    "nota": "extrato OSM completo (alternativa ao Overpass)",
    "status": 200,
    "bytes": 19730,
-   "segundos": 1.0,
+   "segundos": 0.7,
    "content_type": "text/html",
    "resultado": "ok"
   },
@@ -119,13 +142,16 @@
    "tipo": "html",
    "nota": "Secretaria Municipal de Cultura",
    "status": 200,
-   "bytes": 181427,
-   "segundos": 1.2,
+   "bytes": 181432,
+   "segundos": 0.8,
    "content_type": "text/html;charset=UTF-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
    "jsonld_lugares": 0,
    "tem_next_data": false,
+   "detalhes_testados": 0,
+   "detalhes_com_evento": 0,
+   "detalhes_exemplos": [],
    "resultado": "abre_sem_dados_estruturados"
   },
   {
@@ -136,12 +162,15 @@
    "nota": "Theatro Municipal",
    "status": 200,
    "bytes": 483628,
-   "segundos": 1.8,
+   "segundos": 1.4,
    "content_type": "text/html; charset=UTF-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
    "jsonld_lugares": 0,
    "tem_next_data": false,
+   "detalhes_testados": 0,
+   "detalhes_com_evento": 0,
+   "detalhes_exemplos": [],
    "resultado": "abre_sem_dados_estruturados"
   },
   {
@@ -151,14 +180,20 @@
    "tipo": "html",
    "nota": "SPTuris, agenda da cidade",
    "status": 200,
-   "bytes": 323045,
-   "segundos": 7.2,
+   "bytes": 323067,
+   "segundos": 6.6,
    "content_type": "text/html; charset=UTF-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
    "jsonld_lugares": 0,
    "tem_next_data": false,
-   "resultado": "abre_sem_dados_estruturados"
+   "detalhes_testados": 4,
+   "detalhes_com_evento": 4,
+   "detalhes_exemplos": [
+    "https://visitesaopaulo.com/evento/mostra-territorios-vidas-e-futuros-traz-cinema-teatro-e-debate-sobre-os-impactos-da-mineracao-2026/",
+    "https://visitesaopaulo.com/evento/congresso-bodyscience-2026/"
+   ],
+   "resultado": "ok_via_detalhes"
   },
   {
    "id": "sympla",
@@ -167,14 +202,14 @@
    "tipo": "html",
    "nota": "sem API pública de busca",
    "status": 200,
-   "bytes": 431252,
-   "segundos": 0.1,
+   "bytes": 460261,
+   "segundos": 0.2,
    "content_type": "text/html; charset=utf-8",
-   "robots_permite": true,
+   "robots_permite": false,
    "jsonld_eventos": 0,
    "jsonld_lugares": 0,
    "tem_next_data": false,
-   "resultado": "abre_sem_dados_estruturados"
+   "resultado": "robots_proibe"
   },
   {
    "id": "eventbrite",
@@ -184,7 +219,7 @@
    "nota": "sem busca pública pela API",
    "status": 405,
    "bytes": 2543,
-   "segundos": 0.3,
+   "segundos": 0.2,
    "content_type": "text/html; charset=UTF-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
@@ -199,13 +234,16 @@
    "tipo": "html",
    "nota": "cinema/teatro",
    "status": 200,
-   "bytes": 37502,
-   "segundos": 0.3,
+   "bytes": 39089,
+   "segundos": 0.2,
    "content_type": "text/html; charset=utf-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
    "jsonld_lugares": 0,
    "tem_next_data": false,
+   "detalhes_testados": 0,
+   "detalhes_com_evento": 0,
+   "detalhes_exemplos": [],
    "resultado": "abre_sem_dados_estruturados"
   },
   {
@@ -216,7 +254,7 @@
    "nota": "API oficial (chave gratuita)",
    "status": 401,
    "bytes": 150,
-   "segundos": 0.2,
+   "segundos": 0.1,
    "content_type": "application/json",
    "resultado": "precisa_de_chave"
   },
@@ -227,14 +265,20 @@
    "tipo": "html",
    "nota": "shows e festas",
    "status": 200,
-   "bytes": 607537,
-   "segundos": 0.6,
+   "bytes": 607623,
+   "segundos": 0.3,
    "content_type": "text/html; charset=utf-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
    "jsonld_lugares": 0,
    "tem_next_data": false,
-   "resultado": "abre_sem_dados_estruturados"
+   "detalhes_testados": 5,
+   "detalhes_com_evento": 5,
+   "detalhes_exemplos": [
+    "https://www.ticket360.com.br/evento/33890/ingressos-para-gilsons-convida-gilberto-gil",
+    "https://www.ticket360.com.br/evento/34067/ingressos-para-subete-e-mucho-apresenta-braza-baile-citrico-utropico-lunar"
+   ],
+   "resultado": "ok_via_detalhes"
   },
   {
    "id": "bilheteria_digital",
@@ -244,12 +288,15 @@
    "nota": "shows e festas",
    "status": 200,
    "bytes": 184928,
-   "segundos": 0.9,
+   "segundos": 0.7,
    "content_type": "text/html; charset=UTF-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
    "jsonld_lugares": 0,
    "tem_next_data": false,
+   "detalhes_testados": 0,
+   "detalhes_com_evento": 0,
+   "detalhes_exemplos": [],
    "resultado": "abre_sem_dados_estruturados"
   },
   {
@@ -260,12 +307,15 @@
    "nota": "guia",
    "status": 200,
    "bytes": 133785,
-   "segundos": 0.6,
+   "segundos": 0.2,
    "content_type": "text/html; charset=UTF-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
    "jsonld_lugares": 0,
    "tem_next_data": false,
+   "detalhes_testados": 0,
+   "detalhes_com_evento": 0,
+   "detalhes_exemplos": [],
    "resultado": "abre_sem_dados_estruturados"
   },
   {
@@ -276,12 +326,15 @@
    "nota": "guia",
    "status": 200,
    "bytes": 542174,
-   "segundos": 1.5,
+   "segundos": 1.0,
    "content_type": "text/html",
    "robots_permite": true,
    "jsonld_eventos": 0,
    "jsonld_lugares": 0,
    "tem_next_data": false,
+   "detalhes_testados": 4,
+   "detalhes_com_evento": 0,
+   "detalhes_exemplos": [],
    "resultado": "abre_sem_dados_estruturados"
   },
   {
@@ -292,12 +345,15 @@
    "nota": "guia",
    "status": 200,
    "bytes": 319486,
-   "segundos": 1.2,
+   "segundos": 0.8,
    "content_type": "text/html; charset=UTF-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
    "jsonld_lugares": 0,
    "tem_next_data": false,
+   "detalhes_testados": 0,
+   "detalhes_com_evento": 0,
+   "detalhes_exemplos": [],
    "resultado": "abre_sem_dados_estruturados"
   },
   {
@@ -307,8 +363,8 @@
    "tipo": "html",
    "nota": "guia",
    "status": 403,
-   "bytes": 5409,
-   "segundos": 0.3,
+   "bytes": 5430,
+   "segundos": 0.1,
    "content_type": "text/html; charset=UTF-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
@@ -324,7 +380,7 @@
    "nota": "exige app_id aprovado",
    "status": 403,
    "bytes": 111,
-   "segundos": 0.2,
+   "segundos": 0.1,
    "content_type": "application/json",
    "resultado": "precisa_de_chave"
   },
@@ -336,7 +392,7 @@
    "nota": "API só com OAuth",
    "status": 200,
    "bytes": 270878,
-   "segundos": 1.0,
+   "segundos": 1.1,
    "content_type": "text/html; charset=utf-8",
    "robots_permite": true,
    "jsonld_eventos": 11,
@@ -352,9 +408,9 @@
    "nota": "API oficial, exige chave",
    "status": 400,
    "bytes": 45,
-   "segundos": 0.3,
+   "segundos": 0.1,
    "content_type": "",
-   "resultado": "erro_400"
+   "resultado": "precisa_de_chave"
   },
   {
    "id": "tripadvisor_api",
@@ -364,7 +420,7 @@
    "nota": "API oficial, exige chave",
    "status": 401,
    "bytes": 26,
-   "segundos": 0.4,
+   "segundos": 0.1,
    "content_type": "application/json",
    "resultado": "precisa_de_chave"
   },
@@ -375,8 +431,8 @@
    "tipo": "api",
    "nota": "API oficial paga (coletor google já existe)",
    "status": 403,
-   "bytes": 248,
-   "segundos": 0.1,
+   "bytes": 540,
+   "segundos": 0.0,
    "content_type": "application/json; charset=UTF-8",
    "resultado": "precisa_de_chave"
   },
@@ -416,7 +472,7 @@
    "nota": "plataforma de cardápio digital",
    "status": 200,
    "bytes": 3818,
-   "segundos": 0.6,
+   "segundos": 0.3,
    "content_type": "text/html",
    "robots_permite": true,
    "jsonld_eventos": 0,
@@ -431,8 +487,8 @@
    "tipo": "html",
    "nota": "plataforma de cardápio digital",
    "status": 403,
-   "bytes": 4547,
-   "segundos": 0.2,
+   "bytes": 4549,
+   "segundos": 0.1,
    "content_type": "text/html; charset=UTF-8",
    "robots_permite": true,
    "jsonld_eventos": 0,
@@ -448,7 +504,7 @@
    "nota": "plataforma de cardápio digital",
    "status": 200,
    "bytes": 73229,
-   "segundos": 0.5,
+   "segundos": 0.1,
    "content_type": "text/html",
    "robots_permite": true,
    "jsonld_eventos": 0,
