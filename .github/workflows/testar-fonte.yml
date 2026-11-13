@@ -14,6 +14,9 @@ on:
       limite:
         description: "Máximo de páginas de evento a visitar"
         default: "15"
+      cidade:
+        description: "Só eventos desta cidade (vazio = todas)"
+        default: "São Paulo"
 permissions:
   contents: write
 concurrency:
@@ -34,10 +37,11 @@ jobs:
           LISTAGEM: ${{ inputs.listagem }}
           PADRAO: ${{ inputs.padrao_link }}
           LIMITE: ${{ inputs.limite }}
+          CIDADE: ${{ inputs.cidade }}
         run: |
           args=""
           if [ "$LISTAGEM" = "true" ]; then args="--listagem"; fi
-          python testar_fonte.py $URLS $args --padrao "$PADRAO" --limite "$LIMITE"
+          python testar_fonte.py $URLS $args --padrao "$PADRAO" --limite "$LIMITE" --cidade "$CIDADE"
       - name: Commitar resultado
         if: always()
         run: |

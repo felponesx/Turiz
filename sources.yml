@@ -1,7 +1,33 @@
-# Sites extras para raspagem (lê JSON-LD schema.org: Restaurant, BarOrPub, Event).
-# Só adicione sites cujos termos de uso permitam; o coletor respeita robots.txt.
-sites: []
-#  - url: https://exemplo.com.br/agenda
-#    tipo: evento          # evento | restaurante | bar
-#  - url: https://exemplo.com.br/bares-sp
-#    tipo: bar
+# Sites extras para coleta (lê JSON-LD schema.org: Restaurant, BarOrPub, Event).
+# Só ative sites cujos termos de uso permitam; o coletor respeita robots.txt.
+#
+# Opções por site:
+#   url:         página a ler
+#   tipo:        evento | restaurante | bar
+#   ativo:       false = fica listado, mas não é coletado (padrão: true)
+#   cidade:      só mantém eventos desta cidade (ex.: São Paulo); sites nacionais precisam disso
+#   listagem:    true = a página é uma lista sem JSON-LD; segue os links de cada evento
+#   padrao_link: regex do caminho dos links dos eventos (modo listagem), ex.: ^/evento/
+#   limite:      máximo de páginas de evento por execução (padrão 30)
+#   pausa:       segundos entre requisições a este site (padrão 1)
+#
+# Teste uma URL antes de ativar: Actions -> "Testar fonte" (resultado em data/teste_fonte.md).
+sites:
+  # Testado em 2026-11-13: 12 de 12 páginas com JSON-LD (título, data, local, preço). Site de empresa privada: confirme os termos.
+  - url: https://www.ticket360.com.br/
+    tipo: evento
+    cidade: São Paulo
+    listagem: true
+    padrao_link: ^/evento/
+    limite: 40
+    pausa: 2
+    ativo: false
+  # Páginas de evento têm JSON-LD (4 de 4), mas a lista respondeu 429 nos testes: use pausa alta. Turismo da cidade.
+  - url: https://visitesaopaulo.com/eventos/
+    tipo: evento
+    cidade: São Paulo
+    listagem: true
+    padrao_link: ^/evento/
+    limite: 30
+    pausa: 4
+    ativo: false

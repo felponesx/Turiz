@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from app.sources import diagnostico, sites
 
 
-def testar_url(url, listagem, padrao, limite, tipo):
+def testar_url(url, listagem, padrao, limite, tipo, cidade=""):
     client = httpx.Client(timeout=30, headers={"User-Agent": sites.UA}, follow_redirects=True)
     diag = diagnostico.testar({"id": url, "categoria": "evento", "tipo": "html", "url": url}, client)
     linhas = [f"## {url}", "", f"- Resultado: **{diag['resultado']}** (HTTP {diag.get('status')})",
@@ -19,7 +19,8 @@ def testar_url(url, listagem, padrao, limite, tipo):
               f"- JSON-LD na página: {diag.get('jsonld_eventos', 0)} eventos, {diag.get('jsonld_lugares', 0)} lugares"]
     if diag.get("detalhes_testados"):
         linhas.append(f"- Páginas de evento sondadas: {diag['detalhes_com_evento']}/{diag['detalhes_testados']} com JSON-LD (ex.: {', '.join(diag.get('detalhes_exemplos', []))})")
-    cfg = {"sites": [{"url": url, "tipo": tipo, **({"listagem": True, "padrao_link": padrao, "limite": limite} if listagem else {})}]}
+    cfg = {"sites": [{"url": url, "tipo": tipo, "pausa": 2, **({"cidade": cidade} if cidade else {}),
+                      **({"listagem": True, "padrao_link": padrao, "limite": limite} if listagem else {})}]}
     with tempfile.NamedTemporaryFile("w", suffix=".yml", delete=False, encoding="utf-8") as f:
         yaml.safe_dump(cfg, f)
     try:
@@ -46,10 +47,11 @@ def main():
     ap.add_argument("--padrao", default=r"/evento", help="regex do caminho dos links dos eventos (modo listagem)")
     ap.add_argument("--limite", type=int, default=15)
     ap.add_argument("--tipo", default="evento", choices=["evento", "restaurante", "bar"])
+    ap.add_argument("--cidade", default="São Paulo", help="só mantém eventos desta cidade ('' = todas)")
     a = ap.parse_args()
     texto = f"# Teste de fonte\n\nGerado em {datetime.now(timezone.utc):%Y-%m-%d %H:%M} (UTC).\n\n"
     for u in a.urls:
-        texto += testar_url(u, a.listagem, a.padrao, a.limite, a.tipo) + "\n"
+        texto += testar_url(u, a.listagem, a.padrao, a.limite, a.tipo, a.cidade) + "\n"
     open("data/teste_fonte.md", "w", encoding="utf-8").write(texto)
     print(texto)
 

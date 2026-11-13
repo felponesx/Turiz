@@ -144,6 +144,37 @@ def extrair(html: str, url: str, tipo_padrao: str):
     return lugares, eventos
 
 
+def _norm(t: str) -> str:
+    import unicodedata
+    return unicodedata.normalize("NFKD", t or "").encode("ascii", "ignore").decode().lower()
+
+
+def da_cidade(ev: dict, cidade: str) -> bool:
+    """Evento na cidade pedida? Usa o texto do endereço (que traz a localidade) ou, sem ele, as coordenadas."""
+    if not cidade:
+        return True
+    if ev.get("endereco"):
+        return _norm(cidade) in _norm(ev["endereco"])
+    if ev.get("lat") is not None and ev.get("lon") is not None:
+        return -24.01 <= ev["lat"] <= -23.35 and -46.83 <= ev["lon"] <= -46.36 if _norm(cidade) == "sao paulo" else False
+    return False
+
+
+def obter(client, url, tentativas=2):
+    """GET que respeita 429/503: espera o Retry-After (até 30 s) e tenta de novo uma vez."""
+    for i in range(tentativas):
+        r = client.get(url)
+        if r.status_code in (429, 503) and i + 1 < tentativas:
+            try:
+                espera = min(30, int(r.headers.get("retry-after", "10")))
+            except ValueError:
+                espera = 10
+            time.sleep(espera)
+            continue
+        return r
+    return r
+
+
 def links_listagem(html: str, base_url: str, padrao: str, limite: int = 30) -> list[str]:
     """Links (mesmo site) de uma página de listagem que casam com `padrao` (regex no caminho). Sem duplicados."""
     rx = re.compile(padrao)
@@ -166,27 +197,29 @@ def coletar(config_path="sources.yml", client=None, pausa=1.0):
     cfg = yaml.safe_load(open(config_path, encoding="utf-8")) or {}
     lugares, eventos, ignorados = [], [], []
     for s in cfg.get("sites") or []:
-        url = s["url"]
+        if s.get("ativo", True) is False:
+            continue
+        url, cidade, esp = s["url"], s.get("cidade", ""), float(s.get("pausa", pausa))
         if not permitido(url, client):
             ignorados.append(url)
             continue
-        r = client.get(url)
+        r = obter(client, url)
         r.raise_for_status()
         l, e = extrair(r.text, url, s.get("tipo", "evento"))
         lugares += l
-        eventos += e
+        eventos += [x for x in e if da_cidade(x, cidade)]
         if s.get("listagem"):  # a lista não tem JSON-LD: segue os links das páginas de cada evento
             for u in links_listagem(r.text, str(r.url), s["padrao_link"], int(s.get("limite", 30))):
                 if not permitido(u, client):
                     ignorados.append(u)
                     continue
                 try:
-                    rd = client.get(u)
+                    rd = obter(client, u)
                     rd.raise_for_status()
                 except httpx.HTTPError:
                     continue
                 l, e = extrair(rd.text, u, s.get("tipo", "evento"))
                 lugares += l
-                eventos += e
-                time.sleep(pausa)
+                eventos += [x for x in e if da_cidade(x, cidade)]
+                time.sleep(esp)
     return lugares, eventos, ignorados

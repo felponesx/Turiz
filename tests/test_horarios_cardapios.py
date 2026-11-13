@@ -119,3 +119,41 @@ def test_listagem_segue_links_de_eventos():
     html = '<a href="/evento/show-1">a</a><a href="/evento/show-2?id=7&utm_source=x">b</a><a href="/sobre">c</a><a href="https://outro.com/evento/z">d</a><a href="/evento/show-1">dup</a>'
     assert sites.links_listagem(html, "https://s.com/lista", r"^/evento/") == ["https://s.com/evento/show-1", "https://s.com/evento/show-2?id=7"]
     assert sites.links_listagem(html, "https://s.com/lista", r"^/evento/", limite=1) == ["https://s.com/evento/show-1"]
+
+
+def test_filtro_de_cidade_e_obter_com_retry(monkeypatch):
+    import httpx
+    from app.sources import sites
+    sp = {"endereco": "Rua A, 1, São Paulo", "lat": None, "lon": None}
+    assert sites.da_cidade(sp, "São Paulo") and sites.da_cidade(sp, "sao paulo")
+    assert not sites.da_cidade({"endereco": "Av. B, Rio de Janeiro"}, "São Paulo")
+    assert sites.da_cidade({"endereco": "", "lat": -23.55, "lon": -46.63}, "São Paulo")
+    assert not sites.da_cidade({"endereco": "", "lat": -22.9, "lon": -43.2}, "São Paulo")   # Rio pelas coordenadas
+    assert not sites.da_cidade({"endereco": "", "lat": None, "lon": None}, "São Paulo")      # sem informação: não arrisca
+    assert sites.da_cidade({"endereco": "qualquer"}, "")                                      # sem filtro: aceita tudo
+    chamadas = []
+    def h(req):
+        chamadas.append(1)
+        return httpx.Response(429, headers={"retry-after": "1"}) if len(chamadas) == 1 else httpx.Response(200, text="ok")
+    monkeypatch.setattr(sites.time, "sleep", lambda s: None)
+    r = sites.obter(httpx.Client(transport=httpx.MockTransport(h)), "https://x.com/")
+    assert r.status_code == 200 and len(chamadas) == 2
+
+
+def test_coletar_sites_respeita_ativo_cidade_e_listagem(tmp_path, monkeypatch):
+    import httpx
+    from app.sources import sites
+    monkeypatch.setattr(sites.time, "sleep", lambda s: None)
+    ev = lambda nome, cid: ('<script type="application/ld+json">{"@type":"Event","name":"%s","startDate":"2026-12-01T20:00:00-03:00",'
+                            '"location":{"name":"L","address":{"streetAddress":"Rua 1","addressLocality":"%s"}}}</script>' % (nome, cid))
+    def h(req):
+        if req.url.path == "/robots.txt":
+            return httpx.Response(200, text="")
+        if req.url.path == "/lista":
+            return httpx.Response(200, text='<a href="/evento/a">A</a><a href="/evento/b">B</a>')
+        return httpx.Response(200, text=ev("Evento SP" if req.url.path.endswith("a") else "Evento Rio", "São Paulo" if req.url.path.endswith("a") else "Rio de Janeiro"))
+    cfg = tmp_path / "s.yml"
+    cfg.write_text("sites:\n  - {url: 'https://s.com/lista', listagem: true, padrao_link: '^/evento/', cidade: 'São Paulo'}\n"
+                   "  - {url: 'https://off.com/lista', listagem: true, padrao_link: '^/evento/', ativo: false}\n")
+    l, e, ign = sites.coletar(str(cfg), client=httpx.Client(transport=httpx.MockTransport(h), follow_redirects=True), pausa=0)
+    assert [x["titulo"] for x in e] == ["Evento SP"] and ign == []      # Rio filtrado, site desativado nem visitado
