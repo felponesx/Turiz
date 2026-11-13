@@ -1,0 +1,29 @@
+name: Sondagem Receita e IBGE
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: receita
+  cancel-in-progress: false
+jobs:
+  sondar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Sondar (sem imprimir linhas reais)
+        run: python sondar_receita.py
+      - name: Commitar resultado
+        if: always()
+        run: |
+          git config user.name "receita-bot"
+          git config user.email "receita-bot@users.noreply.github.com"
+          git add data/receita_sondagem.md
+          git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
+          git commit -m "sondagem: receita e ibge $(date -u +%F)"
+          git pull --rebase origin main
+          git push
