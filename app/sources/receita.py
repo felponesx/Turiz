@@ -171,7 +171,9 @@ def validar_privacidade(registros: list[dict]) -> None:
         achou = chaves_proibidas & {k.lower() for k in r} | chaves_proibidas & {k.lower() for k in (r.get("extra") or {})}
         if achou:
             raise ValueError(f"campo proibido no registro {r.get('fonte_id')}: {sorted(achou)}")
-        texto = " ".join(str(v) for v in r.values() if not isinstance(v, (dict, float, int))) + " " + " ".join(str(v) for v in (r.get("extra") or {}).values())
+        # `fonte_id` é um hash hexadecimal do endereço (pode conter 10 dígitos seguidos por acaso): não entra na busca por números
+        texto = " ".join(str(v) for k, v in r.items() if k not in ("fonte_id", "fonte") and not isinstance(v, (dict, float, int))) \
+            + " " + " ".join(str(v) for v in (r.get("extra") or {}).values())
         for nome, rx in _PADROES:
             if nome == "número longo":
                 texto_sem_cep = re.sub(r"\d{5}-\d{3}", "", texto)

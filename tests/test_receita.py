@@ -137,3 +137,11 @@ def test_ultima_pasta_le_o_webdav_da_receita():
         assert req.method == "PROPFIND" and req.headers["authorization"].startswith("Basic ")
         return httpx.Response(207, content=xml.encode())
     assert coletar_receita.ultima_pasta(httpx.Client(transport=httpx.MockTransport(h))) == "2026-10"
+
+
+def test_hash_com_muitos_digitos_nao_e_falso_positivo_mas_documento_no_nome_continua_barrado():
+    base = {"fonte": "receita", "fonte_id": "0214252790e1475c", "tipo": "bar", "nome": "Bar", "endereco": "Rua A, 1", "bairro": "Centro",
+            "cep": "01310-100", "extra": {"inicio_atividade": "2019"}}
+    receita.validar_privacidade([base])                                            # id com 10 dígitos seguidos: ok
+    with pytest.raises(ValueError):
+        receita.validar_privacidade([{**base, "nome": "Bar 0214252790"}])         # número longo no NOME: barrado
