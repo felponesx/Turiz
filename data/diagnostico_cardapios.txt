@@ -1,0 +1,1 @@
+DRY-RUN {'visitados': 40, 'bloqueados_robots': 32, 'falhas': 3, 'ignorados_rede_social': 5, 'com_cardapio': 19} | plataformas: {'ifood': 5, 'outro': 10, 'pdf': 4, 'proprio': 11} | com itens (JSON-LD): 0
