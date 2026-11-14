@@ -56,6 +56,20 @@ class Evento(Base):
     preco_min: Mapped[float | None] = mapped_column(Float, nullable=True)
     gratuito: Mapped[bool] = mapped_column(Boolean, default=False)
     ingresso_url: Mapped[str] = mapped_column(String(600), default="")
+    # --- sistema de eventos v2 (migração 0002): a linha continua sendo o evento "canônico"; outras fontes viram links ---
+    nome_norm: Mapped[str] = mapped_column(String(400), default="", index=True)
+    status: Mapped[str] = mapped_column(String(20), default="agendado", index=True)  # agendado|cancelado|adiado|remarcado|encerrado|desconhecido
+    fuso: Mapped[str] = mapped_column(String(60), default="")
+    data_incerta: Mapped[bool] = mapped_column(Boolean, default=False)  # data a anunciar/definir (TBA/TBD)
+    preco_max: Mapped[float | None] = mapped_column(Float, nullable=True)
+    moeda: Mapped[str] = mapped_column(String(8), default="")
+    classificacao_indicativa: Mapped[str] = mapped_column(String(40), default="")
+    acessibilidade: Mapped[str] = mapped_column(Text, default="")
+    url_oficial: Mapped[str] = mapped_column(String(600), default="")
+    local_id: Mapped[int | None] = mapped_column(index=True, nullable=True)       # -> evento_locais.id
+    organizador_id: Mapped[int | None] = mapped_column(index=True, nullable=True)  # -> evento_organizadores.id
+    coletado_em: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    visto_em: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)  # última vez que alguma fonte o devolveu
     extra: Mapped[dict] = mapped_column(JSON, default=dict)
     atualizado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=agora, onupdate=agora)
 
@@ -137,3 +151,6 @@ class Avaliacao(Base):
     validada: Mapped[bool] = mapped_column(Boolean, default=False)  # experiência confirmada por nota fiscal
     status: Mapped[str] = mapped_column(String(20), index=True, default="pendente")  # publicada | pendente | rejeitada
     criado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=agora)
+
+
+from .eventos import modelos as _modelos_eventos  # noqa: E402,F401  (registra as tabelas evento_* no metadata)
