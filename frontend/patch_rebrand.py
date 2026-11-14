@@ -30,12 +30,12 @@ h1,h2,h3,.top h1{font-family:var(--font-display);font-weight:600;letter-spacing:
 .cat .c{width:52px;height:52px}
 .ind{background:var(--brand-soft)!important;box-shadow:none!important}
 .tabbar button[aria-current="page"]{background:none;color:var(--brand);box-shadow:none}
-.tabbar{left:0;right:0;transform:none;bottom:0;width:auto;border-radius:0;border:0;border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));background:var(--surface)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.tabbar{background:var(--surface)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border:1px solid var(--line);border-radius:28px;box-shadow:0 6px 20px rgba(20,30,30,.08)!important}
+.ind{border-radius:22px}
 .hero .iconbtn{background:var(--surface);color:var(--ink);border:1px solid var(--line);-webkit-backdrop-filter:none;backdrop-filter:none}
 .hero .iconbtn[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
 .heart{background:var(--surface);color:var(--ink);border:1px solid var(--line);-webkit-backdrop-filter:none;backdrop-filter:none}
 .sheet-card{border-radius:18px 18px 0 0;margin-top:-18px}
-.cta-bar{bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 .rbadge{background:var(--surface);border:1px solid var(--line)}
 .dchip{display:none}
 .switch[aria-checked="true"]{background:var(--brand)}
