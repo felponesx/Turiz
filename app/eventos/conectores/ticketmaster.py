@@ -209,7 +209,7 @@ class Ticketmaster(Conector):
         except CredencialInvalida:
             raise
         except ErroFonte as exc:
-            raise ErroFonte(redigir(str(exc), (chave,)))
+            raise type(exc)(redigir(str(exc), (chave,)))
 
     def _janela(self, ctx, req, chave, params, max_req, piso_quota):
         """Coleta todas as páginas de uma janela de datas; se houver mais de 1000 itens, divide a janela ao meio."""
