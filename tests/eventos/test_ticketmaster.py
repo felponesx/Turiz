@@ -216,3 +216,53 @@ def test_disponibilidade_brasil_com_dados_simulados(db, monkeypatch):
     cidades = {l.cidade for l in db.scalars(select(EventoLocal))}
     assert len(db.scalars(select(Evento)).all()) == 3
     assert {"São Paulo", "Rio de Janeiro", "Lisboa"} <= cidades
+
+
+def test_protecao_da_chave_em_logs_banco_snapshot_e_arquivos(db, monkeypatch, tmp_path):
+    """A chave (valor de teste) não pode aparecer em: log de coleta, saúde da fonte, histórico, snapshot, API pública e arquivos versionados."""
+    import gzip, subprocess
+    from app.eventos.agendador import executar_fonte
+    from app.eventos.modelos import EventoColetaLog, EventoFonte
+    from app.eventos import snapshot
+    monkeypatch.setenv("TICKETMASTER_API_KEY", CHAVE)
+    def h(r):
+        if int(r.url.params.get("page", 0)) == 0 and r.url.params.get("city"):
+            raise httpx.ConnectError(f"falha em {r.url}")           # mensagem de erro carregando a URL com ?apikey=...
+        return httpx.Response(200, json=pagina([evento("K1")]))
+    f = EventoFonte(slug="tmk", nome="tm", conector="ticketmaster", config={"consultas": [{"nome": "br", "countryCode": "BR"}, {"nome": "sp", "countryCode": "BR", "city": "São Paulo"}]})
+    db.add(f); db.commit()
+    cli = httpx.Client(transport=httpx.MockTransport(h))
+    st = Estatisticas()
+    req = Requisitor(client=cli, intervalo=0, espera_base=0, espera_max=0, stats=st)
+    log = executar_fonte(db, f, requisitor=req)
+    assert log.status == "erro" and CHAVE not in log.mensagem and CHAVE not in (f.ultimo_erro or "")
+    snapshot.exportar(db, str(tmp_path))
+    assert CHAVE.encode() not in gzip.open(tmp_path / snapshot.ARQUIVO).read()
+    from sqlalchemy import select as sel
+    assert all(CHAVE not in (l.mensagem or "") for l in db.scalars(sel(EventoColetaLog)))
+    from fastapi.testclient import TestClient
+    from app.main import app
+    c = TestClient(app)
+    for rota in ("/eventos", "/eventos/categorias", "/health"):
+        assert CHAVE not in c.get(rota).text
+    arquivos = subprocess.run(["git", "ls-files"], capture_output=True, text=True).stdout.split()
+    for a in arquivos:
+        if a.endswith((".png", ".jpg", ".gz", ".ico")) or a.startswith("tests/"):   # os testes citam a chave de teste de propósito
+            continue
+        try:
+            assert CHAVE not in open(a, encoding="utf-8", errors="ignore").read(), a
+        except IsADirectoryError:
+            pass
+
+
+def test_nenhum_segredo_versionado():
+    """.env.example não traz valores; nenhum arquivo versionado tem 'apikey=<valor longo>'."""
+    import re, subprocess
+    env = open(".env.example", encoding="utf-8").read()
+    m = re.search(r"^TICKETMASTER_API_KEY=(.*)$", env, re.M)
+    assert m and m.group(1).split("#")[0].strip() == ""
+    suspeito = re.compile(r"(?i)(api[_-]?key|apikey)\s*[=:]\s*['\"]?[A-Za-z0-9]{24,}")
+    for a in subprocess.run(["git", "ls-files"], capture_output=True, text=True).stdout.split():
+        if a.endswith((".png", ".jpg", ".gz", ".ico", ".html")) or a.startswith("tests/"):
+            continue
+        assert not suspeito.search(open(a, encoding="utf-8", errors="ignore").read()), a

@@ -73,6 +73,11 @@ def test_filtros_cidade_pais_categoria_preco_data(dados):
     assert get({"incluir_encerrados": True}, dados)["total"] >= get({}, dados)["total"] + 1
 
 
+def test_datas_saem_com_fuso(dados):
+    e = get({}, dados)["itens"][0]
+    assert e["inicio"].endswith(("Z", "+00:00")), e["inicio"]      # sem fuso o cliente leria o horário errado
+
+
 def test_item_traz_local_categoria_imagem_real_e_fonte(dados):
     e = next(x for x in get({}, dados)["itens"] if x["titulo"].startswith("Show de Rock"))
     assert e["local"]["cidade"] == "São Paulo" and e["imagem"]["url"] == "https://img.exemplo/1.jpg"

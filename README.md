@@ -61,10 +61,38 @@ Respeita robots.txt, visita só a página inicial e **não** segue Instagram/Fac
 ## Horários
 `GET /lugares/{id}` devolve `horario_estruturado` (dias e faixas) e `aberto_agora`, a partir do `opening_hours` do OSM. Só interpreta regras simples (dias, faixas, `off`, `24/7`, `PH`); se for complexo demais devolve `null` e o texto bruto fica em `horario`. `GET /lugares?aberto_agora=true` filtra quem está aberto (fuso America/Sao_Paulo).
 
-## Eventos
-- `sites`: JSON-LD (schema.org `Event`) das URLs de `sources.yml`, agora com preço, categoria, imagem e link de ingresso;
-- `ticketmaster` (opcional): API oficial, exige `TICKETMASTER_API_KEY`; só roda se você incluir a fonte (`python coletar.py ticketmaster`);
-- cada evento é **vinculado ao restaurante/bar** onde acontece (`app/sources/vincular.py`, por distância e nome; na dúvida não liga). `GET /lugares/{id}/eventos`.
+## Eventos (sistema inteligente de coleta)
+
+Eventos reais de várias fontes, num só catálogo, sem inventar nada. Arquitetura:
+
+- **Conectores independentes** (`app/eventos/conectores/`): `ticketmaster` (Discovery API v2), `jsonld` (sites com schema.org, respeita robots.txt),
+  `feed_json`, `feed_xml`, `rss`, `planilha` (CSV/XLSX de organizadores) e `navegador` (Playwright, só para páginas que dependem de JavaScript;
+  não contorna CAPTCHA/login/paywall: ao detectar, a fonte vira "bloqueada"). Uma fonte com erro não derruba as outras.
+- **Cadastro de fontes** em `fontes_eventos.yml` (e `PUT /admin/eventos/fontes`, protegido por X-API-Key): intervalo, prioridade, autorização,
+  saúde (`ok | erro | aguardando_credencial | bloqueada | desativada`). Organizadores/parceiros entram como uma entrada `feed_*`/`planilha`.
+- **Banco** versionado com Alembic (`migracoes/`, aplicado no startup e em todos os scripts): `eventos` (evento canônico) + `evento_fontes`,
+  `evento_fonte_links`, `evento_locais`, `evento_imagens`, `evento_artistas`, `evento_organizadores`, `evento_categorias`, `evento_atualizacoes`
+  (histórico), `evento_coletas_log`, `evento_duplicatas` (fila de revisão). Índices por nome, categoria, local e data.
+- **Duplicidade**: nome parecido não basta (precisa da mesma data e do mesmo local); o mesmo evento em várias fontes vira UM evento com vários links;
+  dúvidas vão para `GET /admin/eventos/duplicatas` (resolver: `POST .../resolver?decisao=mesmo|distinto`). Nada é apagado: cancelados, adiados e
+  encerrados ficam com status e histórico.
+- **Categorias do TURIZ** (Música e entretenimento · Gastronomia · Cultura e lazer, com subcategorias; um evento pode ter várias): `app/eventos/taxonomia.py`.
+- **API pública**: `GET /eventos` (filtros: `q, categoria, cidade, estado, pais, data_de, data_ate, preco_max, gratuito, tipo_local, local, lugar_id, fonte, com_imagem, ordem`),
+  `GET /eventos/{id}`, `GET /eventos/categorias`, `GET /eventos/busca?q=shows hoje em São Paulo` (linguagem natural), `GET /lugares/{id}/eventos`.
+  Eventos vencidos nunca aparecem como futuros; limite de requisições por IP.
+- **Execução**: `python coletar_eventos.py sincronizar | rodar [--fonte SLUG] [--forcar] | fontes | duplicatas | validar-ticketmaster`.
+  Workflow "Coleta de eventos" (a cada 6 h; cada fonte só roda quando vence o intervalo). Snapshot em `data/eventos_v2.json.gz`.
+
+### Ticketmaster
+Chave **somente** na variável de ambiente `TICKETMASTER_API_KEY` (GitHub: Settings → Secrets → Actions). Sem ela, a fonte fica `aguardando_credencial`.
+A chave nunca vai ao front, às respostas da API, aos logs ou ao banco (há testes para isso). Só parâmetros documentados da Discovery API v2 são usados
+(`geoPoint` em vez do `latlong` obsoleto; paginação limitada a size×page < 1000, com divisão da janela de datas; 5 req/s; reação a 429).
+**A cobertura no Brasil só é conhecida com uma consulta real**: rode o workflow "Coleta de eventos" com "validar_ticketmaster" (ou
+`python coletar_eventos.py validar-ticketmaster`) para ver quantos eventos existem no Brasil e em São Paulo.
+
+### Testes
+`pytest tests/eventos` (respostas da Ticketmaster SIMULADAS com `httpx.MockTransport`: provam o código, não a API real). Front: `frontend/teste_eventos_front.js`
+(Playwright, mobile e desktop). `frontend/build_api_eventos.py` embute os eventos reais do snapshot no protótipo.
 
 ## Avaliações
 Só avaliações **do próprio TURIZ**, enviadas pelo backend do app depois de uma experiência (`POST /avaliacoes`): três notas (comida, ambiente, atendimento), uma por nota fiscal; só aparecem `publicada`s e, por padrão, só as `validada`s. A tabela **não** é exportada para `data/` (repositório público) e a API nunca devolve o autor. Não guardamos notas de terceiros (Google, TripAdvisor, Foursquare...): os termos desses serviços costumam proibir guardar e republicar.

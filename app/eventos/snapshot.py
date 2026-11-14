@@ -3,7 +3,7 @@ O banco é reconstruível a partir daqui (snapshot-first). Só é restaurado em 
 import gzip
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 from sqlalchemy import DateTime, func, select
 from sqlalchemy.orm import Session
 from ..models import Evento
@@ -18,8 +18,13 @@ TABELAS = [("fontes", EventoFonte), ("locais", EventoLocal), ("organizadores", E
 LIMITE_LOG = 1000
 
 
+def _iso(v: datetime) -> str:
+    """SQLite devolve datas sem fuso; nós sempre gravamos em UTC, então o snapshot declara o UTC explicitamente."""
+    return (v if v.tzinfo else v.replace(tzinfo=timezone.utc)).isoformat()
+
+
 def _linha(o):
-    return {c.name: (v.isoformat() if isinstance(v := getattr(o, c.name), datetime) else v) for c in o.__table__.columns}
+    return {c.name: (_iso(v) if isinstance(v := getattr(o, c.name), datetime) else v) for c in o.__table__.columns}
 
 
 def exportar(db: Session, pasta: str = "data") -> dict:

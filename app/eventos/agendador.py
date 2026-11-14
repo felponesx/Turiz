@@ -113,6 +113,8 @@ def executar_devidas(db: Session, agora: datetime | None = None, apenas: list[st
     for f in db.scalars(select(EventoFonte).order_by(EventoFonte.prioridade.desc(), EventoFonte.slug)).all():
         if apenas and f.slug not in apenas:
             continue
+        if not f.ativo and not apenas:             # desativada só roda se for pedida pelo nome
+            continue
         if not forcar and not esta_devida(f, agora):
             continue
         logs.append(executar_fonte(db, f, client=client, limite=limite))

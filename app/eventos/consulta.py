@@ -99,6 +99,11 @@ def ordenar(st, ordem: str):
     return st.order_by(Evento.inicio.is_(None), Evento.inicio, Evento.id)
 
 
+def _utc(d):
+    """Datas guardadas em UTC; bancos sem fuso (SQLite) as devolvem 'ingênuas'. O cliente precisa do fuso para exibir no horário certo."""
+    return d if d is None or d.tzinfo else d.replace(tzinfo=timezone.utc)
+
+
 def serializar(db: Session, eventos: list[Evento], completo: bool = False) -> list[dict]:
     if not eventos:
         return []
@@ -126,7 +131,7 @@ def serializar(db: Session, eventos: list[Evento], completo: bool = False) -> li
     saida = []
     for e in eventos:
         L = locais.get(e.local_id)
-        d = {"id": e.id, "titulo": e.titulo, "descricao": e.descricao if completo else (e.descricao or "")[:300], "inicio": e.inicio, "fim": e.fim, "fuso": e.fuso,
+        d = {"id": e.id, "titulo": e.titulo, "descricao": e.descricao if completo else (e.descricao or "")[:300], "inicio": _utc(e.inicio), "fim": _utc(e.fim), "fuso": e.fuso,
              "status": e.status, "data_incerta": e.data_incerta,
              "local": {"nome": (L.nome if L else "") or e.local_nome, "endereco": (L.endereco if L else "") or e.endereco, "cidade": L.cidade if L else "", "estado": L.estado if L else "",
                        "pais": L.pais if L else "", "lat": (L.lat if L and L.lat is not None else e.lat), "lon": (L.lon if L and L.lon is not None else e.lon)},
@@ -137,7 +142,7 @@ def serializar(db: Session, eventos: list[Evento], completo: bool = False) -> li
         if completo:
             o = orgs.get(e.organizador_id)
             d.update(imagens=imgs.get(e.id, []), organizador={"nome": o.nome, "tipo": o.tipo, "url": o.url} if o else None, classificacao_indicativa=e.classificacao_indicativa,
-                     acessibilidade=e.acessibilidade, atualizado_em=e.atualizado_em, visto_em=e.visto_em)
+                     acessibilidade=e.acessibilidade, atualizado_em=_utc(e.atualizado_em), visto_em=_utc(e.visto_em))
         saida.append(d)
     return saida
 
