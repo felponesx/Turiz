@@ -28,7 +28,7 @@ def main():
     ap.add_argument("--limite-sites", type=int, default=None)
     ap.add_argument("--max-verificacoes", type=int, default=150, help="limite de consultas à API oficial por execução")
     a = ap.parse_args()
-    Base.metadata.create_all(engine)
+    __import__("app.migrar", fromlist=["x"]).upgrade_head()
     restaurar()
     token, ig_id = os.getenv("INSTAGRAM_TOKEN"), os.getenv("INSTAGRAM_USER_ID")
     with SessionLocal() as db:

@@ -24,7 +24,7 @@ def main():
     ap.add_argument("fontes", nargs="+", choices=["commons", "site"])
     ap.add_argument("--limite-sites", type=int, default=None, help="máximo de sites a visitar (teste)")
     a = ap.parse_args()
-    Base.metadata.create_all(engine)
+    __import__("app.migrar", fromlist=["x"]).upgrade_head()
     restaurar()  # garante lugares e imagens atuais no banco
     falhas = []
     with SessionLocal() as db:

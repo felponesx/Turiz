@@ -337,3 +337,38 @@ def ciclo_de_vida(db: Session, agora: datetime | None = None) -> dict:
             n += 1
     db.commit()
     return {"encerrados": n}
+
+
+def mesclar_eventos(db: Session, mantido_id: int, absorvido_id: int) -> None:
+    """Decisão humana: `absorvido` é o mesmo evento que `mantido`. Move links/imagens/artistas/categorias e preenche lacunas;
+    o registro absorvido NÃO é apagado (fica com status 'mesclado', fora das listagens, e o histórico registra a decisão)."""
+    a, b = db.get(Evento, mantido_id), db.get(Evento, absorvido_id)
+    if a is None or b is None or a.id == b.id:
+        raise ValueError("eventos inválidos para mesclagem")
+    for L in db.scalars(select(EventoFonteLink).where(EventoFonteLink.evento_id == b.id)):
+        L.evento_id = a.id
+    tem_img = {i.url for i in db.scalars(select(EventoImagem).where(EventoImagem.evento_id == a.id))}
+    for i in db.scalars(select(EventoImagem).where(EventoImagem.evento_id == b.id)):
+        if i.url in tem_img:
+            db.delete(i)                       # duplicata exata da mesma URL (restrição única); a URL continua no evento mantido
+        else:
+            i.evento_id = a.id
+    tem_art = {l.artista_id for l in db.scalars(select(EventoArtistaLink).where(EventoArtistaLink.evento_id == a.id))}
+    for l in db.scalars(select(EventoArtistaLink).where(EventoArtistaLink.evento_id == b.id)):
+        if l.artista_id in tem_art:
+            db.delete(l)
+        else:
+            l.evento_id = a.id
+    tem_cat = {l.categoria_id for l in db.scalars(select(EventoCategoriaLink).where(EventoCategoriaLink.evento_id == a.id))}
+    for l in db.scalars(select(EventoCategoriaLink).where(EventoCategoriaLink.evento_id == b.id)):
+        if l.categoria_id in tem_cat:
+            db.delete(l)
+        else:
+            l.evento_id, l.primaria = a.id, False
+    for campo in ("descricao", "imagem_url", "ingresso_url", "url", "local_id", "organizador_id", "classificacao_indicativa", "acessibilidade", "preco_min", "preco_max", "moeda"):
+        if not getattr(a, campo) and getattr(b, campo):
+            setattr(a, campo, getattr(b, campo))
+    b.status = "mesclado"
+    b.extra = {**(b.extra or {}), "mesclado_em_evento_id": a.id}
+    _registrar(db, a, "revisao", "mesclado", "evento", "", f"evento {b.id} incorporado por decisão humana")
+    db.flush()

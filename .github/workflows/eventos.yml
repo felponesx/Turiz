@@ -1,0 +1,53 @@
+name: Coleta de eventos
+on:
+  schedule:
+    - cron: "17 */6 * * *"      # a cada 6 h; cada fonte só roda quando vence o intervalo configurado em fontes_eventos.yml
+  workflow_dispatch:
+    inputs:
+      fontes:
+        description: "Fontes (slugs separados por espaço; vazio = todas as devidas)"
+        default: ""
+      forcar:
+        description: "Ignorar o intervalo e rodar agora"
+        type: boolean
+        default: false
+      validar_ticketmaster:
+        description: "Consulta real mínima à Ticketmaster (precisa do secret TICKETMASTER_API_KEY)"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
+jobs:
+  eventos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Restaurar banco a partir do snapshot
+        run: python restaurar.py
+      - name: Validar credencial Ticketmaster (opcional)
+        if: ${{ inputs.validar_ticketmaster }}
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+        run: python coletar_eventos.py validar-ticketmaster
+      - name: Coletar eventos
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+        run: |
+          args=""
+          if [ -n "${{ inputs.fontes }}" ]; then args="--fonte ${{ inputs.fontes }}"; fi
+          if [ "${{ inputs.forcar }}" = "true" ]; then args="$args --forcar"; fi
+          python coletar_eventos.py rodar $args
+      - name: Commitar snapshot
+        run: |
+          git config user.name "coleta-bot"
+          git config user.email "coleta-bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "dados: eventos $(date -u +%F-%H%M)"
+          git pull --rebase -q && git push

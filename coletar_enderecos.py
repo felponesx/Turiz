@@ -17,7 +17,7 @@ def main():
     ap.add_argument("--max-minutos", type=float, default=150)
     ap.add_argument("--limite", type=int, default=None, help="máximo de lugares (teste)")
     a = ap.parse_args()
-    Base.metadata.create_all(engine)
+    __import__("app.migrar", fromlist=["x"]).upgrade_head()
     restaurar()
     fim = time.time() + a.max_minutos * 60
     cli = enderecos.novo_cliente()

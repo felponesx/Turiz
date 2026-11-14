@@ -11,7 +11,8 @@ from pydantic import BaseModel, Field
 from .models import Avaliacao, Cardapio, Evento, Imagem, Lugar, RedeSocial
 from .sources import horarios as hor
 
-Base.metadata.create_all(engine)
+from .migrar import upgrade_head
+upgrade_head()          # esquema versionado (Alembic); bancos antigos são marcados e atualizados sem perder dados
 app = FastAPI(title="Turiz API", description="Restaurantes, bares e eventos de São Paulo")
 
 
@@ -202,22 +203,13 @@ def redes_do_lugar(lugar_id: int, db: Session = Depends(get_db)):
     return [{c.name: getattr(r, c.name) for c in RedeSocial.__table__.columns} for r in db.scalars(st)]
 
 
-@app.get("/eventos")
-def eventos(q: str | None = None, a_partir_de: datetime | None = None, fonte: str | None = None,
-            limit: int = Query(50, le=500), offset: int = 0, db: Session = Depends(get_db)):
-    st = select(Evento)
-    if q: st = st.where(Evento.titulo.ilike(f"%{q}%"))
-    st = st.where(Evento.inicio >= (a_partir_de or datetime.now(timezone.utc)))
-    if fonte: st = st.where(Evento.fonte == fonte)
-    total = db.scalar(select(func.count()).select_from(st.subquery()))
-    itens = db.scalars(st.order_by(Evento.inicio).limit(limit).offset(offset)).all()
-    return {"total": total, "itens": [evento_dict(i) for i in itens]}
-
-
 @app.post("/ingest/lugares", dependencies=[Depends(exigir_chave)])
 def ingest_lugares(registros: list[dict], db: Session = Depends(get_db)):
     """Permite que os bots enviem lugares já normalizados."""
     return ingest.upsert(db, Lugar, registros)
 
+
+from .eventos.api import criar_router
+app.include_router(criar_router(exigir_chave))
 
 app.mount("/", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static"), html=True), name="static")

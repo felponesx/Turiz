@@ -26,5 +26,6 @@ def upgrade_head() -> None:
         atual = MigrationContext.configure(c).get_current_revision()
         tabelas = set(inspect(c).get_table_names())
     if atual is None and "lugares" in tabelas:
-        command.stamp(cfg, "0001")   # banco criado antes das migrações
+        # banco criado antes das migrações: se já tem as tabelas de eventos v2 (create_all do modelo atual), está em dia
+        command.stamp(cfg, "head" if "evento_fontes" in tabelas else "0001")
     command.upgrade(cfg, "head")

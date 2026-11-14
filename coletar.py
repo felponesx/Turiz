@@ -23,6 +23,8 @@ def centros_padrao():
 
 
 def exportar(db):
+    from app.eventos import snapshot
+    snapshot.exportar(db)
     def d(o):
         return {c.name: (v.isoformat() if isinstance(v := getattr(o, c.name), datetime) else v) for c in o.__table__.columns}
     for nome, modelo in (("lugares", Lugar), ("eventos", Evento)):
@@ -36,7 +38,7 @@ def main():
     ap.add_argument("--centros", help="lat,lon;lat,lon (Google). Padrão: grade de SP")
     ap.add_argument("--orgs", nargs="*", default=[], help="IDs de organização Eventbrite")
     a = ap.parse_args()
-    Base.metadata.create_all(engine)
+    __import__("app.migrar", fromlist=["x"]).upgrade_head()
     with SessionLocal() as db:
         falhas = []
         for f in a.fontes:
@@ -48,11 +50,13 @@ def main():
                     print("google", upsert(db, Lugar, google_places.coletar(cs)))
                 elif f == "eventbrite":
                     print("eventbrite", upsert(db, Evento, eventbrite.coletar(a.orgs)))
-                elif f == "ticketmaster":
-                    print("ticketmaster", upsert(db, Evento, ticketmaster.coletar()))
-                elif f == "sites":
+                elif f == "ticketmaster":   # agora pelo sistema de eventos v2 (conector, deduplicação, histórico)
+                    from app.eventos import agendador
+                    agendador.sincronizar_fontes(db)
+                    print("ticketmaster", [(l.status, l.novos, l.mensagem) for l in agendador.executar_devidas(db, apenas=["ticketmaster"], forcar=True)])
+                elif f == "sites":          # lugares (JSON-LD) aqui; os EVENTOS de sites vêm das fontes jsonld de fontes_eventos.yml
                     l, e, ign = sites.coletar()
-                    print("sites", upsert(db, Lugar, l), upsert(db, Evento, e), "bloqueados por robots.txt:", ign)
+                    print("sites", upsert(db, Lugar, l), "eventos ficam com coletar_eventos.py; bloqueados por robots.txt:", ign)
             except Exception as exc:  # cada fonte é independente
                 db.rollback()
                 falhas.append(f)

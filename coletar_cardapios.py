@@ -24,7 +24,7 @@ def main():
     ap.add_argument("--limite-sites", type=int, default=None, help="máximo de sites a visitar (teste)")
     ap.add_argument("--dry-run", action="store_true", help="só mede quantos lugares têm cardápio; não grava nada")
     a = ap.parse_args()
-    Base.metadata.create_all(engine)
+    __import__("app.migrar", fromlist=["x"]).upgrade_head()
     restaurar()  # garante lugares e cardápios atuais no banco
     with SessionLocal() as db:
         ls = []

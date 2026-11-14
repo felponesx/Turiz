@@ -9,12 +9,18 @@ from .models import Cardapio, Evento, Imagem, Lugar, RedeSocial
 
 
 def restaurar(pasta="data"):
-    Base.metadata.create_all(engine)
+    from .migrar import upgrade_head
+    from .eventos import snapshot
+    upgrade_head()
     saida = {}
     with SessionLocal() as db:
+        v2 = snapshot.restaurar(db, pasta)           # eventos v2 (com relacionamentos); None se não há snapshot ou o banco já tem eventos
+        if v2 is not None:
+            saida["eventos_v2"] = v2
+        tem_v2 = os.path.exists(os.path.join(pasta, snapshot.ARQUIVO))
         for nome, modelo in (("lugares", Lugar), ("eventos", Evento), ("imagens", Imagem), ("redes_sociais", RedeSocial), ("cardapios", Cardapio)):
             p = os.path.join(pasta, f"{nome}.json")
-            if not os.path.exists(p):
+            if not os.path.exists(p) or (nome == "eventos" and tem_v2):   # com snapshot v2, o legado de eventos é redundante
                 continue
             regs = json.load(open(p, encoding="utf-8"))
             for r in regs:
