@@ -1,0 +1,52 @@
+# Cadastro de fontes de eventos do TURIZ. Cada fonte é um conector independente; uma falha não afeta as outras.
+# Campos: slug, nome, conector (ticketmaster | jsonld | feed_json | feed_xml | rss | planilha | navegador), ativo, intervalo_horas, prioridade
+#         (maior vence em conflito de campos), autorizacao (autorizada | pendente | bloqueada | nao_requer), config, observacao.
+# NUNCA coloque chaves/tokens aqui: use variáveis de ambiente (ex.: TICKETMASTER_API_KEY) e `chave_env` na config.
+# Organizadores/parceiros: acrescente uma entrada `feed_json`/`feed_xml`/`rss`/`planilha` com `url` (ou `arquivo`) e `mapa` (campo Turiz -> caminho no feed).
+fontes:
+  # API oficial. Sem a variável TICKETMASTER_API_KEY a fonte fica "aguardando_credencial" (nada é inventado).
+  - slug: ticketmaster
+    nome: Ticketmaster (Discovery API v2)
+    conector: ticketmaster
+    ativo: true
+    intervalo_horas: 12
+    prioridade: 80
+    autorizacao: nao_requer      # acesso via chave própria de desenvolvedor, conforme os termos da API
+    config:
+      chave_env: TICKETMASTER_API_KEY
+      dias_a_frente: 365
+      tamanho_pagina: 200
+      max_requisicoes: 300
+      quota_minima: 100
+    observacao: "Cobertura no Brasil só é conhecida após uma consulta real (veja `python coletar_eventos.py validar-ticketmaster`)."
+
+  - slug: ticket360
+    nome: Ticket360
+    conector: jsonld
+    ativo: true
+    intervalo_horas: 24
+    prioridade: 50
+    autorizacao: autorizada       # ativado pelo dono do projeto; o coletor respeita robots.txt
+    config: {url: "https://www.ticket360.com.br/", cidade: São Paulo, listagem: true, padrao_link: "^/evento/", limite: 40, pausa: 2}
+
+  - slug: visitesaopaulo
+    nome: Visite São Paulo
+    conector: jsonld
+    ativo: true
+    intervalo_horas: 24
+    prioridade: 40
+    autorizacao: autorizada
+    config: {url: "https://visitesaopaulo.com/", cidade: São Paulo, listagem: true, padrao_link: "^/evento/", limite: 30, pausa: 4}
+
+  # Exemplos desativados (copie e preencha com o parceiro):
+  - slug: exemplo-organizador-json
+    nome: "EXEMPLO — feed JSON de um organizador (desativado)"
+    conector: feed_json
+    ativo: false
+    autorizacao: pendente
+    config:
+      url: "https://organizador.exemplo/eventos.json"
+      itens: eventos
+      mapa: {id: id, titulo: nome, inicio: data_inicio, fim: data_fim, url: link, imagem: imagem, local_nome: local.nome, cidade: local.cidade, preco_min: preco, categoria: categoria}
+      padroes: {pais: BR, fuso: America/Sao_Paulo}
+    observacao: Só ative depois de o organizador autorizar a divulgação.
