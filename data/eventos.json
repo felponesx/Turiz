@@ -41,8 +41,8 @@
   "fonte_id": "e8be082fbb547bb4b1ef",
   "titulo": "Gustavo Mioto Tour Inconfundível",
   "descricao": "Gustavo Mioto anuncia única apresentação da turnê “Inconfundível” no Espaço Unimed Após ingressos esgotados e grande repercussão no ano passado, projeto intimista retorna a São Paulo para uma apresentação exclusiva no dia 14 de novembro; a venda de ingressos começa no dia 21 de julho É oficial! Gustavo Mioto está de…",
-  "inicio": "2026-11-14T22:00:00",
-  "fim": "2026-11-15T10:00:00",
+  "inicio": "2026-11-15T01:00:00",
+  "fim": "2026-11-15T13:00:00",
   "local_nome": "Espaço Unimed",
   "endereco": "Rua Tagipuru, 795, São Paulo",
   "lat": -23.527600841437025,
@@ -67,9 +67,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:25:35.053264",
+  "visto_em": "2026-11-14T00:35:27.320162",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:25:35.053787"
+  "atualizado_em": "2026-11-14T00:35:27.321472"
  },
  {
   "id": 3,
@@ -103,9 +103,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:25:37.459677",
+  "visto_em": "2026-11-14T00:35:29.668415",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:25:37.459840"
+  "atualizado_em": "2026-11-14T00:35:29.668830"
  },
  {
   "id": 4,
@@ -113,8 +113,8 @@
   "fonte_id": "44402b68eaac88d9f8d3",
   "titulo": "Swingueira da Bahia com Psirico, Rubynho e Filhos do Sol",
   "descricao": "\"Swingueira da Bahia\" tem segunda edição em São Paulo com Psirico e Rubynho no Juventus Live Hall Depois do sucesso da primeira edição, a Swingueira da Bahia está de volta a São Paulo para uma nova noite de pagodão. No dia 15 de novembro, o Juventus Live Hall recebe a segunda edição do evento, com Psirico e Rubynho no…",
-  "inicio": "2026-11-15T17:00:00",
-  "fim": "2026-11-16T05:00:00",
+  "inicio": "2026-11-15T20:00:00",
+  "fim": "2026-11-16T08:00:00",
   "local_nome": "Juventus Live Hall",
   "endereco": "Rua Juventus, 690, São Paulo",
   "lat": -23.5721551484822,
@@ -139,9 +139,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:25:44.490198",
+  "visto_em": "2026-11-14T00:35:35.049866",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:25:44.490362"
+  "atualizado_em": "2026-11-14T00:35:35.050444"
  },
  {
   "id": 5,
@@ -175,9 +175,9 @@
   "local_id": 4,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:25:46.935252",
+  "visto_em": "2026-11-14T00:35:37.435755",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:25:46.935429"
+  "atualizado_em": "2026-11-14T00:35:37.435911"
  },
  {
   "id": 6,
@@ -185,8 +185,8 @@
   "fonte_id": "2dfb42423ebca5c682d0",
   "titulo": "Festival Sertanejo com Jads & Jadson, Munhoz & Mariano, Fiduma & Jeca e Mais",
   "descricao": "ATENÇÃO: 1ª FASE DE VENDAS ESGOTADA! INÍCIO DA 2ª FASE: DIA 22 DE OUTUBRO ÀS 10H Cadastre-se no link da bio do Instagram do Villa Country para garantir o seu lugar na 2ª fase e concorrer a prêmios como fotos com os artistas do Festival Sertanejo, camarotes, brindes exclusivos e muito mais. Link:…",
-  "inicio": "2026-11-19T22:30:00",
-  "fim": "2026-11-20T10:30:00",
+  "inicio": "2026-11-20T01:30:00",
+  "fim": "2026-11-20T13:30:00",
   "local_nome": "Villa Country",
   "endereco": "Av. Francisco Matarazzo, 774, São Paulo",
   "lat": -23.52717019356943,
@@ -211,9 +211,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:25:49.102124",
+  "visto_em": "2026-11-14T00:35:40.075760",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:25:49.102297"
+  "atualizado_em": "2026-11-14T00:35:40.076323"
  },
  {
   "id": 7,
@@ -221,8 +221,8 @@
   "fonte_id": "18fb7aa8f998f3947f37",
   "titulo": "Caetano Veloso nos Festivais",
   "descricao": "Caetano Veloso retorna ao Espaço Unimed com a turnê Nos Festivais Depois da gloriosa turnê com Maria Bethânia, que lotou estádios e arenas pelo Brasil, atraindo mais de 500 mil pessoas, Caetano Veloso tem se apresentado com o elogiado show “Caetano nos Festivais”. O cantor e compositor já passou por eventos como…",
-  "inicio": "2026-11-21T22:00:00",
-  "fim": "2026-11-22T10:00:00",
+  "inicio": "2026-11-22T01:00:00",
+  "fim": "2026-11-22T13:00:00",
   "local_nome": "Espaço Unimed",
   "endereco": "Rua Tagipuru, 795, São Paulo",
   "lat": -23.527600841437025,
@@ -247,9 +247,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:25:58.085333",
+  "visto_em": "2026-11-14T00:35:49.767434",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:25:58.085511"
+  "atualizado_em": "2026-11-14T00:35:49.767966"
  },
  {
   "id": 8,
@@ -283,9 +283,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:02.504396",
+  "visto_em": "2026-11-14T00:35:54.407831",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:02.504562"
+  "atualizado_em": "2026-11-14T00:35:54.407985"
  },
  {
   "id": 9,
@@ -293,8 +293,8 @@
   "fonte_id": "0b4d211ac94be20151bb",
   "titulo": "Hungria e Delacruz",
   "descricao": "Hungria e Delacruz prometem noite histórica em São Paulo Manifestos urbanos do rap e do R&B nacional encontram-se em apresentações completas no Juventus Live Hall São Paulo se prepara para receber duas das maiores potências da música urbana nacional em uma mesma noite. No dia 19 de novembro, uma quinta-feira e véspera…",
-  "inicio": "2026-11-19T22:00:00",
-  "fim": "2026-11-20T10:00:00",
+  "inicio": "2026-11-20T01:00:00",
+  "fim": "2026-11-20T13:00:00",
   "local_nome": "Juventus Live Hall",
   "endereco": "Rua Juventus, 690, São Paulo",
   "lat": -23.5721551484822,
@@ -319,9 +319,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:25:51.525106",
+  "visto_em": "2026-11-14T00:35:42.778013",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:25:51.525272"
+  "atualizado_em": "2026-11-14T00:35:42.778633"
  },
  {
   "id": 10,
@@ -329,8 +329,8 @@
   "fonte_id": "17721b73800f1dd295af",
   "titulo": "Belo e Jeito Moleque",
   "descricao": "Belo, Jeito Moleque, Juventus Live Hall, Samba/Pagode, São Paulo São Paulo Apresentação: 24/01/2027 (Domingo) Abertura dos portões: 20h00 Horário do show: 22h00 Local: Juventus Live Hall Endereço: Rua Juventus, 690 - Mooca, São Paulo - SP, 03124-021 Classificação: 18 Anos Vendas: TICKET360 - Compre pelo site ou…",
-  "inicio": "2027-01-24T22:00:00",
-  "fim": "2027-01-25T10:00:00",
+  "inicio": "2027-01-25T01:00:00",
+  "fim": "2027-01-25T13:00:00",
   "local_nome": "Juventus Live Hall",
   "endereco": "Rua Juventus, 690, São Paulo",
   "lat": -23.5721551484822,
@@ -355,9 +355,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:11.884675",
+  "visto_em": "2026-11-14T00:36:03.824621",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:11.884844"
+  "atualizado_em": "2026-11-14T00:36:03.825129"
  },
  {
   "id": 11,
@@ -391,9 +391,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:14.084353",
+  "visto_em": "2026-11-14T00:36:06.252691",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:14.084520"
+  "atualizado_em": "2026-11-14T00:36:06.252889"
  },
  {
   "id": 12,
@@ -427,9 +427,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:16.370289",
+  "visto_em": "2026-11-14T00:36:08.952575",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:16.370465"
+  "atualizado_em": "2026-11-14T00:36:08.952735"
  },
  {
   "id": 13,
@@ -437,8 +437,8 @@
   "fonte_id": "6e0e28019fdcc0218a14",
   "titulo": "Livinho Fazer Falta Tour",
   "descricao": "A última dança! MC Livinho anuncia último show da carreira em dezembro, no Espaço Unimed Encerramento da turnê “Fazer Falta” será no dia 23 dezembro, no Espaço Unimed, em São Paulo; A venda de ingressos começa nesta quarta-feira (02) Um dos nomes mais marcantes do funk brasileiro, MC Livinho se prepara para viver um…",
-  "inicio": "2026-12-23T21:00:00",
-  "fim": "2026-12-24T09:00:00",
+  "inicio": "2026-12-24T00:00:00",
+  "fim": "2026-12-24T12:00:00",
   "local_nome": "Espaço Unimed",
   "endereco": "Rua Tagipuru, 795, São Paulo",
   "lat": -23.527600841437025,
@@ -463,9 +463,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:18.558038",
+  "visto_em": "2026-11-14T00:36:13.010520",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:18.558200"
+  "atualizado_em": "2026-11-14T00:36:13.011031"
  },
  {
   "id": 14,
@@ -499,9 +499,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:20.751694",
+  "visto_em": "2026-11-14T00:36:15.394722",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:20.751858"
+  "atualizado_em": "2026-11-14T00:36:15.394868"
  },
  {
   "id": 15,
@@ -509,8 +509,8 @@
   "fonte_id": "1ca00d9211b6334a412f",
   "titulo": "Motionless In White The Come To Latin America Tour",
   "descricao": "“PRÉ-VENDA ESGOTADA! Novos ingressos disponíveis na venda geral, dia 06/11, às 10h. Motionless In White traz a \"The Come To Latin America Tour\" a São Paulo em março de 2027 Com o álbum \"Decades\", que estreou em 1º lugar na parada de Hard Rock da Billboard, a banda faz show no Espaço Unimed com realização da CultMix…",
-  "inicio": "2027-03-05T22:00:00",
-  "fim": "2027-03-06T10:00:00",
+  "inicio": "2027-03-06T01:00:00",
+  "fim": "2027-03-06T13:00:00",
   "local_nome": "Espaço Unimed",
   "endereco": "Rua Tagipuru, 795, São Paulo",
   "lat": -23.527600841437025,
@@ -535,9 +535,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:25.186794",
+  "visto_em": "2026-11-14T00:36:20.747270",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:25.186955"
+  "atualizado_em": "2026-11-14T00:36:20.747796"
  },
  {
   "id": 16,
@@ -545,8 +545,8 @@
   "fonte_id": "de072c64c3ed41518990",
   "titulo": "Baco Exu do Blues",
   "descricao": "Ingresso Solidário Este show conta com a modalidade de Ingresso Solidário , o público pode adquirir esse ingresso com desconto mediante a entrega de 1 kg de alimento não perecível na entrada do evento, exceto sal e farinha. São Paulo, Espaço Unimed, Baco Exu do Blues, Rap/Hip-Hop São Paulo Apresentação: 22/01/2027…",
-  "inicio": "2027-01-22T23:00:00",
-  "fim": "2027-01-23T11:00:00",
+  "inicio": "2027-01-23T02:00:00",
+  "fim": "2027-01-23T14:00:00",
   "local_nome": "Espaço Unimed",
   "endereco": "Rua Tagipuru, 795, São Paulo",
   "lat": -23.527600841437025,
@@ -571,9 +571,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:27.442068",
+  "visto_em": "2026-11-14T00:36:23.334730",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:27.442254"
+  "atualizado_em": "2026-11-14T00:36:23.335257"
  },
  {
   "id": 17,
@@ -607,9 +607,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:29.710216",
+  "visto_em": "2026-11-14T00:36:25.665430",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:29.710378"
+  "atualizado_em": "2026-11-14T00:36:25.665587"
  },
  {
   "id": 18,
@@ -643,9 +643,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:31.912786",
+  "visto_em": "2026-11-14T00:36:28.359933",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:31.912957"
+  "atualizado_em": "2026-11-14T00:36:28.360082"
  },
  {
   "id": 19,
@@ -679,9 +679,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:34.138076",
+  "visto_em": "2026-11-14T00:36:30.767699",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:34.138236"
+  "atualizado_em": "2026-11-14T00:36:30.767846"
  },
  {
   "id": 20,
@@ -689,8 +689,8 @@
   "fonte_id": "e6386cd5bcbdde0166f7",
   "titulo": "Paralamas e Frejat",
   "descricao": "Paralamas do Sucesso, Frejat e Suhai agitam o Juventus Live Hall em dezembro O rock brasileiro tem encontro marcado na Zona Leste de São Paulo. No sábado, 19 de dezembro, o Juventus Live Hall recebe Os Paralamas do Sucesso, Frejat e Suhai para uma noite que reúne sucessos de diferentes gerações, a trajetória de uma…",
-  "inicio": "2026-12-19T19:00:00",
-  "fim": "2026-12-20T07:00:00",
+  "inicio": "2026-12-19T22:00:00",
+  "fim": "2026-12-20T10:00:00",
   "local_nome": "Juventus Live Hall",
   "endereco": "Rua Juventus, 690, São Paulo",
   "lat": -23.5721551484822,
@@ -715,9 +715,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:38.703059",
+  "visto_em": "2026-11-14T00:36:35.859740",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:38.703219"
+  "atualizado_em": "2026-11-14T00:36:35.862084"
  },
  {
   "id": 21,
@@ -725,8 +725,8 @@
   "fonte_id": "814f2937673b93d85f39",
   "titulo": "Leonardo uma História sem Fim",
   "descricao": "Leonardo, Espaço Unimed, São Paulo, Sertanejo & Country SETOR: TALISMÃ NÃO TERÁ MEIA ENTRADA, SEGUE O SERVIÇO: Ao adquirir um ingresso do Setor Talismã, você garante uma experiência única além dos benefícios exclusivos: - Entrada Exclusiva - Localização Privilegiada - 01 Caneca Personalizada - Ecobag Personalizada São…",
-  "inicio": "2027-04-17T22:00:00",
-  "fim": "2027-04-18T10:00:00",
+  "inicio": "2027-04-18T01:00:00",
+  "fim": "2027-04-18T13:00:00",
   "local_nome": "Espaço Unimed",
   "endereco": "Rua Tagipuru, 795, São Paulo",
   "lat": -23.527600841437025,
@@ -751,9 +751,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:40.866942",
+  "visto_em": "2026-11-14T00:36:38.641057",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:40.867109"
+  "atualizado_em": "2026-11-14T00:36:38.641657"
  },
  {
   "id": 22,
@@ -787,9 +787,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:09.687240",
+  "visto_em": "2026-11-14T00:36:01.495782",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:09.687418"
+  "atualizado_em": "2026-11-14T00:36:01.495932"
  },
  {
   "id": 23,
@@ -823,9 +823,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:45.827874",
+  "visto_em": "2026-11-14T00:36:43.435426",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:45.828042"
+  "atualizado_em": "2026-11-14T00:36:43.435582"
  },
  {
   "id": 24,
@@ -833,8 +833,8 @@
   "fonte_id": "3a1bdef90dc5ae996e6d",
   "titulo": "Retrô 2 Mil com Dead Fish, Pelanza, Hevo84, Hateen e mais",
   "descricao": "M ais do que uma simples festa, a noite foi pensada como um ponto de encontro para quem viveu intensamente o auge do movimento e para novos fãs do gênero. São Paulo, Juventus Live Hall, Hevo84,Marcelo Strike e Hateen São Paulo Apresentação: 21/11/2026 (Sábado) Abertura dos portões: 19h00 Horário do show: 21h00 Local:…",
-  "inicio": "2026-11-21T21:00:00",
-  "fim": "2026-11-22T09:00:00",
+  "inicio": "2026-11-22T00:00:00",
+  "fim": "2026-11-22T12:00:00",
   "local_nome": "Juventus Live Hall",
   "endereco": "Rua Juventus, 690, São Paulo",
   "lat": -23.5721551484822,
@@ -859,9 +859,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:48.195758",
+  "visto_em": "2026-11-14T00:36:45.745451",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:48.195925"
+  "atualizado_em": "2026-11-14T00:36:45.745997"
  },
  {
   "id": 25,
@@ -895,9 +895,9 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:50.377101",
+  "visto_em": "2026-11-14T00:36:48.088386",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:50.377263"
+  "atualizado_em": "2026-11-14T00:36:48.088536"
  },
  {
   "id": 26,
@@ -905,8 +905,8 @@
   "fonte_id": "39d0d3dfbb274fd4680d",
   "titulo": "Maiara & Maraisa",
   "descricao": "A Casa Mais Temática do Brasil Inspirada na cultura dos cowboys do western, o Villa Country possui 12 mil metros quadrados divididos em vários ambientes que remetem o visitante ao velho oeste americano. É muito mais do que uma casa de shows, pois concentra restaurante, pista de dança, camarotes e centro de convenções.…",
-  "inicio": "2026-11-26T23:30:00",
-  "fim": "2026-11-27T11:30:00",
+  "inicio": "2026-11-27T02:30:00",
+  "fim": "2026-11-27T14:30:00",
   "local_nome": "Villa Country",
   "endereco": "Av. Francisco Matarazzo, 774, São Paulo",
   "lat": -23.52717019356943,
@@ -931,9 +931,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:52.570137",
+  "visto_em": "2026-11-14T00:36:50.463653",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:52.570286"
+  "atualizado_em": "2026-11-14T00:36:50.464174"
  },
  {
   "id": 27,
@@ -967,9 +967,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:55.105901",
+  "visto_em": "2026-11-14T00:36:52.825196",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:55.106063"
+  "atualizado_em": "2026-11-14T00:36:52.825359"
  },
  {
   "id": 28,
@@ -1003,9 +1003,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:26:57.305423",
+  "visto_em": "2026-11-14T00:36:55.148707",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:26:57.305597"
+  "atualizado_em": "2026-11-14T00:36:55.148857"
  },
  {
   "id": 29,
@@ -1183,11 +1183,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:02.000758",
-  "visto_em": "2026-11-14T00:27:02.002075",
+  "visto_em": "2026-11-14T00:36:59.812813",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-14T00:27:02.004886"
+  "atualizado_em": "2026-11-14T00:36:59.812959"
  },
  {
   "id": 34,
@@ -1221,11 +1221,11 @@
   "local_id": 10,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:14.791155",
-  "visto_em": "2026-11-14T00:27:14.791656",
+  "visto_em": "2026-11-14T00:37:12.616568",
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-14T00:27:53.813880"
+  "atualizado_em": "2026-11-14T00:37:12.616725"
  },
  {
   "id": 35,
@@ -1259,11 +1259,11 @@
   "local_id": 11,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:24.895992",
-  "visto_em": "2026-11-14T00:27:24.896515",
+  "visto_em": "2026-11-14T00:37:22.265384",
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-14T00:27:53.813881"
+  "atualizado_em": "2026-11-14T00:37:22.265534"
  },
  {
   "id": 36,
@@ -1297,11 +1297,11 @@
   "local_id": 12,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:34.944125",
-  "visto_em": "2026-11-14T00:27:34.944627",
+  "visto_em": "2026-11-14T00:37:32.211800",
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-14T00:27:53.813881"
+  "atualizado_em": "2026-11-14T00:37:32.211948"
  },
  {
   "id": 37,
@@ -1335,10 +1335,10 @@
   "local_id": 13,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:49.803342",
-  "visto_em": "2026-11-14T00:27:49.803824",
+  "visto_em": "2026-11-14T00:37:41.677334",
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-14T00:27:53.813882"
+  "atualizado_em": "2026-11-14T00:37:41.677484"
  }
 ]
