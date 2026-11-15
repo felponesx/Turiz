@@ -92,7 +92,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34352/ingressos-para-republica-sertaneja-com-bruninho-e-davi-mais-joao-gustavo-e-murilo",
   "nome_norm": "republica sertaneja com bruninho davi mais joao gustavo murilo",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -103,9 +103,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:35:29.668415",
+  "visto_em": "2026-11-15T06:46:01.244738",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:35:29.668830"
+  "atualizado_em": "2026-11-15T06:48:40.047539"
  },
  {
   "id": 4,
@@ -139,9 +139,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:35:35.049866",
+  "visto_em": "2026-11-15T06:46:06.532199",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:35:35.050444"
+  "atualizado_em": "2026-11-15T06:46:06.532375"
  },
  {
   "id": 5,
@@ -164,7 +164,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/33587/ingressos-para-associacao-cultural-cecilia-apresenta-ty-segall",
   "nome_norm": "associacao cultural cecilia apresenta ty segall",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -175,9 +175,9 @@
   "local_id": 4,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:35:37.435755",
+  "visto_em": "2026-11-15T06:46:08.855182",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:35:37.435911"
+  "atualizado_em": "2026-11-15T06:48:40.047541"
  },
  {
   "id": 6,
@@ -196,7 +196,7 @@
   "lugar_fonte_id": "",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34069-20261022090218.webp",
-  "preco_min": 72.0,
+  "preco_min": 84.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34069/ingressos-para-festival-sertanejo-com-jads-e-jadson-munhoz-e-mariano-fiduma-e-jeca-e-mais",
   "nome_norm": "festival sertanejo com jads jadson munhoz mariano fiduma jeca e mais",
@@ -211,9 +211,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:35:40.075760",
+  "visto_em": "2026-11-15T06:46:11.175674",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:35:40.076323"
+  "atualizado_em": "2026-11-15T06:46:11.176910"
  },
  {
   "id": 7,
@@ -247,9 +247,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:35:49.767434",
+  "visto_em": "2026-11-15T06:46:25.882323",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:35:49.767966"
+  "atualizado_em": "2026-11-15T06:46:25.882489"
  },
  {
   "id": 8,
@@ -283,9 +283,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:35:54.407831",
+  "visto_em": "2026-11-15T06:46:15.899680",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:35:54.407985"
+  "atualizado_em": "2026-11-15T06:46:15.899868"
  },
  {
   "id": 9,
@@ -319,9 +319,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:35:42.778013",
+  "visto_em": "2026-11-15T06:46:13.490104",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:35:42.778633"
+  "atualizado_em": "2026-11-15T06:46:13.490281"
  },
  {
   "id": 10,
@@ -355,9 +355,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:03.824621",
+  "visto_em": "2026-11-15T06:46:40.198673",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:03.825129"
+  "atualizado_em": "2026-11-15T06:46:40.198876"
  },
  {
   "id": 11,
@@ -391,9 +391,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:06.252691",
+  "visto_em": "2026-11-15T06:46:42.519121",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:06.252889"
+  "atualizado_em": "2026-11-15T06:46:42.519295"
  },
  {
   "id": 12,
@@ -427,9 +427,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:08.952575",
+  "visto_em": "2026-11-15T06:46:45.009714",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:08.952735"
+  "atualizado_em": "2026-11-15T06:46:45.009891"
  },
  {
   "id": 13,
@@ -463,9 +463,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:13.010520",
+  "visto_em": "2026-11-15T06:46:47.368269",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:13.011031"
+  "atualizado_em": "2026-11-15T06:46:47.368437"
  },
  {
   "id": 14,
@@ -499,9 +499,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:15.394722",
+  "visto_em": "2026-11-15T06:46:49.786731",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:15.394868"
+  "atualizado_em": "2026-11-15T06:46:49.786896"
  },
  {
   "id": 15,
@@ -535,9 +535,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:20.747270",
+  "visto_em": "2026-11-15T06:46:52.137081",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:20.747796"
+  "atualizado_em": "2026-11-15T06:46:52.137250"
  },
  {
   "id": 16,
@@ -571,9 +571,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:23.334730",
+  "visto_em": "2026-11-15T06:46:55.226631",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:23.335257"
+  "atualizado_em": "2026-11-15T06:46:55.226813"
  },
  {
   "id": 17,
@@ -607,9 +607,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:25.665430",
+  "visto_em": "2026-11-15T06:46:57.604205",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:25.665587"
+  "atualizado_em": "2026-11-15T06:46:57.604371"
  },
  {
   "id": 18,
@@ -643,9 +643,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:28.359933",
+  "visto_em": "2026-11-15T06:47:00.480679",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:28.360082"
+  "atualizado_em": "2026-11-15T06:47:00.480859"
  },
  {
   "id": 19,
@@ -679,9 +679,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:30.767699",
+  "visto_em": "2026-11-15T06:47:02.888532",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:30.767846"
+  "atualizado_em": "2026-11-15T06:47:02.888719"
  },
  {
   "id": 20,
@@ -715,9 +715,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:35.859740",
+  "visto_em": "2026-11-15T06:47:07.795968",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:35.862084"
+  "atualizado_em": "2026-11-15T06:47:07.796132"
  },
  {
   "id": 21,
@@ -751,9 +751,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:38.641057",
+  "visto_em": "2026-11-15T06:47:10.182303",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:38.641657"
+  "atualizado_em": "2026-11-15T06:47:10.182468"
  },
  {
   "id": 22,
@@ -787,9 +787,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:01.495782",
+  "visto_em": "2026-11-15T06:46:37.889431",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:01.495932"
+  "atualizado_em": "2026-11-15T06:46:37.889596"
  },
  {
   "id": 23,
@@ -823,9 +823,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:43.435426",
+  "visto_em": "2026-11-15T06:47:14.834739",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:43.435582"
+  "atualizado_em": "2026-11-15T06:47:14.834908"
  },
  {
   "id": 24,
@@ -859,9 +859,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:45.745451",
+  "visto_em": "2026-11-15T06:47:17.173771",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:45.745997"
+  "atualizado_em": "2026-11-15T06:47:17.173938"
  },
  {
   "id": 25,
@@ -895,9 +895,9 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:48.088386",
+  "visto_em": "2026-11-15T06:47:19.512979",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:48.088536"
+  "atualizado_em": "2026-11-15T06:47:19.513150"
  },
  {
   "id": 26,
@@ -931,9 +931,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:50.463653",
+  "visto_em": "2026-11-15T06:47:21.830208",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:50.464174"
+  "atualizado_em": "2026-11-15T06:47:21.830376"
  },
  {
   "id": 27,
@@ -967,9 +967,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:52.825196",
+  "visto_em": "2026-11-15T06:47:24.176382",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:52.825359"
+  "atualizado_em": "2026-11-15T06:47:24.176552"
  },
  {
   "id": 28,
@@ -1003,9 +1003,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-14T00:36:55.148707",
+  "visto_em": "2026-11-15T06:47:26.593573",
   "extra": {},
-  "atualizado_em": "2026-11-14T00:36:55.148857"
+  "atualizado_em": "2026-11-15T06:47:26.593764"
  },
  {
   "id": 29,
@@ -1183,11 +1183,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:02.000758",
-  "visto_em": "2026-11-14T00:36:59.812813",
+  "visto_em": "2026-11-15T06:47:31.228889",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-14T00:36:59.812959"
+  "atualizado_em": "2026-11-15T06:47:31.229055"
  },
  {
   "id": 34,
@@ -1340,5 +1340,271 @@
    "prioridade": 40
   },
   "atualizado_em": "2026-11-14T00:37:41.677484"
+ },
+ {
+  "id": 38,
+  "fonte": "ticket360",
+  "fonte_id": "844f618c798bbd705052",
+  "titulo": "Reggae Live Station com Edson Gomes, Groundation e Leões de Israel",
+  "descricao": "Reggae Live Station fecha o ano com uma noite raiz: Groundation, Edson Gomes e Leões de Israel no Espaço Unimed Segunda edição do festival em 2026 promove uma noite com banda internacional, o reggae de resistência e uma estreia muito aguardada Na esteira dos grandes nomes já anunciados para a data de agosto, o Reggae…",
+  "inicio": "2026-11-29T21:00:00",
+  "fim": "2026-11-30T09:00:00",
+  "local_nome": "Espaço Unimed",
+  "endereco": "Rua Tagipuru, 795, São Paulo",
+  "lat": -23.527600841437025,
+  "lon": -46.667878583035034,
+  "url": "https://www.ticket360.com.br/evento/33514/ingressos-para-reggae-live-station-com-edson-gomes-groundation-e-lees-de-israel",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/33514-20260615185943.webp",
+  "preco_min": 96.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/33514/ingressos-para-reggae-live-station-com-edson-gomes-groundation-e-lees-de-israel",
+  "nome_norm": "reggae live station com edson gomes groundation e leoes de israel",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/33514/ingressos-para-reggae-live-station-com-edson-gomes-groundation-e-lees-de-israel",
+  "local_id": 1,
+  "organizador_id": null,
+  "coletado_em": "2026-11-15T06:46:33.187276",
+  "visto_em": "2026-11-15T06:46:33.188688",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-15T06:46:33.192262"
+ },
+ {
+  "id": 39,
+  "fonte": "ticket360",
+  "fonte_id": "8d0feefb3faa99b80be2",
+  "titulo": "Arrocha Zona Sul com Netto Brito, Pablo, Silfarley e Simone Morena",
+  "descricao": "ARROCHA ZONA SUL reúne Pablo, Netto Brito e grandes nomes do arrocha em São Paulo São Paulo vai receber uma grande celebração do arrocha no dia 29 de novembro, a partir das 14h, no Campo do River. O Arrocha Zona Sul chega com uma programação especial para reunir fãs do gênero em uma tarde de muita música, emoção e…",
+  "inicio": "2026-11-29T00:00:00",
+  "fim": "2026-11-29T00:00:00",
+  "local_nome": "Campo do River",
+  "endereco": "Rua Constelação do Escorpião, 180, São Paulo",
+  "lat": -23.768559816018996,
+  "lon": -46.707418675373205,
+  "url": "https://www.ticket360.com.br/evento/34214/ingressos-para-arrocha-zona-sul-com-netto-brito-pablo-silfarley-e-simone-morena",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34214-20260924110815.webp",
+  "preco_min": 115.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34214/ingressos-para-arrocha-zona-sul-com-netto-brito-pablo-silfarley-e-simone-morena",
+  "nome_norm": "arrocha zona sul com netto brito pablo silfarley e simone morena",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34214/ingressos-para-arrocha-zona-sul-com-netto-brito-pablo-silfarley-e-simone-morena",
+  "local_id": 14,
+  "organizador_id": null,
+  "coletado_em": "2026-11-15T06:47:33.586411",
+  "visto_em": "2026-11-15T06:47:33.586893",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-15T06:47:33.589027"
+ },
+ {
+  "id": 40,
+  "fonte": "ticket360",
+  "fonte_id": "45598e8830cd04fed169",
+  "titulo": "Madame Underground Club apresenta Marc Almond - Soft Cell na Audio",
+  "descricao": "MARC ALMOND EM SÃO PAULO Apresentando clássicos do Soft Cell e da carreira solo Marc Almond, uma das vozes mais importantes do synthpop britânico, apresenta-se no dia 1º de dezembro de 2026, na Audio, em São Paulo. Em uma realização do Madame, o show reunirá clássicos do Soft Cell e músicas que marcaram sua extensa…",
+  "inicio": "2026-12-01T00:00:00",
+  "fim": "2026-12-01T00:00:00",
+  "local_nome": "Audio",
+  "endereco": "Av. Francisco Matarazzo, 694, São Paulo",
+  "lat": -23.52827570365205,
+  "lon": -46.66968615636964,
+  "url": "https://www.ticket360.com.br/evento/34049/ingressos-para-madame-underground-club-apresenta-marc-almond-soft-cell-na-audio",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34049-20260903154904.webp",
+  "preco_min": 312.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34049/ingressos-para-madame-underground-club-apresenta-marc-almond-soft-cell-na-audio",
+  "nome_norm": "madame underground club apresenta marc almond soft cell na audio",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34049/ingressos-para-madame-underground-club-apresenta-marc-almond-soft-cell-na-audio",
+  "local_id": 7,
+  "organizador_id": null,
+  "coletado_em": "2026-11-15T06:47:36.065377",
+  "visto_em": "2026-11-15T06:47:36.065978",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-15T06:47:36.068111"
+ },
+ {
+  "id": 41,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "a46c5029492326cef49f",
+  "titulo": "Uma Noite Com os Bee Gees – Especial Sinfônico",
+  "descricao": "Espetáculo Uma Noite Com Os Bee Gees está de volta ao Brasil e será apresentado pela primeira vez com orquestra\n\nShow que é sucesso de público no país conta a história dos Irmãos Gibb no palco, passando por todos os sucessos do lendário grupo\n\nCom mais de 5 décadas de história, os Bee Gees seguem no imaginário e nos ouvidos de milhares de pessoas ao redor do mundo. Com uma carreira consolidada por 10 Grammys e mais de 350 milhões de cópias vendidas (entre inúmeros outros prêmios), os Irmãos Gibb perdem apenas para a dupla Lennon & Paul McCartney no quesito arrecadação quando o assunto é composição. Com mais de 700 canções catalogadas, Barry, Robin e Maurice hoje são lendas da música pop, sendo figuras amplamente reconhecidas e homenageadas. O espetáculo em tributo aos Bee Gees de maior sucesso da América Latina está de volta ao Brasil e se propõe justamente a contar a história dessa talentosa família que marcou seu nome na história da música.\n\nCom um currículo invejável que soma apresentações em 12 países, além de diversos reconhecimentos de fã-clubes ao redor do mundo, a Geminis foi criada em 1999, em Buenos Aires, Argentina. A banda utiliza os mesmos arranjos vocais, figurinos e inclusive o mesmo set de instrumentos que os Irmãos Gibb usavam em suas apresentações. Não por acaso o projeto ganhou este nome (Geminis significa “Gêmeos” em espanhol). O espetáculo é protagonizado pelos cantores Mati Alvariza (como Barry Gibb), Beto Cánepa (como Robin Gibb) e Dani Liberchuck (como Maurice Gibb). A direção é de Mauricio Trilha, um dos produtores mais respeitados da América Latina no gênero tributo, reconhecido pela grandiosidade de seus espetáculos e pela riqueza de detalhes em suas produções. \nNo show “Uma Noite Com Os Bee Gees”, o trio faz um apanhado de todos os maiores sucessos dos Irmãos Gibb, incluindo canções jamais cantadas ao vivo pela banda original. O espetáculo, com cerca de duas horas de duração, conta com reproduções de figurinos dos anos 70 e 90 e também com músicas que os Bee Gees compuseram para outros artistas, como Celine Dion, Barbra Streisand, Dionne Warwick, Kenny Rogers, Frankie Valli, entre outros. A surpresa fica por conta de uma homenagem para o irmão mais novo dos Bee Gees, Andy Gibb, e por canções que jamais foram interpretadas ao vivo pelos originais.\n\nEm 2026 o espetáculo volta ao Brasil com uma super novidade, pela primeira vez a Geminis será acompanhada por uma orquestra ao vivo, arranjada e regida pelo maestro Dhouglas Umabel, violinista da Ospa, uma das orquestras mais respeitadas do mundo. A iniciativa, completamente inédita, resgata as primeiras duas décadas da carreira dos Bee Gees, onde o trio se apresentava com mais de quarenta músicos no palco.\n\n“Este é um show feito por fãs, para fãs. Muitos colecionam discos, livros, organizam reuniões… Nós decidimos montar uma banda! A ideia nasceu logo após a visita dos Bee Gees em Buenos Aires, nos anos 90, percebemos que haviam espetáculos em tributo a Elvis, Beatles, Queen, mas faltava Bee Gees, então decidimos lançar o projeto. Estamos muito felizes porque, em 2026, pela primeira vez, tocaremos com uma orquestra. É o show definitivo para quem é fã de Bee Gees”, comenta Dani Liberchuck, intérprete de Maurice Gibb e fundador da banda.",
+  "inicio": "2026-11-15T00:00:00",
+  "fim": "2026-11-15T00:00:00",
+  "local_nome": "Teatro Bradesco",
+  "endereco": "Bourbon Shopping Săo Paulo - Rua Palestra Itália, 500 - Loja 263, 3° Piso - Perdizes, 05005-900, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/uma-noite-com-os-bee-gees-especial-sinfonico-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "uma noite com os bee gees especial sinfonico",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/uma-noite-com-os-bee-gees-especial-sinfonico-2026/",
+  "local_id": 15,
+  "organizador_id": null,
+  "coletado_em": "2026-11-15T06:47:59.853314",
+  "visto_em": "2026-11-15T06:47:59.853852",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-15T06:48:40.047542"
+ },
+ {
+  "id": 42,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "83cc55d65762f57952fc",
+  "titulo": "Associação Cultural Cecília apresenta TY SEGALL",
+  "descricao": "",
+  "inicio": "2026-11-15T00:00:00",
+  "fim": "2026-11-15T00:00:00",
+  "local_nome": "Audio",
+  "endereco": "Av. Francisco Matarazzo, 694, São Paulo",
+  "lat": -23.52827570365205,
+  "lon": -46.66968615636964,
+  "url": "https://visitesaopaulo.com/evento/associacao-cultural-cecilia-apresenta-ty-segall-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "associacao cultural cecilia apresenta ty segall",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/associacao-cultural-cecilia-apresenta-ty-segall-2026/",
+  "local_id": 7,
+  "organizador_id": null,
+  "coletado_em": "2026-11-15T06:48:12.682311",
+  "visto_em": "2026-11-15T06:48:12.682883",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-15T06:48:40.047542"
+ },
+ {
+  "id": 43,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "bed7f68ca802bffcdbd7",
+  "titulo": "Swingueira da Bahia com Psirico, Rubynho e Filhos do Sol",
+  "descricao": "Swingueira da Bahia\" tem segunda edição em São Paulo com Psirico e Rubynho no Juventus Live Hall\n\nDepois do sucesso da primeira edição, a Swingueira da Bahia está de volta a São Paulo para uma nova noite de pagodão. No dia 15 de novembro, o Juventus Live Hall recebe a segunda edição do evento, com Psirico e Rubynho no comando da festa, prometendo trazer para a capital paulista o mesmo tempero e a mesma energia que tomam conta dos trios elétricos e das ruas de Salvador.\n\nQuem puxa a folia é o Psirico, sob o comando de Márcio Victor. Vindo de um verão histórico, marcado por uma maratona de shows no Carnaval, pelo audiovisual \"Lambão Weekend\" e por hits como \"Carnaval\", parceria com Marina Sena que ultrapassou 20 milhões de streams. Referência do pagode baiano há mais de duas décadas, o Psirico promete transformar o Juventus Live Hall em um verdadeiro arrastão.\n\nA festa ganha ainda mais swingue com a presença de Rubynho, um dos nomes mais queridos do segmento. Reconhecido como \"Melhor Swingueiro do Brasil\", o cantor construiu carreira à frente da banda Oz Bambaz antes de seguir como solo, e chega para completar a noite com o clima contagiante que é marca registrada do pagode baiano.\n\nPara abrir a noite, o público confere o show do Grupo Filhos do Sol, que chega em clima de celebração: a equipe comemora 31 anos de estrada dirigida por Rogério Costa, contagiando o público com coreografias animadas dos maiores clássicos do axé. Prepare o gogó e o esqueleto: a segunda edição da Swingueira da Bahia promete embalar São Paulo com o melhor da música baiana.",
+  "inicio": "2026-11-15T00:00:00",
+  "fim": "2026-11-15T00:00:00",
+  "local_nome": "Juventus Live Hall",
+  "endereco": "Rua Juventus, 690, São Paulo",
+  "lat": -23.5721551484822,
+  "lon": -46.58899952548829,
+  "url": "https://visitesaopaulo.com/evento/swingueira-da-bahia-com-psirico-rubynho-e-filhos-do-sol-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "festas",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "swingueira da bahia com psirico rubynho e filhos do sol",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/swingueira-da-bahia-com-psirico-rubynho-e-filhos-do-sol-2026/",
+  "local_id": 3,
+  "organizador_id": null,
+  "coletado_em": "2026-11-15T06:48:24.926074",
+  "visto_em": "2026-11-15T06:48:24.926654",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-15T06:48:40.047543"
+ },
+ {
+  "id": 44,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "c0c95f8ffd4db7c94e70",
+  "titulo": "Newcore Festival 2026",
+  "descricao": "O palco do Carioca Club recebe o Newcore Festival 2026!\nUma noite dedicada a reunir quatro dos maiores nomes da cena nacional em São Paulo!\nO festival marca o lançamento do novo álbum do AXTY, \"the pain made me who i am” além de apresentações incríveis das bandas Sujera, Emphuria e Bullet Bane!",
+  "inicio": "2026-11-15T00:00:00",
+  "fim": "2026-11-15T00:00:00",
+  "local_nome": "Carioca Club Pinheiros",
+  "endereco": "Rua Cardeal Arcoverde, 2899 - Pinheiros - São Paulo, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/newcore-festival-2026-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "festivais",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "newcore festival 2026",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/newcore-festival-2026-2026/",
+  "local_id": 16,
+  "organizador_id": null,
+  "coletado_em": "2026-11-15T06:48:36.037580",
+  "visto_em": "2026-11-15T06:48:36.038029",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-15T06:48:40.047543"
  }
 ]
