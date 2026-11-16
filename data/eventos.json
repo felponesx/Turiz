@@ -211,9 +211,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:11.175674",
+  "visto_em": "2026-11-16T22:16:33.556610",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:11.176910"
+  "atualizado_em": "2026-11-16T22:16:33.557190"
  },
  {
   "id": 7,
@@ -247,9 +247,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:25.882323",
+  "visto_em": "2026-11-16T22:16:56.793353",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:25.882489"
+  "atualizado_em": "2026-11-16T22:16:56.793524"
  },
  {
   "id": 8,
@@ -283,9 +283,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:15.899680",
+  "visto_em": "2026-11-16T22:16:38.337080",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:15.899868"
+  "atualizado_em": "2026-11-16T22:16:38.337254"
  },
  {
   "id": 9,
@@ -319,9 +319,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:13.490104",
+  "visto_em": "2026-11-16T22:16:36.050660",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:13.490281"
+  "atualizado_em": "2026-11-16T22:16:36.050844"
  },
  {
   "id": 10,
@@ -355,9 +355,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:40.198673",
+  "visto_em": "2026-11-16T22:17:08.430238",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:40.198876"
+  "atualizado_em": "2026-11-16T22:17:08.430427"
  },
  {
   "id": 11,
@@ -391,9 +391,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:42.519121",
+  "visto_em": "2026-11-16T22:17:10.734381",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:42.519295"
+  "atualizado_em": "2026-11-16T22:17:10.734558"
  },
  {
   "id": 12,
@@ -427,9 +427,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:45.009714",
+  "visto_em": "2026-11-16T22:17:13.159502",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:45.009891"
+  "atualizado_em": "2026-11-16T22:17:13.159673"
  },
  {
   "id": 13,
@@ -463,9 +463,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:47.368269",
+  "visto_em": "2026-11-16T22:17:15.555735",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:47.368437"
+  "atualizado_em": "2026-11-16T22:17:15.555906"
  },
  {
   "id": 14,
@@ -484,7 +484,7 @@
   "lugar_fonte_id": "",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/33896-20260908235829.webp",
-  "preco_min": 96.0,
+  "preco_min": 108.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/33896/ingressos-para-samba-sampa-2027-com-ferrugem-e-sorriso-maroto",
   "nome_norm": "samba sampa 2027 com ferrugem e sorriso maroto",
@@ -499,9 +499,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:49.786731",
+  "visto_em": "2026-11-16T22:17:17.876847",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:49.786896"
+  "atualizado_em": "2026-11-16T22:17:17.878111"
  },
  {
   "id": 15,
@@ -535,9 +535,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:52.137081",
+  "visto_em": "2026-11-16T22:17:20.245973",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:52.137250"
+  "atualizado_em": "2026-11-16T22:17:20.246144"
  },
  {
   "id": 16,
@@ -571,9 +571,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:55.226631",
+  "visto_em": "2026-11-16T22:17:22.684554",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:55.226813"
+  "atualizado_em": "2026-11-16T22:17:22.684718"
  },
  {
   "id": 17,
@@ -607,9 +607,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:57.604205",
+  "visto_em": "2026-11-16T22:16:52.237667",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:57.604371"
+  "atualizado_em": "2026-11-16T22:16:52.237841"
  },
  {
   "id": 18,
@@ -628,7 +628,7 @@
   "lugar_fonte_id": "",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/33945-20260901153903.webp",
-  "preco_min": 72.0,
+  "preco_min": 84.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/33945/ingressos-para-monobloco-ensaio-com-bateria-completa",
   "nome_norm": "monobloco ensaio com bateria completa",
@@ -643,9 +643,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:47:00.480679",
+  "visto_em": "2026-11-16T22:17:25.002421",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:47:00.480859"
+  "atualizado_em": "2026-11-16T22:17:25.002853"
  },
  {
   "id": 19,
@@ -679,9 +679,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:47:02.888532",
+  "visto_em": "2026-11-16T22:17:27.324036",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:47:02.888719"
+  "atualizado_em": "2026-11-16T22:17:27.324204"
  },
  {
   "id": 20,
@@ -715,9 +715,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:47:07.795968",
+  "visto_em": "2026-11-16T22:17:31.890658",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:47:07.796132"
+  "atualizado_em": "2026-11-16T22:17:31.890826"
  },
  {
   "id": 21,
@@ -751,9 +751,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:47:10.182303",
+  "visto_em": "2026-11-16T22:17:34.145027",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:47:10.182468"
+  "atualizado_em": "2026-11-16T22:17:34.145193"
  },
  {
   "id": 22,
@@ -787,9 +787,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:46:37.889431",
+  "visto_em": "2026-11-16T22:16:45.365815",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:46:37.889596"
+  "atualizado_em": "2026-11-16T22:16:45.365992"
  },
  {
   "id": 23,
@@ -808,7 +808,7 @@
   "lugar_fonte_id": "",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34240-20260928120226.webp",
-  "preco_min": 114.0,
+  "preco_min": 120.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34240/ingressos-para-robot-rock-alive-a-daft-punk-tribute",
   "nome_norm": "robot rock alive a daft punk tribute",
@@ -823,9 +823,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:47:14.834739",
+  "visto_em": "2026-11-16T22:17:36.417058",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:47:14.834908"
+  "atualizado_em": "2026-11-16T22:17:36.417511"
  },
  {
   "id": 24,
@@ -859,9 +859,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:47:17.173771",
+  "visto_em": "2026-11-16T22:17:38.808684",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:47:17.173938"
+  "atualizado_em": "2026-11-16T22:17:38.808853"
  },
  {
   "id": 25,
@@ -895,9 +895,9 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:47:19.512979",
+  "visto_em": "2026-11-16T22:17:41.086666",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:47:19.513150"
+  "atualizado_em": "2026-11-16T22:17:41.086838"
  },
  {
   "id": 26,
@@ -931,9 +931,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:47:21.830208",
+  "visto_em": "2026-11-16T22:17:43.442439",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:47:21.830376"
+  "atualizado_em": "2026-11-16T22:17:43.442605"
  },
  {
   "id": 27,
@@ -967,9 +967,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:47:24.176382",
+  "visto_em": "2026-11-16T22:17:45.733380",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:47:24.176552"
+  "atualizado_em": "2026-11-16T22:17:45.733552"
  },
  {
   "id": 28,
@@ -1003,9 +1003,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-15T06:47:26.593573",
+  "visto_em": "2026-11-16T22:17:48.658804",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:47:26.593764"
+  "atualizado_em": "2026-11-16T22:17:48.658970"
  },
  {
   "id": 29,
@@ -1183,11 +1183,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:02.000758",
-  "visto_em": "2026-11-15T06:47:31.228889",
+  "visto_em": "2026-11-16T22:17:53.214602",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-15T06:47:31.229055"
+  "atualizado_em": "2026-11-16T22:17:53.214773"
  },
  {
   "id": 34,
@@ -1373,11 +1373,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:46:33.187276",
-  "visto_em": "2026-11-15T06:46:33.188688",
+  "visto_em": "2026-11-16T22:17:03.812803",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-15T06:46:33.192262"
+  "atualizado_em": "2026-11-16T22:17:03.812978"
  },
  {
   "id": 39,
@@ -1411,11 +1411,11 @@
   "local_id": 14,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:33.586411",
-  "visto_em": "2026-11-15T06:47:33.586893",
+  "visto_em": "2026-11-16T22:17:55.547652",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-15T06:47:33.589027"
+  "atualizado_em": "2026-11-16T22:17:55.547819"
  },
  {
   "id": 40,
@@ -1449,11 +1449,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:36.065377",
-  "visto_em": "2026-11-15T06:47:36.065978",
+  "visto_em": "2026-11-16T22:17:57.915012",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-15T06:47:36.068111"
+  "atualizado_em": "2026-11-16T22:17:57.915198"
  },
  {
   "id": 41,
@@ -1606,5 +1606,271 @@
    "prioridade": 40
   },
   "atualizado_em": "2026-11-15T06:48:40.047543"
+ },
+ {
+  "id": 45,
+  "fonte": "ticket360",
+  "fonte_id": "ce971c0346bcef92a2a9",
+  "titulo": "Clássicos do Forró, Limão com Mel, Magníficos e Mastruz com Leite",
+  "descricao": "Clássicos do Forró, Limão com Mel, Magníficos e Mastruz com Leite Prepare-se para uma noite especial ao som de grandes nomes que marcaram a história do forró! Clássicos do Forró reúne três gigantes do gênero em um encontro inesquecível: Limão com Mel, Magníficos e Mastruz com Leite. Com décadas de trajetória, sucessos…",
+  "inicio": "2026-12-04T00:00:00",
+  "fim": "2026-12-04T00:00:00",
+  "local_nome": "CTN",
+  "endereco": "Rua Jacofer, 615, São Paulo",
+  "lat": -23.51020876209002,
+  "lon": -46.6788143625433,
+  "url": "https://www.ticket360.com.br/evento/34256/ingressos-para-classicos-do-forro-limao-com-mel-magnificos-e-mastruz-com-leite",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34256-20261001165808.webp",
+  "preco_min": 60.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34256/ingressos-para-classicos-do-forro-limao-com-mel-magnificos-e-mastruz-com-leite",
+  "nome_norm": "classicos do forro limao com mel magnificos e mastruz com leite",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34256/ingressos-para-classicos-do-forro-limao-com-mel-magnificos-e-mastruz-com-leite",
+  "local_id": 6,
+  "organizador_id": null,
+  "coletado_em": "2026-11-16T22:18:00.241349",
+  "visto_em": "2026-11-16T22:18:00.242646",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-16T22:18:00.246276"
+ },
+ {
+  "id": 46,
+  "fonte": "ticket360",
+  "fonte_id": "4e7c346cea67596e8cb2",
+  "titulo": "Encontro Nordestino com Limão com Mel e Magníficos",
+  "descricao": "O melhor do forró romântico tem encontro marcado em São Paulo! No dia 04 de dezembro, o Brasas SP recebe o Encontro Nordestino, reunindo duas das maiores referências do forró romântico: Limão com Mel e Magníficos. Com sucessos que atravessam gerações, as bandas prometem uma noite especial, marcada por romantismo,…",
+  "inicio": "2026-12-04T00:00:00",
+  "fim": "2026-12-04T00:00:00",
+  "local_nome": "Brasas SP",
+  "endereco": "Av. Almirante Delamare, 3013, São Paulo",
+  "lat": -23.61050518499207,
+  "lon": -46.58272872884246,
+  "url": "https://www.ticket360.com.br/evento/34475/ingressos-para-encontro-nordestino-com-limao-com-mel-e-magnificos",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34475-20261110105531.webp",
+  "preco_min": 57.5,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34475/ingressos-para-encontro-nordestino-com-limao-com-mel-e-magnificos",
+  "nome_norm": "encontro nordestino com limao com mel e magnificos",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34475/ingressos-para-encontro-nordestino-com-limao-com-mel-e-magnificos",
+  "local_id": 9,
+  "organizador_id": null,
+  "coletado_em": "2026-11-16T22:18:02.513812",
+  "visto_em": "2026-11-16T22:18:02.514435",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-16T22:18:02.516587"
+ },
+ {
+  "id": 47,
+  "fonte": "ticket360",
+  "fonte_id": "cefd38e7e3e3cdf55cbf",
+  "titulo": "Samba 90 com Netinho de Paula, Chrigor e Marcio Art",
+  "descricao": "SAMBA 90 GRAUS NO VARANDA ESTAIADA Ao vivo / Anos 90 · O encontro é na roda. Tem samba na área! Netinho de Paula, Chrigor e Marcio Art, três vozes que marcaram o pagode dos anos 90, se juntam no Samba 90 Graus para uma tarde só com os clássicos que embalaram uma geração. É Lado A, só as boas: aquele repertório que…",
+  "inicio": "2026-12-05T00:00:00",
+  "fim": "2026-12-05T00:00:00",
+  "local_nome": "Varanda Estaiada",
+  "endereco": "Av. Doutor Chucri Zaidan, 155, São Paulo",
+  "lat": -23.614236391731495,
+  "lon": -46.69566603887531,
+  "url": "https://www.ticket360.com.br/evento/34447/ingressos-para-samba-90-com-netinho-de-paula-chrigor-e-marcio-art",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34447-20261104120501.webp",
+  "preco_min": 57.5,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34447/ingressos-para-samba-90-com-netinho-de-paula-chrigor-e-marcio-art",
+  "nome_norm": "samba 90 com netinho de paula chrigor e marcio art",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34447/ingressos-para-samba-90-com-netinho-de-paula-chrigor-e-marcio-art",
+  "local_id": 2,
+  "organizador_id": null,
+  "coletado_em": "2026-11-16T22:18:04.787535",
+  "visto_em": "2026-11-16T22:18:04.788127",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-16T22:18:04.790178"
+ },
+ {
+  "id": 48,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "187b81911bac19e48596",
+  "titulo": "Trio Callas",
+  "descricao": "Formado pelo português Miguel Rocha (violino), o nipo-brasileiro Lucas Garcia Muramoto (violoncelo) e a francesa Bella Schütz (piano), o Trio Callas reúne três músicos de diferentes origens, que se encontraram na Universidade Mozarteum de Salzburgo. A escolha do nome homenageia Maria Callas, símbolo de coragem e autenticidade no canto lírico. Sediado entre Viena e Salzburgo, venceu concursos como o FNAPEC de Paris e Bacewicz de Łódź com menos de seis meses de criação.",
+  "inicio": "2026-11-16T00:00:00",
+  "fim": "2026-11-16T00:00:00",
+  "local_nome": "Teatro Iguatemi",
+  "endereco": "Av. Brigadeiro Faria Lima,2232 - 10° Andar, São Paulo - São Paulo, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/trio-callas-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "trio callas",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/trio-callas-2026/",
+  "local_id": 17,
+  "organizador_id": null,
+  "coletado_em": "2026-11-16T22:18:18.583313",
+  "visto_em": "2026-11-16T22:18:18.583819",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-16T22:18:43.046906"
+ },
+ {
+  "id": 49,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "91a66e2d9fdb8858b558",
+  "titulo": "Connected Smart Cities*",
+  "descricao": "Evento de inovação urbana que integra congresso, feira e experiências, reunindo governo, empresas, startups e especialistas para discutir soluções em cidades inteligentes, mobilidade, tecnologia e GovTech.",
+  "inicio": "2026-11-16T00:00:00",
+  "fim": "2026-11-19T00:00:00",
+  "local_nome": "Expo Center Norte",
+  "endereco": "Rua José Bernardo Pinto, 333 Vila Guilherme\n\nSão Paulo, SP, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/connected-smart-cities-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "feiras",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "connected smart cities",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/connected-smart-cities-2026/",
+  "local_id": 18,
+  "organizador_id": null,
+  "coletado_em": "2026-11-16T22:18:26.019926",
+  "visto_em": "2026-11-16T22:18:26.020414",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-16T22:18:26.022246"
+ },
+ {
+  "id": 50,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "e7172bbc44d23b862ad1",
+  "titulo": "Venture Capital World Summit",
+  "descricao": "Conferência internacional voltada a investimentos, venture capital, startups e empreendedorismo, reunindo investidores, fundos, empresas e empreendedores para networking, captação de recursos e expansão internacional de negócios.",
+  "inicio": "2026-11-16T00:00:00",
+  "fim": "2026-11-16T00:00:00",
+  "local_nome": "Regus Faria Lima",
+  "endereco": "Avenida Brigadeiro Faria Lima, 3729 – Itaim Bibi – São Paulo, SP – 04538-905, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/venture-capital-world-summit-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "venture capital world summit",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/venture-capital-world-summit-2026/",
+  "local_id": 19,
+  "organizador_id": null,
+  "coletado_em": "2026-11-16T22:18:32.414313",
+  "visto_em": "2026-11-16T22:18:32.414800",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-16T22:18:43.046908"
+ },
+ {
+  "id": 51,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "b09c81a1c04a27d86312",
+  "titulo": "Congress of the Building and Wood Workers International",
+  "descricao": "",
+  "inicio": "2026-11-16T00:00:00",
+  "fim": "2026-11-20T00:00:00",
+  "local_nome": "Grand Hyatt São Paulo",
+  "endereco": "Avenida das Nacoes Unidas 13.301, São Paulo -, 04578-000, Brazil, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/congress-of-the-building-and-wood-workers-international-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "congress of the building and wood workers international",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/congress-of-the-building-and-wood-workers-international-2026/",
+  "local_id": 20,
+  "organizador_id": null,
+  "coletado_em": "2026-11-16T22:18:39.029081",
+  "visto_em": "2026-11-16T22:18:39.029619",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-16T22:18:39.030275"
  }
 ]
