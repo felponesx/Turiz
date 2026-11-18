@@ -211,9 +211,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:16:33.556610",
+  "visto_em": "2026-11-18T07:40:29.696238",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:16:33.557190"
+  "atualizado_em": "2026-11-18T07:40:29.696734"
  },
  {
   "id": 7,
@@ -247,9 +247,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:16:56.793353",
+  "visto_em": "2026-11-18T07:40:54.333495",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:16:56.793524"
+  "atualizado_em": "2026-11-18T07:40:54.333645"
  },
  {
   "id": 8,
@@ -283,9 +283,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:16:38.337080",
+  "visto_em": "2026-11-18T07:40:34.757071",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:16:38.337254"
+  "atualizado_em": "2026-11-18T07:40:34.757220"
  },
  {
   "id": 9,
@@ -319,9 +319,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:16:36.050660",
+  "visto_em": "2026-11-18T07:40:32.373156",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:16:36.050844"
+  "atualizado_em": "2026-11-18T07:40:32.373319"
  },
  {
   "id": 10,
@@ -355,9 +355,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:08.430238",
+  "visto_em": "2026-11-18T07:41:07.298768",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:08.430427"
+  "atualizado_em": "2026-11-18T07:41:07.298916"
  },
  {
   "id": 11,
@@ -391,9 +391,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:10.734381",
+  "visto_em": "2026-11-18T07:41:09.706687",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:10.734558"
+  "atualizado_em": "2026-11-18T07:41:09.706838"
  },
  {
   "id": 12,
@@ -427,9 +427,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:13.159502",
+  "visto_em": "2026-11-18T07:41:12.078012",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:13.159673"
+  "atualizado_em": "2026-11-18T07:41:12.078161"
  },
  {
   "id": 13,
@@ -463,9 +463,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:15.555735",
+  "visto_em": "2026-11-18T07:41:14.477961",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:15.555906"
+  "atualizado_em": "2026-11-18T07:41:14.478104"
  },
  {
   "id": 14,
@@ -499,9 +499,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:17.876847",
+  "visto_em": "2026-11-18T07:41:16.814524",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:17.878111"
+  "atualizado_em": "2026-11-18T07:41:16.814678"
  },
  {
   "id": 15,
@@ -535,9 +535,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:20.245973",
+  "visto_em": "2026-11-18T07:41:19.171269",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:20.246144"
+  "atualizado_em": "2026-11-18T07:41:19.171442"
  },
  {
   "id": 16,
@@ -571,9 +571,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:22.684554",
+  "visto_em": "2026-11-18T07:41:21.483692",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:22.684718"
+  "atualizado_em": "2026-11-18T07:41:21.483841"
  },
  {
   "id": 17,
@@ -607,9 +607,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:16:52.237667",
+  "visto_em": "2026-11-18T07:40:49.216999",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:16:52.237841"
+  "atualizado_em": "2026-11-18T07:40:49.217158"
  },
  {
   "id": 18,
@@ -643,9 +643,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:25.002421",
+  "visto_em": "2026-11-18T07:41:23.792825",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:25.002853"
+  "atualizado_em": "2026-11-18T07:41:23.792972"
  },
  {
   "id": 19,
@@ -679,9 +679,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:27.324036",
+  "visto_em": "2026-11-18T07:41:26.088484",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:27.324204"
+  "atualizado_em": "2026-11-18T07:41:26.088636"
  },
  {
   "id": 20,
@@ -715,9 +715,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:31.890658",
+  "visto_em": "2026-11-18T07:41:30.707923",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:31.890826"
+  "atualizado_em": "2026-11-18T07:41:30.708067"
  },
  {
   "id": 21,
@@ -751,9 +751,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:34.145027",
+  "visto_em": "2026-11-18T07:41:33.009433",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:34.145193"
+  "atualizado_em": "2026-11-18T07:41:33.009578"
  },
  {
   "id": 22,
@@ -787,9 +787,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:16:45.365815",
+  "visto_em": "2026-11-18T07:40:41.797517",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:16:45.365992"
+  "atualizado_em": "2026-11-18T07:40:41.797670"
  },
  {
   "id": 23,
@@ -823,9 +823,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:36.417058",
+  "visto_em": "2026-11-18T07:41:35.327738",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:36.417511"
+  "atualizado_em": "2026-11-18T07:41:35.327882"
  },
  {
   "id": 24,
@@ -859,9 +859,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:38.808684",
+  "visto_em": "2026-11-18T07:41:37.640058",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:38.808853"
+  "atualizado_em": "2026-11-18T07:41:37.640200"
  },
  {
   "id": 25,
@@ -895,9 +895,9 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:41.086666",
+  "visto_em": "2026-11-18T07:41:40.682511",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:41.086838"
+  "atualizado_em": "2026-11-18T07:41:40.682652"
  },
  {
   "id": 26,
@@ -931,9 +931,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:43.442439",
+  "visto_em": "2026-11-18T07:41:45.321881",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:43.442605"
+  "atualizado_em": "2026-11-18T07:41:45.322023"
  },
  {
   "id": 27,
@@ -967,9 +967,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:45.733380",
+  "visto_em": "2026-11-18T07:41:47.663455",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:45.733552"
+  "atualizado_em": "2026-11-18T07:41:47.663599"
  },
  {
   "id": 28,
@@ -1003,9 +1003,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-16T22:17:48.658804",
+  "visto_em": "2026-11-18T07:41:50.023741",
   "extra": {},
-  "atualizado_em": "2026-11-16T22:17:48.658970"
+  "atualizado_em": "2026-11-18T07:41:50.023888"
  },
  {
   "id": 29,
@@ -1183,11 +1183,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:02.000758",
-  "visto_em": "2026-11-16T22:17:53.214602",
+  "visto_em": "2026-11-18T07:41:54.686517",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-16T22:17:53.214773"
+  "atualizado_em": "2026-11-18T07:41:54.686667"
  },
  {
   "id": 34,
@@ -1373,11 +1373,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:46:33.187276",
-  "visto_em": "2026-11-16T22:17:03.812803",
+  "visto_em": "2026-11-18T07:41:02.666893",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-16T22:17:03.812978"
+  "atualizado_em": "2026-11-18T07:41:02.667039"
  },
  {
   "id": 39,
@@ -1411,11 +1411,11 @@
   "local_id": 14,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:33.586411",
-  "visto_em": "2026-11-16T22:17:55.547652",
+  "visto_em": "2026-11-18T07:41:57.046411",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-16T22:17:55.547819"
+  "atualizado_em": "2026-11-18T07:41:57.046547"
  },
  {
   "id": 40,
@@ -1449,11 +1449,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:36.065377",
-  "visto_em": "2026-11-16T22:17:57.915012",
+  "visto_em": "2026-11-18T07:41:59.362793",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-16T22:17:57.915198"
+  "atualizado_em": "2026-11-18T07:41:59.362926"
  },
  {
   "id": 41,
@@ -1639,11 +1639,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:00.241349",
-  "visto_em": "2026-11-16T22:18:00.242646",
+  "visto_em": "2026-11-18T07:42:01.700177",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-16T22:18:00.246276"
+  "atualizado_em": "2026-11-18T07:42:01.700331"
  },
  {
   "id": 46,
@@ -1677,11 +1677,11 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:02.513812",
-  "visto_em": "2026-11-16T22:18:02.514435",
+  "visto_em": "2026-11-18T07:42:04.053093",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-16T22:18:02.516587"
+  "atualizado_em": "2026-11-18T07:42:04.053217"
  },
  {
   "id": 47,
@@ -1872,5 +1872,195 @@
    "prioridade": 40
   },
   "atualizado_em": "2026-11-16T22:18:39.030275"
+ },
+ {
+  "id": 52,
+  "fonte": "ticket360",
+  "fonte_id": "9c01d95d885a1a265940",
+  "titulo": "Gravação do DVD Mariana Fagundes com part de Lauana Prado e Natanzinho Lima",
+  "descricao": "MARIANA FAGUNDES – GRAVAÇÃO DO DVD No dia 25 de novembro, Mariana Fagundes grava o maior projeto da sua carreira no Varanda Estaiada, com a Ponte Estaiada como cenário. Com mais de 20 anos de carreira, Mariana é uma das vozes mais fortes do sertanejo atual. Mistura tradição e modernidade e conquistou milhões de fãs…",
+  "inicio": "2026-11-25T22:00:00",
+  "fim": "2026-11-26T10:00:00",
+  "local_nome": "Varanda Estaiada",
+  "endereco": "Av. Doutor Chucri Zaidan, 155, São Paulo",
+  "lat": -23.614236391731495,
+  "lon": -46.69566603887531,
+  "url": "https://www.ticket360.com.br/evento/34529/ingressos-para-gravacao-do-dvd-mariana-fagundes-com-part-de-lauana-prado-e-natanzinho-lima",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34529-20261117210708.webp",
+  "preco_min": 69.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34529/ingressos-para-gravacao-do-dvd-mariana-fagundes-com-part-de-lauana-prado-e-natanzinho-lima",
+  "nome_norm": "gravacao do dvd mariana fagundes com part de lauana prado e natanzinho lima",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34529/ingressos-para-gravacao-do-dvd-mariana-fagundes-com-part-de-lauana-prado-e-natanzinho-lima",
+  "local_id": 2,
+  "organizador_id": null,
+  "coletado_em": "2026-11-18T07:41:42.971185",
+  "visto_em": "2026-11-18T07:41:42.972433",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-18T07:41:42.975643"
+ },
+ {
+  "id": 53,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "7a8dd63351f5701ebe98",
+  "titulo": "Ca7riel e Paco Amoroso Free Spirits World Tour",
+  "descricao": "",
+  "inicio": "2026-11-18T00:00:00",
+  "fim": "2026-11-18T00:00:00",
+  "local_nome": "Espaço Unimed",
+  "endereco": "Rua Tagipuru, 795, São Paulo",
+  "lat": -23.527600841437025,
+  "lon": -46.667878583035034,
+  "url": "https://visitesaopaulo.com/evento/ca7riel-e-paco-amoroso-free-spirits-world-tour-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "ca7riel e paco amoroso free spirits world tour",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/ca7riel-e-paco-amoroso-free-spirits-world-tour-2026/",
+  "local_id": 1,
+  "organizador_id": null,
+  "coletado_em": "2026-11-18T07:42:23.067875",
+  "visto_em": "2026-11-18T07:42:23.068421",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-18T07:42:55.826881"
+ },
+ {
+  "id": 54,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "10ddeb7f0ee68a783af5",
+  "titulo": "Raiz Club Apresenta Tom Collins & The Fountain Dogs",
+  "descricao": "Tom Collins & the Fountain Dogs trazem uma noite de blues, energia e autenticidade, celebrando os grandes clássicos do gênero em releituras que percorrem gerações — de Robert Johnson e Muddy Waters a B.B. King e Stevie Ray Vaughan. Com guitarra, gaita e muito groove, a banda resgata a essência do blues e suas vertentes, em um show vibrante que mistura tradição, personalidade e improviso. Uma viagem pelas raízes do blues, feita para sentir, cantar e dançar.",
+  "inicio": "2026-11-18T00:00:00",
+  "fim": "2026-11-18T00:00:00",
+  "local_nome": "Raiz Club",
+  "endereco": "Rua Alves Guimarães, 153 – Pinheiros - São Paulo/SP, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/raiz-club-apresenta-tom-collins-the-fountain-dogs-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "raiz club apresenta tom collins the fountain dogs",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/raiz-club-apresenta-tom-collins-the-fountain-dogs-2026/",
+  "local_id": 10,
+  "organizador_id": null,
+  "coletado_em": "2026-11-18T07:42:32.843178",
+  "visto_em": "2026-11-18T07:42:32.843688",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-18T07:42:55.826883"
+ },
+ {
+  "id": 55,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "a11b87ae0fba61d5dd45",
+  "titulo": "Otto Acústico",
+  "descricao": "Otto Acústico apresenta uma leitura intimista e envolvente da trajetória de um dos artistas mais marcantes da música brasileira contemporânea.\n\nEm formato acústico, Otto revisita obras, canções e grandes sucessos de sua carreira, propondo uma experiência musical que valoriza a força das composições, a interpretação e a conexão direta com o público.\n\nO repertório percorre diferentes momentos de sua trajetória artística, reunindo músicas que se tornaram referências de sua obra e que, nesta configuração, ganham novos arranjos, sonoridades e possibilidades de interpretação.\n\nA formação acústica aproxima o artista do público e cria uma atmosfera mais orgânica e dinâmica, sem perder a identidade, a energia e a personalidade que caracterizam os shows de Otto.\n\nOtto Acústico é, assim, um encontro entre memória, contemporaneidade e musicalidade: um espetáculo que revisita sucessos e obras fundamentais de sua carreira sob uma perspectiva acústica, proporcionando ao público uma experiência próxima, elegante e musicalmente potente.",
+  "inicio": "2026-11-18T00:00:00",
+  "fim": "2026-11-19T00:00:00",
+  "local_nome": "Bona Casa de Música",
+  "endereco": "Rua Álvaro Anes, 43 – Pinheiros – São Paulo – SP – CEP 05418-010, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/otto-acustico-2026/",
+  "lugar_fonte": "receita",
+  "lugar_fonte_id": "66a37299e4f31ca9",
+  "categoria": "shows",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "otto acustico",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/otto-acustico-2026/",
+  "local_id": 21,
+  "organizador_id": null,
+  "coletado_em": "2026-11-18T07:42:42.345489",
+  "visto_em": "2026-11-18T07:42:42.345882",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-18T07:43:11.506987"
+ },
+ {
+  "id": 56,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "a2ce360868fecd65b82f",
+  "titulo": "Rolling Stone Sessions Apresenta: Hurricanes",
+  "descricao": "",
+  "inicio": "2026-11-18T00:00:00",
+  "fim": "2026-11-18T00:00:00",
+  "local_nome": "Blue Note São Paulo",
+  "endereco": "Av. Paulista, 2073 - Bela Vista, São Paulo - SP, 01311-300, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/rolling-stone-sessions-apresenta-hurricanes-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "rolling stone sessions apresenta hurricanes",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/rolling-stone-sessions-apresenta-hurricanes-2026/",
+  "local_id": 11,
+  "organizador_id": null,
+  "coletado_em": "2026-11-18T07:42:51.808467",
+  "visto_em": "2026-11-18T07:42:51.808961",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-18T07:42:55.826883"
  }
 ]
