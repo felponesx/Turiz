@@ -211,9 +211,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:40:29.696238",
+  "visto_em": "2026-11-19T20:46:11.203328",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:40:29.696734"
+  "atualizado_em": "2026-11-19T20:46:11.203966"
  },
  {
   "id": 7,
@@ -247,9 +247,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:40:54.333495",
+  "visto_em": "2026-11-19T20:46:33.541453",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:40:54.333645"
+  "atualizado_em": "2026-11-19T20:46:33.541664"
  },
  {
   "id": 8,
@@ -268,7 +268,7 @@
   "lugar_fonte_id": "",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34058-20260826095907.webp",
-  "preco_min": 96.0,
+  "preco_min": 72.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34058/ingressos-para-washington-brasileiro-guilherme-silva-e-soro-silva",
   "nome_norm": "washington brasileiro guilherme silva e soro silva",
@@ -283,9 +283,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:40:34.757071",
+  "visto_em": "2026-11-19T20:46:15.781115",
   "extra": {},
-  "atualizado_em": "2026-11-19T07:37:21.968811"
+  "atualizado_em": "2026-11-19T20:46:15.782641"
  },
  {
   "id": 9,
@@ -319,9 +319,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:40:32.373156",
+  "visto_em": "2026-11-19T20:46:13.553363",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:40:32.373319"
+  "atualizado_em": "2026-11-19T20:46:13.553572"
  },
  {
   "id": 10,
@@ -391,9 +391,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:09.706687",
+  "visto_em": "2026-11-19T20:46:47.009507",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:09.706838"
+  "atualizado_em": "2026-11-19T20:46:47.009720"
  },
  {
   "id": 12,
@@ -427,9 +427,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:12.078012",
+  "visto_em": "2026-11-19T20:46:49.358151",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:12.078161"
+  "atualizado_em": "2026-11-19T20:46:49.358396"
  },
  {
   "id": 13,
@@ -463,9 +463,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:14.477961",
+  "visto_em": "2026-11-19T20:46:51.853251",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:14.478104"
+  "atualizado_em": "2026-11-19T20:46:51.853476"
  },
  {
   "id": 14,
@@ -499,9 +499,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:16.814524",
+  "visto_em": "2026-11-19T20:46:54.104488",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:16.814678"
+  "atualizado_em": "2026-11-19T20:46:54.104699"
  },
  {
   "id": 15,
@@ -535,9 +535,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:19.171269",
+  "visto_em": "2026-11-19T20:46:56.318560",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:19.171442"
+  "atualizado_em": "2026-11-19T20:46:56.318770"
  },
  {
   "id": 16,
@@ -571,9 +571,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:21.483692",
+  "visto_em": "2026-11-19T20:46:58.518660",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:21.483841"
+  "atualizado_em": "2026-11-19T20:46:58.518864"
  },
  {
   "id": 17,
@@ -592,7 +592,7 @@
   "lugar_fonte_id": "",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34173-20260914121818.webp",
-  "preco_min": 144.0,
+  "preco_min": 72.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34173/ingressos-para-festival-desejando-com-seu-desejo",
   "nome_norm": "festival desejando com seu desejo",
@@ -607,9 +607,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:40:49.216999",
+  "visto_em": "2026-11-19T20:46:29.122716",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:40:49.217158"
+  "atualizado_em": "2026-11-19T20:46:29.123205"
  },
  {
   "id": 18,
@@ -643,9 +643,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:23.792825",
+  "visto_em": "2026-11-19T20:47:00.769940",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:23.792972"
+  "atualizado_em": "2026-11-19T20:47:00.770147"
  },
  {
   "id": 19,
@@ -679,9 +679,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:26.088484",
+  "visto_em": "2026-11-19T20:47:02.995458",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:26.088636"
+  "atualizado_em": "2026-11-19T20:47:02.995670"
  },
  {
   "id": 20,
@@ -715,9 +715,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:30.707923",
+  "visto_em": "2026-11-19T20:47:07.448371",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:30.708067"
+  "atualizado_em": "2026-11-19T20:47:07.448581"
  },
  {
   "id": 21,
@@ -751,9 +751,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:33.009433",
+  "visto_em": "2026-11-19T20:47:09.650943",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:33.009578"
+  "atualizado_em": "2026-11-19T20:47:09.651149"
  },
  {
   "id": 22,
@@ -787,9 +787,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:40:41.797517",
+  "visto_em": "2026-11-19T20:46:22.495589",
   "extra": {},
-  "atualizado_em": "2026-11-19T07:37:21.968814"
+  "atualizado_em": "2026-11-19T20:46:22.495802"
  },
  {
   "id": 23,
@@ -823,9 +823,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:35.327738",
+  "visto_em": "2026-11-19T20:47:11.848919",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:35.327882"
+  "atualizado_em": "2026-11-19T20:47:11.849128"
  },
  {
   "id": 24,
@@ -859,16 +859,16 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:37.640058",
+  "visto_em": "2026-11-19T20:47:14.066493",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:37.640200"
+  "atualizado_em": "2026-11-19T20:47:14.066701"
  },
  {
   "id": 25,
   "fonte": "site",
   "fonte_id": "4a907e1e5cf5d891a962",
   "titulo": "Seu Desejo e Silvânia & Berg",
-  "descricao": "Estão preparados? VEM AÍ AS DUPLAS MAIS ROMÂNTICAS DO BRASIL! No dia 21 de novembro, o Brasas SP recebe Seu Desejo e Silvânia & Berg para uma noite daquelas, cheia de romantismo e os sucessos que todo mundo ama cantar! Pista 3 Amigos A promoção inclui três ingressos - um ingresso válido para cada pessoa. Para garantir…",
+  "descricao": "Estão preparados? VEM AÍ AS DUPLAS MAIS ROMÂNTICAS DO BRASIL! No dia 21 de novembro, o Brasas SP recebe Seu Desejo e Silvânia & Berg para uma noite daquelas, cheia de romantismo e os sucessos que todo mundo ama cantar! Forró, Brasas SP, São Paulo, Seu Desejo, Silvânia & Berg São Paulo Apresentação: 21/11/2026 (Sábado)…",
   "inicio": "2026-11-21T00:00:00",
   "fim": "2026-11-21T00:00:00",
   "local_nome": "Brasas SP",
@@ -895,9 +895,9 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:40.682511",
+  "visto_em": "2026-11-19T20:47:16.263570",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:40.682652"
+  "atualizado_em": "2026-11-19T20:47:16.264399"
  },
  {
   "id": 26,
@@ -931,9 +931,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:45.321881",
+  "visto_em": "2026-11-19T20:47:20.659147",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:45.322023"
+  "atualizado_em": "2026-11-19T20:47:20.659374"
  },
  {
   "id": 27,
@@ -967,9 +967,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:47.663455",
+  "visto_em": "2026-11-19T20:47:22.918531",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:47.663599"
+  "atualizado_em": "2026-11-19T20:47:22.918739"
  },
  {
   "id": 28,
@@ -1003,9 +1003,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-18T07:41:50.023741",
+  "visto_em": "2026-11-19T20:47:25.142116",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:41:50.023888"
+  "atualizado_em": "2026-11-19T20:47:25.142354"
  },
  {
   "id": 29,
@@ -1183,11 +1183,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:02.000758",
-  "visto_em": "2026-11-18T07:41:54.686517",
+  "visto_em": "2026-11-19T20:47:29.613967",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-18T07:41:54.686667"
+  "atualizado_em": "2026-11-19T20:47:29.614182"
  },
  {
   "id": 34,
@@ -1373,11 +1373,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:46:33.187276",
-  "visto_em": "2026-11-18T07:41:02.666893",
+  "visto_em": "2026-11-19T20:46:40.270033",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-18T07:41:02.667039"
+  "atualizado_em": "2026-11-19T20:46:40.270283"
  },
  {
   "id": 39,
@@ -1411,11 +1411,11 @@
   "local_id": 14,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:33.586411",
-  "visto_em": "2026-11-18T07:41:57.046411",
+  "visto_em": "2026-11-19T20:47:32.444143",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-18T07:41:57.046547"
+  "atualizado_em": "2026-11-19T20:47:32.444387"
  },
  {
   "id": 40,
@@ -1449,11 +1449,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:36.065377",
-  "visto_em": "2026-11-18T07:41:59.362793",
+  "visto_em": "2026-11-19T20:47:34.683748",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-18T07:41:59.362926"
+  "atualizado_em": "2026-11-19T20:47:34.683960"
  },
  {
   "id": 41,
@@ -1639,11 +1639,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:00.241349",
-  "visto_em": "2026-11-18T07:42:01.700177",
+  "visto_em": "2026-11-19T20:47:36.956146",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-18T07:42:01.700331"
+  "atualizado_em": "2026-11-19T20:47:36.956386"
  },
  {
   "id": 46,
@@ -1677,11 +1677,11 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:02.513812",
-  "visto_em": "2026-11-18T07:42:04.053093",
+  "visto_em": "2026-11-19T20:47:39.201772",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-18T07:42:04.053217"
+  "atualizado_em": "2026-11-19T20:47:39.201979"
  },
  {
   "id": 47,
@@ -1905,11 +1905,11 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": "2026-11-18T07:41:42.971185",
-  "visto_em": "2026-11-18T07:41:42.972433",
+  "visto_em": "2026-11-19T20:47:18.468704",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-18T07:41:42.975643"
+  "atualizado_em": "2026-11-19T20:47:18.468920"
  },
  {
   "id": 53,
@@ -2062,5 +2062,195 @@
    "prioridade": 40
   },
   "atualizado_em": "2026-11-18T07:42:55.826883"
+ },
+ {
+  "id": 57,
+  "fonte": "ticket360",
+  "fonte_id": "b9c2abcd0cf65679c9ea",
+  "titulo": "Belo, Jeito Moleque e BG",
+  "descricao": "Belo, Jeito Moleque e BG fazem domingo de pagode no Juventus Live Hall na véspera do aniversário de São Paulo Os pagodeiros têm encontro marcado na Mooca no domingo, 24 de janeiro. Na véspera do aniversário de São Paulo, Belo, Jeito Moleque e BG sobem ao palco do Juventus Live Hall para uma noite que promete reunir…",
+  "inicio": "2027-01-25T01:00:00",
+  "fim": "2027-01-25T13:00:00",
+  "local_nome": "Juventus Live Hall",
+  "endereco": "Rua Juventus, 690, São Paulo",
+  "lat": -23.5721551484822,
+  "lon": -46.58899952548829,
+  "url": "https://www.ticket360.com.br/evento/34470/ingressos-para-belo-e-jeito-moleque-e-bg",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34470-20261119112810.webp",
+  "preco_min": 42.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34470/ingressos-para-belo-e-jeito-moleque-e-bg",
+  "nome_norm": "belo jeito moleque e bg",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34470/ingressos-para-belo-e-jeito-moleque-e-bg",
+  "local_id": 3,
+  "organizador_id": null,
+  "coletado_em": "2026-11-19T20:46:44.783824",
+  "visto_em": "2026-11-19T20:46:44.785431",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-19T20:46:44.789954"
+ },
+ {
+  "id": 58,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "f0983645bb5427460d14",
+  "titulo": "Hungria e Delacruz",
+  "descricao": "",
+  "inicio": "2026-11-19T00:00:00",
+  "fim": "2026-11-19T00:00:00",
+  "local_nome": "Juventus Live Hall",
+  "endereco": "Rua Juventus, 690, São Paulo",
+  "lat": -23.5721551484822,
+  "lon": -46.58899952548829,
+  "url": "https://visitesaopaulo.com/evento/hungria-e-delacruz-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "hungria e delacruz",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/hungria-e-delacruz-2026/",
+  "local_id": 3,
+  "organizador_id": null,
+  "coletado_em": "2026-11-19T20:48:07.910355",
+  "visto_em": "2026-11-19T20:48:07.911019",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-19T20:49:10.909966"
+ },
+ {
+  "id": 59,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "2733e34d629a056205ee",
+  "titulo": "Festival Sertanejo com Jads & Jadson, Munhoz & Mariano, Fiduma & Jeca e Mais",
+  "descricao": "",
+  "inicio": "2026-11-19T00:00:00",
+  "fim": "2026-11-19T00:00:00",
+  "local_nome": "Villa Country",
+  "endereco": "Av. Francisco Matarazzo, 774, São Paulo",
+  "lat": -23.52717019356943,
+  "lon": -46.670425873930924,
+  "url": "https://visitesaopaulo.com/evento/festival-sertanejo-com-jads-jadson-munhoz-mariano-fiduma-jeca-e-mais-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "festivais",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "festival sertanejo com jads jadson munhoz mariano fiduma jeca e mais",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/festival-sertanejo-com-jads-jadson-munhoz-mariano-fiduma-jeca-e-mais-2026/",
+  "local_id": 5,
+  "organizador_id": null,
+  "coletado_em": "2026-11-19T20:48:25.117539",
+  "visto_em": "2026-11-19T20:48:25.118193",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-19T20:49:10.909969"
+ },
+ {
+  "id": 60,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "4c45b0cc9927c2ce5aeb",
+  "titulo": "Corujão do Muka",
+  "descricao": "Depois de passar por São Paulo, Salvador e Rio de Janeiro, o Corujão do Muka segue sua trajetória de sucesso pelos palcos do país. O programa, que conquistou uma audiência fiel na internet ao misturar informação, humor, cultura pop e debates sobre os assuntos mais quentes da atualidade, ganhou uma versão teatral que transforma a experiência digital em um grande encontro com o público. Comandado por Muka, Jeje e Dantinhas, o espetáculo resgata a essência dos grandes programas de auditório brasileiros, mas com uma linguagem contemporânea, dinâmica e irreverente. No palco, os três apresentadores conduzem uma experiência que mistura quadros de humor, jogos, música, improviso, convidados especiais e, principalmente, muita interação com a plateia. O público não é apenas espectador: participa das brincadeiras, interfere nos rumos do espetáculo e, em vários momentos, assume o protagonismo da noite. A química entre os apresentadores, uma das marcas registradas do Corujão, ganha ainda mais força diante do público. Com personalidades diferentes e uma amizade que transborda para o palco, Muka, Jeje e Dantinhas transformam situações cotidianas, acontecimentos do noticiário e histórias pessoais em momentos de diversão, espontaneidade e identificação com a plateia. O resultado é um espetáculo imprevisível, em que cada apresentação tem sua própria dinâmica e nenhuma noite é igual à outra. É a energia do Corujão do Muka, desta vez sem a distância das telas, em um programa de auditório moderno, divertido e feito para ser vivido junto.",
+  "inicio": "2026-11-19T00:00:00",
+  "fim": "2026-11-19T00:00:00",
+  "local_nome": "Teatro Youtube",
+  "endereco": "Av. Paulista, 2073 - Cerqueira César, São Paulo - SP, 01311-940, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/corujao-do-muka-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "teatro",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "corujao do muka",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/corujao-do-muka-2026/",
+  "local_id": 22,
+  "organizador_id": null,
+  "coletado_em": "2026-11-19T20:48:43.636182",
+  "visto_em": "2026-11-19T20:48:43.636788",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-19T20:49:10.909970"
+ },
+ {
+  "id": 61,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "74b09ff95ececfd72da4",
+  "titulo": "Washington Brasileiro, Guilherme Silva e Soró Silva",
+  "descricao": "Washington Brasileiro, Guilherme Silva e Soró Silva se apresentam no CTN\nO Centro de Tradições Nordestinas (CTN), em São Paulo, recebe Washington Brasileiro, Guilherme Silva e Soró Silva no dia 19 de novembro, véspera de feriado, para uma noite especial de muita música e animação.\n\nWashington Brasileiro leva ao palco toda a energia de seu repertório, em uma apresentação preparada para colocar o público para cantar e dançar.\n\nGuilherme Silva também integra a programação, trazendo seu estilo marcante e uma seleção de músicas para agitar a noite no CTN.\n\nCompletando o encontro, Soró Silva sobe ao palco para garantir ainda mais música e diversão ao público. Juntos, os três artistas prometem transformar a véspera de feriado em uma grande festa.",
+  "inicio": "2026-11-19T00:00:00",
+  "fim": "2026-11-19T00:00:00",
+  "local_nome": "CTN - Centro de Tradições Nordestinas",
+  "endereco": "Rua Jacofer, 615 - Bairro do Limão - São Paulo - SP, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/washington-brasileiro-guilherme-silva-e-soro-silva-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "washington brasileiro guilherme silva e soro silva",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/washington-brasileiro-guilherme-silva-e-soro-silva-2026/",
+  "local_id": 23,
+  "organizador_id": null,
+  "coletado_em": "2026-11-19T20:49:06.896171",
+  "visto_em": "2026-11-19T20:49:06.896746",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-19T20:49:10.909970"
  }
 ]
