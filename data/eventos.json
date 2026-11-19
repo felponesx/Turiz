@@ -272,7 +272,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34058/ingressos-para-washington-brasileiro-guilherme-silva-e-soro-silva",
   "nome_norm": "washington brasileiro guilherme silva e soro silva",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -285,7 +285,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-18T07:40:34.757071",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:40:34.757220"
+  "atualizado_em": "2026-11-19T07:37:21.968811"
  },
  {
   "id": 9,
@@ -776,7 +776,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34234/ingressos-para-toca-sessions-apresenta-rael-nas-profundezas-da-onda",
   "nome_norm": "toca sessions apresenta rael nas profundezas da onda",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -789,7 +789,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-18T07:40:41.797517",
   "extra": {},
-  "atualizado_em": "2026-11-18T07:40:41.797670"
+  "atualizado_em": "2026-11-19T07:37:21.968814"
  },
  {
   "id": 23,
@@ -1780,7 +1780,7 @@
   "gratuito": false,
   "ingresso_url": "",
   "nome_norm": "connected smart cities",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -1795,7 +1795,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-16T22:18:26.022246"
+  "atualizado_em": "2026-11-19T07:37:21.968815"
  },
  {
   "id": 50,
@@ -2008,7 +2008,7 @@
   "gratuito": false,
   "ingresso_url": "",
   "nome_norm": "otto acustico",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -2023,7 +2023,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-18T07:43:11.506987"
+  "atualizado_em": "2026-11-19T07:37:21.968816"
  },
  {
   "id": 56,
