@@ -200,7 +200,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34069/ingressos-para-festival-sertanejo-com-jads-e-jadson-munhoz-e-mariano-fiduma-e-jeca-e-mais",
   "nome_norm": "festival sertanejo com jads jadson munhoz mariano fiduma jeca e mais",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -213,7 +213,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-19T20:46:11.203328",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:11.203966"
+  "atualizado_em": "2026-11-20T20:30:11.015351"
  },
  {
   "id": 7,
@@ -308,7 +308,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/33929/ingressos-para-hungria-e-delacruz",
   "nome_norm": "hungria e delacruz",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -321,7 +321,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-19T20:46:13.553363",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:13.553572"
+  "atualizado_em": "2026-11-20T20:30:11.015354"
  },
  {
   "id": 10,
