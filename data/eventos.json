@@ -596,7 +596,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34173/ingressos-para-festival-desejando-com-seu-desejo",
   "nome_norm": "festival desejando com seu desejo",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -609,7 +609,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-19T20:46:29.122716",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:29.123205"
+  "atualizado_em": "2026-11-20T07:27:46.073833"
  },
  {
   "id": 18,
@@ -812,7 +812,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34240/ingressos-para-robot-rock-alive-a-daft-punk-tribute",
   "nome_norm": "robot rock alive a daft punk tribute",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -825,7 +825,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-19T20:47:11.848919",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:47:11.849128"
+  "atualizado_em": "2026-11-20T07:27:46.073835"
  },
  {
   "id": 24,
@@ -1856,7 +1856,7 @@
   "gratuito": false,
   "ingresso_url": "",
   "nome_norm": "congress of the building and wood workers international",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -1871,7 +1871,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-16T22:18:39.030275"
+  "atualizado_em": "2026-11-20T07:27:46.073836"
  },
  {
   "id": 52,
