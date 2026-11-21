@@ -247,9 +247,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:46:33.541453",
+  "visto_em": "2026-11-21T07:22:56.182136",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:33.541664"
+  "atualizado_em": "2026-11-21T07:22:56.182341"
  },
  {
   "id": 8,
@@ -391,9 +391,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:46:47.009507",
+  "visto_em": "2026-11-21T07:23:24.884014",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:47.009720"
+  "atualizado_em": "2026-11-21T07:23:24.884205"
  },
  {
   "id": 12,
@@ -427,9 +427,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:46:49.358151",
+  "visto_em": "2026-11-21T07:23:27.165990",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:49.358396"
+  "atualizado_em": "2026-11-21T07:23:27.166190"
  },
  {
   "id": 13,
@@ -463,9 +463,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:46:51.853251",
+  "visto_em": "2026-11-21T07:23:29.357467",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:51.853476"
+  "atualizado_em": "2026-11-21T07:23:29.357680"
  },
  {
   "id": 14,
@@ -499,9 +499,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:46:54.104488",
+  "visto_em": "2026-11-21T07:23:31.549433",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:54.104699"
+  "atualizado_em": "2026-11-21T07:23:31.549630"
  },
  {
   "id": 15,
@@ -535,9 +535,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:46:56.318560",
+  "visto_em": "2026-11-21T07:23:34.198217",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:56.318770"
+  "atualizado_em": "2026-11-21T07:23:34.198408"
  },
  {
   "id": 16,
@@ -571,9 +571,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:46:58.518660",
+  "visto_em": "2026-11-21T07:23:36.693340",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:58.518864"
+  "atualizado_em": "2026-11-21T07:23:36.693529"
  },
  {
   "id": 17,
@@ -632,7 +632,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/33945/ingressos-para-monobloco-ensaio-com-bateria-completa",
   "nome_norm": "monobloco ensaio com bateria completa",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -643,9 +643,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:47:00.769940",
+  "visto_em": "2026-11-21T07:22:58.408393",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:47:00.770147"
+  "atualizado_em": "2026-11-21T07:25:03.319420"
  },
  {
   "id": 19,
@@ -664,7 +664,7 @@
   "lugar_fonte_id": "",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34436-20261104162810.webp",
-  "preco_min": 126.5,
+  "preco_min": 149.5,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34436/ingressos-para-reimaginario-com-claudia-leitte",
   "nome_norm": "reimaginario com claudia leitte",
@@ -679,9 +679,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:47:02.995458",
+  "visto_em": "2026-11-21T07:23:38.982015",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:47:02.995670"
+  "atualizado_em": "2026-11-21T07:23:38.983457"
  },
  {
   "id": 20,
@@ -715,9 +715,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:47:07.448371",
+  "visto_em": "2026-11-21T07:23:41.182382",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:47:07.448581"
+  "atualizado_em": "2026-11-21T07:23:41.182572"
  },
  {
   "id": 21,
@@ -751,9 +751,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:47:09.650943",
+  "visto_em": "2026-11-21T07:23:43.357516",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:47:09.651149"
+  "atualizado_em": "2026-11-21T07:23:43.357728"
  },
  {
   "id": 22,
@@ -859,9 +859,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:47:14.066493",
+  "visto_em": "2026-11-21T07:22:51.773731",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:47:14.066701"
+  "atualizado_em": "2026-11-21T07:22:51.774401"
  },
  {
   "id": 25,
@@ -884,7 +884,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34294/ingressos-para-seu-desejo-e-silvania-berg",
   "nome_norm": "seu desejo e silvania berg",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -895,9 +895,9 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:47:16.263570",
+  "visto_em": "2026-11-21T07:23:00.672083",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:47:16.264399"
+  "atualizado_em": "2026-11-21T07:25:03.319423"
  },
  {
   "id": 26,
@@ -931,9 +931,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:47:20.659147",
+  "visto_em": "2026-11-21T07:23:05.031373",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:47:20.659374"
+  "atualizado_em": "2026-11-21T07:23:05.031564"
  },
  {
   "id": 27,
@@ -967,9 +967,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:47:22.918531",
+  "visto_em": "2026-11-21T07:23:22.712594",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:47:22.918739"
+  "atualizado_em": "2026-11-21T07:23:22.712813"
  },
  {
   "id": 28,
@@ -1003,9 +1003,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-19T20:47:25.142116",
+  "visto_em": "2026-11-21T07:23:45.585819",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:47:25.142354"
+  "atualizado_em": "2026-11-21T07:23:45.586011"
  },
  {
   "id": 29,
@@ -1183,11 +1183,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:02.000758",
-  "visto_em": "2026-11-19T20:47:29.613967",
+  "visto_em": "2026-11-21T07:23:50.696479",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-19T20:47:29.614182"
+  "atualizado_em": "2026-11-21T07:23:50.696692"
  },
  {
   "id": 34,
@@ -1373,11 +1373,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:46:33.187276",
-  "visto_em": "2026-11-19T20:46:40.270033",
+  "visto_em": "2026-11-21T07:23:13.900696",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-19T20:46:40.270283"
+  "atualizado_em": "2026-11-21T07:23:13.900908"
  },
  {
   "id": 39,
@@ -1411,11 +1411,11 @@
   "local_id": 14,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:33.586411",
-  "visto_em": "2026-11-19T20:47:32.444143",
+  "visto_em": "2026-11-21T07:23:52.880610",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-19T20:47:32.444387"
+  "atualizado_em": "2026-11-21T07:23:52.880804"
  },
  {
   "id": 40,
@@ -1449,11 +1449,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:36.065377",
-  "visto_em": "2026-11-19T20:47:34.683748",
+  "visto_em": "2026-11-21T07:23:55.081017",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-19T20:47:34.683960"
+  "atualizado_em": "2026-11-21T07:23:55.081206"
  },
  {
   "id": 41,
@@ -1639,11 +1639,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:00.241349",
-  "visto_em": "2026-11-19T20:47:36.956146",
+  "visto_em": "2026-11-21T07:23:57.297131",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-19T20:47:36.956386"
+  "atualizado_em": "2026-11-21T07:23:57.297323"
  },
  {
   "id": 46,
@@ -1677,11 +1677,11 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:02.513812",
-  "visto_em": "2026-11-19T20:47:39.201772",
+  "visto_em": "2026-11-21T07:24:00.526121",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-19T20:47:39.201979"
+  "atualizado_em": "2026-11-21T07:24:00.526312"
  },
  {
   "id": 47,
@@ -1700,7 +1700,7 @@
   "lugar_fonte_id": "",
   "categoria": "shows",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34447-20261104120501.webp",
-  "preco_min": 57.5,
+  "preco_min": 69.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34447/ingressos-para-samba-90-com-netinho-de-paula-chrigor-e-marcio-art",
   "nome_norm": "samba 90 com netinho de paula chrigor e marcio art",
@@ -1715,11 +1715,11 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:04.787535",
-  "visto_em": "2026-11-16T22:18:04.788127",
+  "visto_em": "2026-11-21T07:24:02.738768",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-16T22:18:04.790178"
+  "atualizado_em": "2026-11-21T07:24:02.739226"
  },
  {
   "id": 48,
@@ -1905,11 +1905,11 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": "2026-11-18T07:41:42.971185",
-  "visto_em": "2026-11-19T20:47:18.468704",
+  "visto_em": "2026-11-21T07:23:02.855263",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-19T20:47:18.468920"
+  "atualizado_em": "2026-11-21T07:23:02.855459"
  },
  {
   "id": 53,
@@ -2095,11 +2095,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-19T20:46:44.783824",
-  "visto_em": "2026-11-19T20:46:44.785431",
+  "visto_em": "2026-11-21T07:23:18.345083",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-19T20:46:44.789954"
+  "atualizado_em": "2026-11-21T07:23:18.345288"
  },
  {
   "id": 58,
@@ -2252,5 +2252,385 @@
    "prioridade": 40
   },
   "atualizado_em": "2026-11-19T20:49:10.909970"
+ },
+ {
+  "id": 62,
+  "fonte": "ticket360",
+  "fonte_id": "7eee620b92acaa82ab55",
+  "titulo": "Foto em Grupo",
+  "descricao": "São Paulo, Audio, Rock São Paulo Apresentação: 06/12/2026 (Domingo) Abertura dos portões: 18h00 Horário do show: 20h00 Local: Audio Endereço: Av. Francisco Matarazzo, 694 - Barra Funda, São Paulo - SP, 05001-000 Classificação: Vendas: TICKET360 - Compre pelo site ou aplicativo! BILHETERIA VIRTUAL (AUDIO) Bilheteria…",
+  "inicio": "2026-12-06T23:00:00",
+  "fim": "2026-12-07T11:00:00",
+  "local_nome": "Audio",
+  "endereco": "Av. Francisco Matarazzo, 694, São Paulo",
+  "lat": -23.52827570365205,
+  "lon": -46.66968615636964,
+  "url": "https://www.ticket360.com.br/evento/34442/ingressos-para-foto-em-grupo",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34442-20261106191846.webp",
+  "preco_min": 72.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34442/ingressos-para-foto-em-grupo",
+  "nome_norm": "foto em grupo",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34442/ingressos-para-foto-em-grupo",
+  "local_id": 7,
+  "organizador_id": null,
+  "coletado_em": "2026-11-21T07:24:04.946110",
+  "visto_em": "2026-11-21T07:24:04.947584",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-21T07:24:04.951927"
+ },
+ {
+  "id": 63,
+  "fonte": "ticket360",
+  "fonte_id": "330d7a89bfbb64aaa3a7",
+  "titulo": "Maurício Manieri Classics Tour Inesquecível",
+  "descricao": "Em dezembro no Espaço Unimed, Maurício Manieri celebra trajetória na nova tour “Inesquecível” No dia 6 de dezembro, “Classics - Tour Inesquecível” traz grandes sucessos de Manieri e clássicos do pop romântico, em um espetáculo renovado, com novo cenário, figurinos e surpresas no repertório; Ingressos à venda Depois de…",
+  "inicio": "2026-12-06T23:00:00",
+  "fim": "2026-12-07T11:00:00",
+  "local_nome": "Espaço Unimed",
+  "endereco": "Rua Tagipuru, 795, São Paulo",
+  "lat": -23.527600841437025,
+  "lon": -46.667878583035034,
+  "url": "https://www.ticket360.com.br/evento/33543/ingressos-para-mauricio-manieri-classics-tour-inesquecivel",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/33543-20260625122834.webp",
+  "preco_min": 144.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/33543/ingressos-para-mauricio-manieri-classics-tour-inesquecivel",
+  "nome_norm": "mauricio manieri classics tour inesquecivel",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/33543/ingressos-para-mauricio-manieri-classics-tour-inesquecivel",
+  "local_id": 1,
+  "organizador_id": null,
+  "coletado_em": "2026-11-21T07:24:07.158982",
+  "visto_em": "2026-11-21T07:24:07.159560",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-21T07:24:07.162178"
+ },
+ {
+  "id": 64,
+  "fonte": "ticket360",
+  "fonte_id": "60cc65e56d5560e21707",
+  "titulo": "Fábio Jr.",
+  "descricao": "Fábio Jr. faz show com os maiores sucessos em São Paulo no fim do ano Cantor retorna à Mooca, no novo Juventus Live Hall, com show que aproxima o público e traz um repertório que atravessa décadas de carreira O cantor Fábio Jr. sobe ao palco do Juventus Live Hall, em São Paulo, no dia 11 de dezembro, uma sexta-feira.…",
+  "inicio": "2026-12-12T01:00:00",
+  "fim": "2026-12-12T13:00:00",
+  "local_nome": "Juventus Live Hall",
+  "endereco": "Rua Juventus, 690, São Paulo",
+  "lat": -23.5721551484822,
+  "lon": -46.58899952548829,
+  "url": "https://www.ticket360.com.br/evento/34182/ingressos-para-fabio-jr",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34182-20260915115747.webp",
+  "preco_min": 72.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34182/ingressos-para-fabio-jr",
+  "nome_norm": "fabio jr",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34182/ingressos-para-fabio-jr",
+  "local_id": 3,
+  "organizador_id": null,
+  "coletado_em": "2026-11-21T07:24:09.415626",
+  "visto_em": "2026-11-21T07:24:09.416265",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-21T07:24:09.418866"
+ },
+ {
+  "id": 65,
+  "fonte": "ticket360",
+  "fonte_id": "4fad61027277d9e86802",
+  "titulo": "Festa do Branco com Joelma",
+  "descricao": "CTN : O CTN (Centro de Tradições Nordestinas) é o maior ecossistema de cultura nordestina do Brasil, abrangendo uma área de 27 mil m². Aqui, os visitantes têm à disposição uma ampla gama de opções de entretenimento. Nossa infraestrutura é composta por 11 restaurantes e 10 quiosques, cada um destacando o melhor da…",
+  "inicio": "2026-12-11T00:00:00",
+  "fim": "2026-12-11T00:00:00",
+  "local_nome": "CTN",
+  "endereco": "Rua Jacofer, 615, São Paulo",
+  "lat": -23.51020876209002,
+  "lon": -46.6788143625433,
+  "url": "https://www.ticket360.com.br/evento/34209/ingressos-para-festa-do-branco-com-joelma",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34209-20260924144814.webp",
+  "preco_min": 96.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34209/ingressos-para-festa-do-branco-com-joelma",
+  "nome_norm": "festa do branco com joelma",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34209/ingressos-para-festa-do-branco-com-joelma",
+  "local_id": 6,
+  "organizador_id": null,
+  "coletado_em": "2026-11-21T07:24:11.651000",
+  "visto_em": "2026-11-21T07:24:11.651613",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-21T07:24:11.654243"
+ },
+ {
+  "id": 66,
+  "fonte": "ticket360",
+  "fonte_id": "cba8b91778a069d17914",
+  "titulo": "Armandinho Se o Tempo Passa",
+  "descricao": "ARMANDINHO Um dos artistas de maior sucesso no país, colecionador de hits, discos, DVDs, turnês, no Brasil e no exterior, Armandinho está na estrada com seu show que embala e enamora milhares de fãs pelo Brasil e no exterior. Chamado de poeta por seus fãs, sua música reflete suas influências, trazendo uma mistura de…",
+  "inicio": "2026-12-12T00:00:00",
+  "fim": "2026-12-12T00:00:00",
+  "local_nome": "Audio",
+  "endereco": "Av. Francisco Matarazzo, 694, São Paulo",
+  "lat": -23.52827570365205,
+  "lon": -46.66968615636964,
+  "url": "https://www.ticket360.com.br/evento/33222/ingressos-para-armandinho-se-o-tempo-passa",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/33222-20260901150844.webp",
+  "preco_min": 96.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/33222/ingressos-para-armandinho-se-o-tempo-passa",
+  "nome_norm": "armandinho se o tempo passa",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/33222/ingressos-para-armandinho-se-o-tempo-passa",
+  "local_id": 7,
+  "organizador_id": null,
+  "coletado_em": "2026-11-21T07:24:13.833835",
+  "visto_em": "2026-11-21T07:24:13.834417",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-21T07:24:13.837173"
+ },
+ {
+  "id": 67,
+  "fonte": "ticket360",
+  "fonte_id": "e08656d6a4b6b2c68bd3",
+  "titulo": "Matheus & Kauan",
+  "descricao": "A Casa Mais Temática do Brasil Inspirada na cultura dos cowboys do western, o Villa Country possui 12 mil metros quadrados divididos em vários ambientes que remetem o visitante ao velho oeste americano. É muito mais do que uma casa de shows, pois concentra restaurante, pista de dança, camarotes e centro de convenções.…",
+  "inicio": "2026-12-18T02:30:00",
+  "fim": "2026-12-18T14:30:00",
+  "local_nome": "Villa Country",
+  "endereco": "Av. Francisco Matarazzo, 774, São Paulo",
+  "lat": -23.52717019356943,
+  "lon": -46.670425873930924,
+  "url": "https://www.ticket360.com.br/evento/34186/ingressos-para-matheus-e-kauan",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34186-20260927102522.webp",
+  "preco_min": 72.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34186/ingressos-para-matheus-e-kauan",
+  "nome_norm": "matheus kauan",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34186/ingressos-para-matheus-e-kauan",
+  "local_id": 5,
+  "organizador_id": null,
+  "coletado_em": "2026-11-21T07:24:16.016488",
+  "visto_em": "2026-11-21T07:24:16.017120",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-21T07:24:16.019746"
+ },
+ {
+  "id": 68,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "ef7f11a575dfba6766ad",
+  "titulo": "Cordel do Fogo Encantado apresenta primeiro álbum",
+  "descricao": "Cordel do Fogo Encantado apresenta seu primeiro álbum na Casa Natura Musical, nos dias 21.11 e 22.11.\n\nFormado em 1997, em Arcoverde, no sertão de Pernambuco, o Cordel do Fogo Encantado nasceu do encontro entre teatro, poesia oral e escrita dos cantadores e ritmos afro-indígenas da região. Dessa mistura surgiu o espetáculo que deu nome ao grupo e que, ao longo dos anos, se transformou em uma das experiências mais marcantes da música brasileira.\n\nEm 2001, com produção musical de Naná Vasconcelos, a banda lançou seu primeiro álbum homônimo, Cordel do Fogo Encantado. O trabalho ampliou o alcance da sonoridade construída pelo grupo e consolidou a combinação entre poesia, música, percussão e teatralidade que se tornou sua marca.\n\nCom uma formação que reúne Lirinha, Clayton Barros, Emerson Calado, Nego Henrique e Rafa Almeida, o Cordel percorreu o Brasil com apresentações reconhecidas pela intensidade cênica e pela força de seus tambores, violões e versos. A trajetória inclui ainda três álbuns de estúdio, apresentações internacionais, prêmios da crítica especializada e uma pausa nas atividades em 2010. Em 2017, o grupo voltou a se reunir para a criação de novos trabalhos e uma nova turnê.\n\nAgora, o público da Casa Natura Musical poderá acompanhar a apresentação de Cordel do Fogo Encantado, primeiro álbum da banda, em duas noites que celebram um dos trabalhos fundamentais da música independente brasileira.",
+  "inicio": "2026-11-21T00:00:00",
+  "fim": "2026-11-22T00:00:00",
+  "local_nome": "Casa Natura Musical",
+  "endereco": "R. Artur de Azevedo, 2134\nPinheiros, São Paulo – SP, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/cordel-do-fogo-encantado-apresenta-primeiro-album-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "cordel do fogo encantado apresenta primeiro album",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/cordel-do-fogo-encantado-apresenta-primeiro-album-2026/",
+  "local_id": 24,
+  "organizador_id": null,
+  "coletado_em": "2026-11-21T07:24:28.514313",
+  "visto_em": "2026-11-21T07:24:28.514885",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-21T07:24:28.517733"
+ },
+ {
+  "id": 69,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "4c82736fb09f22bb1462",
+  "titulo": "Retrô 2 Mil com Hevo84, Marcelo Strike e Hateen",
+  "descricao": "",
+  "inicio": "2026-11-21T00:00:00",
+  "fim": "2026-11-21T00:00:00",
+  "local_nome": "Juventus Live Hall",
+  "endereco": "Rua Juventus, 690, São Paulo",
+  "lat": -23.5721551484822,
+  "lon": -46.58899952548829,
+  "url": "https://visitesaopaulo.com/evento/retro-2-mil-com-hevo84-marcelo-strike-e-hateen-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "retro 2 mil com hevo84 marcelo strike e hateen",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/retro-2-mil-com-hevo84-marcelo-strike-e-hateen-2026/",
+  "local_id": 3,
+  "organizador_id": null,
+  "coletado_em": "2026-11-21T07:24:37.617192",
+  "visto_em": "2026-11-21T07:24:37.617806",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-21T07:25:03.319424"
+ },
+ {
+  "id": 70,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "9a10b8c7bd57369de599",
+  "titulo": "Heber Nunes – Gênese",
+  "descricao": "",
+  "inicio": "2026-11-21T00:00:00",
+  "fim": "2026-11-21T00:00:00",
+  "local_nome": "Blue Note São Paulo",
+  "endereco": "Av. Paulista, 2073 - Bela Vista, São Paulo - SP, 01311-300, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/heber-nunes-genese-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "heber nunes genese",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/heber-nunes-genese-2026/",
+  "local_id": 11,
+  "organizador_id": null,
+  "coletado_em": "2026-11-21T07:24:49.855637",
+  "visto_em": "2026-11-21T07:24:49.856259",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-21T07:25:03.319424"
+ },
+ {
+  "id": 71,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "7f8ad533ccc1c28502d7",
+  "titulo": "Queen Legend – O Legado De Freddie Mercury",
+  "descricao": "",
+  "inicio": "2026-11-21T00:00:00",
+  "fim": "2026-11-21T00:00:00",
+  "local_nome": "Blue Note São Paulo",
+  "endereco": "Av. Paulista, 2073 - Bela Vista, São Paulo - SP, 01311-300, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/queen-legend-o-legado-de-freddie-mercury-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "queen legend o legado de freddie mercury",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/queen-legend-o-legado-de-freddie-mercury-2026/",
+  "local_id": 11,
+  "organizador_id": null,
+  "coletado_em": "2026-11-21T07:24:59.300183",
+  "visto_em": "2026-11-21T07:24:59.300796",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-21T07:25:03.319425"
  }
 ]
