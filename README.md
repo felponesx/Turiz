@@ -116,3 +116,11 @@ Só avaliações **do próprio TURIZ**, enviadas pelo backend do app depois de u
 Limites: "ativo na Receita" não garante que o lugar esteja aberto (pode ser só escritório ou cozinha de delivery) e a coordenada aproximada pode errar algumas centenas de metros. Lugares que já existem no OSM são tratados em `mesclar_com_osm`.
 
 `python sondar_receita.py` (workflow *Sondagem Receita e IBGE*) mostra o formato dos arquivos sem imprimir nenhum dado real.
+
+## Segurança
+Auditoria completa, correções e status: [docs/seguranca/RELATORIO.md](docs/seguranca/RELATORIO.md). Política de reporte: [SECURITY.md](SECURITY.md).
+- **API**: cabeçalhos de segurança, limites por IP e por classe de rota com bloqueio progressivo (nunca permanente), limite de corpo, timeout, erros sem vazamento, `/docs` desligado por padrão, chaves de API com escopo (`ingest` < `moderacao` < `admin`) e trilha de auditoria. Variáveis em `.env.example`.
+- **Contas** (`/conta/*`): Argon2id, sessões de servidor com cookie HttpOnly + CSRF, MFA (TOTP) obrigatório para administradores, recuperação de senha sem enumeração de e-mails, exportar/excluir dados (LGPD). Primeiro admin: `python -m app.conta.cli seu@email.com`.
+- **Front de produção**: `python frontend/build_producao.py turiz.html dist/turiz.html --vendor frontend/vendor --empresa empresa.json --juridico-revisado` gera uma página com CSP estrita, sem CDN, sem login de teste e sem dados de exemplo (o build recusa se faltar dado da empresa ou revisão jurídica).
+- **Testes**: `pytest tests` (inclui `tests/seguranca`); `python scripts/verificar_privacidade.py`; `python scripts/testar_restauracao.py`; E2E `frontend/teste_e2e_producao.py`; carga controlada `scripts/teste_carga.py`.
+- **CI** (`.github/workflows`): testes, Bandit, pip-audit, Gitleaks, CodeQL, Dependabot, backup com teste de restauração e monitor externo.
