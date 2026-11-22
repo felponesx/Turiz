@@ -129,10 +129,23 @@ button.li:hover,.li[data-go]:hover{background:color-mix(in srgb,var(--ink) 5%,va
 .m-xr small{font-size:.7rem;color:var(--ink-2)}
 .m-xr .m-v{font-size:.78rem;font-weight:600;color:var(--brand);white-space:nowrap}
 .m-xr .m-v.pend{color:var(--warn)}
+/* categorias: uma linha só, em 4 colunas iguais que cabem em qualquer celular */
+.m-cats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.m-cats .chip{min-width:0;padding:8px 0;font-size:.7rem;font-weight:500;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.m-cats .chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink);font-weight:600}
+@media (min-width:720px){.m-cats{grid-template-columns:repeat(4,max-content);justify-content:start;gap:8px}.m-cats .chip{padding:7px 14px;font-size:.78rem}}
+/* abas de período (e de outras telas): colunas iguais; o texto quebra dentro da aba em vez de sair da tela */
+.evfilters .m-sel{position:relative;display:inline-flex;flex:none}
+.evfilters .m-sel select{appearance:none;-webkit-appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);box-shadow:none;border-radius:999px;height:auto;min-height:0;font:500 .78rem var(--font-body);padding:8px 30px 8px 14px;max-width:none}
+.evfilters .m-sel select:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.evfilters .m-sel .i{position:absolute;right:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;pointer-events:none;color:var(--ink-2)}
+.tabs.seg{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);overflow:visible;gap:2px}
+.tabs.seg>button{min-width:0;white-space:normal;line-height:1.15;padding:9px 4px;font-size:.78rem;text-align:center}
 """
 
 HELPERS = r'''
 /* ---- peças do layout do modelo (usam só os dados do próprio app) ---- */
+const GRUPO_CURTO={musica_entretenimento:"Música",gastronomia:"Gastronomia",cultura_lazer:"Cultura"};
 const mPreco=p=>p.price?"$".repeat(Math.min(4,+p.price||0)):"";
 const mNotaTxt=p=>p.rating==null?"":"★ "+p.rating.toFixed(1).replace(".",",");
 const mMeta=p=>[esc(p.region||p.cuisine||""),mPreco(p),mNotaTxt(p)].filter(Boolean).join(" • ");
@@ -176,8 +189,9 @@ ${(()=>{const q=(f.q||"").trim();if(q.length<3)return"";const r=evFilter(E,evNL(
 PARTIES = r'''
 V.parties=()=>{const t=S.tab.parties,p=S.pf,nl=p.q.trim()?evNL(p.q):{f:{},info:[]},f={...nl.f};
 const reais=E.filter(e=>e.real),temData=f.de!=null||f.ate!=null;
-if(p.cidade)f.cidade=p.cidade;if(p.g)f.grupo=p.g;if(p.tipo)f.tipo=p.tipo;if(p.preco==="free")f.gratuito=true;if(p.preco==="100")f.max=100;
+if(p.cidade)f.cidade=p.cidade;if(p.g)f.grupo=p.g;if(p.tipo)f.tipo=p.tipo;if(p.preco==="free")f.gratuito=true;
 let l=evFilter(E,f);if(!temData&&t!=="prox")l=l.filter(e=>e.day===t);
+if(p.preco==="pago")l=l.filter(e=>!e.free&&e.price!=null&&(!p.maxp||e.price<=+p.maxp));
 const cidades=Object.entries(reais.reduce((o,e)=>(e.cidade&&(o[e.cidade]=(o[e.cidade]||0)+1),o),{})).sort((a,b)=>b[1]-a[1]).slice(0,40);
 const temTipo=reais.some(e=>e.placeId),n=l.length,vis=l.slice(0,S.pn);
 const atualiz=REAL.gerado?new Date(REAL.gerado).toLocaleDateString("pt-BR"):"";
@@ -186,9 +200,9 @@ return`<div class="m-phead"><div class="row between"><h1 class="m-h1">Festas</h1
 <form class="search" id="pqf" role="search">${ic("search")}<input id="pq" value="${esc(p.q)}" placeholder="Ex.: shows hoje em São Paulo · festas no fim de semana" aria-label="Buscar eventos"></form>
 ${nl.info.length?`<p class="evinterp" style="margin-top:8px">Entendi: <b>${nl.info.map(esc).join(" · ")}</b> <button class="link" data-act="pfclear">limpar</button></p>`:""}</div>
 ${temData?"":segs("parties",[["hoje","Hoje"],["amanha","Amanhã"],["fds","Fim de semana"],["prox","Próximos"]])}
-<div class="evfilters"><div class="evrow m-chips" role="group" aria-label="Categorias"><button class="chip" aria-pressed="${!p.g}" data-act="pf:g:">Tudo</button>${GRUPOS.map(([k,n2])=>`<button class="chip" aria-pressed="${p.g===k}" data-act="pf:g:${k}">${n2}</button>`).join("")}</div>
+<div class="evfilters"><div class="m-cats" role="group" aria-label="Categorias"><button class="chip" aria-pressed="${!p.g}" data-act="pf:g:">Tudo</button>${GRUPOS.map(([k,n2])=>`<button class="chip" aria-pressed="${p.g===k}" title="${esc(n2)}" data-act="pf:g:${k}">${GRUPO_CURTO[k]||n2}</button>`).join("")}</div>
 <div class="evrow m-chips">${cidades.length>1?`<select id="pcity" aria-label="Cidade"><option value="">Todas as cidades</option>${cidades.map(([c,k])=>`<option value="${esc(c)}"${p.cidade===c?" selected":""}>${esc(c)} (${k})</option>`).join("")}</select>`:""}
-<button class="chip" aria-pressed="${p.preco==="free"}" data-act="pf:preco:free">Gratuitos</button><button class="chip" aria-pressed="${p.preco==="100"}" data-act="pf:preco:100">Até R$ 100</button>
+<button class="chip" aria-pressed="${p.preco==="free"}" data-act="pf:preco:free">Gratuitos</button><button class="chip" aria-pressed="${p.preco==="pago"}" data-act="pf:preco:pago">Pagos</button>${p.preco==="pago"?`<label class="m-sel"><select id="pmax" aria-label="Preço máximo">${[["","Sem limite"],["50","Até R$ 50"],["100","Até R$ 100"],["200","Até R$ 200"],["500","Até R$ 500"]].map(([v,t])=>`<option value="${v}"${(p.maxp||"")===v?" selected":""}>${t}</option>`).join("")}</select><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></label>`:""}
 ${temTipo?`<button class="chip" aria-pressed="${p.tipo==="Restaurante"}" data-act="pf:tipo:Restaurante">Em restaurantes</button><button class="chip" aria-pressed="${p.tipo==="Bar"}" data-act="pf:tipo:Bar">Em bares</button>`:""}</div></div>
 <p class="m-count" style="margin:14px 0 4px"><span>${num(n)} ${n===1?"evento":"eventos"}</span></p>
 ${n?`<div class="m-agenda">${vis.map(mEvRow).join("")}</div>`:`<div class="card state"><div class="big brand">${ic("star")}</div><h3>${E.length?"Nenhum evento com esses filtros":"Ainda não há eventos"}</h3><p class="sub">${E.length?"Tente outro período, cidade ou categoria.":"Os eventos aparecem aqui quando as fontes forem coletadas."}</p>${E.length?`<button class="btn soft" data-act="pfclear">Limpar filtros</button>`:""}</div>`}
@@ -249,6 +263,9 @@ def main(arq):
     h = h.replace(ant, 'const TABS=[["home","Início","compass"],["explore","Explorar","search"],["parties","Festas","calendar"],', 1)
     assert '<symbol id="i-home"' in h
     h = h.replace('<symbol id="i-home"', CAL + '<symbol id="i-home"', 1)
+    ant = 'const pc=$("#pcity");if(pc)pc.addEventListener("change",e=>{S.pf.cidade=e.target.value;S.pn=24;render()});'
+    assert ant in h, "ligação do seletor de cidade não encontrada"
+    h = h.replace(ant, ant + 'const pm=$("#pmax");if(pm)pm.addEventListener("change",e=>{S.pf.maxp=e.target.value;S.pn=24;render()});', 1)
     # 3) só Inter
     h, n = re.subn(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com/css2\?family=Inter[^"]*">',
                    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap">', h, count=1)
