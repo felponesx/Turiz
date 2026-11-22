@@ -41,6 +41,10 @@ def main():
             js = t.extractfile("package/dist/jsQR.js").read()
         open(f"{SAIDA}/jsQR.js", "wb").write(js)
         meta["jsQR.js"] = {"sri": sri(js), "bytes": len(js), "versao": "1.4.0", "origem": "registry.npmjs.org/jsqr@1.4.0"}
+        # Leaflet (página estática da API): hash para SRI
+        for arq in ("leaflet.min.js", "leaflet.min.css"):
+            dados = c.get(f"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/{arq}").content
+            meta[arq] = {"sri": sri(dados), "bytes": len(dados), "origem": f"cdnjs leaflet 1.9.4/{arq}"}
     json.dump(meta, open(f"{SAIDA}/INTEGRIDADE.json", "w"), indent=1)
     print(json.dumps(meta, indent=1))
 
