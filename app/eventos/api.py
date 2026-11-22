@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 from ..db import get_db
+from ..seguranca.ip import cliente_ip
 from ..models import Evento
 from . import agendador, busca, consulta
 from .conectores import REGISTRO
@@ -22,7 +23,7 @@ _hist: dict[str, deque] = defaultdict(deque)
 
 def limite_de_requisicoes(request: Request):
     """Janela deslizante por IP (em memória): protege a consulta pública contra excesso de chamadas."""
-    ip = (request.headers.get("x-forwarded-for", "").split(",")[0].strip() or (request.client.host if request.client else "?"))
+    ip = cliente_ip(request)          # nunca confia no X-Forwarded-For enviado pelo cliente (só atrás de proxies configurados)
     agora = time.monotonic()
     h = _hist[ip]
     while h and agora - h[0] > JANELA_S:

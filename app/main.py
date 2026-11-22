@@ -1,6 +1,9 @@
 import os
+import re
+import threading
+import time
 from datetime import datetime, timezone
-from fastapi import Depends, FastAPI, Header, HTTPException, Query
+from fastapi import Depends, FastAPI, Header, HTTPException, Query, Response
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 from fastapi.staticfiles import StaticFiles
@@ -10,10 +13,24 @@ from .db import Base, engine, get_db
 from pydantic import BaseModel, Field
 from .models import Avaliacao, Cardapio, Evento, Imagem, Lugar, RedeSocial
 from .sources import horarios as hor
+from .seguranca import chaves as _chaves, config as _cfg
+from .seguranca.chaves import exigir_chave, exigir_escopo
+from .seguranca.entrada import LIKE_ESCAPE, like
+from .seguranca.middleware import SegurancaMiddleware
 
 from .migrar import upgrade_head
 upgrade_head()          # esquema versionado (Alembic); bancos antigos são marcados e atualizados sem perder dados
-app = FastAPI(title="Turiz API", description="Restaurantes, bares e eventos de São Paulo")
+_docs = _cfg.docs_ligados()
+app = FastAPI(title="Turiz API", description="Restaurantes, bares e eventos de São Paulo",
+              docs_url="/docs" if _docs else None, redoc_url=None, openapi_url="/openapi.json" if _docs else None)
+_chaves.carregar()          # falha na partida (em produção) se alguma chave for fraca ou malformada
+if _cfg.hosts_permitidos():
+    from starlette.middleware.trustedhost import TrustedHostMiddleware
+    app.add_middleware(TrustedHostMiddleware, allowed_hosts=_cfg.hosts_permitidos())
+if _cfg.origens_cors():          # CORS só para as origens listadas; por padrão nenhuma
+    from fastapi.middleware.cors import CORSMiddleware
+    app.add_middleware(CORSMiddleware, allow_origins=_cfg.origens_cors(), allow_methods=["GET"], allow_headers=["Content-Type"], max_age=600)
+app.add_middleware(SegurancaMiddleware)          # por último = mais externa: protege tudo que vem depois
 
 
 @app.on_event("startup")
@@ -26,12 +43,6 @@ def carregar_dados_iniciais():
         restaurar()
 
 
-def exigir_chave(x_api_key: str | None = Header(default=None)):
-    esperada = os.getenv("API_KEY")
-    if not esperada or x_api_key != esperada:
-        raise HTTPException(401, "API key inválida")
-
-
 def lugar_dict(l: Lugar):
     return {c.name: getattr(l, c.name) for c in Lugar.__table__.columns}
 
@@ -42,6 +53,13 @@ def evento_dict(e: Evento):
 
 @app.get("/health")
 def health(db: Session = Depends(get_db)):
+    """Público e mínimo (monitoramento externo). Contagens e detalhes ficam em /admin/saude."""
+    db.scalar(select(func.count(Lugar.id)).where(Lugar.id == 0))
+    return {"ok": True}
+
+
+@app.get("/admin/saude", dependencies=[Depends(exigir_escopo("moderacao"))])
+def saude_detalhada(db: Session = Depends(get_db)):
     return {"ok": True, "lugares": db.scalar(select(func.count(Lugar.id))), "eventos": db.scalar(select(func.count(Evento.id))),
             "cardapios": db.scalar(select(func.count(Cardapio.id))), "imagens": db.scalar(select(func.count(Imagem.id))),
             "avaliacoes": db.scalar(select(func.count(Avaliacao.id)).where(Avaliacao.status == "publicada"))}
@@ -60,26 +78,40 @@ def _ids_por_abertura(db, aberto: bool) -> list[int]:
 def lugares(tipo: str | None = Query(None, pattern="^(restaurante|bar)$"), q: str | None = None,
             bairro: str | None = None, culinaria: str | None = None, fonte: str | None = None,
             aberto_agora: bool | None = Query(None, description="só quem tem horário interpretável: true=aberto, false=fechado"),
-            limit: int = Query(50, le=500), offset: int = 0, db: Session = Depends(get_db)):
+            limit: int = Query(50, ge=1, le=500), offset: int = Query(0, ge=0, le=100_000), db: Session = Depends(get_db)):
     st = select(Lugar)
     if aberto_agora is not None:
         st = st.where(Lugar.id.in_(_ids_por_abertura(db, aberto_agora)))
     if tipo: st = st.where(Lugar.tipo == tipo)
-    if q: st = st.where(Lugar.nome.ilike(f"%{q}%"))
-    if bairro: st = st.where(Lugar.bairro.ilike(f"%{bairro}%"))
-    if culinaria: st = st.where(Lugar.culinaria.ilike(f"%{culinaria}%"))
+    if q: st = st.where(Lugar.nome.ilike(like(q), escape=LIKE_ESCAPE))
+    if bairro: st = st.where(Lugar.bairro.ilike(like(bairro), escape=LIKE_ESCAPE))
+    if culinaria: st = st.where(Lugar.culinaria.ilike(like(culinaria), escape=LIKE_ESCAPE))
     if fonte: st = st.where(Lugar.fonte == fonte)
     total = db.scalar(select(func.count()).select_from(st.subquery()))
     itens = db.scalars(st.order_by(Lugar.nome).limit(limit).offset(offset)).all()
     return {"total": total, "itens": [lugar_dict(i) for i in itens]}
 
 
+_GEO: dict = {}
+_GEO_LOCK = threading.Lock()
+
+
 @app.get("/lugares/geo")
-def lugares_geo(tipo: str | None = Query(None, pattern="^(restaurante|bar)$"), db: Session = Depends(get_db)):
-    """Lista compacta [id, nome, tipo, lat, lon] para desenhar o mapa."""
+def lugares_geo(response: Response, tipo: str | None = Query(None, pattern="^(restaurante|bar)$"), db: Session = Depends(get_db)):
+    """Lista compacta [id, nome, tipo, lat, lon] para desenhar o mapa. Rota cara: cache de 5 min no servidor e no navegador/CDN."""
+    agora = time.monotonic()
+    with _GEO_LOCK:
+        hit = _GEO.get(tipo)
+        if hit and agora - hit[0] < 300:
+            response.headers["Cache-Control"] = "public, max-age=300"
+            return hit[1]
     st = select(Lugar.id, Lugar.nome, Lugar.tipo, Lugar.lat, Lugar.lon).where(Lugar.lat.is_not(None))
     if tipo: st = st.where(Lugar.tipo == tipo)
-    return [list(r) for r in db.execute(st)]
+    dados = [list(r) for r in db.execute(st)]
+    with _GEO_LOCK:
+        _GEO[tipo] = (agora, dados)
+    response.headers["Cache-Control"] = "public, max-age=300"
+    return dados
 
 
 @app.get("/lugares/{lugar_id}")
@@ -126,7 +158,7 @@ class NovaAvaliacao(BaseModel):
     validada: bool = False
 
 
-@app.post("/avaliacoes", dependencies=[Depends(exigir_chave)], status_code=201)
+@app.post("/avaliacoes", dependencies=[Depends(exigir_escopo("ingest"))], status_code=201)
 def criar_avaliacao(a: NovaAvaliacao, db: Session = Depends(get_db)):
     """O backend do app envia a avaliação depois de uma experiência. Só entra publicada se validada por nota fiscal."""
     l = _lugar_ou_404(db, a.lugar_id)
@@ -140,7 +172,7 @@ def criar_avaliacao(a: NovaAvaliacao, db: Session = Depends(get_db)):
     return {"id": av.id, "status": av.status}
 
 
-@app.patch("/avaliacoes/{avaliacao_id}", dependencies=[Depends(exigir_chave)])
+@app.patch("/avaliacoes/{avaliacao_id}", dependencies=[Depends(exigir_escopo("moderacao"))])
 def moderar_avaliacao(avaliacao_id: int, status: str = Query(..., pattern="^(publicada|pendente|rejeitada)$"), db: Session = Depends(get_db)):
     av = db.get(Avaliacao, avaliacao_id)
     if not av:
@@ -151,19 +183,19 @@ def moderar_avaliacao(avaliacao_id: int, status: str = Query(..., pattern="^(pub
 
 
 @app.get("/lugares/{lugar_id}/avaliacoes")
-def avaliacoes_do_lugar(lugar_id: int, limit: int = Query(20, le=100), offset: int = 0, db: Session = Depends(get_db)):
+def avaliacoes_do_lugar(lugar_id: int, limit: int = Query(20, ge=1, le=100), offset: int = Query(0, ge=0, le=10_000), db: Session = Depends(get_db)):
     """Avaliações publicadas do TURIZ + resumo (média, total, distribuição). Sem nota = ainda não avaliado."""
     l = _lugar_ou_404(db, lugar_id)
     base = (Avaliacao.lugar_fonte == l.fonte, Avaliacao.lugar_fonte_id == l.fonte_id, Avaliacao.status == "publicada")
-    todas = db.scalars(select(Avaliacao).where(*base)).all()
-    n = len(todas)
-    media = lambda f: round(sum(getattr(a, f) for a in todas) / n, 2) if n else None
+    n, mc, ma, mt = db.execute(select(func.count(), func.avg(Avaliacao.nota_comida), func.avg(Avaliacao.nota_ambiente), func.avg(Avaliacao.nota_atendimento)).where(*base)).one()
+    media = lambda v: round(float(v), 2) if n else None
     dist = {str(k): 0 for k in range(5, 0, -1)}
-    for a in todas:
-        dist[str(round((a.nota_comida + a.nota_ambiente + a.nota_atendimento) / 3))] += 1
+    for nota, qtd in db.execute(select(func.round((Avaliacao.nota_comida + Avaliacao.nota_ambiente + Avaliacao.nota_atendimento) / 3.0), func.count()).where(*base).group_by(
+            func.round((Avaliacao.nota_comida + Avaliacao.nota_ambiente + Avaliacao.nota_atendimento) / 3.0))):
+        dist[str(int(nota))] += qtd
     itens = db.scalars(select(Avaliacao).where(*base).order_by(Avaliacao.criado_em.desc()).limit(limit).offset(offset))
-    return {"resumo": {"total": n, "nota": round(sum(media(f) for f in ("nota_comida", "nota_ambiente", "nota_atendimento")) / 3, 2) if n else None,
-                       "comida": media("nota_comida"), "ambiente": media("nota_ambiente"), "atendimento": media("nota_atendimento"),
+    return {"resumo": {"total": n, "nota": round((media(mc) + media(ma) + media(mt)) / 3, 2) if n else None,
+                       "comida": media(mc), "ambiente": media(ma), "atendimento": media(mt),
                        "distribuicao": dist},
             "itens": [{"id": a.id, "nota_comida": a.nota_comida, "nota_ambiente": a.nota_ambiente, "nota_atendimento": a.nota_atendimento,
                        "comentario": a.comentario, "validada": a.validada, "criado_em": a.criado_em} for a in itens]}
@@ -181,7 +213,7 @@ def imagens_do_lugar(lugar_id: int, status: str = Query("aprovada", pattern="^(a
     return [{c.name: getattr(i, c.name) for c in Imagem.__table__.columns} for i in db.scalars(st)]
 
 
-@app.patch("/imagens/{imagem_id}", dependencies=[Depends(exigir_chave)])
+@app.patch("/imagens/{imagem_id}", dependencies=[Depends(exigir_escopo("moderacao"))])
 def moderar_imagem(imagem_id: int, status: str = Query(..., pattern="^(aprovada|pendente|rejeitada)$"), db: Session = Depends(get_db)):
     """Moderação: aprova (você tem permissão/licença) ou rejeita uma imagem."""
     i = db.get(Imagem, imagem_id)
@@ -203,10 +235,21 @@ def redes_do_lugar(lugar_id: int, db: Session = Depends(get_db)):
     return [{c.name: getattr(r, c.name) for c in RedeSocial.__table__.columns} for r in db.scalars(st)]
 
 
-@app.post("/ingest/lugares", dependencies=[Depends(exigir_chave)])
+@app.post("/ingest/lugares", dependencies=[Depends(exigir_escopo("ingest"))])
 def ingest_lugares(registros: list[dict], db: Session = Depends(get_db)):
-    """Permite que os bots enviem lugares já normalizados."""
-    return ingest.upsert(db, Lugar, registros)
+    """Permite que os bots enviem lugares já normalizados. Lote limitado, campos validados, URLs só http(s)."""
+    if len(registros) > _cfg.max_itens_ingest():
+        raise HTTPException(413, f"Lote grande demais (máx. {_cfg.max_itens_ingest()} registros)")
+    limpos = []
+    for r in registros:
+        if not isinstance(r.get("fonte"), str) or not isinstance(r.get("fonte_id"), str) or not r["fonte"] or not r["fonte_id"] \
+                or len(r["fonte"]) > 30 or len(r["fonte_id"]) > 200:
+            raise HTTPException(422, "Cada registro precisa de 'fonte' (até 30) e 'fonte_id' (até 200 caracteres)")
+        r = {k: (v[:600] if isinstance(v, str) else v) for k, v in r.items()}
+        if r.get("site") and not re.match(r"^https?://[^\s<>\"']+$", r["site"]):
+            r["site"] = ""                         # nunca guardamos javascript:, data: etc. em links
+        limpos.append(r)
+    return ingest.upsert(db, Lugar, limpos)
 
 
 from .eventos.api import criar_router

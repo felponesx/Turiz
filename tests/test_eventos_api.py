@@ -97,6 +97,8 @@ def test_avaliacoes_fluxo_completo():
     assert c.get(f"/lugares/{lid}/avaliacoes").json()["resumo"]["total"] == 2
 
 
-def test_health_conta_tudo():
-    j = c.get("/health").json()
+def test_health_publico_e_minimo_e_detalhe_so_com_chave():
+    assert c.get("/health").json() == {"ok": True}                       # monitoramento externo: nada de contagens públicas
+    assert c.get("/admin/saude").status_code == 401
+    j = c.get("/admin/saude", headers=H).json()
     assert {"lugares", "eventos", "cardapios", "imagens", "avaliacoes"} <= set(j)

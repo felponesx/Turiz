@@ -58,7 +58,7 @@ def test_banco_antigo_e_atualizado_sem_perder_dados(monkeypatch, tmp_path):
         assert c.execute(text("SELECT nome FROM lugares")).scalar() == "Bar Antigo"
         row = c.execute(text("SELECT titulo, status, nome_norm, preco_max FROM eventos")).one()
         assert tuple(row) == ("Show Antigo", "agendado", "", None)   # evento antigo preservado, com padrões
-        assert c.execute(text("SELECT version_num FROM alembic_version")).scalar() == "0002"
+        assert c.execute(text("SELECT version_num FROM alembic_version")).scalar() == "0003"
     assert "evento_fontes" in inspect(eng).get_table_names()
 
 

@@ -154,3 +154,4 @@ class Avaliacao(Base):
 
 
 from .eventos import modelos as _modelos_eventos  # noqa: E402,F401  (registra as tabelas evento_* no metadata)
+from .seguranca import modelos as _modelos_seguranca  # noqa: E402,F401  (registra auditoria, usuarios, sessoes...)
