@@ -253,6 +253,8 @@ def ingest_lugares(registros: list[dict], db: Session = Depends(get_db)):
 
 
 from .eventos.api import criar_router
+from .conta.api import router as conta_router
 app.include_router(criar_router(exigir_chave))
+app.include_router(conta_router)
 
 app.mount("/", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static"), html=True), name="static")

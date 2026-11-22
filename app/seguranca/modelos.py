@@ -42,6 +42,7 @@ class Usuario(Base):
     mfa_ativo: Mapped[bool] = mapped_column(Boolean, default=False)
     mfa_segredo: Mapped[str] = mapped_column(String(255), default="")            # cifrado (Fernet)
     mfa_recuperacao: Mapped[list] = mapped_column(JSON, default=list)            # hashes SHA-256 de códigos de uso único
+    mfa_ultimo_passo: Mapped[int] = mapped_column(Integer, default=0)            # último passo TOTP aceito (impede reutilização do código)
     falhas_login: Mapped[int] = mapped_column(Integer, default=0)
     bloqueado_ate: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     ultimo_login_em: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)

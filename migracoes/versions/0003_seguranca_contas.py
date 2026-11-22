@@ -35,6 +35,7 @@ def upgrade():
         sa.Column("senha_hash", sa.String(255), nullable=False), sa.Column("nome", sa.String(80), nullable=False, server_default=""),
         sa.Column("papel", sa.String(12), nullable=False, server_default="usuario"), sa.Column("mfa_ativo", sa.Boolean, nullable=False, server_default=sa.false()),
         sa.Column("mfa_segredo", sa.String(255), nullable=False, server_default=""), sa.Column("mfa_recuperacao", sa.JSON, nullable=False),
+        sa.Column("mfa_ultimo_passo", sa.Integer, nullable=False, server_default="0"),
         sa.Column("falhas_login", sa.Integer, nullable=False, server_default="0"), sa.Column("bloqueado_ate", _dt(), nullable=True),
         sa.Column("ultimo_login_em", _dt(), nullable=True), sa.Column("criado_em", _dt(), nullable=False), sa.Column("atualizado_em", _dt(), nullable=False))
     op.create_index("ix_usuarios_email_norm", "usuarios", ["email_norm"], unique=True)
