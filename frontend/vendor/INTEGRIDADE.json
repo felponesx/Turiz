@@ -1,0 +1,16 @@
+{
+ "fonts/figtree-latin-ext.woff2": {
+  "sri": "sha384-9KSE+iGQ6oJir2yKgmVPQ/gODeYwkECMhN0JLI++3ClZD+uwv045wTApXF0Xeydb",
+  "bytes": 10280
+ },
+ "fonts/figtree-latin.woff2": {
+  "sri": "sha384-d6yvnpflv3m5EhqKK5tQtz0HGXMOiCO1F3+L6ha906VSjNeZv+OL3TCteJovhzem",
+  "bytes": 20156
+ },
+ "jsQR.js": {
+  "sri": "sha384-b5Ya4Bq3qCyz39m2ISh+4DxjAIljdeFwK/BsXLuj9gugaNwAcj/ia15fxNZL9Nlx",
+  "bytes": 256885,
+  "versao": "1.4.0",
+  "origem": "registry.npmjs.org/jsqr@1.4.0"
+ }
+}
