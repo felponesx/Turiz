@@ -71,7 +71,7 @@ def test_imagens_commons_e_site():
     por = {(x["lugar_fonte_id"], x["fonte"]): x for x in r}
     assert por[("node/1", "commons")]["status"] == "aprovada" and por[("node/1", "commons")]["autor"] == "Ana"
     assert por[("way/2", "commons")]["status"] == "pendente"
-    assert por[("node/3", "osm_image")]["status"] == "pendente"
+    assert por[("node/3", "osm_image")]["status"] == "aprovada"   # política do dono do projeto (politicas.yml)
 
     html = '<meta property="og:image" content="/img/capa.jpg">'
     assert imagens.og_image(html, "https://site.com/x") == "https://site.com/img/capa.jpg"
