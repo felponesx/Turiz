@@ -236,7 +236,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/33579/ingressos-para-caetano-nos-festivais",
   "nome_norm": "caetano veloso nos festivais",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -249,7 +249,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-21T07:22:56.182136",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:22:56.182341"
+  "atualizado_em": "2026-11-22T19:51:55.125964"
  },
  {
   "id": 8,
@@ -391,9 +391,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:24.884014",
+  "visto_em": "2026-11-22T19:49:45.667225",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:24.884205"
+  "atualizado_em": "2026-11-22T19:49:45.667442"
  },
  {
   "id": 12,
@@ -427,9 +427,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:27.165990",
+  "visto_em": "2026-11-22T19:50:11.133551",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:27.166190"
+  "atualizado_em": "2026-11-22T19:50:11.133789"
  },
  {
   "id": 13,
@@ -463,9 +463,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:29.357467",
+  "visto_em": "2026-11-22T19:50:13.540826",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:29.357680"
+  "atualizado_em": "2026-11-22T19:50:13.541053"
  },
  {
   "id": 14,
@@ -499,9 +499,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:31.549433",
+  "visto_em": "2026-11-22T19:50:16.220778",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:31.549630"
+  "atualizado_em": "2026-11-22T19:50:16.220999"
  },
  {
   "id": 15,
@@ -535,9 +535,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:34.198217",
+  "visto_em": "2026-11-22T19:50:18.542107",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:34.198408"
+  "atualizado_em": "2026-11-22T19:50:18.542325"
  },
  {
   "id": 16,
@@ -571,9 +571,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:36.693340",
+  "visto_em": "2026-11-22T19:50:20.994899",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:36.693529"
+  "atualizado_em": "2026-11-22T19:50:20.995116"
  },
  {
   "id": 17,
@@ -679,9 +679,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:38.982015",
+  "visto_em": "2026-11-22T19:50:23.411968",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:38.983457"
+  "atualizado_em": "2026-11-22T19:50:23.412199"
  },
  {
   "id": 20,
@@ -715,9 +715,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:41.182382",
+  "visto_em": "2026-11-22T19:50:26.238875",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:41.182572"
+  "atualizado_em": "2026-11-22T19:50:26.239094"
  },
  {
   "id": 21,
@@ -751,9 +751,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:43.357516",
+  "visto_em": "2026-11-22T19:50:28.577939",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:43.357728"
+  "atualizado_em": "2026-11-22T19:50:28.578158"
  },
  {
   "id": 22,
@@ -848,7 +848,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34062/ingressos-para-retro-2-mil-com-dead-fish-hevo84-marcelo-strike-e-hateen",
   "nome_norm": "retro 2 mil com dead fish pelanza hevo84 hateen e mais",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -861,7 +861,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-21T07:22:51.773731",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:22:51.774401"
+  "atualizado_em": "2026-11-22T19:51:55.125966"
  },
  {
   "id": 25,
@@ -931,9 +931,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:05.031373",
+  "visto_em": "2026-11-22T19:49:26.644209",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:05.031564"
+  "atualizado_em": "2026-11-22T19:49:26.644805"
  },
  {
   "id": 27,
@@ -967,9 +967,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:22.712594",
+  "visto_em": "2026-11-22T19:49:35.993983",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:22.712813"
+  "atualizado_em": "2026-11-22T19:49:35.994209"
  },
  {
   "id": 28,
@@ -1003,9 +1003,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-21T07:23:45.585819",
+  "visto_em": "2026-11-22T19:49:38.345871",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:23:45.586011"
+  "atualizado_em": "2026-11-22T19:49:38.346097"
  },
  {
   "id": 29,
@@ -1183,11 +1183,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:02.000758",
-  "visto_em": "2026-11-21T07:23:50.696479",
+  "visto_em": "2026-11-22T19:49:42.996070",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:23:50.696692"
+  "atualizado_em": "2026-11-22T19:49:42.996301"
  },
  {
   "id": 34,
@@ -1373,11 +1373,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:46:33.187276",
-  "visto_em": "2026-11-21T07:23:13.900696",
+  "visto_em": "2026-11-22T19:49:57.348747",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:23:13.900908"
+  "atualizado_em": "2026-11-22T19:49:57.348964"
  },
  {
   "id": 39,
@@ -1411,11 +1411,11 @@
   "local_id": 14,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:33.586411",
-  "visto_em": "2026-11-21T07:23:52.880610",
+  "visto_em": "2026-11-22T19:50:30.957091",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:23:52.880804"
+  "atualizado_em": "2026-11-22T19:50:30.957306"
  },
  {
   "id": 40,
@@ -1449,11 +1449,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:36.065377",
-  "visto_em": "2026-11-21T07:23:55.081017",
+  "visto_em": "2026-11-22T19:50:33.258073",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:23:55.081206"
+  "atualizado_em": "2026-11-22T19:50:33.258295"
  },
  {
   "id": 41,
@@ -1639,11 +1639,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:00.241349",
-  "visto_em": "2026-11-21T07:23:57.297131",
+  "visto_em": "2026-11-22T19:50:35.697701",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:23:57.297323"
+  "atualizado_em": "2026-11-22T19:50:35.697937"
  },
  {
   "id": 46,
@@ -1677,11 +1677,11 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:02.513812",
-  "visto_em": "2026-11-21T07:24:00.526121",
+  "visto_em": "2026-11-22T19:50:38.200526",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:24:00.526312"
+  "atualizado_em": "2026-11-22T19:50:38.200774"
  },
  {
   "id": 47,
@@ -1715,11 +1715,11 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:04.787535",
-  "visto_em": "2026-11-21T07:24:02.738768",
+  "visto_em": "2026-11-22T19:50:40.728906",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:24:02.739226"
+  "atualizado_em": "2026-11-22T19:50:40.729132"
  },
  {
   "id": 48,
@@ -1890,7 +1890,7 @@
   "lugar_fonte_id": "",
   "categoria": "shows",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34529-20261117210708.webp",
-  "preco_min": 69.0,
+  "preco_min": 86.25,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34529/ingressos-para-gravacao-do-dvd-mariana-fagundes-com-part-de-lauana-prado-e-natanzinho-lima",
   "nome_norm": "gravacao do dvd mariana fagundes com part de lauana prado e natanzinho lima",
@@ -1905,11 +1905,11 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": "2026-11-18T07:41:42.971185",
-  "visto_em": "2026-11-21T07:23:02.855263",
+  "visto_em": "2026-11-22T19:49:23.466018",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:23:02.855459"
+  "atualizado_em": "2026-11-22T19:49:23.469049"
  },
  {
   "id": 53,
@@ -2095,11 +2095,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-19T20:46:44.783824",
-  "visto_em": "2026-11-21T07:23:18.345083",
+  "visto_em": "2026-11-22T19:50:02.237360",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:23:18.345288"
+  "atualizado_em": "2026-11-22T19:50:02.237582"
  },
  {
   "id": 58,
@@ -2285,11 +2285,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:04.946110",
-  "visto_em": "2026-11-21T07:24:04.947584",
+  "visto_em": "2026-11-22T19:50:43.055511",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:24:04.951927"
+  "atualizado_em": "2026-11-22T19:50:43.055744"
  },
  {
   "id": 63,
@@ -2323,11 +2323,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:07.158982",
-  "visto_em": "2026-11-21T07:24:07.159560",
+  "visto_em": "2026-11-22T19:50:04.703347",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:24:07.162178"
+  "atualizado_em": "2026-11-22T19:50:04.703564"
  },
  {
   "id": 64,
@@ -2361,11 +2361,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:09.415626",
-  "visto_em": "2026-11-21T07:24:09.416265",
+  "visto_em": "2026-11-22T19:50:45.619927",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:24:09.418866"
+  "atualizado_em": "2026-11-22T19:50:45.620149"
  },
  {
   "id": 65,
@@ -2399,11 +2399,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:11.651000",
-  "visto_em": "2026-11-21T07:24:11.651613",
+  "visto_em": "2026-11-22T19:50:47.979724",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:24:11.654243"
+  "atualizado_em": "2026-11-22T19:50:47.979954"
  },
  {
   "id": 66,
@@ -2437,11 +2437,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:13.833835",
-  "visto_em": "2026-11-21T07:24:13.834417",
+  "visto_em": "2026-11-22T19:50:50.477472",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:24:13.837173"
+  "atualizado_em": "2026-11-22T19:50:50.477716"
  },
  {
   "id": 67,
@@ -2475,11 +2475,11 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:16.016488",
-  "visto_em": "2026-11-21T07:24:16.017120",
+  "visto_em": "2026-11-22T19:50:54.793609",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-21T07:24:16.019746"
+  "atualizado_em": "2026-11-22T19:50:54.793853"
  },
  {
   "id": 68,
@@ -2632,5 +2632,347 @@
    "prioridade": 40
   },
   "atualizado_em": "2026-11-21T07:25:03.319425"
+ },
+ {
+  "id": 72,
+  "fonte": "ticket360",
+  "fonte_id": "44e4cb1f96260de1437c",
+  "titulo": "Deixa Arder Let It Burn Chico Chico Show de Encerramento",
+  "descricao": "Chico Chico fecha ciclo de uma turnê que conquistou palcos e casas lotadas pelo Brasil Depois de um ano na estrada com “Let It Burn / Deixa Arder”, o artista anuncia último show em São Paulo, na Audio Chico Chico se apresenta no dia 19 de dezembro, na Audio, em São Paulo, com a turnê “Let It Burn / Deixa Arder”. O…",
+  "inicio": "2026-12-19T00:00:00",
+  "fim": "2026-12-19T00:00:00",
+  "local_nome": "Audio",
+  "endereco": "Av. Francisco Matarazzo, 694, São Paulo",
+  "lat": -23.52827570365205,
+  "lon": -46.66968615636964,
+  "url": "https://www.ticket360.com.br/evento/34178/ingressos-para-deixa-arder-let-it-burn-chico-chico-show-de-encerramento",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34178-20260915101242.webp",
+  "preco_min": 102.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34178/ingressos-para-deixa-arder-let-it-burn-chico-chico-show-de-encerramento",
+  "nome_norm": "deixa arder let it burn chico chico show de encerramento",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34178/ingressos-para-deixa-arder-let-it-burn-chico-chico-show-de-encerramento",
+  "local_id": 7,
+  "organizador_id": null,
+  "coletado_em": "2026-11-22T19:50:57.230516",
+  "visto_em": "2026-11-22T19:50:57.232115",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-22T19:50:57.236438"
+ },
+ {
+  "id": 73,
+  "fonte": "ticket360",
+  "fonte_id": "2876194f5b9ff571c52d",
+  "titulo": "Última do ano com Xand Avião e Mari Fernandez",
+  "descricao": "Xand Avião, Mari Fernandez, CTN, São Paulo, Forró, Sertanejo & Country São Paulo Apresentação: 19/12/2026 (Sábado) Abertura da casa: 20h00 Local: CTN Endereço: Rua Jacofer, 615 - Bairro do Limão, São Paulo - SP, 02712-070 Classificação: 18 Anos Vendas: TICKET360 - Compre pelo site ou aplicativo! BILHETERIA VIRTUAL…",
+  "inicio": "2026-12-19T00:00:00",
+  "fim": "2026-12-19T00:00:00",
+  "local_nome": "CTN",
+  "endereco": "Rua Jacofer, 615, São Paulo",
+  "lat": -23.51020876209002,
+  "lon": -46.6788143625433,
+  "url": "https://www.ticket360.com.br/evento/34544/ingressos-para-ultima-do-ano-com-xand-aviao-e-mari-fernandez",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34544-20261119134730.webp",
+  "preco_min": 60.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34544/ingressos-para-ultima-do-ano-com-xand-aviao-e-mari-fernandez",
+  "nome_norm": "ultima do ano com xand aviao e mari fernandez",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34544/ingressos-para-ultima-do-ano-com-xand-aviao-e-mari-fernandez",
+  "local_id": 6,
+  "organizador_id": null,
+  "coletado_em": "2026-11-22T19:50:59.859246",
+  "visto_em": "2026-11-22T19:50:59.859945",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-22T19:50:59.863054"
+ },
+ {
+  "id": 74,
+  "fonte": "ticket360",
+  "fonte_id": "3b4dcbe6ea0a5313448c",
+  "titulo": "Mari Fernandez",
+  "descricao": "MARI FERNANDEZ EM SÃO PAULO! E A PERGUNTA É: QUEM VAI CANTAR TODAS COM VOCÊ? Dia 19 de dezembro, o Brasas SP (antigo Good Show) recebe Mari Fernandez, uma das artistas mais queridas do forró e do piseiro, para um show repleto de sucessos! Dona de hits como “Não, Não Vou”, “Eu Gosto Assim” e “Comunicação Falhou”, Mari…",
+  "inicio": "2026-12-19T00:00:00",
+  "fim": "2026-12-19T00:00:00",
+  "local_nome": "Brasas SP",
+  "endereco": "Av. Almirante Delamare, 3013, São Paulo",
+  "lat": -23.61050518499207,
+  "lon": -46.58272872884246,
+  "url": "https://www.ticket360.com.br/evento/34515/ingressos-para-mari-fernandez",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34515-20261117142725.webp",
+  "preco_min": 69.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34515/ingressos-para-mari-fernandez",
+  "nome_norm": "mari fernandez",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34515/ingressos-para-mari-fernandez",
+  "local_id": 9,
+  "organizador_id": null,
+  "coletado_em": "2026-11-22T19:51:03.568204",
+  "visto_em": "2026-11-22T19:51:03.568936",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-22T19:51:03.571714"
+ },
+ {
+  "id": 75,
+  "fonte": "ticket360",
+  "fonte_id": "b745bfd77cd9eb8f2d00",
+  "titulo": "Corrida de Natal",
+  "descricao": "CORRIDA DE NATAL – 2026 Prepare o tênis e entre no clima natalino! No dia 20 de dezembro de 2026, São Paulo recebe a Corrida de Natal, um evento esportivo que promete reunir amantes da corrida e do esporte em uma manhã especial de celebração, saúde e superação. Realizada no Clube Recreativo CERET, localizado no bairro…",
+  "inicio": "2026-12-20T10:30:00",
+  "fim": "2026-12-20T22:30:00",
+  "local_nome": "Clube Recreativo CERET",
+  "endereco": "Rua Canuto Abreu, S/N, São Paulo",
+  "lat": -23.559536829883452,
+  "lon": -46.55770646213908,
+  "url": "https://www.ticket360.com.br/evento/34357/ingressos-para-corrida-de-natal",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34357-20261022144715.webp",
+  "preco_min": 76.89,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34357/ingressos-para-corrida-de-natal",
+  "nome_norm": "corrida de natal",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34357/ingressos-para-corrida-de-natal",
+  "local_id": 25,
+  "organizador_id": null,
+  "coletado_em": "2026-11-22T19:51:06.318665",
+  "visto_em": "2026-11-22T19:51:06.319273",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-22T19:51:06.319727"
+ },
+ {
+  "id": 76,
+  "fonte": "ticket360",
+  "fonte_id": "3ac9840a9a0e7ebae5d1",
+  "titulo": "Sunset White Party com Tom Keller, Dre Guazzelli, Daniel Laleska e mais",
+  "descricao": "Sunset MII Rooftop — WHITE PARTY A edição mais esperada do ano está chegando. No dia 20 de dezembro, a partir das 14h, o Sunset MII Rooftop recebe a White Party, uma experiência criada para viver o melhor da tarde, do pôr do sol e da noite em um dos rooftops mais desejados de São Paulo. Prepare o look branco e venha…",
+  "inicio": "2026-12-20T00:00:00",
+  "fim": "2026-12-20T00:00:00",
+  "local_nome": "Mii Rooftop",
+  "endereco": "Rua Cândido Lacerda, 33, São Paulo",
+  "lat": -23.55334305759205,
+  "lon": -46.56377931534255,
+  "url": "https://www.ticket360.com.br/evento/34528/ingressos-para-sunset-white-party-com-tom-keller-dre-guazzelli-daniel-laleska-e-mais",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34528-20261117203046.webp",
+  "preco_min": 64.9,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34528/ingressos-para-sunset-white-party-com-tom-keller-dre-guazzelli-daniel-laleska-e-mais",
+  "nome_norm": "sunset white party com tom keller dre guazzelli daniel laleska e mais",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34528/ingressos-para-sunset-white-party-com-tom-keller-dre-guazzelli-daniel-laleska-e-mais",
+  "local_id": 26,
+  "organizador_id": null,
+  "coletado_em": "2026-11-22T19:51:08.682641",
+  "visto_em": "2026-11-22T19:51:08.683258",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-22T19:51:08.686562"
+ },
+ {
+  "id": 77,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "be7442dadc1f4cbffe2f",
+  "titulo": "Hot Chip",
+  "descricao": "A fundamental banda inglesa volta a se apresentar em São Paulo em novembro deste ano. O show, único no Brasil, está marcado para o dia 22/11 na Audio, na Barra Funda.\n\nA noite, fora a significativa data exclusiva, ganha um contorno ainda mais especial: além de promover a antologia definitiva da carreira do grupo, “Joy in Repetition”, lançada no final de 2025, o show será dedicado ainda à celebração dos 20 anos do lendário álbum \"The Warning\", considerado o disco que mostrou o Hot Chip ao mundo e ajudou a fundir a atitude do rock alternativo com a cultura das pistas de dança nos anos 2000.\nO Hot Chip carrega a marca de ser uma das bandas mais consistentes e divertidas de sua geração, transformando sintetizadores frios em pura catarse coletiva e orgânica prepare-se para viver momentos lindos com aquele repertório recheado de bangers que grudam na mente, como\"Ready for the Floor\", “Over and Over”, “Flutes”,\"Boy from School\" e a recente “Devotion\" O show do Hot Chip em novembro é uma realização de LATINA! e CultMix Live",
+  "inicio": "2026-11-22T00:00:00",
+  "fim": "2026-11-22T00:00:00",
+  "local_nome": "Audio",
+  "endereco": "Av. Francisco Matarazzo, 694, São Paulo",
+  "lat": -23.52827570365205,
+  "lon": -46.66968615636964,
+  "url": "https://visitesaopaulo.com/evento/hot-chip-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "hot chip",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/hot-chip-2026/",
+  "local_id": 7,
+  "organizador_id": null,
+  "coletado_em": "2026-11-22T19:51:21.627852",
+  "visto_em": "2026-11-22T19:51:21.628621",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-22T19:51:55.125967"
+ },
+ {
+  "id": 78,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "c3875f321410c262d01e",
+  "titulo": "Diego Estevam",
+  "descricao": "Com participação especial de MC Marechal, Diego Estevam apresenta o show de Caminhos Abertos, seu segundo álbum. O espetáculo aproxima jazz contemporâneo e hip-hop em uma performance marcada pela improvisação, pela força da palavra e por composições inspiradas em vivências, afetos e na cultura preta.\n\nNo palco, o guitarrista apresentará “Caminhos Abertos” amparado por uma banda de excelência, formada por Atila Silva (trompete e flugelhorn), Obi Orin (contrabaixo acústico), Wopper Black (bateria) e Wendell Lima (teclas) e participação especial de MC Marechal.",
+  "inicio": "2026-11-22T00:00:00",
+  "fim": "2026-11-22T00:00:00",
+  "local_nome": "Sesc Belenzinho",
+  "endereco": "R. Padre Adelino, 1000 - Belenzinho, São Paulo - SP, 03303-000, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/diego-estevam-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "diego estevam",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/diego-estevam-2026/",
+  "local_id": 27,
+  "organizador_id": null,
+  "coletado_em": "2026-11-22T19:51:31.080470",
+  "visto_em": "2026-11-22T19:51:31.081113",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-22T19:51:55.125968"
+ },
+ {
+  "id": 79,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "f64b864665e9422fc124",
+  "titulo": "Undercurrent Trio & Suzan Veneman",
+  "descricao": "",
+  "inicio": "2026-11-22T00:00:00",
+  "fim": "2026-11-22T00:00:00",
+  "local_nome": "Blue Note São Paulo",
+  "endereco": "Av. Paulista, 2073 - Bela Vista, São Paulo - SP, 01311-300, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/undercurrent-trio-suzan-veneman-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "undercurrent trio suzan veneman",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/undercurrent-trio-suzan-veneman-2026/",
+  "local_id": 11,
+  "organizador_id": null,
+  "coletado_em": "2026-11-22T19:51:41.712630",
+  "visto_em": "2026-11-22T19:51:41.713338",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-22T19:51:55.125969"
+ },
+ {
+  "id": 80,
+  "fonte": "visitesaopaulo",
+  "fonte_id": "2c0a9446b6565f9199de",
+  "titulo": "Zé Manoel",
+  "descricao": "Neste show especial, o cantor, compositor e pianista Zé Manoel conduz crianças e adultos por uma experiência musical que celebra a imaginação, a escuta e a memória como territórios de pertencimento, encontro e criação, apresentando algumas composições que farão parte de um de seus novos projetos: o álbum “Quem Inventou o Sorriso?”, dedicado ao público infantil, estabelecendo um diálogo sensível entre gerações, além de um repertório com outras composições autorais, marcadas pela delicadeza poética e pela forte presença da ancestralidade afro-brasileira.\n\nReconhecido por uma trajetória que articula música, poesia e identidade afro-brasileira, Zé Manoel constrói uma obra profundamente conectada às tradições da cultura negra, sem abrir mão de uma linguagem contemporânea. No palco, transforma essas referências em um espetáculo que convida o público a celebrar a infância como espaço de afeto, imaginação, ancestralidade e futuro.",
+  "inicio": "2026-11-22T00:00:00",
+  "fim": "2026-11-22T00:00:00",
+  "local_nome": "Sesc Bom Retiro",
+  "endereco": "Alameda Nothmann, 185 - Campos Elíseos, São Paulo - SP, 01216-000, São Paulo",
+  "lat": null,
+  "lon": null,
+  "url": "https://visitesaopaulo.com/evento/ze-manoel-2026/",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "",
+  "nome_norm": "ze manoel",
+  "status": "encerrado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://visitesaopaulo.com/evento/ze-manoel-2026/",
+  "local_id": 28,
+  "organizador_id": null,
+  "coletado_em": "2026-11-22T19:51:51.102338",
+  "visto_em": "2026-11-22T19:51:51.102920",
+  "extra": {
+   "prioridade": 40
+  },
+  "atualizado_em": "2026-11-22T19:51:55.125970"
  }
 ]
