@@ -40,7 +40,7 @@ def main(pasta, dst):
             "cs": [cats[r["categoria_id"]]["slug"] for r in cl], "k": cats[cl[0]["categoria_id"]]["nome"] if cl else "Evento",
             "im": e.get("imagem_url", ""), "p0": e.get("preco_min"), "p1": e.get("preco_max"), "mo": e.get("moeda", ""), "g": bool(e.get("gratuito")),
             "tk": e.get("ingresso_url", ""), "u": e.get("url_oficial") or e.get("url", ""),
-            "fs": sorted({fontes.get(r["fonte"], r["fonte"]) for r in f_l.get(e["id"], [])}), "d": (e.get("descricao") or "")[:500],
+            "fs": sorted({fontes.get(r["fonte"], r["fonte"]) for r in f_l.get(e["id"], [])}), "d": (e.get("descricao") or "")[:3000],
             "ar": [artistas[r["artista_id"]] for r in sorted(a_l.get(e["id"], []), key=lambda r: r["ordem"])][:8],
             "pl": ("api-%s" % lugares[(e["lugar_fonte"], e["lugar_fonte_id"])]) if e.get("lugar_fonte_id") and (e["lugar_fonte"], e["lugar_fonte_id"]) in lugares else "",
             "fz": e.get("fuso", ""),

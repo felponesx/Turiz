@@ -37,7 +37,8 @@ def main(pasta, dst):
     imgs = {}
     for i in json.load(open(f"{pasta}/imagens.json", encoding="utf-8")):
         k = chave.get((i["lugar_fonte"], i["lugar_fonte_id"]))
-        if k is None or not re.match(r"^https://[^\s\"'<>]+$", i.get("url") or ""): continue
+        i["url"] = re.sub(r"^http://", "https://", (i.get("url") or "").strip()).replace(" ", "%20")   # a página é https: imagem http seria bloqueada
+        if k is None or i.get("status") == "rejeitada" or not re.match(r"^https://[^\s\"'<>]+$", i["url"]): continue
         imgs.setdefault("api-%s" % k, []).append([i["url"], i.get("licenca", ""), i.get("autor", ""), i.get("creditos_url", ""), i.get("status", "pendente")])
     html, n2 = bloco(html, "API-IMAGENS", "api-imagens", imgs)
     redes = {}
@@ -52,7 +53,7 @@ def main(pasta, dst):
         for c in json.load(open(pc, encoding="utf-8")):
             k = chave.get((c["lugar_fonte"], c["lugar_fonte_id"]))
             if k is None or c.get("status") == "rejeitado" or not re.match(r"^https?://[^\s\"'<>]+$", c.get("url") or ""): continue
-            card.setdefault("api-%s" % k, []).append([c["url"], c.get("plataforma", ""), c.get("status", "provavel"), [[i.get("secao", ""), i.get("nome", ""), i.get("descricao", ""), i.get("preco")] for i in (c.get("itens") or [])[:80]]])
+            card.setdefault("api-%s" % k, []).append([c["url"], c.get("plataforma", ""), c.get("status", "provavel"), [[i.get("secao", ""), i.get("nome", ""), i.get("descricao", ""), i.get("preco")] for i in (c.get("itens") or [])]])
     html, n4 = bloco(html, "API-CARDAPIOS", "api-cardapios", card)
     open(dst, "w", encoding="utf-8").write(html)
     print(f"{sum(len(v) for v in card.values())} cardápios em {len(card)} lugares;", f"{len(rows)} lugares ({n1//1024} KB; {len(rec)} da Receita), {sum(len(v) for v in imgs.values())} imagens em {len(imgs)} lugares, {sum(len(v) for v in redes.values())} redes em {len(redes)} lugares")

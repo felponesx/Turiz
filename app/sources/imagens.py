@@ -126,7 +126,7 @@ def coletar_commons(post=None, client=None):
         u = el.get("tags", {}).get("image", "")
         if u.startswith("http") and not _titulo_commons(u):
             saida.append({"lugar_fonte": "osm", "lugar_fonte_id": f'{el["type"]}/{el["id"]}', "fonte": "osm_image", "url": u,
-                          "thumb_url": "", "licenca": "", "autor": "", "creditos_url": "", "status": "pendente"})
+                          "thumb_url": "", "licenca": "", "autor": "", "creditos_url": "", "status": _status_site()})
     return saida
 
 
