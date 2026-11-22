@@ -2502,7 +2502,7 @@
   "gratuito": false,
   "ingresso_url": "",
   "nome_norm": "cordel do fogo encantado apresenta primeiro album",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -2517,7 +2517,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-21T07:24:28.517733"
+  "atualizado_em": "2026-11-22T07:02:45.152536"
  },
  {
   "id": 69,
