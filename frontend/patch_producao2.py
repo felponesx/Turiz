@@ -81,7 +81,8 @@ sub('case"delyes":S.ex.del=false;toast("Exemplo: nos dados reais, a exclusão te
 EXTRA = r'''
 function baixarJson(nome,obj){const b=new Blob([JSON.stringify(obj,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=nome;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000)}
 async function exportarDados(){
-  if(PROTO){baixarJson("turiz-meus-dados-exemplo.json",{aviso:"Protótipo: dados locais de exemplo",favoritos:[...S.fav],preferencias:{cozinhas:[...S.prefs.cuisines]},xp:S.xp});toast("Arquivo gerado no seu aparelho");return}
+  if(PROTO){const j=JSON.stringify({aviso:"Protótipo: dados locais de exemplo",favoritos:[...S.fav],preferencias:{cozinhas:[...S.prefs.cuisines]},xp:S.xp},null,2);
+    sheet(`<div class="grab"></div><div class="row between"><h2>Seus dados (exemplo)</h2><button class="iconbtn" data-act="close" aria-label="Fechar">${ic("close")}</button></div><p class="sub" style="margin:8px 0">No app de verdade isto vira um arquivo para baixar. Aqui, copie o texto abaixo.</p><textarea readonly rows="10" style="width:100%;font:12px monospace;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--surface);color:var(--ink)" aria-label="Seus dados em JSON">${esc(j)}</textarea>`);return}
   let r=await api("/conta/exportar");
   if(r.reauth){const senha=prompt("Confirme sua senha para exportar seus dados:");if(!senha)return;const ra=await api("/conta/reautenticar",{method:"POST",body:{senha}});if(!ra.ok){toast("Senha incorreta");return}r=await api("/conta/exportar")}
   if(r.ok){baixarJson("turiz-meus-dados.json",r.j);toast("Seus dados foram baixados")}else toast(msgApi(r,"Não foi possível exportar agora."))}
