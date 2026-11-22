@@ -1,12 +1,4 @@
 {
- "fonts/figtree-latin-ext.woff2": {
-  "sri": "sha384-9KSE+iGQ6oJir2yKgmVPQ/gODeYwkECMhN0JLI++3ClZD+uwv045wTApXF0Xeydb",
-  "bytes": 10280
- },
- "fonts/figtree-latin.woff2": {
-  "sri": "sha384-d6yvnpflv3m5EhqKK5tQtz0HGXMOiCO1F3+L6ha906VSjNeZv+OL3TCteJovhzem",
-  "bytes": 20156
- },
  "jsQR.js": {
   "sri": "sha384-b5Ya4Bq3qCyz39m2ISh+4DxjAIljdeFwK/BsXLuj9gugaNwAcj/ia15fxNZL9Nlx",
   "bytes": 256885,
@@ -22,5 +14,21 @@
   "sri": "sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb",
   "bytes": 10879,
   "origem": "cdnjs leaflet 1.9.4/leaflet.min.css"
+ },
+ "fonts/inter-latin-ext.woff2": {
+  "sri": "sha384-r0EoKgCx3XyQjhJdTJ6FDE+8mEZrV95dM7cWvqLDUVdqzM44cq76qdOaYiA3sebS",
+  "bytes": 85068
+ },
+ "fonts/inter-latin.woff2": {
+  "sri": "sha384-l0ql7Q1zqvX5klAVRwYjcMVCkCxg5dMTdghsIlC3pYkX6wwEHerh2bP/4yAao3Im",
+  "bytes": 48256
+ },
+ "fonts/plusjakarta-latin-ext.woff2": {
+  "sri": "sha384-YEgChAoYNVoWusG3QRillTHqLx/4d4yiobHamK1BGpCrERveCLISj8XaL4z3SWhb",
+  "bytes": 21728
+ },
+ "fonts/plusjakarta-latin.woff2": {
+  "sri": "sha384-PLr9Pw5Kj/wYLXprEoC4H+A67gWdr/vTHwjvixEXhBKOSEkgKsA9wRwZRvAEnGeN",
+  "bytes": 27348
  }
 }

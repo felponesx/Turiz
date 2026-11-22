@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Baixa UMA vez as dependências de front (fontes Figtree e jsQR) para frontend/vendor/, com hash de integridade.
+"""Baixa UMA vez as dependências de front (fontes Inter e Plus Jakarta Sans, e jsQR) para frontend/vendor/, com hash de integridade.
 Motivo: nada de CDN/Google Fonts em produção (privacidade: o IP do visitante não vai para terceiros; segurança: sem script externo
 que possa ser adulterado; CSP estrita). Rodar pelo workflow 'Vendor do front' (precisa de acesso à internet)."""
 import base64
@@ -23,18 +23,20 @@ def main():
     os.makedirs(f"{SAIDA}/fonts", exist_ok=True)
     meta = {}
     with httpx.Client(timeout=60, follow_redirects=True) as c:
-        css = c.get("https://fonts.googleapis.com/css2?family=Figtree:wght@400..700&display=swap", headers={"User-Agent": UA_MODERNO}).text
-        blocos = re.findall(r"/\*\s*([a-z-]+)\s*\*/\s*(@font-face\s*\{.*?\})", css, flags=re.S)
         saida_css = []
-        for subset, bloco in blocos:
-            if subset not in ("latin", "latin-ext"):
-                continue
-            url = re.search(r"url\((https://[^)]+\.woff2)\)", bloco).group(1)
-            dados = c.get(url).content
-            arq = f"figtree-{subset}.woff2"
-            open(f"{SAIDA}/fonts/{arq}", "wb").write(dados)
-            meta[f"fonts/{arq}"] = {"sri": sri(dados), "bytes": len(dados)}
-            saida_css.append(bloco.replace(url, f"fonts/{arq}"))
+        # Inter (texto) e Plus Jakarta Sans (títulos): fontes variáveis, só os subconjuntos latin e latin-ext (português)
+        for fam, url_fam in (("inter", "Inter:wght@400..600"), ("plusjakarta", "Plus+Jakarta+Sans:wght@500..700")):
+            css = c.get(f"https://fonts.googleapis.com/css2?family={url_fam}&display=swap", headers={"User-Agent": UA_MODERNO}).text
+            blocos = re.findall(r"/\*\s*([a-z-]+)\s*\*/\s*(@font-face\s*\{.*?\})", css, flags=re.S)
+            for subset, bloco in blocos:
+                if subset not in ("latin", "latin-ext"):
+                    continue
+                url = re.search(r"url\((https://[^)]+\.woff2)\)", bloco).group(1)
+                dados = c.get(url).content
+                arq = f"{fam}-{subset}.woff2"
+                open(f"{SAIDA}/fonts/{arq}", "wb").write(dados)
+                meta[f"fonts/{arq}"] = {"sri": sri(dados), "bytes": len(dados)}
+                saida_css.append(bloco.replace(url, f"fonts/{arq}"))
         open(f"{SAIDA}/fonts.css", "w", encoding="utf-8").write("\n".join(saida_css))
         tgz = c.get("https://registry.npmjs.org/jsqr/-/jsqr-1.4.0.tgz").content
         with tarfile.open(fileobj=io.BytesIO(tgz)) as t:

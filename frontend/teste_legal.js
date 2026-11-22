@@ -16,5 +16,5 @@ await p.addScriptTag({content:AXE});const r=await p.evaluate(async()=>await axe.
 ok(!/\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}/.test(await p.evaluate(()=>document.body.innerText)),'sem CNPJ formatado na tela');
 // exportar (protótipo) gera arquivo local
 await p.evaluate(()=>{S.stack=[];go('settings',null,true)});await p.waitForTimeout(200);
-const [dl]=await Promise.all([p.waitForEvent('download'),p.evaluate(()=>exportarDados())]);ok(/turiz-meus-dados/.test(dl.suggestedFilename()),'exportar baixa um JSON no aparelho');
+await p.evaluate(()=>exportarDados());await p.waitForTimeout(300);const js=await p.evaluate(()=>{const t=document.querySelector('#panel textarea');try{return t?JSON.parse(t.value):null}catch(e){return null}});ok(js&&js.aviso&&Array.isArray(js.favoritos),'exportar (protótipo) mostra os dados em JSON para copiar (o visualizador bloqueia downloads)');
 ok(er.length===0,'sem erros JS '+JSON.stringify(er));await b.close();console.log(f?f+' FALHAS':'TUDO OK');process.exit(f?1:0)})();
