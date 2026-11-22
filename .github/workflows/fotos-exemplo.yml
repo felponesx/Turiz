@@ -1,6 +1,10 @@
 name: Fotos ilustrativas (exemplo)
 on:
   workflow_dispatch:
+    inputs:
+      temas:
+        description: "Temas para refazer (vazio = todos)"
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -15,7 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r requirements.txt
-      - run: python coletar_fotos_exemplo.py --por-tema 5
+      - run: python coletar_fotos_exemplo.py --por-tema 5 ${{ inputs.temas && format('--temas {0}', inputs.temas) || '' }}
       - name: Commitar
         run: |
           git config user.name "fotos-bot"

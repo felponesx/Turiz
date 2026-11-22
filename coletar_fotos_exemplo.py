@@ -12,26 +12,26 @@ PASTA = "data/fotos_exemplo"
 LIVRES = re.compile(r"^(CC0|CC BY(-SA)?( \d\.\d)?|Public domain|PD|Attribution)", re.I)
 # tema -> buscas no Commons (pt/en). O app escolhe o tema pela culinária/tipo do lugar ou pela categoria do evento.
 TEMAS = {
-    "restaurante": ["restaurant interior São Paulo", "restaurant dining room"],
-    "bar": ["bar São Paulo boteco", "bar counter drinks"],
-    "lanchonete": ["lanchonete Brasil", "coxinha salgado"],
+    "restaurante": ["restaurant table food served", "restaurante prato servido", "restaurant dining room"],
+    "bar": ["caipirinha", "chopp beer glass bar", "boteco petiscos"],
+    "lanchonete": ["coxinha", "pão de queijo", "misto quente sanduíche"],
     "hamburguer": ["hamburger burger"],
     "pizzaria": ["pizza margherita", "pizzeria"],
     "japonesa": ["sushi platter", "japanese restaurant sushi"],
     "cafeteria": ["coffee cappuccino cafe", "café coffee shop"],
     "padaria": ["padaria pão francês", "bakery bread"],
-    "churrasco": ["churrasco picanha", "churrascaria"],
-    "brasileira": ["feijoada", "prato feito arroz feijão"],
+    "churrasco": ["picanha grelhada", "churrasco espeto carne", "barbecue grilled meat"],
+    "brasileira": ["feijoada", "arroz e feijão prato", "moqueca"],
     "italiana": ["pasta spaghetti dish", "lasagna"],
     "arabe": ["esfiha", "kebab shawarma"],
-    "doces": ["brigadeiro", "cake dessert"],
+    "doces": ["brigadeiro doce", "pudim de leite", "chocolate cake slice"],
     "acai": ["açaí bowl"],
     "pastel": ["pastel de feira"],
     "sorveteria": ["ice cream gelato"],
     "show": ["concert stage crowd", "live music band stage"],
-    "festa": ["party dance floor", "nightclub dj"],
-    "gastronomia_evento": ["food festival", "street food market"],
-    "cultura": ["museum exhibition", "theatre stage"],
+    "festa": ["nightclub dancing crowd", "dj party lights", "dance party"],
+    "gastronomia_evento": ["street food market stalls", "food festival stand", "feira gastronômica"],
+    "cultura": ["art museum gallery visitors", "theatre auditorium stage", "exposição de arte"],
 }
 
 
@@ -65,11 +65,18 @@ def miniatura(b):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--por-tema", type=int, default=5); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--por-tema", type=int, default=5); ap.add_argument("--temas", nargs="*"); a = ap.parse_args()
     os.makedirs(PASTA, exist_ok=True)
-    indice, stats = {}, {}
+    ip = os.path.join(PASTA, "indice.json")
+    indice = json.load(open(ip, encoding="utf-8")) if (a.temas and os.path.exists(ip)) else {}
+    stats = {}
     with httpx.Client(timeout=30, follow_redirects=True, headers={"User-Agent": UA}) as c:
         for tema, termos in TEMAS.items():
+            if a.temas and tema not in a.temas:
+                continue
+            for velho in indice.get(tema, []):
+                try: os.remove(os.path.join(PASTA, velho["arquivo"]))
+                except OSError: pass
             lista, vistos = [], set()
             for t in termos:
                 try:
