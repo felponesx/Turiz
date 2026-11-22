@@ -1,0 +1,27 @@
+name: Fotos ilustrativas (exemplo)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
+jobs:
+  fotos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - run: python coletar_fotos_exemplo.py --por-tema 5
+      - name: Commitar
+        run: |
+          git config user.name "fotos-bot"
+          git config user.email "fotos-bot@users.noreply.github.com"
+          git add data/fotos_exemplo
+          git diff --cached --quiet && exit 0
+          git commit -m "dados: fotos ilustrativas $(date -u +%F)"
+          git pull --rebase origin main
+          git push
