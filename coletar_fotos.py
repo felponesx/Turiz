@@ -75,6 +75,31 @@ def main():
             indice[str(i["id"])] = {"arquivo": arq, "url": url, "bytes": len(dados)}
             ok += 1
             time.sleep(0.3)
+        # imagens dos eventos (snapshot v2): ev-<id>.jpg
+        import gzip
+        snap = "data/eventos_v2.json.gz"
+        evs = json.load(gzip.open(snap, "rt", encoding="utf-8"))["eventos"] if os.path.exists(snap) else []
+        for e in evs:
+            url = re.sub(r"^http://", "https://", (e.get("imagem_url") or "").strip()).replace(" ", "%20")
+            if not url.startswith("https://"):
+                continue
+            chave, arq = f"ev-{e['id']}", f"ev-{e['id']}.jpg"
+            if indice.get(chave, {}).get("url") == url and os.path.exists(os.path.join(PASTA, arq)):
+                pulados += 1
+                continue
+            ref = e.get("url") or ""
+            ref = f"{urlparse(ref).scheme}://{urlparse(ref).netloc}/" if ref.startswith("http") else ""
+            try:
+                dados = miniatura(baixar(c, url, ref))
+            except Exception as exc:
+                falhas += 1
+                k = "evento " + type(exc).__name__
+                motivos[k] = motivos.get(k, 0) + 1
+                continue
+            open(os.path.join(PASTA, arq), "wb").write(dados)
+            indice[chave] = {"arquivo": arq, "url": url, "bytes": len(dados)}
+            ok += 1
+            time.sleep(0.3)
     json.dump(indice, open(indice_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"fotos: baixadas={ok} já_existiam={pulados} falhas={falhas} {motivos}")
     print(f"total no índice: {len(indice)} ({sum(v['bytes'] for v in indice.values())//1024} KB)")
