@@ -12,7 +12,7 @@ PASTA = "data/fotos_exemplo"
 LIVRES = re.compile(r"^(CC0|CC BY(-SA)?( \d\.\d)?|Public domain|PD|Attribution)", re.I)
 # tema -> buscas no Commons (pt/en). O app escolhe o tema pela culinária/tipo do lugar ou pela categoria do evento.
 TEMAS = {
-    "restaurante": ["restaurant table food served", "restaurante prato servido", "restaurant dining room"],
+    "restaurante": ["restaurante prato executivo", "restaurant table food served", "restaurante prato servido", "restaurant dining room"],
     "bar": ["caipirinha", "chopp beer glass bar", "boteco petiscos"],
     "lanchonete": ["coxinha", "pão de queijo", "misto quente sanduíche"],
     "hamburguer": ["hamburger burger"],
@@ -30,8 +30,8 @@ TEMAS = {
     "sorveteria": ["ice cream gelato"],
     "show": ["concert stage crowd", "live music band stage"],
     "festa": ["nightclub dancing crowd", "dj party lights", "dance party"],
-    "gastronomia_evento": ["street food market stalls", "food festival stand", "feira gastronômica"],
-    "cultura": ["art museum gallery visitors", "theatre auditorium stage", "exposição de arte"],
+    "gastronomia_evento": ["food truck festival", "Mercado Municipal São Paulo", "street food stall cooking"],
+    "cultura": ["Pinacoteca de São Paulo interior", "museum gallery paintings interior", "Theatro Municipal São Paulo interior"],
 }
 
 
