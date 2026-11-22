@@ -3,7 +3,17 @@
 Uso: python3 build_api_eventos.py <data_dir> <turiz.html>
 Só entram eventos reais (nada de exemplo), ainda não encerrados; cancelados/adiados entram com o status. Sem CNPJ/dados pessoais."""
 import gzip, json, re, sys
+from embutir import data_uri
 from datetime import datetime, timedelta, timezone
+
+def foto_ev(pasta, e):
+    """Miniatura local do evento (data/fotos/ev-<id>.jpg) embutida; senão a URL original."""
+    import base64, os
+    f = f"{pasta}/fotos/ev-{e['id']}.jpg"
+    if os.path.exists(f):
+        return data_uri(f)
+    return e.get("imagem_url", "")
+
 
 def main(pasta, dst):
     snap = json.load(gzip.open(f"{pasta}/eventos_v2.json.gz", "rt", encoding="utf-8"))
@@ -38,7 +48,7 @@ def main(pasta, dst):
             "ci": L.get("cidade", ""), "uf": L.get("estado", ""), "pa": L.get("pais", ""), "ln": L.get("nome") or e.get("local_nome", ""),
             "ad": L.get("endereco") or e.get("endereco", ""), "la": L.get("lat") if L.get("lat") is not None else e.get("lat"), "lo": L.get("lon") if L.get("lon") is not None else e.get("lon"),
             "cs": [cats[r["categoria_id"]]["slug"] for r in cl], "k": cats[cl[0]["categoria_id"]]["nome"] if cl else "Evento",
-            "im": e.get("imagem_url", ""), "p0": e.get("preco_min"), "p1": e.get("preco_max"), "mo": e.get("moeda", ""), "g": bool(e.get("gratuito")),
+            "im": foto_ev(pasta, e), "p0": e.get("preco_min"), "p1": e.get("preco_max"), "mo": e.get("moeda", ""), "g": bool(e.get("gratuito")),
             "tk": e.get("ingresso_url", ""), "u": e.get("url_oficial") or e.get("url", ""),
             "fs": sorted({fontes.get(r["fonte"], r["fonte"]) for r in f_l.get(e["id"], [])}), "d": (e.get("descricao") or "")[:3000],
             "ar": [artistas[r["artista_id"]] for r in sorted(a_l.get(e["id"], []), key=lambda r: r["ordem"])][:8],

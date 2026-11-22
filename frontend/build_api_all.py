@@ -5,6 +5,7 @@ import gzip, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_api_data as B
 import build_api_eventos as EV
+from embutir import data_uri
 
 def bloco(html, nome, ident, payload):
     blob = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
@@ -44,7 +45,7 @@ def main(pasta, dst):
         th = idx.get(str(i["id"]))
         src = i["url"]
         if th and os.path.exists(f"{pasta}/fotos/{th['arquivo']}"):       # miniatura local embutida: não depende do site de origem nem de CSP
-            src = "data:image/jpeg;base64," + base64.b64encode(open(f"{pasta}/fotos/{th['arquivo']}", "rb").read()).decode()
+            src = data_uri(f"{pasta}/fotos/{th['arquivo']}")
         imgs.setdefault("api-%s" % k, []).append([src, i.get("licenca", ""), i.get("autor", ""), i.get("creditos_url", ""), i.get("status", "pendente")])
     html, n2 = bloco(html, "API-IMAGENS", "api-imagens", imgs)
     redes = {}
@@ -61,6 +62,17 @@ def main(pasta, dst):
             if k is None or c.get("status") == "rejeitado" or not re.match(r"^https?://[^\s\"'<>]+$", c.get("url") or ""): continue
             card.setdefault("api-%s" % k, []).append([c["url"], c.get("plataforma", ""), c.get("status", "provavel"), [[i.get("secao", ""), i.get("nome", ""), i.get("descricao", ""), i.get("preco")] for i in (c.get("itens") or [])]])
     html, n4 = bloco(html, "API-CARDAPIOS", "api-cardapios", card)
+    fex = {}
+    pf = f"{pasta}/fotos_exemplo/indice.json"
+    desc = set(json.load(open(f"{pasta}/fotos_exemplo/descartar.json"))) if os.path.exists(f"{pasta}/fotos_exemplo/descartar.json") else set()
+    if os.path.exists(pf):
+        for tema, lista in json.load(open(pf, encoding="utf-8")).items():
+            for f in lista:
+                a = f"{pasta}/fotos_exemplo/{f['arquivo']}"
+                if os.path.exists(a) and f["arquivo"] not in desc:
+                    fex.setdefault(tema, []).append([data_uri(a, 400, 250, 58), f.get("autor", ""), f.get("licenca", ""), f.get("pagina", "")])
+    html, n5 = bloco(html, "API-FOTOS-EX", "api-fotos-ex", fex)
+    print(f"{sum(len(v) for v in fex.values())} fotos ilustrativas em {len(fex)} temas ({n5//1024} KB)")
     open(dst, "w", encoding="utf-8").write(html)
     print(f"{sum(len(v) for v in card.values())} cardápios em {len(card)} lugares;", f"{len(rows)} lugares ({n1//1024} KB; {len(rec)} da Receita), {sum(len(v) for v in imgs.values())} imagens em {len(imgs)} lugares, {sum(len(v) for v in redes.values())} redes em {len(redes)} lugares")
     EV.main(pasta, dst)
