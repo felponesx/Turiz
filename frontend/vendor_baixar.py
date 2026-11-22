@@ -41,7 +41,7 @@ def main():
             js = t.extractfile("package/dist/jsQR.js").read()
         open(f"{SAIDA}/jsQR.js", "wb").write(js)
         meta["jsQR.js"] = {"sri": sri(js), "bytes": len(js), "versao": "1.4.0", "origem": "registry.npmjs.org/jsqr@1.4.0"}
-    json.dump(meta, open(f"{SAIDA}/INTEGRIDADE.json", "w", indent=1))
+    json.dump(meta, open(f"{SAIDA}/INTEGRIDADE.json", "w"), indent=1)
     print(json.dumps(meta, indent=1))
 
 
