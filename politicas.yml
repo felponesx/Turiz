@@ -1,0 +1,6 @@
+# Decisões do dono do projeto que os bots respeitam.
+imagens:
+  # Fotos vindas do site do próprio estabelecimento (og:image) são exibidas como "aprovadas", com crédito e link de origem.
+  # Decisão do dono do projeto em 2026-11-14: a autorização formal de uso de imagem ainda será providenciada com os estabelecimentos.
+  # Se algum estabelecimento pedir a remoção, marque a imagem como "rejeitada" (ela deixa de aparecer).
+  aprovar_direitos_estabelecimento: true

@@ -9,7 +9,9 @@ Fontes, da mais segura para a menos:
 
 Não baixamos nem republicamos os arquivos; só guardamos a referência e os créditos.
 """
+import os
 import re
+import yaml
 import time
 from urllib.parse import quote, unquote, urlparse
 import httpx
@@ -128,6 +130,15 @@ def coletar_commons(post=None, client=None):
     return saida
 
 
+def _status_site() -> str:
+    """Política do dono do projeto (politicas.yml): aprova as fotos do próprio site do estabelecimento."""
+    try:
+        cfg = yaml.safe_load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "politicas.yml"), encoding="utf-8")) or {}
+        return "aprovada" if (cfg.get("imagens") or {}).get("aprovar_direitos_estabelecimento") else "pendente"
+    except OSError:
+        return "pendente"
+
+
 def og_image(html: str, base_url: str) -> str | None:
     soup = BeautifulSoup(html, "html.parser")
     for attrs in ({"property": "og:image"}, {"name": "twitter:image"}, {"property": "og:image:url"}):
@@ -161,6 +172,6 @@ def coletar_sites(lugares: list[dict], client=None, pausa=1.0, limite=None):
             continue
         if img:
             saida.append({"lugar_fonte": l["fonte"], "lugar_fonte_id": l["fonte_id"], "fonte": "site", "url": img, "thumb_url": "",
-                          "licenca": "direitos do estabelecimento", "autor": "", "creditos_url": url, "status": "pendente"})
+                          "licenca": "direitos do estabelecimento", "autor": "", "creditos_url": url, "status": _status_site()})
         time.sleep(pausa)
     return saida, {"bloqueados_robots": bloqueados, "falhas": falhas}
