@@ -22,13 +22,5 @@
  "fonts/inter-latin.woff2": {
   "sri": "sha384-l0ql7Q1zqvX5klAVRwYjcMVCkCxg5dMTdghsIlC3pYkX6wwEHerh2bP/4yAao3Im",
   "bytes": 48256
- },
- "fonts/plusjakarta-latin-ext.woff2": {
-  "sri": "sha384-YEgChAoYNVoWusG3QRillTHqLx/4d4yiobHamK1BGpCrERveCLISj8XaL4z3SWhb",
-  "bytes": 21728
- },
- "fonts/plusjakarta-latin.woff2": {
-  "sri": "sha384-PLr9Pw5Kj/wYLXprEoC4H+A67gWdr/vTHwjvixEXhBKOSEkgKsA9wRwZRvAEnGeN",
-  "bytes": 27348
  }
 }

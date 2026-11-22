@@ -9,7 +9,7 @@ let tabs=[],semFoco=0;for(let i=0;i<14;i++){await p.keyboard.press('Tab');const 
 ok(tabs.filter(Boolean).length>=10,'Tab percorre controles ('+tabs.filter(Boolean).slice(0,6).join(' | ')+')');
 ok(semFoco===0,`todo elemento focado tem indicador visível (${semFoco} sem)`);
 // 2) Enter ativa cartão (role=link)
-await p.evaluate(()=>{document.querySelector('.hrow[role="link"]').focus()});await p.keyboard.press('Enter');await p.waitForTimeout(500);
+await p.evaluate(()=>{document.querySelector('.m-tcard[role="link"],.m-row[role="link"],.hrow[role="link"]').focus()});await p.keyboard.press('Enter');await p.waitForTimeout(500);
 ok(await p.evaluate(()=>S.route.n==='place'),'Enter abre o lugar pelo teclado');
 // 3) sheet: foco entra, Tab não escapa, Esc fecha e o foco volta
 await p.evaluate(()=>{S.stack=[];go('explore',null,true)});await p.waitForTimeout(300);

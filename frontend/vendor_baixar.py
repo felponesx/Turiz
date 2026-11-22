@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Baixa UMA vez as dependências de front (fontes Inter e Plus Jakarta Sans, e jsQR) para frontend/vendor/, com hash de integridade.
+"""Baixa UMA vez as dependências de front (fonte Inter e jsQR) para frontend/vendor/, com hash de integridade.
 Motivo: nada de CDN/Google Fonts em produção (privacidade: o IP do visitante não vai para terceiros; segurança: sem script externo
 que possa ser adulterado; CSP estrita). Rodar pelo workflow 'Vendor do front' (precisa de acesso à internet)."""
 import base64
@@ -21,11 +21,14 @@ def sri(dados: bytes) -> str:
 def main():
     import os
     os.makedirs(f"{SAIDA}/fonts", exist_ok=True)
-    meta = {}
+    try:  # preserva os hashes que esta execução não conseguir renovar (ex.: um host bloqueado pela rede)
+        meta = {k: v for k, v in json.load(open(f"{SAIDA}/INTEGRIDADE.json")).items() if not k.startswith("fonts/")}
+    except (OSError, ValueError):
+        meta = {}
     with httpx.Client(timeout=60, follow_redirects=True) as c:
         saida_css = []
-        # Inter (texto) e Plus Jakarta Sans (títulos): fontes variáveis, só os subconjuntos latin e latin-ext (português)
-        for fam, url_fam in (("inter", "Inter:wght@400..600"), ("plusjakarta", "Plus+Jakarta+Sans:wght@500..700")):
+        # Inter (texto e títulos): fonte variável, só os subconjuntos latin e latin-ext (português)
+        for fam, url_fam in (("inter", "Inter:wght@400..700"),):
             css = c.get(f"https://fonts.googleapis.com/css2?family={url_fam}&display=swap", headers={"User-Agent": UA_MODERNO}).text
             blocos = re.findall(r"/\*\s*([a-z-]+)\s*\*/\s*(@font-face\s*\{.*?\})", css, flags=re.S)
             for subset, bloco in blocos:
@@ -45,7 +48,11 @@ def main():
         meta["jsQR.js"] = {"sri": sri(js), "bytes": len(js), "versao": "1.4.0", "origem": "registry.npmjs.org/jsqr@1.4.0"}
         # Leaflet (página estática da API): hash para SRI
         for arq in ("leaflet.min.js", "leaflet.min.css"):
-            dados = c.get(f"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/{arq}").content
+            try:
+                dados = c.get(f"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/{arq}").content
+            except httpx.HTTPError as e:
+                print(f"AVISO: não consegui baixar {arq} ({type(e).__name__}); mantendo o hash anterior")
+                continue
             meta[arq] = {"sri": sri(dados), "bytes": len(dados), "origem": f"cdnjs leaflet 1.9.4/{arq}"}
     json.dump(meta, open(f"{SAIDA}/INTEGRIDADE.json", "w"), indent=1)
     print(json.dumps(meta, indent=1))

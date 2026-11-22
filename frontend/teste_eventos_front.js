@@ -20,19 +20,19 @@ const S = process.env.SHOTS || '.';
       ok(info.vencidos===0, `${k}: nenhum evento vencido na lista`);
       ok(demo ? info.demo>0 : info.demo===0, `${k}: eventos de exemplo só quando ligados`);
       await page.evaluate(()=>{S.tab.parties='prox';S.pf={q:'',g:'',cidade:'',tipo:'',preco:''};S.stack=[];go('parties',null,true)}); await page.waitForTimeout(500);
-      const cards = await page.locator('#app .pcard, main .pcard, .pcard').count();
+      const cards = await page.locator('.m-ev').count();
       ok(cards>0, `${k}: Festas mostra cards (${cards})`);
-      const imgs = await page.evaluate(()=>({img:document.querySelectorAll('.pcard img.evimg').length, tile:document.querySelectorAll('.pcard .evtile').length}));
+      const imgs = await page.evaluate(()=>({img:document.querySelectorAll('.m-ev img.evimg').length, tile:document.querySelectorAll('.m-ev .evtile').length}));
       ok(imgs.img+imgs.tile>0, `${k}: cada card tem foto real ou bloco neutro (${JSON.stringify(imgs)})`);
       await page.waitForTimeout(800); // sem rede para as fotos: onerror troca por bloco neutro
-      const quebradas = await page.evaluate(()=>[...document.querySelectorAll('.pcard img.evimg')].filter(i=>i.complete&&i.naturalWidth===0).length);
+      const quebradas = await page.evaluate(()=>[...document.querySelectorAll('.m-ev img.evimg')].filter(i=>i.complete&&i.naturalWidth===0).length);
       ok(quebradas===0, `${k}: nenhuma imagem quebrada visível`);
       const overflow = await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+1);
       ok(!overflow, `${k}: sem rolagem horizontal em Festas`);
       await page.screenshot({path:`${S}/shots/ev-${k}-parties.png`});
       // busca natural
       await page.fill('#pq','shows hoje em São Paulo'); await page.waitForTimeout(700);
-      const nl = await page.evaluate(()=>({txt:document.querySelector('.evinterp')?.textContent||'', n:document.querySelectorAll('.pcard').length, pq:S.pf.q}));
+      const nl = await page.evaluate(()=>({txt:document.querySelector('.evinterp')?.textContent||'', n:document.querySelectorAll('.m-ev').length, pq:S.pf.q}));
       ok(/hoje/.test(nl.txt)&&/São Paulo/.test(nl.txt)&&/show/.test(nl.txt), `${k}: busca natural interpretada -> ${nl.txt.trim().slice(0,70)}`);
       const todosHoje = await page.evaluate(()=>{const f=evNL('shows hoje em São Paulo').f;return evFilter(E,f).every(e=>e.cidade==='São Paulo'&&(e.ini>=Date.now()-3*36e5||e.fim>Date.now()))});
       ok(todosHoje, `${k}: resultado da busca só tem eventos de hoje/futuros em São Paulo`);
@@ -40,9 +40,9 @@ const S = process.env.SHOTS || '.';
       await page.fill('#pq',''); await page.waitForTimeout(500);
       // filtros
       await page.locator('[data-act="pf:g:musica_entretenimento"]').first().click({force:true}); await page.waitForTimeout(300);
-      const g = await page.evaluate(()=>document.querySelectorAll('.pcard').length); ok(g>=0, `${k}: filtro de categoria aplicado (${g})`);
+      const g = await page.evaluate(()=>document.querySelectorAll('.m-ev').length); ok(g>=0, `${k}: filtro de categoria aplicado (${g})`);
       await page.locator('[data-act="pf:preco:free"]').first().click({force:true}); await page.waitForTimeout(300);
-      const fr = await page.evaluate(()=>[...document.querySelectorAll('.pcard')].every(c=>/Gratuito/.test(c.textContent)));
+      const fr = await page.evaluate(()=>[...document.querySelectorAll('.m-ev')].every(c=>/Gratuito/.test(c.textContent)));
       ok(fr, `${k}: filtro gratuito só traz gratuitos`);
       await page.evaluate(()=>{S.pf={q:'',g:'',cidade:'',tipo:'',preco:''};S.tab.parties='prox';render()}); await page.waitForTimeout(300);
       // pagina do evento real
@@ -56,12 +56,12 @@ const S = process.env.SHOTS || '.';
       // home e explorar
       await page.evaluate(()=>{S.stack=[];go('home',null,true)}); await page.waitForTimeout(400); await page.screenshot({path:`${S}/shots/ev-${k}-home.png`});
       await page.evaluate(()=>{S.filt.q='shows este mês';S.stack=[];go('explore',null,true)}); await page.waitForTimeout(500);
-      const ex = await page.evaluate(()=>/Eventos/.test(document.body.textContent)&&document.querySelectorAll('.hscroll .pcard').length); ok(ex>0, `${k}: Explorar mostra eventos para "shows este mês" (${ex})`);
+      const ex = await page.evaluate(()=>/Eventos/.test(document.body.textContent)&&document.querySelectorAll('.hscroll .m-tcard').length); ok(ex>0, `${k}: Explorar mostra eventos para "shows este mês" (${ex})`);
       await page.screenshot({path:`${S}/shots/ev-${k}-explorar.png`});
       await page.evaluate(()=>{S.filt.q='';});
       // favoritos de evento real
       await page.evaluate(id=>{S.fav.add('e:'+id);S.tab.favs='e';S.stack=[];go('favs',null,true)},eid); await page.waitForTimeout(300);
-      ok(await page.locator('.pcard').count()>0, `${k}: favoritos lista evento real`);
+      ok(await page.locator('.m-ev').count()>0, `${k}: favoritos lista evento real`);
       // evento cancelado
       const canc = await page.evaluate(()=>{const e=E.find(e=>e.real);const c={...e,id:'rx',status:'cancelado',ticket:''};E.push(c);EM.rx=c;S.stack=[];go('event','rx',true);return true}); await page.waitForTimeout(300);
       ok(/Cancelado/.test(await page.locator('.sheet-card').innerText()) && await page.locator('.cta-bar button[disabled]').count()===1, `${k}: evento cancelado mostra status e bloqueia ingresso`);
