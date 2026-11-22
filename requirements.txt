@@ -8,3 +8,4 @@ pytest>=8.0
 alembic>=1.13
 defusedxml>=0.7
 openpyxl>=3.1
+Pillow>=10.0
