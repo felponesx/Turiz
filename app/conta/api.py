@@ -13,7 +13,7 @@ from sqlalchemy.orm import Session
 from ..db import get_db
 from ..seguranca import config, limites
 from ..seguranca.auditoria import registrar
-from ..seguranca.entrada import email_valido, ref_valida, texto_limpo
+from ..seguranca.entrada import IdPositivo, email_valido, ref_valida, texto_limpo
 from ..seguranca.ip import cliente_ip, ip_hash
 from ..seguranca.modelos import Auditoria, FavoritoUsuario, Sessao, TokenConta, Usuario
 from . import cripto, email as correio, senhas, sessoes
@@ -179,7 +179,7 @@ def listar_sessoes(a: Autenticado = Depends(sessoes.sessao_atual), db: Session =
 
 
 @router.delete("/sessoes/{sessao_id}")
-def encerrar_sessao(sessao_id: int, a: Autenticado = Depends(sessoes.sessao_atual), db: Session = Depends(get_db)):
+def encerrar_sessao(sessao_id: IdPositivo, a: Autenticado = Depends(sessoes.sessao_atual), db: Session = Depends(get_db)):
     s = db.get(Sessao, sessao_id)
     if s is None or s.usuario_id != a.usuario.id:          # sessão de outra pessoa = "não existe" (sem vazar nada)
         raise HTTPException(404, "Não encontrada")

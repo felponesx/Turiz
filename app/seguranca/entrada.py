@@ -27,3 +27,9 @@ def email_valido(e: str) -> bool:
 def texto_limpo(s: str, maximo: int) -> str:
     """Remove caracteres de controle e corta. O escape para HTML é responsabilidade de quem exibe (o front escapa tudo)."""
     return re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]", "", str(s or "")).strip()[:maximo]
+
+
+from typing import Annotated
+from fastapi import Path
+
+IdPositivo = Annotated[int, Path(ge=1, le=2_147_483_647)]     # ids de caminho: cabem num INTEGER; valores absurdos viram 422, não erro de banco

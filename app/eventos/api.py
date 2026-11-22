@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 from ..db import get_db
+from ..seguranca.entrada import IdPositivo
 from ..seguranca.ip import cliente_ip
 from ..models import Evento
 from . import agendador, busca, consulta
@@ -75,7 +76,7 @@ def criar_router(exigir_chave) -> APIRouter:
         return {"interpretacao": info, **res}
 
     @r.get("/eventos/{evento_id}")
-    def detalhe(evento_id: int, db: Session = Depends(get_db)):
+    def detalhe(evento_id: IdPositivo, db: Session = Depends(get_db)):
         e = db.get(Evento, evento_id)
         if not e:
             raise HTTPException(404, "evento não encontrado")
@@ -137,7 +138,7 @@ def criar_router(exigir_chave) -> APIRouter:
         return [{"id": d.id, "score": d.score, "motivos": d.motivos, "a": consulta.serializar(db, [evs[d.evento_a_id]])[0], "b": consulta.serializar(db, [evs[d.evento_b_id]])[0]} for d in itens]
 
     @adm.post("/duplicatas/{dup_id}/resolver")
-    def resolver(dup_id: int, decisao: str = Query(..., pattern="^(mesmo|distinto)$"), db: Session = Depends(get_db)):
+    def resolver(dup_id: IdPositivo, decisao: str = Query(..., pattern="^(mesmo|distinto)$"), db: Session = Depends(get_db)):
         """mesmo: o evento B vira link do A (todas as fontes/links são mantidos); distinto: marca como revisado."""
         d = db.get(EventoDuplicata, dup_id)
         if not d or d.status != "pendente":
@@ -151,7 +152,7 @@ def criar_router(exigir_chave) -> APIRouter:
         return {"id": d.id, "status": d.status}
 
     @adm.get("/{evento_id}/historico")
-    def historico(evento_id: int, db: Session = Depends(get_db)):
+    def historico(evento_id: IdPositivo, db: Session = Depends(get_db)):
         return [{c.name: getattr(h, c.name) for c in EventoAtualizacao.__table__.columns}
                 for h in db.scalars(select(EventoAtualizacao).where(EventoAtualizacao.evento_id == evento_id).order_by(EventoAtualizacao.id))]
 

@@ -64,3 +64,8 @@ def segredo_hmac() -> bytes:
 
 def https_obrigatorio() -> bool:
     return producao() or os.getenv("TURIZ_FORCE_HTTPS", "0") == "1"
+
+
+def csp_pagina(padrao: str) -> str:
+    """CSP das páginas HTML. Em produção, defina TURIZ_CSP_PAGINA com o conteúdo de dist/turiz.html.csp.txt (+ '; frame-ancestors none')."""
+    return os.getenv("TURIZ_CSP_PAGINA", "").strip() or padrao

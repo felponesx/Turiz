@@ -15,7 +15,7 @@ from .models import Avaliacao, Cardapio, Evento, Imagem, Lugar, RedeSocial
 from .sources import horarios as hor
 from .seguranca import chaves as _chaves, config as _cfg
 from .seguranca.chaves import exigir_chave, exigir_escopo
-from .seguranca.entrada import LIKE_ESCAPE, like
+from .seguranca.entrada import IdPositivo, LIKE_ESCAPE, like
 from .seguranca.middleware import SegurancaMiddleware
 
 from .migrar import upgrade_head
@@ -30,6 +30,16 @@ if _cfg.hosts_permitidos():
 if _cfg.origens_cors():          # CORS só para as origens listadas; por padrão nenhuma
     from fastapi.middleware.cors import CORSMiddleware
     app.add_middleware(CORSMiddleware, allow_origins=_cfg.origens_cors(), allow_methods=["GET"], allow_headers=["Content-Type"], max_age=600)
+from fastapi.exceptions import RequestValidationError  # noqa: E402
+from fastapi.responses import JSONResponse  # noqa: E402
+
+
+@app.exception_handler(RequestValidationError)
+async def validacao_sem_eco(request, exc):
+    """422 sem devolver o que o cliente enviou (evita ecoar senhas/dados em respostas, logs de proxy e caches)."""
+    return JSONResponse(status_code=422, content={"detail": [{"loc": list(e.get("loc", [])), "msg": e.get("msg", ""), "type": e.get("type", "")} for e in exc.errors()]})
+
+
 app.add_middleware(SegurancaMiddleware)          # por último = mais externa: protege tudo que vem depois
 
 
@@ -115,7 +125,7 @@ def lugares_geo(response: Response, tipo: str | None = Query(None, pattern="^(re
 
 
 @app.get("/lugares/{lugar_id}")
-def lugar(lugar_id: int, db: Session = Depends(get_db)):
+def lugar(lugar_id: IdPositivo, db: Session = Depends(get_db)):
     l = db.get(Lugar, lugar_id)
     if not l:
         raise HTTPException(404, "Não encontrado")
@@ -131,7 +141,7 @@ def _lugar_ou_404(db, lugar_id: int) -> Lugar:
 
 
 @app.get("/lugares/{lugar_id}/cardapios")
-def cardapios_do_lugar(lugar_id: int, db: Session = Depends(get_db)):
+def cardapios_do_lugar(lugar_id: IdPositivo, db: Session = Depends(get_db)):
     """Cardápios oficiais do lugar (link e, quando o site publica, itens e preços)."""
     l = _lugar_ou_404(db, lugar_id)
     st = select(Cardapio).where(Cardapio.lugar_fonte == l.fonte, Cardapio.lugar_fonte_id == l.fonte_id, Cardapio.status != "rejeitado")
@@ -139,7 +149,7 @@ def cardapios_do_lugar(lugar_id: int, db: Session = Depends(get_db)):
 
 
 @app.get("/lugares/{lugar_id}/eventos")
-def eventos_do_lugar(lugar_id: int, db: Session = Depends(get_db)):
+def eventos_do_lugar(lugar_id: IdPositivo, db: Session = Depends(get_db)):
     """Próximos eventos que acontecem neste lugar (vínculo feito por distância e nome)."""
     l = _lugar_ou_404(db, lugar_id)
     st = select(Evento).where(Evento.lugar_fonte == l.fonte, Evento.lugar_fonte_id == l.fonte_id,
@@ -173,7 +183,7 @@ def criar_avaliacao(a: NovaAvaliacao, db: Session = Depends(get_db)):
 
 
 @app.patch("/avaliacoes/{avaliacao_id}", dependencies=[Depends(exigir_escopo("moderacao"))])
-def moderar_avaliacao(avaliacao_id: int, status: str = Query(..., pattern="^(publicada|pendente|rejeitada)$"), db: Session = Depends(get_db)):
+def moderar_avaliacao(avaliacao_id: IdPositivo, status: str = Query(..., pattern="^(publicada|pendente|rejeitada)$"), db: Session = Depends(get_db)):
     av = db.get(Avaliacao, avaliacao_id)
     if not av:
         raise HTTPException(404, "Não encontrada")
@@ -183,7 +193,7 @@ def moderar_avaliacao(avaliacao_id: int, status: str = Query(..., pattern="^(pub
 
 
 @app.get("/lugares/{lugar_id}/avaliacoes")
-def avaliacoes_do_lugar(lugar_id: int, limit: int = Query(20, ge=1, le=100), offset: int = Query(0, ge=0, le=10_000), db: Session = Depends(get_db)):
+def avaliacoes_do_lugar(lugar_id: IdPositivo, limit: int = Query(20, ge=1, le=100), offset: int = Query(0, ge=0, le=10_000), db: Session = Depends(get_db)):
     """Avaliações publicadas do TURIZ + resumo (média, total, distribuição). Sem nota = ainda não avaliado."""
     l = _lugar_ou_404(db, lugar_id)
     base = (Avaliacao.lugar_fonte == l.fonte, Avaliacao.lugar_fonte_id == l.fonte_id, Avaliacao.status == "publicada")
@@ -202,7 +212,7 @@ def avaliacoes_do_lugar(lugar_id: int, limit: int = Query(20, ge=1, le=100), off
 
 
 @app.get("/lugares/{lugar_id}/imagens")
-def imagens_do_lugar(lugar_id: int, status: str = Query("aprovada", pattern="^(aprovada|pendente|todas)$"), db: Session = Depends(get_db)):
+def imagens_do_lugar(lugar_id: IdPositivo, status: str = Query("aprovada", pattern="^(aprovada|pendente|todas)$"), db: Session = Depends(get_db)):
     """Imagens de um lugar. Por padrão só as de licença livre identificada (status=aprovada)."""
     l = db.get(Lugar, lugar_id)
     if not l:
@@ -214,7 +224,7 @@ def imagens_do_lugar(lugar_id: int, status: str = Query("aprovada", pattern="^(a
 
 
 @app.patch("/imagens/{imagem_id}", dependencies=[Depends(exigir_escopo("moderacao"))])
-def moderar_imagem(imagem_id: int, status: str = Query(..., pattern="^(aprovada|pendente|rejeitada)$"), db: Session = Depends(get_db)):
+def moderar_imagem(imagem_id: IdPositivo, status: str = Query(..., pattern="^(aprovada|pendente|rejeitada)$"), db: Session = Depends(get_db)):
     """Moderação: aprova (você tem permissão/licença) ou rejeita uma imagem."""
     i = db.get(Imagem, imagem_id)
     if not i:
@@ -225,7 +235,7 @@ def moderar_imagem(imagem_id: int, status: str = Query(..., pattern="^(aprovada|
 
 
 @app.get("/lugares/{lugar_id}/redes")
-def redes_do_lugar(lugar_id: int, db: Session = Depends(get_db)):
+def redes_do_lugar(lugar_id: IdPositivo, db: Session = Depends(get_db)):
     """Perfis de rede social (Instagram) vinculados ao lugar, com origem e confiança."""
     l = db.get(Lugar, lugar_id)
     if not l:

@@ -340,3 +340,20 @@ def test_cripto_exige_chave_em_producao(monkeypatch):
     monkeypatch.setenv("TURIZ_ENV", "production"); monkeypatch.delenv("TURIZ_ENC_KEY", raising=False)
     with pytest.raises(RuntimeError, match="TURIZ_ENC_KEY"):
         cripto.cifrar("x")
+
+
+def test_retencao_apaga_so_o_que_venceu():
+    from app.seguranca.retencao import limpar
+    agora = datetime.now(timezone.utc)
+    c, csrf = usuario_logado("retencao@exemplo.com")
+    with SessionLocal() as db:
+        uid = db.scalar(select(Usuario.id).where(Usuario.email_norm == "retencao@exemplo.com"))
+        db.add_all([Auditoria(ator="usuario:x", quando=agora - timedelta(days=400), detalhe="velha"), Auditoria(ator="usuario:x", quando=agora - timedelta(days=10), detalhe="recente"),
+                    Sessao(token_hash="a" * 64, usuario_id=uid, expira_em=agora - timedelta(days=200)),
+                    TokenConta(usuario_id=uid, tipo="recuperar_senha", token_hash="b" * 64, expira_em=agora - timedelta(days=60))])
+        db.commit()
+        r = limpar(db)
+        assert r["auditoria"] >= 1 and r["sessoes"] >= 1 and r["tokens"] >= 1
+        assert db.scalar(select(Auditoria).where(Auditoria.detalhe == "recente")) is not None
+        assert db.scalar(select(Auditoria).where(Auditoria.detalhe == "velha")) is None
+    assert c.get("/conta/eu").status_code == 200                      # a sessão ativa não foi tocada

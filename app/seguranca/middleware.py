@@ -12,7 +12,7 @@ log = logging.getLogger("turiz.seguranca")
 CSP_API = "default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
 # página estática embutida (mapa Leaflet + OpenStreetMap): scripts só do próprio site e do cdnjs
 CSP_PAGINA = ("default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; "
-              "img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'; object-src 'none'")
+              "img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'; object-src 'none'")
 
 
 def _json(status: int, corpo: dict, extra: list | None = None):
@@ -103,7 +103,7 @@ class SegurancaMiddleware:
             b"x-content-type-options": b"nosniff", b"referrer-policy": b"strict-origin-when-cross-origin",
             b"permissions-policy": b"camera=(), microphone=(), payment=(), geolocation=(self)", b"x-frame-options": b"DENY",
             b"cross-origin-opener-policy": b"same-origin", b"cross-origin-resource-policy": b"same-site",
-            b"content-security-policy": (CSP_PAGINA if eh_pagina else CSP_API).encode(), b"x-request-id": rid.encode(),
+            b"content-security-policy": (config.csp_pagina(CSP_PAGINA) if eh_pagina else CSP_API).encode(), b"x-request-id": rid.encode(),
         }
         if config.https_obrigatorio():
             extra[b"strict-transport-security"] = b"max-age=31536000; includeSubDomains"
