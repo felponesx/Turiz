@@ -34,12 +34,18 @@ def main(pasta, dst):
     for r in rec: add(r, 1)         # arquivo gz: só o que ainda não estiver no JSON
     html = open(dst, encoding="utf-8").read()
     html, n1 = bloco(html, "API-DATA", "api-lugares", rows)
+    import base64
+    idx = json.load(open(f"{pasta}/fotos/indice.json", encoding="utf-8")) if os.path.exists(f"{pasta}/fotos/indice.json") else {}
     imgs = {}
     for i in json.load(open(f"{pasta}/imagens.json", encoding="utf-8")):
         k = chave.get((i["lugar_fonte"], i["lugar_fonte_id"]))
         i["url"] = re.sub(r"^http://", "https://", (i.get("url") or "").strip()).replace(" ", "%20")   # a página é https: imagem http seria bloqueada
         if k is None or i.get("status") == "rejeitada" or not re.match(r"^https://[^\s\"'<>]+$", i["url"]): continue
-        imgs.setdefault("api-%s" % k, []).append([i["url"], i.get("licenca", ""), i.get("autor", ""), i.get("creditos_url", ""), i.get("status", "pendente")])
+        th = idx.get(str(i["id"]))
+        src = i["url"]
+        if th and os.path.exists(f"{pasta}/fotos/{th['arquivo']}"):       # miniatura local embutida: não depende do site de origem nem de CSP
+            src = "data:image/jpeg;base64," + base64.b64encode(open(f"{pasta}/fotos/{th['arquivo']}", "rb").read()).decode()
+        imgs.setdefault("api-%s" % k, []).append([src, i.get("licenca", ""), i.get("autor", ""), i.get("creditos_url", ""), i.get("status", "pendente")])
     html, n2 = bloco(html, "API-IMAGENS", "api-imagens", imgs)
     redes = {}
     for r in json.load(open(f"{pasta}/redes_sociais.json", encoding="utf-8")):
