@@ -1,0 +1,742 @@
+{
+ "restaurante": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Famiglia_Mancini%2C_S%C3%A3o_Paulo%2C_Brazil.jpg/960px-Famiglia_Mancini%2C_S%C3%A3o_Paulo%2C_Brazil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Famiglia_Mancini,_S%C3%A3o_Paulo,_Brazil.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Wilfredor",
+   "arquivo": "restaurante-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Shopping_Cidade_S%C3%A3o_Paulo.jpg/960px-Shopping_Cidade_S%C3%A3o_Paulo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Shopping_Cidade_S%C3%A3o_Paulo.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Wilfredor",
+   "arquivo": "restaurante-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Famiglia_Mancini_restaurant_fountain_in_S%C3%A3o_Paulo_downtown%2C_Brazil.jpg/960px-Famiglia_Mancini_restaurant_fountain_in_S%C3%A3o_Paulo_downtown%2C_Brazil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Famiglia_Mancini_restaurant_fountain_in_S%C3%A3o_Paulo_downtown,_Brazil.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Wilfredor",
+   "arquivo": "restaurante-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Shopping_P%C3%A1tio_Paulista%2C_S%C3%A3o_Paulo%2C_Brazil.jpg/960px-Shopping_P%C3%A1tio_Paulista%2C_S%C3%A3o_Paulo%2C_Brazil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Shopping_P%C3%A1tio_Paulista,_S%C3%A3o_Paulo,_Brazil.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Wilfredor",
+   "arquivo": "restaurante-4.jpg"
+  },
+  {
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Restaurantepanamericano-interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Restaurantepanamericano-interior.jpg",
+   "licenca": "Public domain",
+   "autor": "Unstated",
+   "arquivo": "restaurante-5.jpg"
+  }
+ ],
+ "bar": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Boteco_S%C3%A3o_Paulo_-_Av._Pomp%C3%A9ia%2C_2.089_-_panoramio.jpg/960px-Boteco_S%C3%A3o_Paulo_-_Av._Pomp%C3%A9ia%2C_2.089_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Boteco_S%C3%A3o_Paulo_-_Av._Pomp%C3%A9ia,_2.089_-_panoramio.jpg",
+   "licenca": "CC BY-SA 3.0",
+   "autor": "CORRETOR-CARVALHO",
+   "arquivo": "bar-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Boteco_S%C3%A3o_Conrado.jpg/960px-Boteco_S%C3%A3o_Conrado.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Boteco_S%C3%A3o_Conrado.jpg",
+   "licenca": "CC BY-SA 2.0",
+   "autor": "Bernardo Santana",
+   "arquivo": "bar-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Boteco_S%C3%A3o_Conrado_2.jpg/960px-Boteco_S%C3%A3o_Conrado_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Boteco_S%C3%A3o_Conrado_2.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Bernardo da Motta Santana",
+   "arquivo": "bar-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Boteco_no_Br%C3%A1s%2C_S%C3%A3o_Paulo.jpg/960px-Boteco_no_Br%C3%A1s%2C_S%C3%A3o_Paulo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Boteco_no_Br%C3%A1s,_S%C3%A3o_Paulo.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Milena Dias Pires",
+   "arquivo": "bar-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Boteco_S%C3%A3o_Bento_Itaim_-_Rua_Leopoldo_Couto_Magalh%C3%A3es_Jr_x_Jo%C3%A3o_Cacheira_-_panoramio.jpg/960px-Boteco_S%C3%A3o_Bento_Itaim_-_Rua_Leopoldo_Couto_Magalh%C3%A3es_Jr_x_Jo%C3%A3o_Cacheira_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Boteco_S%C3%A3o_Bento_Itaim_-_Rua_Leopoldo_Couto_Magalh%C3%A3es_Jr_x_Jo%C3%A3o_Cacheira_-_panoramio.jpg",
+   "licenca": "CC BY-SA 3.0",
+   "autor": "CORRETOR-CARVALHO",
+   "arquivo": "bar-5.jpg"
+  }
+ ],
+ "lanchonete": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Lanchonete_na_rua_prado_Valadares.jpg/960px-Lanchonete_na_rua_prado_Valadares.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Lanchonete_na_rua_prado_Valadares.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Vitória Catarina02",
+   "arquivo": "lanchonete-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/LANCHONETE_BERIMBAU.jpg/960px-LANCHONETE_BERIMBAU.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:LANCHONETE_BERIMBAU.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Emerson M Santos",
+   "arquivo": "lanchonete-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Lanchonete_Berimbau_Ilh%C3%A9us_2021.jpg/960px-Lanchonete_Berimbau_Ilh%C3%A9us_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Lanchonete_Berimbau_Ilh%C3%A9us_2021.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Jaynara Morais",
+   "arquivo": "lanchonete-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Lanchonete_Berimbau%2C_IOS%2C_2021.jpg/960px-Lanchonete_Berimbau%2C_IOS%2C_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Lanchonete_Berimbau,_IOS,_2021.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Cauanenascimento",
+   "arquivo": "lanchonete-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Berimbau_ios.jpg/960px-Berimbau_ios.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Berimbau_ios.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Friduxa",
+   "arquivo": "lanchonete-5.jpg"
+  }
+ ],
+ "hamburguer": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Big_Mac_hamburger.jpg/960px-Big_Mac_hamburger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Big_Mac_hamburger.jpg",
+   "licenca": "CC0",
+   "autor": "Evan-Amos",
+   "arquivo": "hamburguer-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Apple_light_burger.jpg/960px-Apple_light_burger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Apple_light_burger.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Wilfredor",
+   "arquivo": "hamburguer-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Burger_King_double_cheeseburger.jpg/960px-Burger_King_double_cheeseburger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Burger_King_double_cheeseburger.jpg",
+   "licenca": "Public domain",
+   "autor": "Luke",
+   "arquivo": "hamburguer-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Hamburger_Montagnard%2C_Bistro_Burger%2C_Montparnasse%2C_Paris_003.jpg/960px-Hamburger_Montagnard%2C_Bistro_Burger%2C_Montparnasse%2C_Paris_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Hamburger_Montagnard,_Bistro_Burger,_Montparnasse,_Paris_003.jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "Guilhem Vellut from Paris, France",
+   "arquivo": "hamburguer-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Hamburger_Montagnard%2C_Bistro_Burger%2C_Montparnasse%2C_Paris_001.jpg/960px-Hamburger_Montagnard%2C_Bistro_Burger%2C_Montparnasse%2C_Paris_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Hamburger_Montagnard,_Bistro_Burger,_Montparnasse,_Paris_001.jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "Guilhem Vellut from Paris, France",
+   "arquivo": "hamburguer-5.jpg"
+  }
+ ],
+ "pizzaria": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Margherita_Originale.JPG/960px-Margherita_Originale.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Margherita_Originale.JPG",
+   "licenca": "CC BY-SA 3.0",
+   "autor": "Mario56",
+   "arquivo": "pizzaria-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Pizza-napoletana.jpg/960px-Pizza-napoletana.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Pizza-napoletana.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Fabryx98",
+   "arquivo": "pizzaria-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Margherita_pizza_on_plate.jpg/960px-Margherita_pizza_on_plate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Margherita_pizza_on_plate.jpg",
+   "licenca": "CC BY 4.0",
+   "autor": "Shisma",
+   "arquivo": "pizzaria-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Margherita_pizza_on_plate_2.jpg/960px-Margherita_pizza_on_plate_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Margherita_pizza_on_plate_2.jpg",
+   "licenca": "CC BY 4.0",
+   "autor": "Shisma",
+   "arquivo": "pizzaria-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Pizza_Margherita_ingredients.png/960px-Pizza_Margherita_ingredients.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Pizza_Margherita_ingredients.png",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "GeoO",
+   "arquivo": "pizzaria-5.jpg"
+  }
+ ],
+ "japonesa": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Sushi_platter%2C_Nikko%2C_Japan.jpg/960px-Sushi_platter%2C_Nikko%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Sushi_platter,_Nikko,_Japan.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Joli Rumi",
+   "arquivo": "japonesa-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Sushi_platter.jpg/960px-Sushi_platter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Sushi_platter.jpg",
+   "licenca": "CC BY-SA 2.0",
+   "autor": "chidorian from Japan",
+   "arquivo": "japonesa-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Assorted_Western_sushi_%28%E7%9B%9B%E3%82%8A%E5%90%88%E3%82%8F%E3%81%9B%29.jpg/960px-Assorted_Western_sushi_%28%E7%9B%9B%E3%82%8A%E5%90%88%E3%82%8F%E3%81%9B%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Assorted_Western_sushi_(%E7%9B%9B%E3%82%8A%E5%90%88%E3%82%8F%E3%81%9B).jpg",
+   "licenca": "Attribution",
+   "autor": "Francis Daniel Maning (Blurem23 (talk).",
+   "arquivo": "japonesa-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Sushi_Platter_in_Portugal.png/960px-Sushi_Platter_in_Portugal.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Sushi_Platter_in_Portugal.png",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "RL0919",
+   "arquivo": "japonesa-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Assorted_Sushi_Platter_from_Nobu.jpg/960px-Assorted_Sushi_Platter_from_Nobu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Assorted_Sushi_Platter_from_Nobu.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Joapplestwothree",
+   "arquivo": "japonesa-5.jpg"
+  }
+ ],
+ "cafeteria": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/A-cup-of-cappuccino-coffee-dar-es-salaam-cafe.jpg/960px-A-cup-of-cappuccino-coffee-dar-es-salaam-cafe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:A-cup-of-cappuccino-coffee-dar-es-salaam-cafe.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Aneth David (SLU)",
+   "arquivo": "cafeteria-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Cappuccino_6.jpg/960px-Cappuccino_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Cappuccino_6.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Vrindapl",
+   "arquivo": "cafeteria-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Cappuccino_with_cursive_G.png/960px-Cappuccino_with_cursive_G.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Cappuccino_with_cursive_G.png",
+   "licenca": "CC0",
+   "autor": "Funknendai",
+   "arquivo": "cafeteria-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/A_cappuccino_with_gingerbread_men_and_chocolate_christmas_tree.jpg/960px-A_cappuccino_with_gingerbread_men_and_chocolate_christmas_tree.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:A_cappuccino_with_gingerbread_men_and_chocolate_christmas_tree.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Peachyeung316",
+   "arquivo": "cafeteria-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Classical_Cappuccino_in_Savour_Cafe.jpg/960px-Classical_Cappuccino_in_Savour_Cafe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Classical_Cappuccino_in_Savour_Cafe.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Peachyeung316",
+   "arquivo": "cafeteria-5.jpg"
+  }
+ ],
+ "padaria": [
+  {
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e9/P%C3%A3o_na_chapa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "pagina": "https://commons.wikimedia.org/wiki/File:P%C3%A3o_na_chapa.jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "Mark Hillary",
+   "arquivo": "padaria-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/P%C3%A3o_na_chapa_2.jpg/960px-P%C3%A3o_na_chapa_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:P%C3%A3o_na_chapa_2.jpg",
+   "licenca": "CC0",
+   "autor": "Melsj",
+   "arquivo": "padaria-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/P%C3%A3o_na_chapa_1.jpg/960px-P%C3%A3o_na_chapa_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:P%C3%A3o_na_chapa_1.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Melsj",
+   "arquivo": "padaria-3.jpg"
+  },
+  {
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/52/Prepara%C3%A7%C3%A3o_de_p%C3%A3es_na_chapa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Prepara%C3%A7%C3%A3o_de_p%C3%A3es_na_chapa.jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "Mark Hillary",
+   "arquivo": "padaria-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/P%C3%A3o_franc%C3%AAs_carioca.jpg/960px-P%C3%A3o_franc%C3%AAs_carioca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:P%C3%A3o_franc%C3%AAs_carioca.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Gabriel Del Cima",
+   "arquivo": "padaria-5.jpg"
+  }
+ ],
+ "churrasco": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Churrasco_carioca.jpg/960px-Churrasco_carioca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Churrasco_carioca.jpg",
+   "licenca": "CC BY-SA 2.5",
+   "autor": "Leonardo \"Leguas\" Carvalho",
+   "arquivo": "churrasco-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Churrascaria_-_C%C3%A1ceres.jpg/960px-Churrascaria_-_C%C3%A1ceres.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Churrascaria_-_C%C3%A1ceres.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Túllio F",
+   "arquivo": "churrasco-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Restaurante_Churrascaria_Zarcos%2C_S%C3%A3o_Gon%C3%A7alo%2C_Funchal_04.jpg/960px-Restaurante_Churrascaria_Zarcos%2C_S%C3%A3o_Gon%C3%A7alo%2C_Funchal_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Restaurante_Churrascaria_Zarcos,_S%C3%A3o_Gon%C3%A7alo,_Funchal_04.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "GualdimG",
+   "arquivo": "churrasco-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Costela_no_Fogo.JPG/960px-Costela_no_Fogo.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Costela_no_Fogo.JPG",
+   "licenca": "CC BY-SA 3.0",
+   "autor": "Julio Cesar Martins",
+   "arquivo": "churrasco-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Restaurante_Churrascaria_Zarcos%2C_S%C3%A3o_Gon%C3%A7alo%2C_Funchal_02.jpg/960px-Restaurante_Churrascaria_Zarcos%2C_S%C3%A3o_Gon%C3%A7alo%2C_Funchal_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Restaurante_Churrascaria_Zarcos,_S%C3%A3o_Gon%C3%A7alo,_Funchal_02.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "GualdimG",
+   "arquivo": "churrasco-5.jpg"
+  }
+ ],
+ "brasileira": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Feijoada_%C3%A0_brasileira_-02.jpg/960px-Feijoada_%C3%A0_brasileira_-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Feijoada_%C3%A0_brasileira_-02.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Bradleyzm",
+   "arquivo": "brasileira-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Feijoada_%C3%A0_brasileira_1.jpg/960px-Feijoada_%C3%A0_brasileira_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Feijoada_%C3%A0_brasileira_1.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Melsj",
+   "arquivo": "brasileira-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Feijoada_%28Brazilian_dish%29%2C_S%C3%A3o_Lu%C3%ADs%2C_Maranh%C3%A3o.jpg/960px-Feijoada_%28Brazilian_dish%29%2C_S%C3%A3o_Lu%C3%ADs%2C_Maranh%C3%A3o.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Feijoada_(Brazilian_dish),_S%C3%A3o_Lu%C3%ADs,_Maranh%C3%A3o.jpg",
+   "licenca": "CC0",
+   "autor": "Ridiculopathy",
+   "arquivo": "brasileira-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Feijoada_fam%C3%ADlia.jpg/960px-Feijoada_fam%C3%ADlia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Feijoada_fam%C3%ADlia.jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "Jofre Carneiro",
+   "arquivo": "brasileira-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/%D9%81%D9%8A%D8%AC%D9%88%D8%A7%D8%AF%D8%A7_feijoada.jpg/960px-%D9%81%D9%8A%D8%AC%D9%88%D8%A7%D8%AF%D8%A7_feijoada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:%D9%81%D9%8A%D8%AC%D9%88%D8%A7%D8%AF%D8%A7_feijoada.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "إيان",
+   "arquivo": "brasileira-5.jpg"
+  }
+ ],
+ "italiana": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Liat_Portal_for_Foodie_Disorder_-_Spaghetti_bolognese_with_peas.jpg/960px-Liat_Portal_for_Foodie_Disorder_-_Spaghetti_bolognese_with_peas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Spaghetti_bolognese_with_peas.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "HaJunkiyada",
+   "arquivo": "italiana-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Espaguetis_carbonara.jpg/960px-Espaguetis_carbonara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Espaguetis_carbonara.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Javier Somoza",
+   "arquivo": "italiana-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/A_Pasta_dish_with_meatballs_and_tomato_sauce.jpg/960px-A_Pasta_dish_with_meatballs_and_tomato_sauce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:A_Pasta_dish_with_meatballs_and_tomato_sauce.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Peachyeung316",
+   "arquivo": "italiana-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Spaghetti_Carbonara_with_Japanese_Raw_Egg.jpg/960px-Spaghetti_Carbonara_with_Japanese_Raw_Egg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Spaghetti_Carbonara_with_Japanese_Raw_Egg.jpg",
+   "licenca": "CC0",
+   "autor": "Andy Li",
+   "arquivo": "italiana-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Carbonara%2C_Ostia_Antica.jpg/960px-Carbonara%2C_Ostia_Antica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Carbonara,_Ostia_Antica.jpg",
+   "licenca": "CC BY-SA 2.0",
+   "autor": "philip.mallis",
+   "arquivo": "italiana-5.jpg"
+  }
+ ],
+ "arabe": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Sfiha2.jpg/960px-Sfiha2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Sfiha2.jpg",
+   "licenca": "Public domain",
+   "autor": "Bazel",
+   "arquivo": "arabe-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Sfiha.jpg/960px-Sfiha.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Sfiha.jpg",
+   "licenca": "CC BY-SA 3.0",
+   "autor": "Carioca",
+   "arquivo": "arabe-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Safeha%2C_a_Lebanese_dish_of_Baalbek%2C_2017.jpg/960px-Safeha%2C_a_Lebanese_dish_of_Baalbek%2C_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Safeha,_a_Lebanese_dish_of_Baalbek,_2017.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Bdx",
+   "arquivo": "arabe-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Esfirra_aberta_em_Ponta_Grossa.jpg/960px-Esfirra_aberta_em_Ponta_Grossa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Esfirra_aberta_em_Ponta_Grossa.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Simplus Menegati",
+   "arquivo": "arabe-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Empanadas_argentinas_llamadas_%C3%A1rabes%2C_similares_a_las_Sfiha_cerradas.JPG/960px-Empanadas_argentinas_llamadas_%C3%A1rabes%2C_similares_a_las_Sfiha_cerradas.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Empanadas_argentinas_llamadas_%C3%A1rabes,_similares_a_las_Sfiha_cerradas.JPG",
+   "licenca": "CC BY-SA 3.0",
+   "autor": "Carlosdisogra",
+   "arquivo": "arabe-5.jpg"
+  }
+ ],
+ "doces": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Edif%C3%ADcio_Tuiuti_-_panoramio.jpg/960px-Edif%C3%ADcio_Tuiuti_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Edif%C3%ADcio_Tuiuti_-_panoramio.jpg",
+   "licenca": "CC BY-SA 3.0",
+   "autor": "enioprado",
+   "arquivo": "doces-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Brigadeiro.jpg/960px-Brigadeiro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Brigadeiro.jpg",
+   "licenca": "CC BY-SA 2.0",
+   "autor": "User Mayra (Maych) on Flickr",
+   "arquivo": "doces-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Esta%C3%A7%C3%A3o_Brigadeiro.jpg/960px-Esta%C3%A7%C3%A3o_Brigadeiro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_Brigadeiro.jpg",
+   "licenca": "CC BY-SA 3.0",
+   "autor": "Peter Louiz",
+   "arquivo": "doces-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Brigadeiros.jpg/960px-Brigadeiros.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Brigadeiros.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Rodrigogomesonetwo",
+   "arquivo": "doces-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Brigadeiro_-_Flickr_-_Rod_Senna.jpg/960px-Brigadeiro_-_Flickr_-_Rod_Senna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Brigadeiro_-_Flickr_-_Rod_Senna.jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "Rodrigo Senna from Brasília, DF, Brasil",
+   "arquivo": "doces-5.jpg"
+  }
+ ],
+ "acai": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/A%C3%A7a%C3%AD_na_tigela_1.jpg/960px-A%C3%A7a%C3%AD_na_tigela_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:A%C3%A7a%C3%AD_na_tigela_1.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Melsj",
+   "arquivo": "acai-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/A%C3%A7a%C3%AD_na_tigela_2.jpg/960px-A%C3%A7a%C3%AD_na_tigela_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:A%C3%A7a%C3%AD_na_tigela_2.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Melsj",
+   "arquivo": "acai-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Acai_bowl_-_A%C3%A7a%C3%AD_na_tigela.jpg/960px-Acai_bowl_-_A%C3%A7a%C3%AD_na_tigela.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Acai_bowl_-_A%C3%A7a%C3%AD_na_tigela.jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "chahayes",
+   "arquivo": "acai-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/A%C3%A7a%C3%AD_na_tigela_-_Acai_bowl.jpg/960px-A%C3%A7a%C3%AD_na_tigela_-_Acai_bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:A%C3%A7a%C3%AD_na_tigela_-_Acai_bowl.jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "Joe Crawford from San Diego, California, USA",
+   "arquivo": "acai-4.jpg"
+  },
+  {
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6f/A%C3%A7a%C3%AD_na_tigela.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "pagina": "https://commons.wikimedia.org/wiki/File:A%C3%A7a%C3%AD_na_tigela.jpeg",
+   "licenca": "CC BY-SA 3.0",
+   "autor": "Olga Kreglicka",
+   "arquivo": "acai-5.jpg"
+  }
+ ],
+ "pastel": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Brazilian_pastel.jpg/960px-Brazilian_pastel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Brazilian_pastel.jpg",
+   "licenca": "CC BY-SA 2.0",
+   "autor": "BuenosAiresPhotographer",
+   "arquivo": "pastel-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Pastel_de_Feira_01.jpg/960px-Pastel_de_Feira_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Pastel_de_Feira_01.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Avelludo",
+   "arquivo": "pastel-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Pastel_de_Feira_02.jpg/960px-Pastel_de_Feira_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Pastel_de_Feira_02.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Avelludo",
+   "arquivo": "pastel-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Pastel_de_Bacalhau.jpg/960px-Pastel_de_Bacalhau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Pastel_de_Bacalhau.jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "T Chu",
+   "arquivo": "pastel-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Pastel_de_Bacalhau_Queijo_da_Serra.jpg/960px-Pastel_de_Bacalhau_Queijo_da_Serra.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Pastel_de_Bacalhau_Queijo_da_Serra.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Antiga Bacalhoeira",
+   "arquivo": "pastel-5.jpg"
+  }
+ ],
+ "sorveteria": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Gelato_Cup_Ice-cream_Cake_Cow.jpg/960px-Gelato_Cup_Ice-cream_Cake_Cow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Gelato_Cup_Ice-cream_Cake_Cow.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Sky22688",
+   "arquivo": "sorveteria-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Ice_cream_in_cones.jpg/960px-Ice_cream_in_cones.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Ice_cream_in_cones.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "AlphaLemur",
+   "arquivo": "sorveteria-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Gelato_ice_cream_Wikivoyage_banner.jpg/960px-Gelato_ice_cream_Wikivoyage_banner.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Gelato_ice_cream_Wikivoyage_banner.jpg",
+   "licenca": "CC0",
+   "autor": "rawpixel",
+   "arquivo": "sorveteria-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Gelato_Ice_Cream_%2842356096320%29.jpg/960px-Gelato_Ice_Cream_%2842356096320%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Gelato_Ice_Cream_(42356096320).jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "Ella Olsson from Stockholm, Sweden",
+   "arquivo": "sorveteria-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Gelato_ice_cream.jpg/960px-Gelato_ice_cream.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Gelato_ice_cream.jpg",
+   "licenca": "CC0",
+   "autor": "rawpixel",
+   "arquivo": "sorveteria-5.jpg"
+  }
+ ],
+ "show": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Crowd_surf_Green_Day.jpg/960px-Crowd_surf_Green_Day.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Crowd_surf_Green_Day.jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "Anirudh Koul",
+   "arquivo": "show-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Method_Man_stage_dive.jpg/960px-Method_Man_stage_dive.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Method_Man_stage_dive.jpg",
+   "licenca": "CC BY-SA 2.5",
+   "autor": "Mysekurity",
+   "arquivo": "show-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Stage_diving.jpg/960px-Stage_diving.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Stage_diving.jpg",
+   "licenca": "CC BY 3.0",
+   "autor": "Бурнайкин Максим",
+   "arquivo": "show-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Heritage_Live_concert_crowd_and_stage_at_Sandringham_2023_-_geograph.org.uk_-_7586057.jpg/960px-Heritage_Live_concert_crowd_and_stage_at_Sandringham_2023_-_geograph.org.uk_-_7586057.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Heritage_Live_concert_crowd_and_stage_at_Sandringham_2023_-_geograph.org.uk_-_7586057.jpg",
+   "licenca": "CC BY-SA 2.0",
+   "autor": "Richard Humphrey",
+   "arquivo": "show-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/CrowdAtFortKnoxConcert.jpg/960px-CrowdAtFortKnoxConcert.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:CrowdAtFortKnoxConcert.jpg",
+   "licenca": "Public domain",
+   "autor": "US Army - Rob McIlvaine, FMWRC",
+   "arquivo": "show-5.jpg"
+  }
+ ],
+ "festa": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Popovka%2C_Outdoor_dance_party_at_night_under_moonlight%2C_Black_Sea%2C_Crimea.jpg/960px-Popovka%2C_Outdoor_dance_party_at_night_under_moonlight%2C_Black_Sea%2C_Crimea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Popovka,_Outdoor_dance_party_at_night_under_moonlight,_Black_Sea,_Crimea.jpg",
+   "licenca": "CC BY 4.0",
+   "autor": "Vyacheslav Argenberg",
+   "arquivo": "festa-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/88mph_high_res_illuminated_dance_floor_20260411.jpg/960px-88mph_high_res_illuminated_dance_floor_20260411.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:88mph_high_res_illuminated_dance_floor_20260411.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "Alex Sims",
+   "arquivo": "festa-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Kazantip%2C_Popovka%2C_Crimea%2C_Dance_floor_by_the_sea.jpg/960px-Kazantip%2C_Popovka%2C_Crimea%2C_Dance_floor_by_the_sea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Kazantip,_Popovka,_Crimea,_Dance_floor_by_the_sea.jpg",
+   "licenca": "CC BY 4.0",
+   "autor": "Vyacheslav Argenberg",
+   "arquivo": "festa-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Kazantip%2C_Popovka%2C_Crimea%2C_Dance_floor_at_the_sea_at_sunrise.jpg/960px-Kazantip%2C_Popovka%2C_Crimea%2C_Dance_floor_at_the_sea_at_sunrise.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Kazantip,_Popovka,_Crimea,_Dance_floor_at_the_sea_at_sunrise.jpg",
+   "licenca": "CC BY 4.0",
+   "autor": "Vyacheslav Argenberg",
+   "arquivo": "festa-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Daylight_sessions_on_Euro_dance_floor_%282006-08-029%29_%28324839937%29.jpg/960px-Daylight_sessions_on_Euro_dance_floor_%282006-08-029%29_%28324839937%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Daylight_sessions_on_Euro_dance_floor_(2006-08-029)_(324839937).jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "Vyacheslav Argenberg from Seattle, WA, USA",
+   "arquivo": "festa-5.jpg"
+  }
+ ],
+ "gastronomia_evento": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Around_the_World_Cultural_Food_Festival_2018_%2830648122398%29.jpg/960px-Around_the_World_Cultural_Food_Festival_2018_%2830648122398%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Around_the_World_Cultural_Food_Festival_2018_(30648122398).jpg",
+   "licenca": "CC BY 2.0",
+   "autor": "S Pakhrin from DC, USA",
+   "arquivo": "gastronomia_evento-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Back_to_your_village_food_festival_2025_%282%29_%283%29.jpg/960px-Back_to_your_village_food_festival_2025_%282%29_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Back_to_your_village_food_festival_2025_(2)_(3).jpg",
+   "licenca": "CC BY 4.0",
+   "autor": "Vera Asante 1",
+   "arquivo": "gastronomia_evento-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Back_to_your_village_food_festival_2025_%282%29_%282%29.jpg/960px-Back_to_your_village_food_festival_2025_%282%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Back_to_your_village_food_festival_2025_(2)_(2).jpg",
+   "licenca": "CC BY 4.0",
+   "autor": "Vera Asante 1",
+   "arquivo": "gastronomia_evento-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Back_to_your_village_food_festival_2025_%282%29_%281%29.jpg/960px-Back_to_your_village_food_festival_2025_%282%29_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Back_to_your_village_food_festival_2025_(2)_(1).jpg",
+   "licenca": "CC BY 4.0",
+   "autor": "Vera Asante 1",
+   "arquivo": "gastronomia_evento-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Back_to_your_village_food_festival_2025_%282%29_%284%29.jpg/960px-Back_to_your_village_food_festival_2025_%282%29_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Back_to_your_village_food_festival_2025_(2)_(4).jpg",
+   "licenca": "CC BY 4.0",
+   "autor": "Vera Asante 1",
+   "arquivo": "gastronomia_evento-5.jpg"
+  }
+ ],
+ "cultura": [
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Museum_of_the_History_of_Polish_Jews_in_Warsaw_Main_exhibition_Gwo%C5%BAdziec_synagogue.jpg/960px-Museum_of_the_History_of_Polish_Jews_in_Warsaw_Main_exhibition_Gwo%C5%BAdziec_synagogue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Museum_of_the_History_of_Polish_Jews_in_Warsaw_Main_exhibition_Gwo%C5%BAdziec_synagogue.jpg",
+   "licenca": "CC BY-SA 3.0 pl",
+   "autor": "Magdalena Starowieyska, Dariusz Golik",
+   "arquivo": "cultura-1.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Zempl%C3%ADn_Museum_in_Michalovce_-_Art_history_permanent_exhibition_-_The_iconostasis_of_an_eastern-rite_Christian_church_02.jpg/960px-Zempl%C3%ADn_Museum_in_Michalovce_-_Art_history_permanent_exhibition_-_The_iconostasis_of_an_eastern-rite_Christian_church_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Zempl%C3%ADn_Museum_in_Michalovce_-_Art_history_permanent_exhibition_-_The_iconostasis_of_an_eastern-rite_Christian_church_02.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "ZemplinTemplar",
+   "arquivo": "cultura-2.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/East_Slovak_Museum_in_Ko%C5%A1ice_-_%27Lehrner_Kass%C3%A1n%27_temporary_exhibition_-_promotional_sign_for_the_exhibition_in_front_of_the_%27Salon_Renaissance%27_exhibit_entrance_in_the_main_museum_building.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:East_Slovak_Museum_in_Ko%C5%A1ice_-_%27Lehrner_Kass%C3%A1n%27_temporary_exhibition_-_promotional_sign_for_the_exhibition_in_front_of_the_%27Salon_Renaissance%27_exhibit_entrance_in_the_main_museum_building.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "ZemplinTemplar",
+   "arquivo": "cultura-3.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/East_Slovak_Museum_in_Ko%C5%A1ice_-_%27Lehrner_Kass%C3%A1n%27_temporary_exhibition_-_Title_of_the_temporary_exhibition.jpg/960px-East_Slovak_Museum_in_Ko%C5%A1ice_-_%27Lehrner_Kass%C3%A1n%27_temporary_exhibition_-_Title_of_the_temporary_exhibition.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:East_Slovak_Museum_in_Ko%C5%A1ice_-_%27Lehrner_Kass%C3%A1n%27_temporary_exhibition_-_Title_of_the_temporary_exhibition.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "ZemplinTemplar",
+   "arquivo": "cultura-4.jpg"
+  },
+  {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Zempl%C3%ADn_Museum_in_Michalovce_-_Art_history_permanent_exhibition_-_The_iconostasis_of_an_eastern-rite_Christian_church_01.jpg/960px-Zempl%C3%ADn_Museum_in_Michalovce_-_Art_history_permanent_exhibition_-_The_iconostasis_of_an_eastern-rite_Christian_church_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Zempl%C3%ADn_Museum_in_Michalovce_-_Art_history_permanent_exhibition_-_The_iconostasis_of_an_eastern-rite_Christian_church_01.jpg",
+   "licenca": "CC BY-SA 4.0",
+   "autor": "ZemplinTemplar",
+   "arquivo": "cultura-5.jpg"
+  }
+ ]
+}
