@@ -73,7 +73,7 @@ def de_mapa(item: dict, mapa: dict, fonte: str, padroes: dict | None = None) -> 
     if not titulo:
         return None
     url = g("url") or ""
-    fid = g("id") or hashlib.sha1(f"{url}|{titulo}|{g('inicio')}".encode()).hexdigest()[:20]
+    fid = g("id") or hashlib.sha1(f"{url}|{titulo}|{g('inicio')}".encode(), usedforsecurity=False).hexdigest()[:20]
     local = LocalBruto(nome=str(g("local_nome") or ""), endereco=str(g("endereco") or ""), cidade=str(g("cidade") or padroes.get("cidade", "")),
                        estado=str(g("estado") or padroes.get("estado", "")), pais=str(g("pais") or padroes.get("pais", "")), cep=str(g("cep") or ""),
                        lat=_f(g("lat")), lon=_f(g("lon")))

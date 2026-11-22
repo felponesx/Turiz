@@ -55,7 +55,7 @@ def main():
     indice = json.load(open(indice_p, encoding="utf-8")) if os.path.exists(indice_p) else {}
     ok = falhas = pulados = 0
     motivos = {}
-    with httpx.Client(timeout=25, follow_redirects=True, transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=1)) as c:
+    with httpx.Client(timeout=25, follow_redirects=True, transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=1)) as c:  # nosec B104 - é o endereço LOCAL de saída (força IPv4), não um servidor escutando
         for i in imgs[: a.limite]:
             arq = f"{i['id']}.jpg"
             url = re.sub(r"^http://", "https://", (i["url"] or "").strip()).replace(" ", "%20")

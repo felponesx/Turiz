@@ -19,8 +19,8 @@ SEM_INDIVIDUAIS_AVISO = "MEIs e empresários individuais excluídos (privacidade
 
 def ultima_pasta(cliente=None) -> str:
     """Pasta mensal mais recente do compartilhamento da Receita (WebDAV público)."""
-    import xml.etree.ElementTree as ET
-    cliente = cliente or httpx.Client(timeout=60, transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=2))
+    from defusedxml import ElementTree as ET   # XML vindo de servidor externo: sem entidades externas nem bombas de expansão
+    cliente = cliente or httpx.Client(timeout=60, transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=2))  # nosec B104 - é o endereço LOCAL de saída (força IPv4), não um servidor escutando
     r = cliente.request("PROPFIND", f"{receita.RECEITA}/", auth=(receita.TOKEN, ""), headers={"Depth": "1"})
     r.raise_for_status()
     hrefs = (x.findtext("{DAV:}href", "") for x in ET.fromstring(r.content).findall("{DAV:}response"))

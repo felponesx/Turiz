@@ -117,7 +117,7 @@ class Requisitor:
 def cliente_http(timeout: float = 30.0) -> httpx.Client:
     """IPv4 (o runner do Actions não tem IPv6) e User-Agent identificável."""
     return httpx.Client(timeout=timeout, follow_redirects=True, headers={"User-Agent": "TurizEventosBot/1.0 (+https://github.com/felponesx/Turiz)"},
-                        transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=1))
+                        transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=1))  # nosec B104 - é o endereço LOCAL de saída (força IPv4), não um servidor escutando
 
 
 @dataclass

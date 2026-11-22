@@ -1,0 +1,53 @@
+name: Backup e teste de restauração
+on:
+  schedule:
+    - cron: "37 3 * * *"        # diário
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TEM_SENHA: ${{ secrets.BACKUP_PASSPHRASE != '' }}
+      TEM_S3: ${{ secrets.BACKUP_S3_BUCKET != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Teste REAL de restauração (backup só conta se restaurar)
+        run: python scripts/testar_restauracao.py | tee restauracao.json
+      - name: Varredura de privacidade dos dados
+        run: python scripts/verificar_privacidade.py
+      - name: Empacotar e CRIPTOGRAFAR (nunca guarda cópia sem criptografia)
+        if: ${{ env.TEM_SENHA == 'true' }}
+        env:
+          BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          nome="turiz-backup-$(date -u +%Y%m%d-%H%M).tar.gz.enc"
+          tar -czf - data migracoes | openssl enc -aes-256-cbc -pbkdf2 -iter 600000 -salt -pass env:BACKUP_PASSPHRASE -out "$nome"
+          sha256sum "$nome" > "$nome.sha256"
+          echo "ARQUIVO=$nome" >> "$GITHUB_ENV"
+      - name: Guardar como artefato (90 dias)
+        if: ${{ env.TEM_SENHA == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: turiz-backup-criptografado
+          path: |
+            turiz-backup-*.enc
+            turiz-backup-*.sha256
+          retention-days: 90
+      - name: Cópia independente em armazenamento externo (opcional)
+        if: ${{ env.TEM_SENHA == 'true' && env.TEM_S3 == 'true' }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.BACKUP_S3_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.BACKUP_S3_SECRET }}
+          AWS_DEFAULT_REGION: ${{ vars.BACKUP_S3_REGION || 'us-east-1' }}
+        run: |
+          aws s3 cp "$ARQUIVO" "s3://${{ secrets.BACKUP_S3_BUCKET }}/$ARQUIVO" ${{ vars.BACKUP_S3_ENDPOINT && format('--endpoint-url {0}', vars.BACKUP_S3_ENDPOINT) || '' }}
+          aws s3 cp "$ARQUIVO.sha256" "s3://${{ secrets.BACKUP_S3_BUCKET }}/$ARQUIVO.sha256" ${{ vars.BACKUP_S3_ENDPOINT && format('--endpoint-url {0}', vars.BACKUP_S3_ENDPOINT) || '' }}
+      - name: Aviso — backup criptografado não configurado
+        if: ${{ env.TEM_SENHA != 'true' }}
+        run: echo "::warning::Defina o secret BACKUP_PASSPHRASE para gerar o backup criptografado (o teste de restauração acima já roda). Para cópia fora do GitHub, defina também BACKUP_S3_BUCKET, BACKUP_S3_KEY e BACKUP_S3_SECRET."

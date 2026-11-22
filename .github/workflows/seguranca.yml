@@ -1,0 +1,35 @@
+name: Segurança (testes, análise estática, dependências, segredos, privacidade)
+on:
+  push: { branches: [main] }
+  pull_request:
+  schedule:
+    - cron: "23 5 * * *"          # diário: vulnerabilidades novas em dependências aparecem sem precisar de commit
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  testes-e-analise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt bandit pip-audit
+      - name: Testes (inclui testes de segurança, isolamento entre usuários e privacidade)
+        run: python -m pytest tests -q
+      - name: Análise estática (Bandit) — falha em severidade média ou alta
+        run: bandit -r app *.py -q -ll -x tests
+      - name: Vulnerabilidades em dependências (pip-audit)
+        run: pip-audit -r requirements.txt
+      - name: Privacidade — nenhum CNPJ/CPF/e-mail nos dados versionados
+        run: python scripts/verificar_privacidade.py
+  segredos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }          # histórico completo: um segredo apagado depois ainda está no histórico
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

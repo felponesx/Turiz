@@ -146,7 +146,7 @@ def montar_registros(cands: dict, exato: dict, centro: dict, incluir_individuais
         nome = titulo(d["fantasia"])
         rua = " ".join(x for x in (titulo(d["tipo_log"]), titulo(d["logradouro"])) if x)
         endereco = f"{rua}, {d['numero'].strip()}" if d["numero"].strip() and d["numero"].strip().upper() not in ("S/N", "SN") else rua
-        fid = hashlib.sha1(f"{cep}|{n}|{nome.lower()}".encode()).hexdigest()[:16]   # derivado de dados públicos do endereço, NÃO do CNPJ
+        fid = hashlib.sha1(f"{cep}|{n}|{nome.lower()}".encode(), usedforsecurity=False).hexdigest()[:16]   # derivado de dados públicos do endereço, NÃO do CNPJ
         if fid in vistos:
             continue
         vistos.add(fid)
@@ -232,7 +232,7 @@ def baixar(url: str, destino: str, auth=None, timeout=600) -> int:
     """Baixa em streaming para o disco (IPv4). Retorna o tamanho em bytes."""
     total = 0
     cli = httpx.Client(timeout=timeout, follow_redirects=True, headers={"User-Agent": "TurizBot/1.0 (+https://github.com/felponesx/Turiz)"},
-                       transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=2))
+                       transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=2))  # nosec B104 - é o endereço LOCAL de saída (força IPv4), não um servidor escutando
     with cli.stream("GET", url, auth=auth) as r:
         r.raise_for_status()
         with open(destino, "wb") as f:

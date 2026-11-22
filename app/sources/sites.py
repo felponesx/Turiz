@@ -41,7 +41,7 @@ def robots(url, client) -> str:
 def cliente_http(timeout=20) -> httpx.Client:
     """Cliente dos bots. Força IPv4: o runner do GitHub Actions não tem rota IPv6 e sites com AAAA dão 'Network is unreachable'."""
     return httpx.Client(timeout=timeout, headers={"User-Agent": UA}, follow_redirects=True,
-                        transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=1))
+                        transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=1))  # nosec B104 - é o endereço LOCAL de saída (força IPv4), não um servidor escutando
 
 
 def permitido(url, client) -> bool:
@@ -110,7 +110,7 @@ def _oferta(o, url_padrao):
 
 
 def _id(url, nome):
-    return hashlib.sha1(f"{url}|{nome}".encode()).hexdigest()[:20]
+    return hashlib.sha1(f"{url}|{nome}".encode(), usedforsecurity=False).hexdigest()[:20]
 
 
 def extrair(html: str, url: str, tipo_padrao: str):

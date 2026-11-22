@@ -92,7 +92,7 @@ def links(cli, url, n=60):
 
 def webdav(cli, base, token, caminho=""):
     """PROPFIND em um compartilhamento público do Nextcloud (usuário = token, senha vazia) -> [(caminho, bytes|None)]."""
-    import xml.etree.ElementTree as ET
+    from defusedxml import ElementTree as ET   # XML vindo de servidor externo: sem entidades externas nem bombas de expansão
     r = cli.request("PROPFIND", f"{base}/public.php/webdav/{caminho}", auth=(token, ""), headers={"Depth": "1"})
     if r.status_code not in (200, 207):
         return [(f"HTTP {r.status_code}", None)]
@@ -135,7 +135,7 @@ def main():
            "| Fonte | Resultado | Tamanho | Observação |", "|---|---|---|---|"]
     detalhes = []
     cli = httpx.Client(timeout=60, headers={"User-Agent": UA}, follow_redirects=True,
-                       transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=1))
+                       transport=httpx.HTTPTransport(local_address="0.0.0.0", retries=1))  # nosec B104 - é o endereço LOCAL de saída (força IPv4), não um servidor escutando
     mes = ultima_pasta(cli)
     out.insert(2, f"Pasta mais recente da Receita: **{mes}**\n")
     for nome, url, auth in candidatos(mes):

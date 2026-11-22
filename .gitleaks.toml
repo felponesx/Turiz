@@ -1,0 +1,13 @@
+# Regras do Gitleaks: padrões padrão + exceções documentadas (valores PÚBLICOS que parecem segredo).
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Valores públicos conhecidos"
+regexes = [
+  # Token do compartilhamento público de dados abertos da Receita Federal (publicado pelo próprio órgão para download anônimo).
+  '''YggdBLfdninEJX9''',
+]
+paths = [
+  '''tests/.*''',          # chaves falsas de teste
+]

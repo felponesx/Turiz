@@ -1,0 +1,41 @@
+name: Monitoramento externo
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      TURIZ_URL: ${{ vars.TURIZ_URL }}
+      TEM_WEBHOOK: ${{ secrets.ALERTA_WEBHOOK != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install httpx
+      - name: Sem URL de produção ainda
+        if: ${{ env.TURIZ_URL == '' }}
+        run: echo "::notice::Defina a variável de repositório TURIZ_URL (Settings → Variables) quando a API estiver hospedada. Nada a monitorar por enquanto."
+      - name: Verificar disponibilidade, cabeçalhos e certificado
+        id: mon
+        if: ${{ env.TURIZ_URL != '' }}
+        run: python scripts/monitorar.py "$TURIZ_URL" | tee resultado.json
+      - name: Abrir/atualizar incidente
+        if: ${{ failure() && steps.mon.conclusion == 'failure' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(gh issue list --label incidente --state open --json number --jq '.[0].number')
+          corpo="Monitor externo detectou problemas em $(date -u +%F\ %H:%MZ):\n\n\`\`\`json\n$(cat resultado.json)\n\`\`\`\n\nVeja docs/seguranca/resposta-a-incidentes.md (classifique P0–P4)."
+          if [ -z "$n" ]; then gh issue create --title "Incidente: TURIZ com problema no monitor externo" --label incidente --body "$(printf "$corpo")"; else gh issue comment "$n" --body "$(printf "$corpo")"; fi
+      - name: Avisar por webhook (opcional)
+        if: ${{ failure() && steps.mon.conclusion == 'failure' && env.TEM_WEBHOOK == 'true' }}
+        env:
+          ALERTA_WEBHOOK: ${{ secrets.ALERTA_WEBHOOK }}
+        run: |
+          curl -fsS -X POST -H "Content-Type: application/json" -d '{"text":"TURIZ: monitor externo detectou problema. Veja os incidentes no GitHub."}' "$ALERTA_WEBHOOK"
