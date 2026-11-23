@@ -31,10 +31,4 @@ jobs:
       - name: Commitar dados
         if: always()
         run: |
-          git config user.name "cardapios-bot"
-          git config user.email "cardapios-bot@users.noreply.github.com"
-          git add data/cardapios.json
-          git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
-          git commit -m "dados: cardapios $(date -u +%F)"
-          git pull --rebase origin main
-          git push
+          scripts/commitar_dados.sh "dados: cardapios $(date -u +%F)" data/cardapios.json

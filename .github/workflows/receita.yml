@@ -29,14 +29,9 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Coletar (o CNPJ nunca é gravado; os logs só mostram contagens)
         run: python coletar_receita.py --arquivos "${{ inputs.arquivos || '0,1,2,3,4,5,6,7,8,9' }}"
-      - name: Commitar resultado
+      - name: Commitar dados
         if: always()
         run: |
-          git config user.name "receita-bot"
-          git config user.email "receita-bot@users.noreply.github.com"
-          git add data/receita_resumo.md || true
-          if [ "${{ inputs.gravar_dados || 'true' }}" = "true" ]; then git add data/lugares_receita.json.gz || true; fi
-          git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
-          git commit -m "dados: receita+ibge $(date -u +%F)"
-          git pull --rebase origin main
-          git push
+          arquivos="data/receita_resumo.md"
+          if [ "${{ inputs.gravar_dados || 'true' }}" = "true" ]; then arquivos="$arquivos data/lugares_receita.json.gz"; fi
+          scripts/commitar_dados.sh "dados: receita+ibge $(date -u +%F)" $arquivos

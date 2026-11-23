@@ -33,11 +33,6 @@ jobs:
         run: |
           python coletar_imagens.py ${{ inputs.fontes || 'commons site' }} ${{ inputs.limite_sites && format('--limite-sites {0}', inputs.limite_sites) || '' }}
       - name: Commitar dados
+        if: always()
         run: |
-          git config user.name "imagens-bot"
-          git config user.email "imagens-bot@users.noreply.github.com"
-          git add data/imagens.json
-          git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
-          git commit -m "dados: imagens $(date -u +%F)"
-          git pull --rebase origin main
-          git push
+          scripts/commitar_dados.sh "dados: imagens $(date -u +%F)" data/imagens.json

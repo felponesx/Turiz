@@ -47,10 +47,7 @@ jobs:
           if [ -n "${{ inputs.fontes }}" ]; then args="--fonte ${{ inputs.fontes }}"; fi
           if [ "${{ inputs.forcar }}" = "true" ]; then args="$args --forcar"; fi
           python coletar_eventos.py rodar $args
-      - name: Commitar snapshot
+      - name: Commitar dados
+        if: always()
         run: |
-          git config user.name "coleta-bot"
-          git config user.email "coleta-bot@users.noreply.github.com"
-          git add data/
-          git diff --cached --quiet || git commit -m "dados: eventos $(date -u +%F-%H%M)"
-          git pull --rebase -q && git push
+          scripts/commitar_dados.sh "dados: eventos $(date -u +%F-%H%M)" data/
