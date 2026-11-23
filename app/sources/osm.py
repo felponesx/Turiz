@@ -54,14 +54,16 @@ def normalizar(el: dict) -> dict | None:
     }
 
 
-def coletar(amenities=("restaurant", "fast_food", "cafe", "bar", "pub", "nightclub"), linhas=4, colunas=4, post=None, progresso=None):
-    """Retorna lista de lugares normalizados (sem duplicados). `progresso(feitos, total, atual, itens, **contagem)` é opcional."""
+def coletar(amenities=("restaurant", "fast_food", "cafe", "bar", "pub", "nightclub"), linhas=4, colunas=4, post=None, progresso=None, falhas=None):
+    """Retorna lista de lugares normalizados (sem duplicados). `progresso(feitos, total, atual, itens, **contagem)` é opcional.
+    Uma região sem resposta do Overpass NÃO derruba a coleta: ela é tentada de novo no fim e, se continuar falhando,
+    o número da região vai para a lista `falhas` (se fornecida) e o resto é devolvido."""
     post = post or _post
     vistos = {}
     celulas = list(grade(linhas=linhas, colunas=colunas))
-    for i, cel in enumerate(celulas, 1):
-        if progresso:
-            progresso(i - 1, len(celulas), f"Região {i} de {len(celulas)}")
+    pendentes = list(enumerate(celulas, 1))
+
+    def uma(i, cel):
         novos = []
         for el in post(query(cel, amenities)).get("elements", []):
             r = normalizar(el)
@@ -69,9 +71,34 @@ def coletar(amenities=("restaurant", "fast_food", "cafe", "bar", "pub", "nightcl
                 if r["fonte_id"] not in vistos:
                     novos.append(r["nome"])
                 vistos[r["fonte_id"]] = r
+        return novos
+
+    ruins = []
+    for i, cel in pendentes:
+        if progresso:
+            progresso(i - 1, len(celulas), f"Região {i} de {len(celulas)}")
+        try:
+            novos = uma(i, cel)
+        except RuntimeError:
+            ruins.append((i, cel))
+            time.sleep(2)
+            continue
         if progresso:
             progresso(i, len(celulas), f"Região {i} de {len(celulas)}", itens=novos[:4], captados=len(novos))
         time.sleep(2)
+    for i, cel in ruins:                       # segunda chance, com o servidor já "descansado"
+        if progresso:
+            progresso(len(celulas) - len(ruins), len(celulas), f"Região {i} de {len(celulas)} (nova tentativa)")
+        try:
+            novos = uma(i, cel)
+            if progresso:
+                progresso(len(celulas) - len(ruins) + 1, len(celulas), f"Região {i} de {len(celulas)}", itens=novos[:4], captados=len(novos))
+        except RuntimeError:
+            if falhas is not None:
+                falhas.append(i)
+            if progresso:
+                progresso(len(celulas) - len(ruins), len(celulas), f"Região {i} sem resposta do Overpass", falhas=1)
+        time.sleep(5)
     return list(vistos.values())
 
 

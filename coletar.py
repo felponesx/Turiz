@@ -61,8 +61,11 @@ def main():
 
 def _fonte(f, a, db, rep, cb):
     if f == "osm":
-        r = upsert(db, Lugar, osm.coletar(progresso=cb))
+        regioes_ruins = []
+        r = upsert(db, Lugar, osm.coletar(progresso=cb, falhas=regioes_ruins))
         print("osm", r)
+        if regioes_ruins:
+            rep.aviso(f"{len(regioes_ruins)} região(ões) sem resposta do Overpass ({', '.join(map(str, regioes_ruins))}); entram na próxima coleta")
         rep.contar(novos=r["novos"], atualizados=r["atualizados"])
         rep.total_no_sistema(lugares=db.query(Lugar).count())
     elif f == "google":

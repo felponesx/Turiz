@@ -41,3 +41,21 @@ def test_redes_reporta_perfis_encontrados(tmp_path, monkeypatch):
     lugares = [{"fonte": "osm", "fonte_id": "node/1", "site": "https://a.com"}]
     regs, st = instagram.vinculos_sites(lugares, client=_cliente('<a href="https://instagram.com/bar_a/">ig</a>'), progresso=r.callback())
     assert regs[0]["usuario"] == "bar_a" and r.itens[0]["txt"] == "a.com: @bar_a"
+
+
+def test_osm_regiao_com_falha_nao_derruba_a_coleta(tmp_path, monkeypatch):
+    monkeypatch.setattr(osm.time, "sleep", lambda s: None)
+    el = {"type": "node", "id": 1, "lat": -23.5, "lon": -46.6, "tags": {"name": "Bar Um", "amenity": "bar"}}
+    chamadas = {"n": 0}
+
+    def post(q):
+        chamadas["n"] += 1
+        if chamadas["n"] in (2, 5):             # a região 2 falha na 1ª tentativa e na nova tentativa do fim
+            raise RuntimeError("Overpass indisponível: 504")
+        return {"elements": [el]}
+    ruins = []
+    r = Reporter("osm", pasta=str(tmp_path))
+    r.iniciar()
+    regs = osm.coletar(linhas=2, colunas=2, post=post, progresso=r.callback(), falhas=ruins)
+    assert len(regs) == 1                      # nada se perdeu
+    assert ruins == [2] and r.contagem.get("falhas") == 1
