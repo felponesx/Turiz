@@ -12,8 +12,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://www.ticket360.com.br/evento/34067/ingressos-para-subete-e-mucho-apresenta-braza-baile-citrico-utropico-lunar",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34067-20260901150614.webp",
   "preco_min": 60.0,
@@ -33,7 +33,7 @@
   "coletado_em": null,
   "visto_em": null,
   "extra": {},
-  "atualizado_em": "2026-11-14T00:27:53.813876"
+  "atualizado_em": "2026-11-23T18:39:57.550841"
  },
  {
   "id": 2,
@@ -156,8 +156,8 @@
   "lat": -23.55335719630478,
   "lon": -46.6358201309697,
   "url": "https://www.ticket360.com.br/evento/33587/ingressos-para-associacao-cultural-cecilia-apresenta-ty-segall",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/424630894",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/33587-20261023191554.webp",
   "preco_min": 312.0,
@@ -177,7 +177,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-15T06:46:08.855182",
   "extra": {},
-  "atualizado_em": "2026-11-15T06:48:40.047541"
+  "atualizado_em": "2026-11-23T18:39:57.550845"
  },
  {
   "id": 6,
@@ -192,8 +192,8 @@
   "lat": -23.52717019356943,
   "lon": -46.670425873930924,
   "url": "https://www.ticket360.com.br/evento/34069/ingressos-para-festival-sertanejo-com-jads-e-jadson-munhoz-e-mariano-fiduma-e-jeca-e-mais",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/5075597941",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34069-20261022090218.webp",
   "preco_min": 84.0,
@@ -213,7 +213,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-19T20:46:11.203328",
   "extra": {},
-  "atualizado_em": "2026-11-20T20:30:11.015351"
+  "atualizado_em": "2026-11-23T18:39:57.550846"
  },
  {
   "id": 7,
@@ -624,8 +624,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://www.ticket360.com.br/evento/33945/ingressos-para-monobloco-ensaio-com-bateria-completa",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/33945-20260901153903.webp",
   "preco_min": 84.0,
@@ -645,7 +645,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-21T07:22:58.408393",
   "extra": {},
-  "atualizado_em": "2026-11-21T07:25:03.319420"
+  "atualizado_em": "2026-11-23T18:39:57.550846"
  },
  {
   "id": 19,
@@ -768,8 +768,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://www.ticket360.com.br/evento/34234/ingressos-para-toca-sessions-apresenta-rael-nas-profundezas-da-onda",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34234-20260925152629.webp",
   "preco_min": 84.0,
@@ -789,7 +789,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-19T20:46:22.495589",
   "extra": {},
-  "atualizado_em": "2026-11-19T20:46:22.495802"
+  "atualizado_em": "2026-11-23T18:39:57.550847"
  },
  {
   "id": 23,
@@ -804,8 +804,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://www.ticket360.com.br/evento/34240/ingressos-para-robot-rock-alive-a-daft-punk-tribute",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34240-20260928120226.webp",
   "preco_min": 120.0,
@@ -825,7 +825,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-19T20:47:11.848919",
   "extra": {},
-  "atualizado_em": "2026-11-20T07:27:46.073835"
+  "atualizado_em": "2026-11-23T18:39:57.550847"
  },
  {
   "id": 24,
@@ -912,8 +912,8 @@
   "lat": -23.52717019356943,
   "lon": -46.670425873930924,
   "url": "https://www.ticket360.com.br/evento/33871/ingressos-para-maiara-e-maraisa",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/5075597941",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/33871-20260924193514.webp",
   "preco_min": 72.0,
@@ -933,7 +933,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-23T09:27:02.095373",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:02.095592"
+  "atualizado_em": "2026-11-23T18:39:57.550848"
  },
  {
   "id": 27,
@@ -984,8 +984,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://www.ticket360.com.br/evento/34043/ingressos-para-falamansa-show-de-despedida-da-turne-universos",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34043-20260901153734.webp",
   "preco_min": 72.0,
@@ -1005,7 +1005,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-23T09:27:11.054212",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:11.054431"
+  "atualizado_em": "2026-11-23T18:39:57.550848"
  },
  {
   "id": 29,
@@ -1430,8 +1430,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://www.ticket360.com.br/evento/34049/ingressos-para-madame-underground-club-apresenta-marc-almond-soft-cell-na-audio",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "shows",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34049-20260903154904.webp",
   "preco_min": 312.0,
@@ -1453,7 +1453,7 @@
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:00.388742"
+  "atualizado_em": "2026-11-23T18:39:57.550849"
  },
  {
   "id": 41,
@@ -1506,8 +1506,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://visitesaopaulo.com/evento/associacao-cultural-cecilia-apresenta-ty-segall-2026/",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "shows",
   "imagem_url": "",
   "preco_min": null,
@@ -1529,7 +1529,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-15T06:48:40.047542"
+  "atualizado_em": "2026-11-23T18:39:57.550849"
  },
  {
   "id": 43,
@@ -2152,8 +2152,8 @@
   "lat": -23.52717019356943,
   "lon": -46.670425873930924,
   "url": "https://visitesaopaulo.com/evento/festival-sertanejo-com-jads-jadson-munhoz-mariano-fiduma-jeca-e-mais-2026/",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/5075597941",
   "categoria": "festivais",
   "imagem_url": "",
   "preco_min": null,
@@ -2175,7 +2175,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-19T20:49:10.909969"
+  "atualizado_em": "2026-11-23T18:39:57.550850"
  },
  {
   "id": 60,
@@ -2266,8 +2266,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://www.ticket360.com.br/evento/34442/ingressos-para-foto-em-grupo",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "shows",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34442-20261106191846.webp",
   "preco_min": 72.0,
@@ -2289,7 +2289,7 @@
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:09.565521"
+  "atualizado_em": "2026-11-23T18:39:57.550850"
  },
  {
   "id": 63,
@@ -2418,8 +2418,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://www.ticket360.com.br/evento/33222/ingressos-para-armandinho-se-o-tempo-passa",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "shows",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/33222-20260901150844.webp",
   "preco_min": 96.0,
@@ -2441,7 +2441,7 @@
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:16.261001"
+  "atualizado_em": "2026-11-23T18:39:57.550851"
  },
  {
   "id": 67,
@@ -2456,8 +2456,8 @@
   "lat": -23.52717019356943,
   "lon": -46.670425873930924,
   "url": "https://www.ticket360.com.br/evento/34186/ingressos-para-matheus-e-kauan",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/5075597941",
   "categoria": "shows",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34186-20260927102522.webp",
   "preco_min": 72.0,
@@ -2479,7 +2479,7 @@
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:18.779034"
+  "atualizado_em": "2026-11-23T18:39:57.550851"
  },
  {
   "id": 68,
@@ -2646,8 +2646,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://www.ticket360.com.br/evento/34178/ingressos-para-deixa-arder-let-it-burn-chico-chico-show-de-encerramento",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "shows",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34178-20260915101242.webp",
   "preco_min": 102.0,
@@ -2669,7 +2669,7 @@
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:20.989682"
+  "atualizado_em": "2026-11-23T18:39:57.550852"
  },
  {
   "id": 73,
@@ -2836,8 +2836,8 @@
   "lat": -23.52827570365205,
   "lon": -46.66968615636964,
   "url": "https://visitesaopaulo.com/evento/hot-chip-2026/",
-  "lugar_fonte": "",
-  "lugar_fonte_id": "",
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/2981644654",
   "categoria": "shows",
   "imagem_url": "",
   "preco_min": null,
@@ -2859,7 +2859,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-22T19:51:55.125967"
+  "atualizado_em": "2026-11-23T18:39:57.550852"
  },
  {
   "id": 78,
