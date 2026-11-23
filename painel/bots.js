@@ -177,11 +177,12 @@ window.BOTS_REGISTRY = {
    "fonte": "Atualização automática",
    "grupo": "Sistema Turiz",
    "icone": "rocket",
-   "descricao": "Pega tudo que os bots captaram e atualiza os dados dentro do app Turiz, sem aprovação.",
+   "descricao": "Pega tudo que os bots captaram e atualiza os dados dentro do app Turiz, sem aprovação. Roda numa tarefa agendada do Claude (não no GitHub), por isso o resultado chega como notificação no celular em vez de aparecer aqui em tempo real.",
    "workflow": null,
    "agenda": "todo dia 11:07 (Brasília)",
    "requer": [],
-   "saidas": []
+   "saidas": [],
+   "externo": true
   }
  ]
 };

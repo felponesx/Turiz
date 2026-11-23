@@ -46,6 +46,12 @@ def main(argv=None):
     ap.add_argument("nova")
     ap.add_argument("--dados", default=os.path.join(RAIZ, "data"))
     a = ap.parse_args(argv)
+    try:
+        import PIL.Image  # noqa: F401
+        import yaml  # noqa: F401
+    except Exception as exc:  # noqa: BLE001
+        print(f"ERRO: Python sem Pillow/PyYAML funcionando ({type(exc).__name__}). Rode `pip install -r requirements.txt` ou use /usr/bin/python3.")
+        return 2
     antes = open(a.atual, encoding="utf-8").read()
     faltam = [b for b in ("API-DATA", "API-IMAGENS", "API-REDES") if f"<!--{b}-->" not in antes]
     if faltam:

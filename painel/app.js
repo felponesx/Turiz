@@ -60,7 +60,7 @@ let avisoTimer;
 function aviso(txt) { const a = document.getElementById("aviso"); a.textContent = txt; a.classList.add("on"); clearTimeout(avisoTimer); avisoTimer = setTimeout(() => a.classList.remove("on"), 3800); }
 
 /* ---------- estado dos bots ---------- */
-const ROTULO = { rodando: "Rodando", concluido: "Concluído", avisos: "Concluído com avisos", erro: "Erro", aguardando_credencial: "Aguardando chave", aguardando_config: "Aguardando ajuste", semsinal: "Sem sinal", nunca: "Ainda não rodou", ocioso: "Parado" };
+const ROTULO = { externo: "Automático", rodando: "Rodando", concluido: "Concluído", avisos: "Concluído com avisos", erro: "Erro", aguardando_credencial: "Aguardando chave", aguardando_config: "Aguardando ajuste", semsinal: "Sem sinal", nunca: "Ainda não rodou", ocioso: "Parado" };
 const ST = {};                // id -> status do bot (ou null = nunca rodou)
 let redeErro = false, ultimaBusca = 0, buscando = false;
 
@@ -84,7 +84,12 @@ async function atualizar(manual) {
   if (buscando) return; buscando = true;
   const btn = document.getElementById("btn-atualizar"); btn.classList.add("gira");
   let falhas = 0;
-  await Promise.all(REG.bots.map(async (b) => { try { ST[b.id] = await buscarStatus(b.id); } catch { falhas++; } }));
+  await Promise.all(REG.bots.map(async (b) => {
+    try {
+      ST[b.id] = await buscarStatus(b.id);
+      if (!ST[b.id] && b.externo) ST[b.id] = { estado: "externo", percentual: 0, mensagem: "Roda sozinho todo dia às 11:07 (Brasília) e avisa por notificação no celular." };
+    } catch { falhas++; }
+  }));
   redeErro = falhas === REG.bots.length; ultimaBusca = Date.now(); buscando = false;
   btn.classList.remove("gira");
   if (manual && redeErro) aviso("Sem conexão com o GitHub. Mostrando o último estado conhecido.");
@@ -109,12 +114,13 @@ function cartao(b) {
   const pct = s ? (s.percentual || 0) : 0;
   let linha;
   if (e === "rodando") linha = h("div", { class: "captando" }, h("em", { text: "Captando agora: " }), s.atual || s.etapa || "iniciando…");
+  else if (e === "externo") linha = h("div", { class: "captando" }, s.mensagem);
   else if (e === "nunca") linha = h("div", { class: "captando" }, h("em", { text: b.agenda ? `Agenda: ${b.agenda}` : "Ainda não rodou" }));
   else linha = h("div", { class: "captando" }, h("em", { text: `Último resultado ${quando(s.finalizado_em || s.atualizado_em)}${s.mensagem ? " — " : ""}` }), s.mensagem || "");
   return h("a", { class: `cartao est-${e}`, href: `#/bot/${b.id}`, "aria-label": `${b.nome}: ${ROTULO[e]}, ${pct}%` },
     h("div", { class: "cabeca" }, h("div", { class: "ic" }, icone(b.icone)), h("div", { class: "titulo" }, h("b", { text: b.nome }), h("small", { text: b.fonte })), h("span", { class: "selo", text: ROTULO[e] })),
-    barra(e === "nunca" ? 0 : pct),
-    h("div", { class: "linha-p" }, h("span", {}, s && s.etapa && e === "rodando" ? s.etapa : (s && s.iniciado_em ? `Iniciou ${quando(s.iniciado_em)}` : "")), h("b", { text: e === "nunca" ? "" : pct + "%" })),
+    e === "externo" ? null : barra(e === "nunca" ? 0 : pct),
+    e === "externo" ? null : h("div", { class: "linha-p" }, h("span", {}, s && s.etapa && e === "rodando" ? s.etapa : (s && s.iniciado_em ? `Iniciou ${quando(s.iniciado_em)}` : "")), h("b", { text: e === "nunca" ? "" : pct + "%" })),
     linha, s ? minis(s.contagem) : null);
 }
 
@@ -156,8 +162,8 @@ function detalhe(id) {
   raiz.append(h("div", { class: "cabeca", style: "margin:6px 0 4px" }, h("div", { class: "ic" }, icone(b.icone)), h("div", { class: "titulo" }, h("h1", { style: "font-size:1.3rem", text: b.nome }), h("small", { text: b.fonte })), h("span", { class: "selo", text: ROTULO[e] })));
   raiz.append(h("p", { class: "desc", text: b.descricao }));
   raiz.append(h("div", { class: "cartao", style: "cursor:default" },
-    h("div", { class: "linha-p" }, h("span", { text: e === "nunca" ? "Ainda não rodou" : (s.etapa || "Progresso") }), h("span", { class: "grande", text: e === "nunca" ? "–" : pct + "%" })),
-    barra(e === "nunca" ? 0 : pct),
+    h("div", { class: "linha-p" }, h("span", { text: e === "nunca" ? "Ainda não rodou" : e === "externo" ? "Automático" : (s.etapa || "Progresso") }), h("span", { class: "grande", text: e === "nunca" || e === "externo" ? "–" : pct + "%" })),
+    e === "externo" ? null : barra(e === "nunca" ? 0 : pct),
     e === "rodando" ? h("div", { class: "captando" }, h("em", { text: "Captando agora: " }), s.atual || "iniciando…") : null,
     s && s.total ? h("div", { class: "linha-p" }, h("span", { text: "Itens" }), h("b", { text: `${num(s.feitos)} de ${num(s.total)}` })) : null,
     s ? h("div", { class: "linha-p" }, h("span", { text: "Última atualização" }), h("b", { text: quando(s.atualizado_em) })) : null,

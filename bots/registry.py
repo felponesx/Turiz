@@ -40,8 +40,8 @@ BOTS = [
      "descricao": "Capta eventos com data, local, preço e foto de todas as fontes cadastradas, tira duplicados e guarda o histórico.",
      "workflow": "eventos.yml", "agenda": "a cada 6 horas", "requer": [], "saidas": ["data/eventos_v2.json.gz", "data/eventos.json"]},
     {"id": "turiz_app", "nome": "App Turiz", "fonte": "Atualização automática", "grupo": "Sistema Turiz", "icone": "rocket",
-     "descricao": "Pega tudo que os bots captaram e atualiza os dados dentro do app Turiz, sem aprovação.",
-     "workflow": None, "agenda": "todo dia 11:07 (Brasília)", "requer": [], "saidas": []},
+     "descricao": "Pega tudo que os bots captaram e atualiza os dados dentro do app Turiz, sem aprovação. Roda numa tarefa agendada do Claude (não no GitHub), por isso o resultado chega como notificação no celular em vez de aparecer aqui em tempo real.",
+     "workflow": None, "agenda": "todo dia 11:07 (Brasília)", "requer": [], "saidas": [], "externo": True},
 ]
 
 
