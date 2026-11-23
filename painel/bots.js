@@ -8,6 +8,7 @@ window.BOTS_REGISTRY = {
  "bots": [
   {
    "id": "osm",
+   "encadeia": true,
    "nome": "Restaurantes e bares",
    "fonte": "OpenStreetMap",
    "grupo": "Lugares",
@@ -36,6 +37,7 @@ window.BOTS_REGISTRY = {
   },
   {
    "id": "sites",
+   "encadeia": true,
    "nome": "Lugares em sites",
    "fonte": "Sites (JSON-LD)",
    "grupo": "Lugares",
@@ -50,6 +52,7 @@ window.BOTS_REGISTRY = {
   },
   {
    "id": "google",
+   "encadeia": true,
    "nome": "Google Places",
    "fonte": "Google Places API",
    "grupo": "Lugares",
@@ -66,6 +69,7 @@ window.BOTS_REGISTRY = {
   },
   {
    "id": "enderecos",
+   "encadeia": true,
    "nome": "Endereços",
    "fonte": "Nominatim (OpenStreetMap)",
    "grupo": "Enriquecimento",
@@ -80,6 +84,7 @@ window.BOTS_REGISTRY = {
   },
   {
    "id": "imagens",
+   "encadeia": true,
    "nome": "Imagens dos lugares",
    "fonte": "Wikimedia Commons + sites",
    "grupo": "Enriquecimento",
@@ -94,6 +99,7 @@ window.BOTS_REGISTRY = {
   },
   {
    "id": "instagram",
+   "encadeia": true,
    "nome": "Redes sociais",
    "fonte": "Sites e OpenStreetMap",
    "grupo": "Enriquecimento",
@@ -108,6 +114,7 @@ window.BOTS_REGISTRY = {
   },
   {
    "id": "cardapios",
+   "encadeia": true,
    "nome": "Cardápios",
    "fonte": "Sites dos lugares",
    "grupo": "Enriquecimento",
@@ -122,6 +129,7 @@ window.BOTS_REGISTRY = {
   },
   {
    "id": "fotos",
+   "encadeia": true,
    "nome": "Fotos (miniaturas)",
    "fonte": "Imagens captadas",
    "grupo": "Enriquecimento",

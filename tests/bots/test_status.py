@@ -146,3 +146,13 @@ def test_cli_inicio_progresso_fim(tmp_path, monkeypatch):
     cli.main(["turiz_app", "fim", "concluido", "--mensagem", "ok", "--total", "lugares=10"])
     d = json.load(open("status/turiz_app.json"))
     assert d["estado"] == "concluido" and d["percentual"] == 100
+
+
+def test_batimento_mantem_o_bot_vivo_sem_progresso(tmp_path):
+    import time as _t
+    with bot("receita", publicador=None, pasta=str(tmp_path), batimento_s=0.05) as r:
+        antes = json.load(open(tmp_path / "receita.json"))["atualizado_em"]
+        _t.sleep(1.2)   # sem nenhuma chamada de progresso: só a thread de batimento
+        depois = json.load(open(tmp_path / "receita.json"))["atualizado_em"]
+    assert depois > antes
+    assert json.load(open(tmp_path / "receita.json"))["estado"] == "concluido"

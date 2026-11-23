@@ -168,7 +168,7 @@ function detalhe(id) {
   if (e === "rodando" && s.run_url) botoes.append(h("button", { class: "btn", onclick: () => cancelar(s) }, icone("stop"), "Cancelar"));
   const link = s && seguro(s.run_url); if (link) botoes.append(h("a", { class: "btn", href: link, target: "_blank", rel: "noopener" }, icone("ext"), "Ver no GitHub"));
   raiz.append(botoes);
-  raiz.append(h("p", { class: "dica", text: `Agenda: ${b.agenda}.${b.requer.length ? " Precisa de: " + b.requer.join(", ") + "." : ""}` }));
+  raiz.append(h("p", { class: "dica", text: `Agenda: ${b.agenda}.${b.requer.length ? " Precisa de: " + b.requer.join(", ") + "." : ""}${b.encadeia ? " Quando termina, o próximo bot da cadeia começa sozinho." : ""}` }));
   if (s && s.contagem && Object.keys(s.contagem).length) raiz.append(h("div", { class: "secao" }, h("h2", { text: "Quantos captou" }), h("div", { class: "grade" }, Object.entries(s.contagem).map(([k, v]) => kpi(ROT_CONTA[k] || bonito(k), v)))));
   if (s && s.totais && Object.keys(s.totais).length) raiz.append(h("div", { class: "secao" }, h("h2", { text: "Total no sistema Turiz" }), h("div", { class: "grade" }, Object.entries(s.totais).map(([k, v]) => kpi(ROT_TOTAL[k] || bonito(k), v)))));
   if (s && s.fontes && s.fontes.length) raiz.append(h("div", { class: "secao" }, h("h2", { text: `Fontes (${s.fontes.length})` }), h("div", { class: "lista" }, s.fontes.map((f) =>

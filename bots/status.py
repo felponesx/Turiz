@@ -12,6 +12,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 from datetime import datetime, timezone
 
@@ -240,6 +241,14 @@ class Reporter:
             except Exception as exc:  # noqa: BLE001
                 self._avisar_pub(exc)
 
+    def batimento(self):
+        """Renova `atualizado_em` sem mudar mais nada (o painel só chama de "sem sinal" quem para de bater)."""
+        if self.estado == "rodando":
+            try:
+                self._salvar()
+            except Exception:  # noqa: BLE001 - corrida inofensiva com a thread principal
+                pass
+
     def _avisar_pub(self, exc):
         if not self._aviso_pub:
             self._aviso_pub = True
@@ -277,13 +286,19 @@ def criar_publicador():
 
 
 @contextlib.contextmanager
-def bot(bot_id, publicador="auto", pasta="status", espelhar_saida=True, **kw):
+def bot(bot_id, publicador="auto", pasta="status", espelhar_saida=True, batimento_s=60, **kw):
     """Contexto de um bot: inicia, captura a saída, finaliza com o estado certo e propaga erros reais."""
     rep = Reporter(bot_id, criar_publicador() if publicador == "auto" else publicador, pasta=pasta, **kw)
     rep.iniciar()
     original = sys.stdout
     if espelhar_saida:
         sys.stdout = _Tee(original, rep)
+    parar = threading.Event()
+    if batimento_s:
+        def bater():
+            while not parar.wait(batimento_s):
+                rep.batimento()
+        threading.Thread(target=bater, daemon=True).start()
     try:
         yield rep
     except Pular as p:
@@ -300,4 +315,5 @@ def bot(bot_id, publicador="auto", pasta="status", espelhar_saida=True, **kw):
     else:
         rep.finalizar("concluido")
     finally:
+        parar.set()
         sys.stdout = original
