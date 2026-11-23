@@ -89,21 +89,30 @@ def _reg(lugar, usuario, origem, conf, status):
             "url": f"https://www.instagram.com/{usuario}/", "origem": origem, "confianca": conf, "status": status}
 
 
-def vinculos_sites(lugares: list[dict], client=None, pausa=1.0, limite=None):
+def vinculos_sites(lugares: list[dict], client=None, pausa=1.0, limite=None, progresso=None):
     client = client or cliente_http(20)
     saida, bloqueados, falhas = [], 0, 0
-    for l in lugares[:limite]:
+    alvo = lugares[:limite]
+    for n, l in enumerate(alvo, 1):
         url = l["site"] if l["site"].startswith("http") else "https://" + l["site"]
+        host = url.split("//", 1)[-1].split("/", 1)[0]
         try:
             if not permitido(url, client):
                 bloqueados += 1
+                if progresso:
+                    progresso(n, len(alvo), host, bloqueados=1)
                 continue
             r = client.get(url)
             r.raise_for_status()
         except httpx.HTTPError:
             falhas += 1
+            if progresso:
+                progresso(n, len(alvo), host, falhas=1)
             continue
-        for u in usuarios_do_html(r.text)[:3]:
+        achados = usuarios_do_html(r.text)[:3]
+        if progresso:
+            progresso(n, len(alvo), host, itens=[f"{host}: @{u}" for u in achados], captados=len(achados))
+        for u in achados:
             saida.append(_reg(l, u, "site", 0.70, "provavel"))
         time.sleep(pausa)
     return saida, {"bloqueados_robots": bloqueados, "falhas": falhas}

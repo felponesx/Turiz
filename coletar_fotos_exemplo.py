@@ -66,14 +66,22 @@ def miniatura(b):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--por-tema", type=int, default=5); ap.add_argument("--temas", nargs="*"); a = ap.parse_args()
+    from bots.status import bot
+    with bot("fotos_exemplo") as rep:
+        _executar(a, rep)
+
+
+def _executar(a, rep):
     os.makedirs(PASTA, exist_ok=True)
     ip = os.path.join(PASTA, "indice.json")
     indice = json.load(open(ip, encoding="utf-8")) if (a.temas and os.path.exists(ip)) else {}
     stats = {}
+    temas_alvo = [t for t in TEMAS if not a.temas or t in a.temas]
     with httpx.Client(timeout=30, follow_redirects=True, headers={"User-Agent": UA}) as c:
-        for tema, termos in TEMAS.items():
+        for n_tema, (tema, termos) in enumerate(TEMAS.items()):
             if a.temas and tema not in a.temas:
                 continue
+            rep.progresso(len([t for t in list(TEMAS)[:n_tema] if t in temas_alvo]), len(temas_alvo), atual=f"Tema: {tema}")
             for velho in indice.get(tema, []):
                 try: os.remove(os.path.join(PASTA, velho["arquivo"]))
                 except OSError: pass
@@ -96,8 +104,11 @@ def main():
                 if len(lista) >= a.por_tema:
                     break
             indice[tema] = lista; stats[tema] = len(lista)
+            rep.contar(fotos=len(lista))
+            rep.item(f"{tema}: {len(lista)} fotos")
     json.dump(indice, open(os.path.join(PASTA, "indice.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("fotos ilustrativas por tema:", stats, "total:", sum(stats.values()))
+    rep.total_no_sistema(fotos_ilustrativas=sum(stats.values()), temas=len(stats))
 
 
 if __name__ == "__main__":

@@ -107,9 +107,11 @@ def executar_fonte(db: Session, f: EventoFonte, client=None, limite: int | None 
 
 
 def executar_devidas(db: Session, agora: datetime | None = None, apenas: list[str] | None = None, forcar: bool = False, client=None,
-                     limite: int | None = None) -> list[EventoColetaLog]:
+                     limite: int | None = None, progresso=None) -> list[EventoColetaLog]:
+    """`progresso(momento, feitas, total, fonte, log)` é opcional ("inicio" antes de cada fonte, "fim" depois, com o log)."""
     agora = agora or _agora()
     logs = []
+    devidas = []
     for f in db.scalars(select(EventoFonte).order_by(EventoFonte.prioridade.desc(), EventoFonte.slug)).all():
         if apenas and f.slug not in apenas:
             continue
@@ -117,7 +119,13 @@ def executar_devidas(db: Session, agora: datetime | None = None, apenas: list[st
             continue
         if not forcar and not esta_devida(f, agora):
             continue
+        devidas.append(f)
+    for n, f in enumerate(devidas):
+        if progresso:
+            progresso("inicio", n, len(devidas), f, None)
         logs.append(executar_fonte(db, f, client=client, limite=limite))
+        if progresso:
+            progresso("fim", n + 1, len(devidas), f, logs[-1])
     ciclo_de_vida(db, agora)
     return logs
 

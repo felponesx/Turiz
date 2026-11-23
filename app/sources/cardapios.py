@@ -121,11 +121,12 @@ def buscar(html: str, base_url: str, menu_osm: str = "") -> list[dict]:
     return achados[:3]
 
 
-def coletar(lugares: list[dict], client=None, pausa=1.0, limite=None):
+def coletar(lugares: list[dict], client=None, pausa=1.0, limite=None, progresso=None):
     """lugares: [{'fonte','fonte_id','site','menu_osm'}]. Retorna (registros, stats)."""
     client = client or cliente_http(20)
     saida, st = [], {"visitados": 0, "bloqueados_robots": 0, "robots_sem_resposta": 0, "motivos_sem_resposta": Counter(), "falhas": 0, "ignorados_rede_social": 0, "com_cardapio": 0}
-    for l in lugares[:limite]:
+    alvo = lugares[:limite]
+    for n, l in enumerate(alvo, 1):
         site = (l.get("site") or "").strip()
         osm_menu = (l.get("menu_osm") or "").strip()
         achados = []
@@ -152,6 +153,9 @@ def coletar(lugares: list[dict], client=None, pausa=1.0, limite=None):
             achados = buscar("", osm_menu, osm_menu)
         if achados:
             st["com_cardapio"] += 1
+        if progresso:
+            host = _host(site if site.startswith("http") else "https://" + site) if site else "OpenStreetMap"
+            progresso(n, len(alvo), host, itens=[f"{host}: cardápio ({achados[0].get('plataforma', 'site')})"] if achados else (), captados=1 if achados else 0)
         for a in achados:
             saida.append({"lugar_fonte": l["fonte"], "lugar_fonte_id": l["fonte_id"], **a})
     return saida, st

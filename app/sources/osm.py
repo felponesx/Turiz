@@ -54,15 +54,23 @@ def normalizar(el: dict) -> dict | None:
     }
 
 
-def coletar(amenities=("restaurant", "fast_food", "cafe", "bar", "pub", "nightclub"), linhas=4, colunas=4, post=None):
-    """Retorna lista de lugares normalizados (sem duplicados)."""
+def coletar(amenities=("restaurant", "fast_food", "cafe", "bar", "pub", "nightclub"), linhas=4, colunas=4, post=None, progresso=None):
+    """Retorna lista de lugares normalizados (sem duplicados). `progresso(feitos, total, atual, itens, **contagem)` é opcional."""
     post = post or _post
     vistos = {}
-    for cel in grade(linhas=linhas, colunas=colunas):
+    celulas = list(grade(linhas=linhas, colunas=colunas))
+    for i, cel in enumerate(celulas, 1):
+        if progresso:
+            progresso(i - 1, len(celulas), f"Região {i} de {len(celulas)}")
+        novos = []
         for el in post(query(cel, amenities)).get("elements", []):
             r = normalizar(el)
             if r:
+                if r["fonte_id"] not in vistos:
+                    novos.append(r["nome"])
                 vistos[r["fonte_id"]] = r
+        if progresso:
+            progresso(i, len(celulas), f"Região {i} de {len(celulas)}", itens=novos[:4], captados=len(novos))
         time.sleep(2)
     return list(vistos.values())
 

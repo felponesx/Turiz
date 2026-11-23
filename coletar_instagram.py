@@ -14,6 +14,7 @@ from app.ingest import upsert
 from app.models import Lugar, RedeSocial
 from app.restaurar import restaurar
 from app.sources import instagram
+from bots.status import bot
 
 
 def exportar(db):
@@ -28,6 +29,12 @@ def main():
     ap.add_argument("--limite-sites", type=int, default=None)
     ap.add_argument("--max-verificacoes", type=int, default=150, help="limite de consultas à API oficial por execução")
     a = ap.parse_args()
+    with bot("instagram") as rep:
+        _executar(a, rep)
+
+
+def _executar(a, rep):
+    rep.progresso(0, 0, atual="Carregando os dados")
     __import__("app.migrar", fromlist=["x"]).upgrade_head()
     restaurar()
     token, ig_id = os.getenv("INSTAGRAM_TOKEN"), os.getenv("INSTAGRAM_USER_ID")
@@ -36,12 +43,20 @@ def main():
         # não sobrescrever vínculos já confirmados/rejeitados manualmente
         travados = {(r.lugar_fonte_id, r.usuario) for r in db.scalars(select(RedeSocial).where(RedeSocial.origem == "api_oficial"))}
         novos = [v for l in lugares for v in instagram.vinculos_osm(l)]
-        print("osm_tag", upsert(db, RedeSocial, [v for v in novos if (v["lugar_fonte_id"], v["usuario"]) not in travados]))
+        r = upsert(db, RedeSocial, [v for v in novos if (v["lugar_fonte_id"], v["usuario"]) not in travados])
+        print("osm_tag", r)
+        rep.contar(novos=r["novos"], atualizados=r["atualizados"])
+        rep.progresso(1, 1, atual="Perfis cadastrados no OpenStreetMap", etapa="OpenStreetMap")
         try:
-            regs, stats = instagram.vinculos_sites([l for l in lugares if l["site"]], limite=a.limite_sites)
-            print("site", upsert(db, RedeSocial, [v for v in regs if (v["lugar_fonte_id"], v["usuario"]) not in travados]), stats)
+            with rep.faixa(10, 85 if (token and ig_id) else 100):
+                rep.progresso(0, 1, etapa="Sites dos lugares")
+                regs, stats = instagram.vinculos_sites([l for l in lugares if l["site"]], limite=a.limite_sites, progresso=rep.callback())
+                r = upsert(db, RedeSocial, [v for v in regs if (v["lugar_fonte_id"], v["usuario"]) not in travados])
+                print("site", r, stats)
+                rep.contar(novos=r["novos"], atualizados=r["atualizados"])
         except Exception as exc:
             db.rollback()
+            rep.aviso(f"sites falhou: {type(exc).__name__}")
             print(f"::warning::sites falhou: {type(exc).__name__}: {exc}")
         if token and ig_id:
             cli = httpx.Client(timeout=30)
@@ -49,7 +64,10 @@ def main():
             ok = nao = 0
             pend = [r for r in db.scalars(select(RedeSocial).where(RedeSocial.origem != "api_oficial", RedeSocial.status != "rejeitado"))
                     if not (r.extra or {}).get("verificado")]
-            for r in pend[:a.max_verificacoes]:
+            alvo = pend[:a.max_verificacoes]
+            for n, r in enumerate(alvo, 1):
+                with rep.faixa(85, 100):
+                    rep.progresso(n - 1, len(alvo), atual=f"@{r.usuario}", etapa="Verificação pela API oficial")
                 l = por_id.get(r.lugar_fonte_id, {})
                 try:
                     v = instagram.verificar(r.usuario, l.get("nome", ""), l.get("site", ""), token, ig_id, cli)
@@ -72,6 +90,7 @@ def main():
             print("sem INSTAGRAM_TOKEN/INSTAGRAM_USER_ID: pulando verificação pela API oficial")
         exportar(db)
         tot = {s: db.query(RedeSocial).filter(RedeSocial.status == s).count() for s in ("confirmado", "provavel")}
+        rep.total_no_sistema(vinculos=sum(tot.values()), confirmados=tot["confirmado"], lugares_com_rede=db.query(RedeSocial.lugar_fonte_id).distinct().count())
         print("vínculos:", tot, "| lugares com Instagram:", db.query(RedeSocial.lugar_fonte_id).distinct().count())
 
 

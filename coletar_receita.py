@@ -13,6 +13,7 @@ import tempfile
 from datetime import datetime, timezone
 import httpx
 from app.sources import receita
+from bots.status import bot
 
 SEM_INDIVIDUAIS_AVISO = "MEIs e empresários individuais excluídos (privacidade)."
 
@@ -52,8 +53,20 @@ def main():
     ap.add_argument("--arquivos", default="0,1,2,3,4,5,6,7,8,9", help="números dos arquivos Estabelecimentos/Empresas (padrão: todos)")
     ap.add_argument("--incluir-individuais", action="store_true", help="NÃO recomendado: inclui MEI e empresário individual")
     a = ap.parse_args()
+    with bot("receita") as rep:
+        _executar(a, rep)
+
+
+def _executar(a, rep):
+    rep.progresso(0, 0, atual="Procurando a pasta mais recente da Receita")
     mes = a.mes or ultima_pasta()
     nums = [n.strip() for n in a.arquivos.split(",") if n.strip()]
+    passos, feitos = 2 * len(nums) + 3, 0   # estabelecimentos + empresas + simples + IBGE + montagem
+
+    def passo(texto):
+        nonlocal feitos
+        feitos += 1
+        rep.progresso(feitos, passos, atual=texto)   # só texto genérico: nenhum dado de empresa vai para o painel
     auth = (receita.TOKEN, "")
     print(f"Receita: pasta {mes}; arquivos {nums}")
     with tempfile.TemporaryDirectory() as tmp:
@@ -64,24 +77,33 @@ def main():
             return dest
         est = []
         for n in nums:  # um por vez, apagando em seguida (disco do runner é limitado)
+            rep.progresso(feitos, passos, atual=f"Baixando e filtrando Estabelecimentos{n}", etapa="Estabelecimentos")
             z = pegar(f"{receita.RECEITA}/{mes}/Estabelecimentos{n}.zip", f"est{n}.zip", auth)
             est.append(receita.filtrar_estabelecimentos(z))
             os.remove(z)
             print(f"  Estabelecimentos{n}: {len(est[-1])} bares/restaurantes ativos em SP com nome fantasia")
+            rep.contar(candidatos=len(est[-1]))
+            passo(f"Estabelecimentos{n} concluído")
         cands = {}
         for e in est:
             cands.update(e)
         print(f"candidatos: {len(cands)}")
         for n in nums:
+            rep.progresso(feitos, passos, atual=f"Natureza jurídica (Empresas{n})", etapa="Empresas")
             z = pegar(f"{receita.RECEITA}/{mes}/Empresas{n}.zip", f"emp{n}.zip", auth)
             receita.anexar_natureza(z, cands)
             os.remove(z)
+            passo(f"Empresas{n} concluído")
+        rep.progresso(feitos, passos, atual="Separando MEIs (Simples Nacional)", etapa="Simples")
         z = pegar(f"{receita.RECEITA}/{mes}/Simples.zip", "simples.zip", auth)
         receita.anexar_mei(z, cands)
         os.remove(z)
+        passo("Simples concluído")
+        rep.progresso(feitos, passos, atual="Coordenadas do IBGE (CNEFE)", etapa="IBGE")
         z = pegar(receita.CNEFE_SP, "cnefe.zip")
         exato, centro = receita.indexar_cnefe(z, {d["cep"] for d in cands.values()})
         os.remove(z)
+        passo("Coordenadas do IBGE concluídas")
         regs, st = receita.montar_registros(cands, exato, centro, a.incluir_individuais)
     receita.validar_privacidade(regs)
     with gzip.open("data/lugares_receita.json.gz", "wt", encoding="utf-8") as f:
@@ -94,6 +116,8 @@ def main():
               "Não são gravados: CNPJ, razão social, telefone, e-mail, sócios. A trava de privacidade passou.\n")
     open("data/receita_resumo.md", "w", encoding="utf-8").write(resumo)
     print(resumo)
+    rep.contar(novos=len(regs))
+    rep.total_no_sistema(lugares_receita=len(regs), coordenada_exata=st["coord_exata"], coordenada_aproximada=st["coord_aproximada"])
 
 
 if __name__ == "__main__":

@@ -27,13 +27,17 @@ def normalizar(p: dict, tipo: str) -> dict:
 
 
 def coletar(centros, raio_m=1500, consultas=(("restaurante em São Paulo", "restaurante"), ("bar em São Paulo", "bar")),
-            chave=None, client=None):
+            chave=None, client=None, progresso=None):
     chave = chave or os.getenv("GOOGLE_PLACES_API_KEY")
     if not chave:
         raise RuntimeError("Defina GOOGLE_PLACES_API_KEY")
     client = client or httpx.Client(timeout=30)
     vistos = {}
-    for lat, lon in centros:
+    centros = list(centros)
+    for n, (lat, lon) in enumerate(centros, 1):
+        if progresso:
+            progresso(n - 1, len(centros), f"Região {n} de {len(centros)}")
+        antes = len(vistos)
         for texto, tipo in consultas:
             token = None
             for _ in range(3):  # 3 páginas x 20 = 60
@@ -49,4 +53,7 @@ def coletar(centros, raio_m=1500, consultas=(("restaurante em São Paulo", "rest
                 token = d.get("nextPageToken")
                 if not token:
                     break
+        if progresso:
+            novos = [v["nome"] for v in list(vistos.values())[antes:]]
+            progresso(n, len(centros), f"Região {n} de {len(centros)}", itens=novos[:3], captados=len(novos))
     return list(vistos.values())

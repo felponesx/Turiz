@@ -19,7 +19,7 @@ jobs:
       - name: Testes (inclui testes de segurança, isolamento entre usuários e privacidade)
         run: python -m pytest tests -q
       - name: Análise estática (Bandit) — falha em severidade média ou alta
-        run: bandit -r app *.py -q -ll -x tests
+        run: bandit -r app bots scripts *.py -q -ll -x tests
       - name: Vulnerabilidades em dependências (pip-audit)
         run: pip-audit -r requirements.txt
       - name: Privacidade — nenhum CNPJ/CPF/e-mail nos dados versionados

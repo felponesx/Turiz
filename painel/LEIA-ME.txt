@@ -1,0 +1,36 @@
+CENTRAL DE BOTS DO TURIZ  (pasta "painel")
+==========================================
+
+O que é
+  Um app para o celular que mostra, bot por bot, quanto já captou (%), o que está captando agora,
+  quantos itens entraram no sistema Turiz, os avisos, o registro e o histórico das últimas execuções.
+  Os bots rodam sozinhos no GitHub (mesmo com o celular desligado); este app só acompanha e comanda.
+
+Como virar app
+  1) Use esta pasta inteira ("painel") no seu conversor de pasta em app. A página inicial é index.html.
+  2) Ou abra a pasta num endereço https (GitHub Pages, por exemplo) e use "Adicionar à tela inicial".
+  Funciona também aberto como arquivo local. Não precisa instalar nada nem de servidor.
+
+Usar
+  - Aba "Bots": todos os bots, agrupados. Toque num bot para ver o detalhe.
+  - Tela de um bot: porcentagem, "Captando agora", itens recém-captados, contagens, total no sistema,
+    avisos, log e histórico. "Rodar agora" e "Cancelar" precisam do token (abaixo).
+  - Aba "Dados": o que cada bot já guardou no sistema e links para os arquivos.
+  - Aba "Ajustes": repositório, token e "Adicionar site de eventos" (cole o endereço e pronto).
+
+Token do GitHub (só para rodar/cancelar bots e adicionar sites)
+  GitHub > Settings > Developer settings > Fine-grained tokens > Generate new token.
+  Repositório: só "Turiz". Permissões: Actions = Read and write; Contents = Read and write.
+  Cole em Ajustes > Token. Fica guardado somente neste aparelho. Sem token o app só acompanha.
+
+Estados
+  Rodando · Concluído · Concluído com avisos · Erro · Aguardando chave (falta um secret no GitHub)
+  · Sem sinal (marcado "rodando" mas parou de atualizar há mais de 20 min) · Ainda não rodou.
+
+De onde vêm os dados do painel
+  Cada bot publica seu andamento no branch "bot-status" do repositório (arquivos status/<bot>.json),
+  a cada ~20 s enquanto roda. O painel lê esses arquivos. Segredos são mascarados antes de publicar.
+
+Atualização do app Turiz
+  Todo dia às 11:07 (Brasília) uma tarefa agendada pega o que os bots captaram e atualiza os dados
+  dentro do app Turiz, sem aprovação. O card "App Turiz" mostra o resultado.

@@ -124,3 +124,13 @@ Auditoria completa, correções e status: [docs/seguranca/RELATORIO.md](docs/seg
 - **Front de produção**: `python frontend/build_producao.py turiz.html dist/turiz.html --vendor frontend/vendor --empresa empresa.json --juridico-revisado` gera uma página com CSP estrita, sem CDN, sem login de teste e sem dados de exemplo (o build recusa se faltar dado da empresa ou revisão jurídica).
 - **Testes**: `pytest tests` (inclui `tests/seguranca`); `python scripts/verificar_privacidade.py`; `python scripts/testar_restauracao.py`; E2E `frontend/teste_e2e_producao.py`; carga controlada `scripts/teste_carga.py`.
 - **CI** (`.github/workflows`): testes, Bandit, pip-audit, Gitleaks, CodeQL, Dependabot, backup com teste de restauração e monitor externo.
+
+
+## Central de bots (painel no celular)
+`painel/` é um app estático (PWA) que mostra **cada bot separadamente**: porcentagem captada, o que está captando agora, contagens, total já guardado no sistema, avisos, log e histórico. Use a pasta como app (veja `painel/LEIA-ME.txt`); com um token do GitHub ele também roda/cancela bots e adiciona sites de eventos.
+- **Como funciona**: cada bot usa `bots/status.py` (`with bot("osm") as rep:`) e publica o andamento em `status/<bot>.json` no branch órfão `bot-status` (a cada ~20 s). Só publica com `TURIZ_STATUS_PUBLICAR=1` + token (os workflows já passam). Segredos são mascarados; falha de publicação nunca derruba o bot.
+- **Bots** (registro em `bots/registry.py`; regenere o painel com `python -m bots.registry > painel/bots.json` e `--js > painel/bots.js`): osm, receita, sites, google, enderecos, imagens, instagram (redes), cardapios, fotos, fotos_exemplo, eventos (uma linha por fonte) e turiz_app.
+- **Cadeia semanal**: Coleta → Endereços → Imagens → Redes → Cardápios → Fotos → Google; cada elo roda mesmo que o anterior tenha falhado (só não roda se for cancelado). Eventos: a cada 6 h. Receita: dia 20.
+- **Sem aprovação**: tudo que é captado entra direto. Os status das imagens (`aprovada`/`pendente`) são só rótulo de origem/licença.
+- **App Turiz**: uma tarefa agendada diária (11:07 Brasília) roda `scripts/atualizar_app_turiz.py` sobre a página publicada, troca **só** os blocos de dados e republica no mesmo link; recusa se algo fora dos dados mudar ou se algum total despencar. Status no card "App Turiz".
+- **Redes sociais**: só vínculos publicados pelo próprio lugar (tag do OSM, links do site) e, com credenciais, a API oficial. Não se raspa Instagram/TikTok/Facebook.

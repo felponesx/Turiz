@@ -1,0 +1,17 @@
+{
+  "name": "Turiz — Central de bots",
+  "short_name": "Turiz Bots",
+  "description": "Acompanhe cada bot do Turiz: quanto já captou, o que está captando agora e o que entrou no sistema.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#23211E",
+  "theme_color": "#23211E",
+  "icons": [
+    {"src": "icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icone.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}

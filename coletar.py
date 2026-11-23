@@ -2,13 +2,17 @@
 """CLI de coleta. Ex.: python coletar.py osm sites | python coletar.py google --centros -23.55,-46.63
 Depois de coletar, exporta snapshot em data/ (versionado no git)."""
 import argparse
+import contextlib
 import json
+import os
 from datetime import datetime
+import httpx
 from sqlalchemy import select
 from app.db import Base, SessionLocal, engine
 from app.ingest import upsert
 from app.models import Evento, Lugar
 from app.sources import eventbrite, google_places, osm, sites, ticketmaster, vincular
+from bots.status import Pular, bot, aguardar_credencial
 
 # Centros aproximados para varrer SP no Google (raio de 1,5 km cada ~ grade de 3 km).
 def centros_padrao():
@@ -43,20 +47,9 @@ def main():
         falhas = []
         for f in a.fontes:
             try:
-                if f == "osm":
-                    print("osm", upsert(db, Lugar, osm.coletar()))
-                elif f == "google":
-                    cs = [tuple(map(float, c.split(","))) for c in a.centros.split(";")] if a.centros else list(centros_padrao())
-                    print("google", upsert(db, Lugar, google_places.coletar(cs)))
-                elif f == "eventbrite":
-                    print("eventbrite", upsert(db, Evento, eventbrite.coletar(a.orgs)))
-                elif f == "ticketmaster":   # agora pelo sistema de eventos v2 (conector, deduplicação, histórico)
-                    from app.eventos import agendador
-                    agendador.sincronizar_fontes(db)
-                    print("ticketmaster", [(l.status, l.novos, l.mensagem) for l in agendador.executar_devidas(db, apenas=["ticketmaster"], forcar=True)])
-                elif f == "sites":          # lugares (JSON-LD) aqui; os EVENTOS de sites vêm das fontes jsonld de fontes_eventos.yml
-                    l, e, ign = sites.coletar()
-                    print("sites", upsert(db, Lugar, l), "eventos ficam com coletar_eventos.py; bloqueados por robots.txt:", ign)
+                with (bot(f) if f in ("osm", "sites", "google") else contextlib.nullcontext()) as rep:
+                    cb = rep.callback() if rep else None
+                    _fonte(f, a, db, rep, cb)
             except Exception as exc:  # cada fonte é independente
                 db.rollback()
                 falhas.append(f)
@@ -64,6 +57,40 @@ def main():
         print("vínculo evento->lugar:", vincular.vincular_eventos(db))
         exportar(db)
         print("falhas:", falhas or "nenhuma")
+
+
+def _fonte(f, a, db, rep, cb):
+    if f == "osm":
+        r = upsert(db, Lugar, osm.coletar(progresso=cb))
+        print("osm", r)
+        rep.contar(novos=r["novos"], atualizados=r["atualizados"])
+        rep.total_no_sistema(lugares=db.query(Lugar).count())
+    elif f == "google":
+        if not os.getenv("GOOGLE_PLACES_API_KEY"):
+            aguardar_credencial("GOOGLE_PLACES_API_KEY")
+        cs = [tuple(map(float, c.split(","))) for c in a.centros.split(";")] if a.centros else list(centros_padrao())
+        try:
+            regs = google_places.coletar(cs, progresso=cb)
+        except httpx.HTTPStatusError as exc:
+            if exc.response.status_code in (400, 401, 403):
+                raise Pular("aguardando_credencial", f"O Google recusou a chave (HTTP {exc.response.status_code}): ative a Places API (New) e o faturamento no projeto da chave.")
+            raise
+        r = upsert(db, Lugar, regs)
+        print("google", r)
+        rep.contar(novos=r["novos"], atualizados=r["atualizados"])
+        rep.total_no_sistema(lugares=db.query(Lugar).count())
+    elif f == "eventbrite":
+        print("eventbrite", upsert(db, Evento, eventbrite.coletar(a.orgs)))
+    elif f == "ticketmaster":   # agora pelo sistema de eventos v2 (conector, deduplicação, histórico)
+        from app.eventos import agendador
+        agendador.sincronizar_fontes(db)
+        print("ticketmaster", [(l.status, l.novos, l.mensagem) for l in agendador.executar_devidas(db, apenas=["ticketmaster"], forcar=True)])
+    elif f == "sites":          # lugares (JSON-LD) aqui; os EVENTOS de sites vêm das fontes jsonld de fontes_eventos.yml
+        l, e, ign = sites.coletar(progresso=cb)
+        r = upsert(db, Lugar, l)
+        print("sites", r, "eventos ficam com coletar_eventos.py; bloqueados por robots.txt:", ign)
+        rep.contar(novos=r["novos"], atualizados=r["atualizados"], bloqueados=len(ign))
+        rep.total_no_sistema(lugares=db.query(Lugar).count())
 
 
 if __name__ == "__main__":

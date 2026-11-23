@@ -154,22 +154,30 @@ def og_image(html: str, base_url: str) -> str | None:
     return None
 
 
-def coletar_sites(lugares: list[dict], client=None, pausa=1.0, limite=None):
+def coletar_sites(lugares: list[dict], client=None, pausa=1.0, limite=None, progresso=None):
     """lugares: [{'fonte','fonte_id','site'}]. Pega o og:image do site oficial (status pendente)."""
     client = client or cliente_http(20)
     saida, bloqueados, falhas = [], 0, 0
-    for l in lugares[:limite]:
+    alvo = lugares[:limite]
+    for n, l in enumerate(alvo, 1):
         url = l["site"] if l["site"].startswith("http") else "https://" + l["site"]
+        host = url.split("//", 1)[-1].split("/", 1)[0]
         try:
             if not permitido(url, client):
                 bloqueados += 1
+                if progresso:
+                    progresso(n, len(alvo), host, bloqueados=1)
                 continue
             r = client.get(url)
             r.raise_for_status()
             img = og_image(r.text, str(r.url))
         except httpx.HTTPError:
             falhas += 1
+            if progresso:
+                progresso(n, len(alvo), host, falhas=1)
             continue
+        if progresso:
+            progresso(n, len(alvo), host, itens=[f"{host}: imagem de capa"] if img else (), captados=1 if img else 0)
         if img:
             saida.append({"lugar_fonte": l["fonte"], "lugar_fonte_id": l["fonte_id"], "fonte": "site", "url": img, "thumb_url": "",
                           "licenca": "direitos do estabelecimento", "autor": "", "creditos_url": url, "status": _status_site()})

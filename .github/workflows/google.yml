@@ -1,0 +1,40 @@
+name: Bot do Google Places
+on:
+  workflow_run:
+    workflows: ["Bot de fotos (miniaturas)"]
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
+jobs:
+  google:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
+    runs-on: ubuntu-latest
+    env:
+      TURIZ_STATUS_PUBLICAR: "1"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Restaurar banco a partir do snapshot
+        run: python restaurar.py
+      - name: Coletar do Google Places (sem a chave, o bot só avisa no painel)
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: python coletar.py google
+      - name: Commitar dados
+        if: always()
+        run: |
+          git config user.name "google-bot"
+          git config user.email "google-bot@users.noreply.github.com"
+          git add data/lugares.json data/eventos.json data/eventos_v2.json.gz
+          git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
+          git commit -m "dados: google places $(date -u +%F)"
+          git pull --rebase origin main
+          git push

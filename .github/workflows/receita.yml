@@ -18,6 +18,9 @@ concurrency:
 jobs:
   receita:
     runs-on: ubuntu-latest
+    env:
+      TURIZ_STATUS_PUBLICAR: "1"            # painel de bots: publica o progresso no branch bot-status
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4

@@ -10,6 +10,7 @@ from app.ingest import upsert
 from app.models import Cardapio, Lugar
 from app.restaurar import restaurar
 from app.sources import cardapios
+from bots.status import bot
 
 
 def exportar(db):
@@ -24,6 +25,12 @@ def main():
     ap.add_argument("--limite-sites", type=int, default=None, help="máximo de sites a visitar (teste)")
     ap.add_argument("--dry-run", action="store_true", help="só mede quantos lugares têm cardápio; não grava nada")
     a = ap.parse_args()
+    with bot("cardapios") as rep:
+        _executar(a, rep)
+
+
+def _executar(a, rep):
+    rep.progresso(0, 0, atual="Carregando os dados")
     __import__("app.migrar", fromlist=["x"]).upgrade_head()
     restaurar()  # garante lugares e cardápios atuais no banco
     with SessionLocal() as db:
@@ -32,14 +39,18 @@ def main():
             menu = (l.extra or {}).get("website:menu") or (l.extra or {}).get("menu:url") or ""
             if l.site or menu:
                 ls.append({"fonte": l.fonte, "fonte_id": l.fonte_id, "site": l.site, "menu_osm": menu})
-        regs, stats = cardapios.coletar(ls, limite=a.limite_sites)
+        rep.definir(lugares_para_visitar=len(ls[:a.limite_sites]))
+        regs, stats = cardapios.coletar(ls, limite=a.limite_sites, progresso=rep.callback())
         if a.dry_run:
             print("DRY-RUN", {**stats, "motivos_sem_resposta": dict(stats["motivos_sem_resposta"])}, "| plataformas:", {p: sum(1 for r in regs if r["plataforma"] == p) for p in sorted({r["plataforma"] for r in regs})},
                   "| com itens (JSON-LD):", sum(1 for r in regs if r["itens"]))
             return
-        print("cardapios", upsert(db, Cardapio, regs), {**stats, "motivos_sem_resposta": dict(stats["motivos_sem_resposta"])})
+        r = upsert(db, Cardapio, regs)
+        print("cardapios", r, {**stats, "motivos_sem_resposta": dict(stats["motivos_sem_resposta"])})
+        rep.contar(novos=r["novos"], atualizados=r["atualizados"])
         exportar(db)
         tot = {s: db.query(Cardapio).filter(Cardapio.status == s).count() for s in ("confirmado", "provavel")}
+        rep.total_no_sistema(cardapios=sum(tot.values()), confirmados=tot["confirmado"])
         print("cardapios no banco:", tot)
 
 

@@ -198,13 +198,14 @@ def links_listagem(html: str, base_url: str, padrao: str, limite: int = 30) -> l
     return saida
 
 
-def coletar(config_path="sources.yml", client=None, pausa=1.0):
+def coletar(config_path="sources.yml", client=None, pausa=1.0, progresso=None):
     client = client or cliente_http(30)
     cfg = yaml.safe_load(open(config_path, encoding="utf-8")) or {}
     lugares, eventos, ignorados = [], [], []
-    for s in cfg.get("sites") or []:
-        if s.get("ativo", True) is False:
-            continue
+    ativos = [s for s in cfg.get("sites") or [] if s.get("ativo", True) is not False]
+    for n, s in enumerate(ativos):
+        if progresso:
+            progresso(n, len(ativos), s["url"])
         url, cidade, esp = s["url"], s.get("cidade", ""), float(s.get("pausa", pausa))
         try:  # uma fonte com problema não pode derrubar as outras
             if not permitido(url, client):
@@ -232,4 +233,6 @@ def coletar(config_path="sources.yml", client=None, pausa=1.0):
         except httpx.HTTPError as exc:
             print(f"::warning::fonte {url} falhou: {type(exc).__name__}: {exc}")
             ignorados.append(f"{url} (erro: {type(exc).__name__})")
+        if progresso:
+            progresso(n + 1, len(ativos), s["url"], itens=[f"{x['nome']}" for x in lugares[-2:]] if lugares else ())
     return lugares, eventos, ignorados
