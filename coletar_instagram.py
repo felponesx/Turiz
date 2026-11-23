@@ -46,7 +46,8 @@ def _executar(a, rep):
         r = upsert(db, RedeSocial, [v for v in novos if (v["lugar_fonte_id"], v["usuario"]) not in travados])
         print("osm_tag", r)
         rep.contar(novos=r["novos"], atualizados=r["atualizados"])
-        rep.progresso(1, 1, atual="Perfis cadastrados no OpenStreetMap", etapa="OpenStreetMap")
+        with rep.faixa(0, 10):
+            rep.progresso(1, 1, atual="Perfis cadastrados no OpenStreetMap", etapa="OpenStreetMap")
         try:
             with rep.faixa(10, 85 if (token and ig_id) else 100):
                 rep.progresso(0, 1, etapa="Sites dos lugares")
