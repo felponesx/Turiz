@@ -8,7 +8,7 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.506767"
+  "atualizado_em": "2026-11-23T19:35:06.941954"
  },
  {
   "id": 2,
@@ -19,7 +19,7 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.507389"
+  "atualizado_em": "2026-11-23T19:35:06.942712"
  },
  {
   "id": 3,
@@ -30,10 +30,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.507791"
+  "atualizado_em": "2026-11-23T19:35:06.943241"
  },
  {
-  "id": 295,
+  "id": 4,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10121749217",
   "url": "https://espacoformigueiro.com.br/festas/cardapio",
@@ -41,10 +41,21 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:29:03.816087"
+  "atualizado_em": "2026-11-23T19:35:06.943725"
  },
  {
-  "id": 4,
+  "id": 300,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/10200456717",
+  "url": "https://menu.getinapp.com.br/store/3P4x3rPn/1",
+  "plataforma": "proprio",
+  "origem": "osm_tag",
+  "itens": [],
+  "status": "confirmado",
+  "atualizado_em": "2026-11-23T20:04:40.103007"
+ },
+ {
+  "id": 5,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10274164429",
   "url": "https://1900.com.br/cardapio/delivery",
@@ -52,10 +63,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.508116"
+  "atualizado_em": "2026-11-23T19:35:06.944237"
  },
  {
-  "id": 5,
+  "id": 6,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10274164429",
   "url": "https://1900.com.br/cardapio/jantar-presencial",
@@ -63,10 +74,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.508451"
+  "atualizado_em": "2026-11-23T19:35:06.944713"
  },
  {
-  "id": 6,
+  "id": 7,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10274184390",
   "url": "https://www.lellis.com/cardapio",
@@ -74,10 +85,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.508771"
+  "atualizado_em": "2026-11-23T19:35:06.945206"
  },
  {
-  "id": 7,
+  "id": 8,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/1059511085",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/la-caballeriza-jardim-paulista/37c77194-6c07-4613-8b77-d2f4fb3d0a0f",
@@ -85,10 +96,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.509070"
+  "atualizado_em": "2026-11-23T19:35:06.945664"
  },
  {
-  "id": 8,
+  "id": 9,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/1059511085",
   "url": "https://www.lacaballeriza.com.br/menu",
@@ -96,10 +107,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.509364"
+  "atualizado_em": "2026-11-23T19:35:06.946289"
  },
  {
-  "id": 9,
+  "id": 10,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10676629605",
   "url": "https://miski.com.br/cardapio/",
@@ -107,10 +118,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.509862"
+  "atualizado_em": "2026-11-23T19:35:06.946758"
  },
  {
-  "id": 10,
+  "id": 11,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10812435805",
   "url": "https://gateriacatcafe.com.br/menu.pdf",
@@ -118,10 +129,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.510193"
+  "atualizado_em": "2026-11-23T19:35:06.947242"
  },
  {
-  "id": 11,
+  "id": 12,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10876838059",
   "url": "https://livemenu.app/menu/62601dabe5d0390011da99fe",
@@ -129,10 +140,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.510527"
+  "atualizado_em": "2026-11-23T19:35:06.947701"
  },
  {
-  "id": 12,
+  "id": 13,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10969885713",
   "url": "https://selvagemibirapuera.com.br/menu-chandon-50-anos/",
@@ -140,10 +151,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.510839"
+  "atualizado_em": "2026-11-23T19:35:06.948181"
  },
  {
-  "id": 13,
+  "id": 14,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10969885713",
   "url": "https://selvagemibirapuera.com.br/menu-completo-selvagem/",
@@ -151,10 +162,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.511142"
+  "atualizado_em": "2026-11-23T19:35:06.948640"
  },
  {
-  "id": 14,
+  "id": 15,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/10969885713",
   "url": "https://selvagemibirapuera.com.br/menu/",
@@ -162,10 +173,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.511484"
+  "atualizado_em": "2026-11-23T19:35:06.949122"
  },
  {
-  "id": 15,
+  "id": 16,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11079440680",
   "url": "https://www.primobasilico.com.br/cardapio",
@@ -173,10 +184,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.511810"
+  "atualizado_em": "2026-11-23T19:35:06.949578"
  },
  {
-  "id": 16,
+  "id": 17,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11110241749",
   "url": "https://www.casadopastelsp.com.br/_files/ugd/2b59b5_b0b15266d0b54917ad28571e564e3607.pdf",
@@ -184,10 +195,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.512111"
+  "atualizado_em": "2026-11-23T19:35:06.950058"
  },
  {
-  "id": 17,
+  "id": 18,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11110241749",
   "url": "https://www.casadopastelsp.com.br/cardapio-online",
@@ -195,10 +206,21 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.512409"
+  "atualizado_em": "2026-11-23T19:35:06.950520"
  },
  {
-  "id": 18,
+  "id": 301,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/11146601551",
+  "url": "https://linktr.ee/seucubas",
+  "plataforma": "proprio",
+  "origem": "osm_tag",
+  "itens": [],
+  "status": "confirmado",
+  "atualizado_em": "2026-11-23T20:04:40.107390"
+ },
+ {
+  "id": 19,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11281793604",
   "url": "https://drive.google.com/file/d/13DcnCdNA_S0S_ogJydfkCP6-Lw5lqbl4/view?usp=sharing",
@@ -206,10 +228,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.512722"
+  "atualizado_em": "2026-11-23T19:35:06.950998"
  },
  {
-  "id": 19,
+  "id": 20,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11281793604",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/all-sanduba-nao-e-shawarma-e-shish-tawoo-bom-retiro/50b6f230-a10b-4e37-8125-219a7ee86c42",
@@ -217,10 +239,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.513012"
+  "atualizado_em": "2026-11-23T19:35:06.951449"
  },
  {
-  "id": 20,
+  "id": 21,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11409772170",
   "url": "http://sternacafe.com.br/menu-sterna-cafe-2.pdf",
@@ -228,10 +250,21 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.513298"
+  "atualizado_em": "2026-11-23T19:35:06.951915"
  },
  {
-  "id": 21,
+  "id": 302,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/11410900569",
+  "url": "https://comodoroburguer.com/cardapio",
+  "plataforma": "proprio",
+  "origem": "link_site",
+  "itens": [],
+  "status": "provavel",
+  "atualizado_em": "2026-11-23T20:04:40.109025"
+ },
+ {
+  "id": 22,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11471993309",
   "url": "https://jeronimoburger.com.br/cardapio",
@@ -239,10 +272,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.513597"
+  "atualizado_em": "2026-11-23T19:35:06.952366"
  },
  {
-  "id": 22,
+  "id": 23,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11785009472",
   "url": "https://gopubbrooklin.com.br/menu/",
@@ -250,10 +283,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.513887"
+  "atualizado_em": "2026-11-23T19:35:06.952835"
  },
  {
-  "id": 23,
+  "id": 24,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11810594906",
   "url": "https://www.alyahsweets.com/pages/cardapio-em-atualizacao",
@@ -261,10 +294,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.514180"
+  "atualizado_em": "2026-11-23T19:35:06.953289"
  },
  {
-  "id": 24,
+  "id": 25,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/11810594906",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/alyah-sweets-indianopolis/c6172545-8503-402b-9e7d-ac12cccd451f?utm_medium=share",
@@ -272,10 +305,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.514479"
+  "atualizado_em": "2026-11-23T19:35:06.953737"
  },
  {
-  "id": 25,
+  "id": 26,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12091678935",
   "url": "https://cdn.me-qr.com/pdf/12607216.pdf?time=1712578944",
@@ -283,10 +316,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.514767"
+  "atualizado_em": "2026-11-23T19:35:06.954208"
  },
  {
-  "id": 26,
+  "id": 27,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12091678935",
   "url": "https://cdn.me-qr.com/pdf/12607344.pdf?time=1712690862",
@@ -294,10 +327,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.515045"
+  "atualizado_em": "2026-11-23T19:35:06.954655"
  },
  {
-  "id": 27,
+  "id": 28,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12091678935",
   "url": "https://cdn.me-qr.com/pdf/12607404.pdf?time=1712578858",
@@ -305,10 +338,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.515332"
+  "atualizado_em": "2026-11-23T19:35:06.955119"
  },
  {
-  "id": 28,
+  "id": 29,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12101548856",
   "url": "https://deliverydireto.com.br/charlespizzaria/charlespizzaria?dd=menu",
@@ -316,10 +349,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.515643"
+  "atualizado_em": "2026-11-23T19:35:06.955591"
  },
  {
-  "id": 29,
+  "id": 30,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12101548856",
   "url": "https://site.charlespizzaria.com.br/cardapio.html",
@@ -327,10 +360,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.515963"
+  "atualizado_em": "2026-11-23T19:35:06.956064"
  },
  {
-  "id": 294,
+  "id": 31,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12258003259",
   "url": "https://app.anota.ai/la-forno",
@@ -338,10 +371,43 @@
   "origem": "osm_tag",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:29:03.814496"
+  "atualizado_em": "2026-11-23T19:35:06.956516"
  },
  {
-  "id": 30,
+  "id": 307,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/12405135055",
+  "url": "https://app.gula.menu/mainMenu?pPlace=6FvJHNotztwPjRJDuePL",
+  "plataforma": "outro",
+  "origem": "link_site",
+  "itens": [],
+  "status": "provavel",
+  "atualizado_em": "2026-11-23T20:04:40.158456"
+ },
+ {
+  "id": 306,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/12405135055",
+  "url": "https://app.gula.menu/mainMenu?pPlace=QJw6EkOWKhoMr1eFRy37",
+  "plataforma": "outro",
+  "origem": "link_site",
+  "itens": [],
+  "status": "provavel",
+  "atualizado_em": "2026-11-23T20:04:40.157977"
+ },
+ {
+  "id": 308,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/12405135055",
+  "url": "https://app.gula.menu/mainMenu?pPlace=n6v0aF4dJ5NPBGoSqoo1",
+  "plataforma": "outro",
+  "origem": "link_site",
+  "itens": [],
+  "status": "provavel",
+  "atualizado_em": "2026-11-23T20:04:40.158852"
+ },
+ {
+  "id": 32,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12409668701",
   "url": "https://tascadaesquina.com.br/carta/",
@@ -349,10 +415,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.516250"
+  "atualizado_em": "2026-11-23T19:35:06.956988"
  },
  {
-  "id": 31,
+  "id": 33,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12409668701",
   "url": "https://tascadaesquina.com.br/menu/",
@@ -360,10 +426,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.516552"
+  "atualizado_em": "2026-11-23T19:35:06.957442"
  },
  {
-  "id": 32,
+  "id": 34,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12409668701",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/tasca-da-esquina-pinheiros/0d1e5cc7-c3c8-4860-9dc6-d76ace8499c1?srsltid=AfmBOooJePhTDEwbGBTAeWe5UsjpNXxUXLSfE30QVED0ixCpbxHMwvR6",
@@ -371,10 +437,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.516834"
+  "atualizado_em": "2026-11-23T19:35:06.957905"
  },
  {
-  "id": 33,
+  "id": 35,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12469595301",
   "url": "https://menu.getinapp.com.br/pt-br/EP0bGn63/menus/KxkKvz6w/banners",
@@ -382,10 +448,10 @@
   "origem": "jsonld",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:03:09.517112"
+  "atualizado_em": "2026-11-23T19:35:06.958354"
  },
  {
-  "id": 34,
+  "id": 36,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12469595301",
   "url": "https://www.fazendachurrascada.com.br/menu",
@@ -393,10 +459,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.517386"
+  "atualizado_em": "2026-11-23T19:35:06.958815"
  },
  {
-  "id": 35,
+  "id": 37,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12469595301",
   "url": "https://www.fazendachurrascada.com.br/menu#menu-especial",
@@ -404,10 +470,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.517695"
+  "atualizado_em": "2026-11-23T19:35:06.959261"
  },
  {
-  "id": 36,
+  "id": 38,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12535377705",
   "url": "https://brevo.com.br/menu/l/alvorada-cervejaria",
@@ -415,10 +481,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.517978"
+  "atualizado_em": "2026-11-23T19:35:06.959701"
  },
  {
-  "id": 37,
+  "id": 39,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12552452321",
   "url": "https://www.letspoke.com.br/_files/ugd/f622bb_2dd6422a90c24a489cda93d2cdd9097a.pdf",
@@ -426,10 +492,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.518256"
+  "atualizado_em": "2026-11-23T19:35:06.960168"
  },
  {
-  "id": 38,
+  "id": 40,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12553970313",
   "url": "https://insalata.com.br/wp-content/uploads/2026/09/cardapio-digital-ago26.pdf",
@@ -437,10 +503,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.518547"
+  "atualizado_em": "2026-11-23T19:35:06.960613"
  },
  {
-  "id": 39,
+  "id": 41,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12553970313",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/insalata-jardim-paulista/c629898d-ea21-4138-99d6-dfa0239de1a0?utm_medium=share",
@@ -448,10 +514,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.518827"
+  "atualizado_em": "2026-11-23T19:35:06.961078"
  },
  {
-  "id": 40,
+  "id": 42,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12699068942",
   "url": "https://www.sukiya-brasil.com.br/menu/",
@@ -459,10 +525,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.519108"
+  "atualizado_em": "2026-11-23T19:35:06.961525"
  },
  {
-  "id": 41,
+  "id": 43,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12699068942",
   "url": "https://www.sukiya-brasil.com.br/menu/fair.html",
@@ -470,10 +536,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.519403"
+  "atualizado_em": "2026-11-23T19:35:06.961994"
  },
  {
-  "id": 42,
+  "id": 44,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12699068942",
   "url": "https://www.sukiya-brasil.com.br/menu/grandmenu.html",
@@ -481,10 +547,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.519718"
+  "atualizado_em": "2026-11-23T19:35:06.962436"
  },
  {
-  "id": 43,
+  "id": 45,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12748377245",
   "url": "https://app.cardapioweb.com/fortal_cuscuz",
@@ -492,10 +558,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.519993"
+  "atualizado_em": "2026-11-23T19:35:06.962899"
  },
  {
-  "id": 44,
+  "id": 46,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12748377245",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/fortal-cuscuz---aclimacao-cambuci/7ad6d85d-29ee-4ade-bec6-1ac683c1406c",
@@ -503,10 +569,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.520262"
+  "atualizado_em": "2026-11-23T19:35:06.963347"
  },
  {
-  "id": 45,
+  "id": 47,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12750164559",
   "url": "https://www.lepainquotidien.com/br/pt/menu",
@@ -514,10 +580,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.520569"
+  "atualizado_em": "2026-11-23T19:35:06.963789"
  },
  {
-  "id": 46,
+  "id": 48,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12840806701",
   "url": "https://www.kintaro.com.br/menu",
@@ -525,10 +591,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.520855"
+  "atualizado_em": "2026-11-23T19:35:06.964251"
  },
  {
-  "id": 47,
+  "id": 49,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12861662077",
   "url": "https://www.tamashiiramen.com.br/menu",
@@ -536,10 +602,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.521131"
+  "atualizado_em": "2026-11-23T19:35:06.964691"
  },
  {
-  "id": 48,
+  "id": 50,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/12861662077",
   "url": "https://www.tamashiiramen.com.br/menu/",
@@ -547,10 +613,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.521403"
+  "atualizado_em": "2026-11-23T19:35:06.965157"
  },
  {
-  "id": 49,
+  "id": 51,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13141694988",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/ze-do-hamburguer---itapicuru-perdizes/53b28ce8-1126-4ca2-95dc-e6416a78eb50?utm_medium=share",
@@ -558,10 +624,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.521694"
+  "atualizado_em": "2026-11-23T19:35:06.965598"
  },
  {
-  "id": 50,
+  "id": 52,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13141694988",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/ze-do-hamburguer-pompeia-perdizes/2f8b64f6-1eb6-4d5c-a2c2-ef0a4ee558ad?utm_medium=share",
@@ -569,10 +635,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.521975"
+  "atualizado_em": "2026-11-23T19:35:06.966057"
  },
  {
-  "id": 51,
+  "id": 53,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13141694988",
   "url": "https://www.zedohamburger.com.br/pdf/cardapio_2024.pdf",
@@ -580,10 +646,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.522251"
+  "atualizado_em": "2026-11-23T19:35:06.966499"
  },
  {
-  "id": 52,
+  "id": 54,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13255955101",
   "url": "https://drive.google.com/drive/folders/15qQdcU3xZK5OCKjH8E05_XnFsD73agUe",
@@ -591,10 +657,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.522540"
+  "atualizado_em": "2026-11-23T19:35:06.966964"
  },
  {
-  "id": 53,
+  "id": 55,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13277367201",
   "url": "http://www.carlospizza.com.br/cardapio-1",
@@ -602,10 +668,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.522815"
+  "atualizado_em": "2026-11-23T19:35:06.967410"
  },
  {
-  "id": 54,
+  "id": 56,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13277367201",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/carlos-pizza---jardins-jardim-paulista/6a56019e-7c8d-4e5f-a456-f534dd2b6ecd",
@@ -613,10 +679,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.523081"
+  "atualizado_em": "2026-11-23T19:35:06.967870"
  },
  {
-  "id": 55,
+  "id": 57,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13277367201",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/carlos-pizza---vila-madalena-sumarezinho/6edf82dc-e585-4c47-b93b-1b3c129cbcde",
@@ -624,10 +690,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.523377"
+  "atualizado_em": "2026-11-23T19:35:06.968321"
  },
  {
-  "id": 56,
+  "id": 58,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13505699801",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/la-guapa-empanadas-jardim-paulista/714d3112-8e96-497a-84b4-503e5ec802bb",
@@ -635,10 +701,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.523689"
+  "atualizado_em": "2026-11-23T19:35:06.968768"
  },
  {
-  "id": 57,
+  "id": 59,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13505699801",
   "url": "https://www.laguapa.com.br/cardapio-completo",
@@ -646,10 +712,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.523964"
+  "atualizado_em": "2026-11-23T19:35:06.969232"
  },
  {
-  "id": 58,
+  "id": 60,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13505702401",
   "url": "http://santocolomba.com.br/arquivos/MENU-SC-2025-(ENGLISH).pdf",
@@ -657,10 +723,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.524237"
+  "atualizado_em": "2026-11-23T19:35:06.969667"
  },
  {
-  "id": 59,
+  "id": 61,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13505702401",
   "url": "http://santocolomba.com.br/arquivos/MENU-SC-2026-(PORT).pdf",
@@ -668,10 +734,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.524528"
+  "atualizado_em": "2026-11-23T19:35:06.970127"
  },
  {
-  "id": 60,
+  "id": 62,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13505702401",
   "url": "http://santocolomba.com.br/cardapio",
@@ -679,10 +745,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.524814"
+  "atualizado_em": "2026-11-23T19:35:06.970562"
  },
  {
-  "id": 61,
+  "id": 63,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13605419843",
   "url": "http://noryosushi.com.br/wp-content/uploads/2024/05/Cardapios-A-la-carte.pdf",
@@ -690,10 +756,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.525090"
+  "atualizado_em": "2026-11-23T19:35:06.971018"
  },
  {
-  "id": 62,
+  "id": 64,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13605419843",
   "url": "http://noryosushi.com.br/wp-content/uploads/2024/05/Cardapios-Drinks.pdf",
@@ -701,10 +767,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.525361"
+  "atualizado_em": "2026-11-23T19:35:06.971455"
  },
  {
-  "id": 63,
+  "id": 65,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/13897949011",
   "url": "https://dguests.com/cardapio/ParrillaSecreta",
@@ -712,10 +778,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.525648"
+  "atualizado_em": "2026-11-23T19:35:06.971911"
  },
  {
-  "id": 64,
+  "id": 66,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/14085979242",
   "url": "https://marenacucina.com.br/menu/",
@@ -723,10 +789,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.525924"
+  "atualizado_em": "2026-11-23T19:35:06.972346"
  },
  {
-  "id": 65,
+  "id": 67,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/14162719601",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/tempero-das-gerais---santo-amaro-santo-amaro/e4c2e084-9fa2-427c-a1fc-5f11ab276745?UTM_Medium=share",
@@ -734,10 +800,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.526205"
+  "atualizado_em": "2026-11-23T19:35:06.972792"
  },
  {
-  "id": 290,
+  "id": 68,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/14162719601",
   "url": "https://www.temperodasgerais.com.br/cardapiotemperodasgerais/",
@@ -745,10 +811,10 @@
   "origem": "osm_tag",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:29:03.750776"
+  "atualizado_em": "2026-11-23T19:35:06.973257"
  },
  {
-  "id": 66,
+  "id": 69,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/14165212987",
   "url": "http://www.rosinaemporio.com.br/qrcode/cardapio.pdf",
@@ -756,10 +822,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.526494"
+  "atualizado_em": "2026-11-23T19:35:06.973696"
  },
  {
-  "id": 67,
+  "id": 70,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/14165229975",
   "url": "https://restaurantepastissimo.com.br/restaurante-pastissimo-o-seu-restaurante-italiano-favorito-em-sumare/cardapio/",
@@ -767,10 +833,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.526776"
+  "atualizado_em": "2026-11-23T19:35:06.974156"
  },
  {
-  "id": 296,
+  "id": 71,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/14349582501",
   "url": "https://connectplug.com.br/smartmenu/694021e52a311-ab80f0e1e4ca04f4ddb8d0dee9c60090-RiYSrnBVX0UCcYaa9/cardapio?t=40948adc-eef0-4e4e-a027-4739ddba46ea",
@@ -778,10 +844,10 @@
   "origem": "osm_tag",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:29:03.816353"
+  "atualizado_em": "2026-11-23T19:35:06.974591"
  },
  {
-  "id": 68,
+  "id": 72,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/1654663498",
   "url": "https://qr.cocobambu.com/todos-cardapios",
@@ -789,10 +855,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.527043"
+  "atualizado_em": "2026-11-23T19:35:06.975067"
  },
  {
-  "id": 69,
+  "id": 73,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/1738042648",
   "url": "https://livemenu.app/menu/64c7bab2f4cca00054b76dcc",
@@ -800,10 +866,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.527332"
+  "atualizado_em": "2026-11-23T19:35:06.975507"
  },
  {
-  "id": 70,
+  "id": 74,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2283621582",
   "url": "https://drive.google.com/file/d/17veMGBCFjp7H2J-mBZdycnLyL7EolTLc/view?usp=sharing",
@@ -811,10 +877,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.527645"
+  "atualizado_em": "2026-11-23T19:35:06.975967"
  },
  {
-  "id": 71,
+  "id": 75,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2283621582",
   "url": "https://drive.google.com/file/d/1SCSHF5bOwxmr2ao2gxHekw8OUjcIAcA1/view?usp=sharing",
@@ -822,10 +888,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.527926"
+  "atualizado_em": "2026-11-23T19:35:06.976409"
  },
  {
-  "id": 72,
+  "id": 76,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2312081049",
   "url": "https://nobrepasteis.saipos.com/home",
@@ -833,10 +899,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.528197"
+  "atualizado_em": "2026-11-23T19:35:06.976865"
  },
  {
-  "id": 73,
+  "id": 77,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2312081049",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/pasteis-cantinho-nobre---mooca-mooca/a65114fa-6cfa-47e0-bfa8-1f2f2c834745?UTM_Medium=share",
@@ -844,10 +910,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.528495"
+  "atualizado_em": "2026-11-23T19:35:06.977318"
  },
  {
-  "id": 74,
+  "id": 78,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2380731344",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/coffee-lab-pinheiros/08c30a11-a239-40f4-8ad9-73093e40a1ba?UTM_Medium=share",
@@ -855,10 +921,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.528778"
+  "atualizado_em": "2026-11-23T19:35:06.977777"
  },
  {
-  "id": 75,
+  "id": 79,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2558589778",
   "url": "https://livemenu.app/menu/6453c51993c09d005616b234",
@@ -866,10 +932,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.529050"
+  "atualizado_em": "2026-11-23T19:35:06.978252"
  },
  {
-  "id": 76,
+  "id": 80,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2558589778",
   "url": "https://livemenu.app/menu/6453c51993c09d005616b234?cross_session=done",
@@ -877,10 +943,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.529319"
+  "atualizado_em": "2026-11-23T19:35:06.978702"
  },
  {
-  "id": 291,
+  "id": 81,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2637707882",
   "url": "https://www.sukiya-brasil.com.br/menu/",
@@ -888,10 +954,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:29:03.755365"
+  "atualizado_em": "2026-11-23T19:35:06.979175"
  },
  {
-  "id": 292,
+  "id": 82,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2637707882",
   "url": "https://www.sukiya-brasil.com.br/menu/fair.html",
@@ -899,10 +965,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:29:03.755795"
+  "atualizado_em": "2026-11-23T19:35:06.979617"
  },
  {
-  "id": 293,
+  "id": 83,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2637707882",
   "url": "https://www.sukiya-brasil.com.br/menu/grandmenu.html",
@@ -910,10 +976,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:29:03.756114"
+  "atualizado_em": "2026-11-23T19:35:06.980087"
  },
  {
-  "id": 77,
+  "id": 84,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/2964766095",
   "url": "https://fornalipizzaria.wabiz.delivery/",
@@ -921,10 +987,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.529620"
+  "atualizado_em": "2026-11-23T19:35:06.980531"
  },
  {
-  "id": 78,
+  "id": 85,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/3719540067",
   "url": "https://cdn.me-qr.com/pdf/12607216.pdf?time=1712578944",
@@ -932,10 +998,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.529896"
+  "atualizado_em": "2026-11-23T19:35:06.980988"
  },
  {
-  "id": 79,
+  "id": 86,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/3719540067",
   "url": "https://cdn.me-qr.com/pdf/12607344.pdf?time=1712690862",
@@ -943,10 +1009,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.530168"
+  "atualizado_em": "2026-11-23T19:35:06.981432"
  },
  {
-  "id": 80,
+  "id": 87,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/3719540067",
   "url": "https://cdn.me-qr.com/pdf/12607404.pdf?time=1712578858",
@@ -954,10 +1020,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.530457"
+  "atualizado_em": "2026-11-23T19:35:06.981909"
  },
  {
-  "id": 81,
+  "id": 88,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/3722298685",
   "url": "http://www.cantinaroperto.com/cardapio/card_vinhos.pdf",
@@ -965,10 +1031,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.530751"
+  "atualizado_em": "2026-11-23T19:35:06.982348"
  },
  {
-  "id": 82,
+  "id": 89,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/3722298685",
   "url": "http://www.cantinaroperto.com/cardapio/cardapio.pdf",
@@ -976,10 +1042,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.531024"
+  "atualizado_em": "2026-11-23T19:35:06.982788"
  },
  {
-  "id": 83,
+  "id": 90,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/3722298685",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/roperto-bela-vista/c398b9be-d8f2-4642-9805-a7fa68e8185d",
@@ -987,10 +1053,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.531301"
+  "atualizado_em": "2026-11-23T19:35:06.983256"
  },
  {
-  "id": 84,
+  "id": 91,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/3873686200",
   "url": "http://www.cafepiupiu.com.br/cardapio.php",
@@ -998,10 +1064,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.531626"
+  "atualizado_em": "2026-11-23T19:35:06.983702"
  },
  {
-  "id": 85,
+  "id": 92,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4124598111",
   "url": "https://gato.zmenu.com.br/",
@@ -1009,10 +1075,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.531918"
+  "atualizado_em": "2026-11-23T19:35:06.984167"
  },
  {
-  "id": 86,
+  "id": 93,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4124598111",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/o-gato-que-ri-republica/",
@@ -1020,10 +1086,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.532203"
+  "atualizado_em": "2026-11-23T19:35:06.984606"
  },
  {
-  "id": 87,
+  "id": 94,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4128376190",
   "url": "https://usetag.me/america",
@@ -1031,10 +1097,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.532499"
+  "atualizado_em": "2026-11-23T19:35:06.985078"
  },
  {
-  "id": 88,
+  "id": 95,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4150329895",
   "url": "https://reservation-widget.tagme.com.br/group/638f6c0610eead004a4507cf",
@@ -1042,10 +1108,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.532798"
+  "atualizado_em": "2026-11-23T19:35:06.985523"
  },
  {
-  "id": 89,
+  "id": 96,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4210898997",
   "url": "https://www.starbucks.com.br/cardapio/",
@@ -1053,10 +1119,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.533087"
+  "atualizado_em": "2026-11-23T19:35:06.985986"
  },
  {
-  "id": 90,
+  "id": 97,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4285462391",
   "url": "https://www.esfihajuventus.com.br/cardapio",
@@ -1064,10 +1130,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.533372"
+  "atualizado_em": "2026-11-23T19:35:06.986427"
  },
  {
-  "id": 91,
+  "id": 98,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4285462391",
   "url": "https://www.esfihajuventus.com.br/cardapio.html",
@@ -1075,10 +1141,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.533671"
+  "atualizado_em": "2026-11-23T19:35:06.986885"
  },
  {
-  "id": 92,
+  "id": 99,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4285462391",
   "url": "https://www.esfihajuventus.com.br/cardapio/pratos-e-salgados/esfihas",
@@ -1086,10 +1152,21 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.533942"
+  "atualizado_em": "2026-11-23T19:35:06.987329"
  },
  {
-  "id": 93,
+  "id": 297,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/4296702489",
+  "url": "https://bit.ly/Card%C3%A1pioBarGuanabara",
+  "plataforma": "proprio",
+  "origem": "osm_tag",
+  "itens": [],
+  "status": "confirmado",
+  "atualizado_em": "2026-11-23T20:04:40.058939"
+ },
+ {
+  "id": 100,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4339110864",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/jamies-italian-vila-nova-conceicao/60b2b131-66d2-4e53-b7bb-602b9203fb42",
@@ -1097,10 +1174,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.534208"
+  "atualizado_em": "2026-11-23T19:35:06.987761"
  },
  {
-  "id": 94,
+  "id": 101,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4339110864",
   "url": "https://www.jamiesitalian.com.br/en/ji-sao-paulo/menu/",
@@ -1108,10 +1185,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.534502"
+  "atualizado_em": "2026-11-23T19:35:06.988222"
  },
  {
-  "id": 95,
+  "id": 102,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4341891590",
   "url": "https://davvero.com.br/cardapio.html",
@@ -1119,10 +1196,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.534784"
+  "atualizado_em": "2026-11-23T19:35:06.988658"
  },
  {
-  "id": 96,
+  "id": 103,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4341891590",
   "url": "https://davvero.com.br/cardapio.html#cafeteria",
@@ -1130,10 +1207,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.535055"
+  "atualizado_em": "2026-11-23T19:35:06.989115"
  },
  {
-  "id": 97,
+  "id": 104,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4341891590",
   "url": "https://davvero.com.br/cardapio.html#gelatos",
@@ -1141,10 +1218,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.535335"
+  "atualizado_em": "2026-11-23T19:35:06.989549"
  },
  {
-  "id": 98,
+  "id": 105,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4366660090",
   "url": "https://menu.getinapp.com.br/pt-br/2Pr2DmP8",
@@ -1152,10 +1229,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.535651"
+  "atualizado_em": "2026-11-23T19:35:06.990007"
  },
  {
-  "id": 99,
+  "id": 106,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4366660090",
   "url": "https://menu.getinapp.com.br/pt-br/D6W30g6Q",
@@ -1163,10 +1240,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.535940"
+  "atualizado_em": "2026-11-23T19:35:06.990448"
  },
  {
-  "id": 100,
+  "id": 107,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4366660090",
   "url": "https://menu.getinapp.com.br/pt-br/g6GA7AP0",
@@ -1174,10 +1251,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.536221"
+  "atualizado_em": "2026-11-23T19:35:06.990902"
  },
  {
-  "id": 101,
+  "id": 108,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4367772290",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/z-deli---pinheiros-pinheiros/74aaa21c-82b6-4089-bd3b-d3d72ae71f6d",
@@ -1185,10 +1262,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.536516"
+  "atualizado_em": "2026-11-23T19:35:06.991340"
  },
  {
-  "id": 102,
+  "id": 109,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4367772290",
   "url": "https://www.zdeli.com.br/unidades/CentroIAB/cardapios.html",
@@ -1196,10 +1273,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.536817"
+  "atualizado_em": "2026-11-23T19:35:06.991785"
  },
  {
-  "id": 103,
+  "id": 110,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4367772290",
   "url": "https://www.zdeli.com.br/unidades/Pinheiros/cardapios.html",
@@ -1207,10 +1284,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.537106"
+  "atualizado_em": "2026-11-23T19:35:06.992252"
  },
  {
-  "id": 104,
+  "id": 111,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4369789880",
   "url": "https://www.apizzaria.com.br/cardapio",
@@ -1218,10 +1295,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.537395"
+  "atualizado_em": "2026-11-23T19:35:06.992691"
  },
  {
-  "id": 105,
+  "id": 112,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4394024912",
   "url": "http://www.estadaolanches.com.br/cardapio-portugues.pdf",
@@ -1229,10 +1306,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.537714"
+  "atualizado_em": "2026-11-23T19:35:06.993161"
  },
  {
-  "id": 106,
+  "id": 113,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4398192524",
   "url": "https://lamenkazu.com.br/cardapio#Cardapio",
@@ -1240,10 +1317,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.537993"
+  "atualizado_em": "2026-11-23T19:35:06.993608"
  },
  {
-  "id": 107,
+  "id": 114,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4398192524",
   "url": "https://lamenkazu.com.br/cardapio/",
@@ -1251,10 +1328,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.538267"
+  "atualizado_em": "2026-11-23T19:35:06.994069"
  },
  {
-  "id": 108,
+  "id": 115,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4398192524",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/lamen-kazu---liberdade-liberdade/860f1904-e37c-4265-ad2c-6d6cdfbee061",
@@ -1262,10 +1339,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.538554"
+  "atualizado_em": "2026-11-23T19:35:06.994513"
  },
  {
-  "id": 109,
+  "id": 116,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4449679689",
   "url": "https://www.rinconcitoperuano.com.br/files/menu-rinconcito-peruano.pdf",
@@ -1273,10 +1350,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.538830"
+  "atualizado_em": "2026-11-23T19:35:06.994976"
  },
  {
-  "id": 110,
+  "id": 117,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4449679689",
   "url": "https://www.rinconcitoperuano.com.br/menu-restaurante/17/pr",
@@ -1284,10 +1361,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.539112"
+  "atualizado_em": "2026-11-23T19:35:06.995415"
  },
  {
-  "id": 111,
+  "id": 118,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4449679689",
   "url": "https://www.rinconcitoperuano.com.br/menu-restaurante/18/pr",
@@ -1295,10 +1372,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.539405"
+  "atualizado_em": "2026-11-23T19:35:06.995870"
  },
  {
-  "id": 112,
+  "id": 119,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4460098489",
   "url": "https://www.ecully.com.br/cardápio-retomada",
@@ -1306,10 +1383,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.539716"
+  "atualizado_em": "2026-11-23T19:35:06.996314"
  },
  {
-  "id": 113,
+  "id": 120,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4470687910",
   "url": "https://www.consuladodabahia.com.br/cardapio/",
@@ -1317,10 +1394,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.539996"
+  "atualizado_em": "2026-11-23T19:35:06.996752"
  },
  {
-  "id": 114,
+  "id": 121,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4470727724",
   "url": "https://empanadasbar.com.br/cardapio",
@@ -1328,10 +1405,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.540289"
+  "atualizado_em": "2026-11-23T19:35:06.997213"
  },
  {
-  "id": 115,
+  "id": 122,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4470727724",
   "url": "https://empanadasbar.com.br/cardapio/#g-intro",
@@ -1339,10 +1416,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.540593"
+  "atualizado_em": "2026-11-23T19:35:06.997647"
  },
  {
-  "id": 116,
+  "id": 123,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4470727724",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/empanadas-bar-vila-madalena?Origem=SiteParceiro&produto=intermediario",
@@ -1350,10 +1427,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.540879"
+  "atualizado_em": "2026-11-23T19:35:06.998102"
  },
  {
-  "id": 117,
+  "id": 124,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4510838660",
   "url": "http://www.botecoouzar.com.br/Cardápio/",
@@ -1361,10 +1438,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.541156"
+  "atualizado_em": "2026-11-23T19:35:06.998538"
  },
  {
-  "id": 118,
+  "id": 125,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4527197091",
   "url": "https://camaroes.com.br/cardapios/",
@@ -1372,10 +1449,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.541449"
+  "atualizado_em": "2026-11-23T19:35:06.999002"
  },
  {
-  "id": 119,
+  "id": 126,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4527197091",
   "url": "https://deliveryapp.neemo.com.br/delivery/4630/menu",
@@ -1383,10 +1460,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.541740"
+  "atualizado_em": "2026-11-23T19:35:06.999440"
  },
  {
-  "id": 120,
+  "id": 127,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4528875793",
   "url": "https://www.starbucks.com.br/cardapio/",
@@ -1394,10 +1471,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.542016"
+  "atualizado_em": "2026-11-23T19:35:06.999889"
  },
  {
-  "id": 121,
+  "id": 128,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4528907291",
   "url": "https://www.starbucks.com.br/cardapio/",
@@ -1405,10 +1482,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.542288"
+  "atualizado_em": "2026-11-23T19:35:07.000324"
  },
  {
-  "id": 122,
+  "id": 129,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4528920989",
   "url": "https://bardadonaonca.com.br/menu/",
@@ -1416,10 +1493,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.542574"
+  "atualizado_em": "2026-11-23T19:35:07.000759"
  },
  {
-  "id": 123,
+  "id": 130,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4529885389",
   "url": "http://www.botecoouzar.com.br/Cardápio/",
@@ -1427,10 +1504,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.542846"
+  "atualizado_em": "2026-11-23T19:35:07.001224"
  },
  {
-  "id": 124,
+  "id": 131,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4566867799",
   "url": "http://paodequeijohaddocklobo.com.br/menu",
@@ -1438,10 +1515,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.543126"
+  "atualizado_em": "2026-11-23T19:35:07.001661"
  },
  {
-  "id": 125,
+  "id": 132,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4566867799",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/pao-de-queijo-haddock-lobo-cerqueira-cesar/f9758a28-0033-404e-b62e-06bccaa4a6ac",
@@ -1449,10 +1526,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.543416"
+  "atualizado_em": "2026-11-23T19:35:07.002118"
  },
  {
-  "id": 126,
+  "id": 133,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4641297791",
   "url": "https://www.ristorantecarlino.com.br/cardapio-carlino.pdf",
@@ -1460,10 +1537,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.543721"
+  "atualizado_em": "2026-11-23T19:35:07.002561"
  },
  {
-  "id": 127,
+  "id": 134,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4676624389",
   "url": "https://confeitariachristina.com.br/cardapio/",
@@ -1471,10 +1548,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.544002"
+  "atualizado_em": "2026-11-23T19:35:07.003061"
  },
  {
-  "id": 128,
+  "id": 135,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4785226033",
   "url": "https://livemenu.app/menu/5df22f550a4ababa6d96e22a?_ga=2.149436342.1638794767.1677165904-1738001062.1672833683",
@@ -1482,10 +1559,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.544277"
+  "atualizado_em": "2026-11-23T19:35:07.003517"
  },
  {
-  "id": 129,
+  "id": 136,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4785226033",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/rendez-vous-pinheiros/c5735308-ee9b-4b62-8836-722aa5411f7a?utm_medium=share",
@@ -1493,10 +1570,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.544582"
+  "atualizado_em": "2026-11-23T19:35:07.004011"
  },
  {
-  "id": 130,
+  "id": 137,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4804394122",
   "url": "https://tabernadaesquina.com/wp-content/uploads/2024/06/menu_taberna_1.1.pdf",
@@ -1504,10 +1581,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.544869"
+  "atualizado_em": "2026-11-23T19:35:07.004472"
  },
  {
-  "id": 131,
+  "id": 138,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4899871493",
   "url": "https://www.rascal.com.br/restaurante/cardapio-e-bebidas-rascal-guarulhos/",
@@ -1515,10 +1592,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.545151"
+  "atualizado_em": "2026-11-23T19:35:07.004942"
  },
  {
-  "id": 132,
+  "id": 139,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4899871493",
   "url": "https://www.rascal.com.br/restaurante/cardapio-e-bebidas-rascal-rio-de-janeiro/",
@@ -1526,10 +1603,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.545438"
+  "atualizado_em": "2026-11-23T19:35:07.005387"
  },
  {
-  "id": 133,
+  "id": 140,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4899871493",
   "url": "https://www.rascal.com.br/restaurante/cardapio-e-bebidas-rascal-sao-paulo/",
@@ -1537,10 +1614,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.545733"
+  "atualizado_em": "2026-11-23T19:35:07.005845"
  },
  {
-  "id": 134,
+  "id": 141,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4915679021",
   "url": "https://www.hamburgueriacalifornia.com/cardapio",
@@ -1548,10 +1625,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.546015"
+  "atualizado_em": "2026-11-23T19:35:07.006291"
  },
  {
-  "id": 135,
+  "id": 142,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4944684721",
   "url": "https://cardapio-casa-da-coxinha-vegana.goomer.app/",
@@ -1559,10 +1636,21 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.546293"
+  "atualizado_em": "2026-11-23T19:35:07.006733"
  },
  {
-  "id": 136,
+  "id": 298,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/4947353945",
+  "url": "https://www.labarbara.com.br",
+  "plataforma": "outro",
+  "origem": "osm_tag",
+  "itens": [],
+  "status": "confirmado",
+  "atualizado_em": "2026-11-23T20:04:40.076140"
+ },
+ {
+  "id": 143,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4960843326",
   "url": "http://www.paulistaburger.com.br/cardapio.html",
@@ -1570,10 +1658,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.546582"
+  "atualizado_em": "2026-11-23T19:35:07.007197"
  },
  {
-  "id": 137,
+  "id": 144,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4960843326",
   "url": "http://www.paulistaburger.com.br/cardapio.html#itens-hamburgers",
@@ -1581,10 +1669,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.546867"
+  "atualizado_em": "2026-11-23T19:35:07.007634"
  },
  {
-  "id": 138,
+  "id": 145,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4960843326",
   "url": "http://www.paulistaburger.com.br/cardapio.html#itens-porcoes",
@@ -1592,10 +1680,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.547145"
+  "atualizado_em": "2026-11-23T19:35:07.008096"
  },
  {
-  "id": 139,
+  "id": 146,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4962188946",
   "url": "https://www.reidomate.com.br/cardapio",
@@ -1603,10 +1691,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.547446"
+  "atualizado_em": "2026-11-23T19:35:07.008611"
  },
  {
-  "id": 140,
+  "id": 147,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/4985185141",
   "url": "https://formosahifi.com/cardapio/",
@@ -1614,10 +1702,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.547732"
+  "atualizado_em": "2026-11-23T19:35:07.009100"
  },
  {
-  "id": 141,
+  "id": 148,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5046052946",
   "url": "https://app.cardapioweb.com/raful_cozinha_arabe",
@@ -1625,10 +1713,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.547998"
+  "atualizado_em": "2026-11-23T19:35:07.009547"
  },
  {
-  "id": 142,
+  "id": 149,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5049076690",
   "url": "https://deliveryapp.neemo.com.br/select_voucher/3497/48007288",
@@ -1636,10 +1724,21 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.548275"
+  "atualizado_em": "2026-11-23T19:35:07.010009"
  },
  {
-  "id": 143,
+  "id": 299,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/5103818949",
+  "url": "https://gruporubaiyat.com/casas-menu/a-figueira-rubaiyat/",
+  "plataforma": "proprio",
+  "origem": "osm_tag",
+  "itens": [],
+  "status": "confirmado",
+  "atualizado_em": "2026-11-23T20:04:40.079317"
+ },
+ {
+  "id": 150,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5138039022",
   "url": "https://www.cafemartinellimidi.com.br/cardapio",
@@ -1647,10 +1746,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.548573"
+  "atualizado_em": "2026-11-23T19:35:07.010446"
  },
  {
-  "id": 144,
+  "id": 151,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5160291825",
   "url": "https://burdog.com.br/cardapio/",
@@ -1658,10 +1757,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.548854"
+  "atualizado_em": "2026-11-23T19:35:07.010899"
  },
  {
-  "id": 145,
+  "id": 152,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5209256522",
   "url": "http://www.ifood.com.br",
@@ -1669,10 +1768,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.549125"
+  "atualizado_em": "2026-11-23T19:35:07.011340"
  },
  {
-  "id": 146,
+  "id": 153,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5209256522",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/hakka-delivery-paulista-cerqueira-cesar/ea082ba8-246d-463f-9c38-0399352fda00",
@@ -1680,10 +1779,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.549393"
+  "atualizado_em": "2026-11-23T19:35:07.011773"
  },
  {
-  "id": 147,
+  "id": 154,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5209256522",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/hakka-delivery-vila-olimpia-vila-olimpia/7ebe8746-95e0-4909-a336-81299d179930",
@@ -1691,10 +1790,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.549696"
+  "atualizado_em": "2026-11-23T19:35:07.012237"
  },
  {
-  "id": 148,
+  "id": 155,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5249431521",
   "url": "https://www.agilizaiapp.com.br/cardapio/highline",
@@ -1702,10 +1801,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.549973"
+  "atualizado_em": "2026-11-23T19:35:07.012672"
  },
  {
-  "id": 149,
+  "id": 156,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5323842922",
   "url": "https://jucalemao.com.br/cardapio/",
@@ -1713,10 +1812,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.550245"
+  "atualizado_em": "2026-11-23T19:35:07.013134"
  },
  {
-  "id": 150,
+  "id": 157,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5323842922",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/jucalemao---brooklin-vila-cordeiro/e9802289-9cbb-4b80-a1d5-9ab3a26a3954",
@@ -1724,10 +1823,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.550530"
+  "atualizado_em": "2026-11-23T19:35:07.013571"
  },
  {
-  "id": 151,
+  "id": 158,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5323842922",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/jucalemao-vila-cordeiro/1dd0429a-437f-402d-8a12-7157064fbcc9",
@@ -1735,10 +1834,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.550813"
+  "atualizado_em": "2026-11-23T19:35:07.014029"
  },
  {
-  "id": 152,
+  "id": 159,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5573896421",
   "url": "https://futuro.goomer.app",
@@ -1746,10 +1845,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.551088"
+  "atualizado_em": "2026-11-23T19:35:07.014472"
  },
  {
-  "id": 153,
+  "id": 160,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5573896421",
   "url": "https://www.dropbox.com/scl/fi/5n11rcu8mbi587zx9memj/POR-CARD-PIO_JUN2026.pdf?rlkey=sfgnizwt84ql5o9jzi841l1pl&st=lt39ggcf&dl=0",
@@ -1757,10 +1856,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.551369"
+  "atualizado_em": "2026-11-23T19:35:07.014941"
  },
  {
-  "id": 154,
+  "id": 161,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5573896421",
   "url": "https://www.dropbox.com/scl/fi/xqc9ra3q4uuy3mr6tkh4u/CardapioPARQUE_fev26_v4.pdf?rlkey=gsv6z0dat94r33mayun71kv3q&st=wtb76w9l&e=1&dl=0",
@@ -1768,10 +1867,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.551671"
+  "atualizado_em": "2026-11-23T19:35:07.015382"
  },
  {
-  "id": 155,
+  "id": 162,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5595301022",
   "url": "https://www.tchecafe.com.br/menu",
@@ -1779,10 +1878,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.551938"
+  "atualizado_em": "2026-11-23T19:35:07.015833"
  },
  {
-  "id": 156,
+  "id": 163,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5628634061",
   "url": "https://popveganfood.com.br/cardapio/",
@@ -1790,10 +1889,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.552202"
+  "atualizado_em": "2026-11-23T19:35:07.016279"
  },
  {
-  "id": 157,
+  "id": 164,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5628634061",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/pop-vegan-food---pinheiros-pinheiros/b57d94ce-d123-4f79-800e-2c67a3728f38",
@@ -1801,10 +1900,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.552495"
+  "atualizado_em": "2026-11-23T19:35:07.016712"
  },
  {
-  "id": 158,
+  "id": 165,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5628634061",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/pop-vegan-food-consolacao/6a674272-e07c-4b71-b171-6c477e57fd38",
@@ -1812,10 +1911,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.552782"
+  "atualizado_em": "2026-11-23T19:35:07.017173"
  },
  {
-  "id": 159,
+  "id": 166,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/5648011827",
   "url": "https://reservation-widget.tagme.com.br/group/638f6c0610eead004a4507cf",
@@ -1823,10 +1922,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.553054"
+  "atualizado_em": "2026-11-23T19:35:07.017610"
  },
  {
-  "id": 160,
+  "id": 167,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6109038386",
   "url": "https://pastificioprimo.com.br/cardapio/",
@@ -1834,10 +1933,10 @@
   "origem": "jsonld",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:03:09.553333"
+  "atualizado_em": "2026-11-23T19:35:07.018070"
  },
  {
-  "id": 161,
+  "id": 168,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6109038386",
   "url": "https://www.ifood.com.br/delivery/sorocaba-sp/pastificio-primo---massas-artesanais-recheadas-e-parmegianas-vila-independencia/1fbfb27f-b1ab-416f-9838-ad55f4137298?utm_source=site&utm_medium=referral&utm_campaign=pastificioprimo",
@@ -1845,10 +1944,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.553628"
+  "atualizado_em": "2026-11-23T19:35:07.018510"
  },
  {
-  "id": 162,
+  "id": 169,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6109038386",
   "url": "https://www.pastificioprimo.com.br/cardapio/",
@@ -1856,10 +1955,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.553903"
+  "atualizado_em": "2026-11-23T19:35:07.018978"
  },
  {
-  "id": 163,
+  "id": 170,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6418727765",
   "url": "https://www.brodo.com.br/menu",
@@ -1867,10 +1966,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.554174"
+  "atualizado_em": "2026-11-23T19:35:07.019419"
  },
  {
-  "id": 164,
+  "id": 171,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6422063345",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/restaurante-taste-and-see-paraiso/5d593001-d8f7-4efc-9cd9-ee37d75c5d90",
@@ -1878,10 +1977,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.554454"
+  "atualizado_em": "2026-11-23T19:35:07.019884"
  },
  {
-  "id": 165,
+  "id": 172,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6422063345",
   "url": "https://www.tasteandsee.com.br/cardapios",
@@ -1889,10 +1988,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.554750"
+  "atualizado_em": "2026-11-23T19:35:07.020342"
  },
  {
-  "id": 166,
+  "id": 173,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6443914041",
   "url": "https://loja.deliverydireto.com.br/letsbeer/sp",
@@ -1900,10 +1999,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.555027"
+  "atualizado_em": "2026-11-23T19:35:07.020775"
  },
  {
-  "id": 167,
+  "id": 174,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6443914041",
   "url": "https://www.deliverydireto.com.br/letsbeer/sp",
@@ -1911,10 +2010,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.555312"
+  "atualizado_em": "2026-11-23T19:35:07.021237"
  },
  {
-  "id": 168,
+  "id": 175,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6530576385",
   "url": "https://www.dguests.com/cardapio/saobentoitaim",
@@ -1922,10 +2021,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.555638"
+  "atualizado_em": "2026-11-23T19:35:07.021675"
  },
  {
-  "id": 169,
+  "id": 176,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6530576385",
   "url": "https://www.dguests.com/cardapio/saobentosantoandre",
@@ -1933,10 +2032,10 @@
   "origem": "jsonld",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:03:09.555945"
+  "atualizado_em": "2026-11-23T19:35:07.022132"
  },
  {
-  "id": 170,
+  "id": 177,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6530576385",
   "url": "https://www.dguests.com/cardapio/saobentovilamadalena",
@@ -1944,10 +2043,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.556235"
+  "atualizado_em": "2026-11-23T19:35:07.022565"
  },
  {
-  "id": 171,
+  "id": 178,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6628695265",
   "url": "https://meemo.menu/ristorantino",
@@ -1955,10 +2054,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.556542"
+  "atualizado_em": "2026-11-23T19:35:07.023020"
  },
  {
-  "id": 172,
+  "id": 179,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6628695265",
   "url": "https://meemo.menu/ristorantino-delivery",
@@ -1966,10 +2065,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.556828"
+  "atualizado_em": "2026-11-23T19:35:07.023457"
  },
  {
-  "id": 173,
+  "id": 180,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6628695265",
   "url": "https://www.ristorantino.com.br/ristorantino-executivo.pdf",
@@ -1977,10 +2076,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.557125"
+  "atualizado_em": "2026-11-23T19:35:07.023912"
  },
  {
-  "id": 174,
+  "id": 181,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6646716512",
   "url": "https://www.cameliaododo.com.br/menu",
@@ -1988,10 +2087,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.557409"
+  "atualizado_em": "2026-11-23T19:35:07.024351"
  },
  {
-  "id": 175,
+  "id": 182,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6646716512",
   "url": "https://www.cameliaododo.com.br/menu-geral",
@@ -1999,10 +2098,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.557706"
+  "atualizado_em": "2026-11-23T19:35:07.024797"
  },
  {
-  "id": 176,
+  "id": 183,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6670536620",
   "url": "https://bullguer.com/cardapio",
@@ -2010,10 +2109,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.557974"
+  "atualizado_em": "2026-11-23T19:35:07.025299"
  },
  {
-  "id": 177,
+  "id": 184,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6670536620",
   "url": "https://bullguer.com/cardapio#lumberjack-br",
@@ -2021,10 +2120,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.558243"
+  "atualizado_em": "2026-11-23T19:35:07.025739"
  },
  {
-  "id": 178,
+  "id": 185,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6670536620",
   "url": "https://bullguer.com/cardapio#standard-br",
@@ -2032,10 +2131,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.558537"
+  "atualizado_em": "2026-11-23T19:35:07.026222"
  },
  {
-  "id": 179,
+  "id": 186,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6703484699",
   "url": "https://deliverydireto.com.br/originaletrattoria/sp",
@@ -2043,10 +2142,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.558814"
+  "atualizado_em": "2026-11-23T19:35:07.026664"
  },
  {
-  "id": 180,
+  "id": 187,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6703484699",
   "url": "https://deliverydireto.com.br/originaletrattoria/sp?dd=menu",
@@ -2054,10 +2153,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.559087"
+  "atualizado_em": "2026-11-23T19:35:07.027129"
  },
  {
-  "id": 181,
+  "id": 188,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6703484699",
   "url": "https://originaletrattoria.com.br/cardapio/",
@@ -2065,10 +2164,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.559368"
+  "atualizado_em": "2026-11-23T19:35:07.027570"
  },
  {
-  "id": 182,
+  "id": 189,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6736650585",
   "url": "https://m.odionisio.com/bar-charles-edward/menu-principal/view",
@@ -2076,10 +2175,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.559695"
+  "atualizado_em": "2026-11-23T19:35:07.028034"
  },
  {
-  "id": 183,
+  "id": 190,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6789357704",
   "url": "https://losteriadopiero.com.br/cardapio/",
@@ -2087,10 +2186,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.559983"
+  "atualizado_em": "2026-11-23T19:35:07.028476"
  },
  {
-  "id": 184,
+  "id": 191,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/6789357704",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/losteria-do-piero-jardim-paulista/ba2c1edd-3e99-403b-87ee-a427ed52c162?utm_medium=share",
@@ -2098,10 +2197,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.560262"
+  "atualizado_em": "2026-11-23T19:35:07.028935"
  },
  {
-  "id": 185,
+  "id": 192,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/7004330307",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/astor---vila-madalena-vila-madalena/979d73aa-2b33-4925-b7c9-0f8480260ecd",
@@ -2109,10 +2208,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.560556"
+  "atualizado_em": "2026-11-23T19:35:07.029390"
  },
  {
-  "id": 186,
+  "id": 193,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/7234959580",
   "url": "https://www.restaurantemaraja.com/menu",
@@ -2120,10 +2219,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.560844"
+  "atualizado_em": "2026-11-23T19:35:07.029845"
  },
  {
-  "id": 187,
+  "id": 194,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/7234959580",
   "url": "https://www.restaurantemaraja.com/menu-do-dia",
@@ -2131,10 +2230,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.561130"
+  "atualizado_em": "2026-11-23T19:35:07.030300"
  },
  {
-  "id": 188,
+  "id": 195,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/7569552171",
   "url": "https://livemenu.app/menu/62601dabe5d0390011da99fe",
@@ -2142,10 +2241,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.561411"
+  "atualizado_em": "2026-11-23T19:35:07.030746"
  },
  {
-  "id": 189,
+  "id": 196,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/7619829384",
   "url": "http://nouzin.com.br",
@@ -2153,10 +2252,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.561709"
+  "atualizado_em": "2026-11-23T19:35:07.031209"
  },
  {
-  "id": 190,
+  "id": 197,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/7619829384",
   "url": "https://nou.com.br/menu",
@@ -2164,10 +2263,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.561991"
+  "atualizado_em": "2026-11-23T19:35:07.031650"
  },
  {
-  "id": 191,
+  "id": 198,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/7850807416",
   "url": "http://www.karaokekampai.com.br/pdf/cardapio.pdf",
@@ -2175,10 +2274,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.562268"
+  "atualizado_em": "2026-11-23T19:35:07.032109"
  },
  {
-  "id": 192,
+  "id": 199,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/8098031826",
   "url": "https://www.vicolonostro.com.br/cardapio-restautante-en/",
@@ -2186,10 +2285,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.562556"
+  "atualizado_em": "2026-11-23T19:35:07.032547"
  },
  {
-  "id": 193,
+  "id": 200,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/8098031826",
   "url": "https://www.vicolonostro.com.br/cardapio-restautante-pt/",
@@ -2197,10 +2296,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.562834"
+  "atualizado_em": "2026-11-23T19:35:07.033014"
  },
  {
-  "id": 194,
+  "id": 201,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/8098031826",
   "url": "https://www.vicolonostro.com.br/carta-de-vinhos/",
@@ -2208,10 +2307,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.563111"
+  "atualizado_em": "2026-11-23T19:35:07.033454"
  },
  {
-  "id": 195,
+  "id": 202,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/8425982197",
   "url": "https://pedido.brendi.com.br/la-fortunata-pizzaria-vila-da-saude",
@@ -2219,10 +2318,21 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.563402"
+  "atualizado_em": "2026-11-23T19:35:07.033908"
  },
  {
-  "id": 196,
+  "id": 305,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "node/865280465",
+  "url": "https://www.mcdonalds.com.br/cardapio",
+  "plataforma": "proprio",
+  "origem": "link_site",
+  "itens": [],
+  "status": "provavel",
+  "atualizado_em": "2026-11-23T20:04:40.157425"
+ },
+ {
+  "id": 203,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/8825298645",
   "url": "https://mais1cafe.com.br/cardapio-mais1/",
@@ -2230,10 +2340,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.563706"
+  "atualizado_em": "2026-11-23T19:35:07.034344"
  },
  {
-  "id": 197,
+  "id": 204,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/8825298645",
   "url": "https://mais1cafe.com.br/cardapio/",
@@ -2241,10 +2351,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.563984"
+  "atualizado_em": "2026-11-23T19:35:07.034781"
  },
  {
-  "id": 198,
+  "id": 205,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/8825298645",
   "url": "https://mais1cafe.com.br/cardapio/#quentes",
@@ -2252,10 +2362,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.564260"
+  "atualizado_em": "2026-11-23T19:35:07.035245"
  },
  {
-  "id": 199,
+  "id": 206,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/9923104917",
   "url": "https://oliviobar.com.br/cardapios/Menu_Bebidas.jpg",
@@ -2263,10 +2373,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.564561"
+  "atualizado_em": "2026-11-23T19:35:07.035678"
  },
  {
-  "id": 200,
+  "id": 207,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/9923104917",
   "url": "https://oliviobar.com.br/cardapios/Menu_Comidas.jpg",
@@ -2274,10 +2384,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.564849"
+  "atualizado_em": "2026-11-23T19:35:07.036142"
  },
  {
-  "id": 201,
+  "id": 208,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/9923104917",
   "url": "https://www.oliviobar.com.br/cardapios/Eventos/Eventos_Olivio_1.jpg",
@@ -2285,10 +2395,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.565127"
+  "atualizado_em": "2026-11-23T19:35:07.036575"
  },
  {
-  "id": 202,
+  "id": 209,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/9946480566",
   "url": "https://www.pizzariamoraes.com.br/cardapio",
@@ -2296,10 +2406,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.565421"
+  "atualizado_em": "2026-11-23T19:35:07.037034"
  },
  {
-  "id": 203,
+  "id": 210,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/9946480566",
   "url": "https://www.pizzariamoraes.com.br/cardapio-completo.html#pizzas",
@@ -2307,10 +2417,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.565726"
+  "atualizado_em": "2026-11-23T19:35:07.037470"
  },
  {
-  "id": 204,
+  "id": 211,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "node/9946480566",
   "url": "https://www.pizzariamoraes.com.br/cardapio-completo.html#saladas-massas-porcoes",
@@ -2318,10 +2428,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.565996"
+  "atualizado_em": "2026-11-23T19:35:07.037933"
  },
  {
-  "id": 205,
+  "id": 212,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1058336450",
   "url": "https://degaspompeia.com.br/cardapio.pdf",
@@ -2329,10 +2439,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.566263"
+  "atualizado_em": "2026-11-23T19:35:07.038371"
  },
  {
-  "id": 206,
+  "id": 213,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1058336450",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/degas-pompeia-pompeia/54ccc8f7-c699-4bcd-adf4-f3f66888a23f",
@@ -2340,10 +2450,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.566548"
+  "atualizado_em": "2026-11-23T19:35:07.038828"
  },
  {
-  "id": 207,
+  "id": 214,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1062175770",
   "url": "https://pastificioprimo.com.br/cardapio/",
@@ -2351,10 +2461,10 @@
   "origem": "jsonld",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:03:09.566830"
+  "atualizado_em": "2026-11-23T19:35:07.039276"
  },
  {
-  "id": 208,
+  "id": 215,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1062175770",
   "url": "https://www.ifood.com.br/delivery/sorocaba-sp/pastificio-primo---massas-artesanais-recheadas-e-parmegianas-vila-independencia/1fbfb27f-b1ab-416f-9838-ad55f4137298?utm_source=site&utm_medium=referral&utm_campaign=pastificioprimo",
@@ -2362,10 +2472,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.567101"
+  "atualizado_em": "2026-11-23T19:35:07.039719"
  },
  {
-  "id": 209,
+  "id": 216,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1062175770",
   "url": "https://www.pastificioprimo.com.br/cardapio/",
@@ -2373,10 +2483,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.567404"
+  "atualizado_em": "2026-11-23T19:35:07.040187"
  },
  {
-  "id": 210,
+  "id": 217,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1084458726",
   "url": "https://halim.com.br/cardapio/",
@@ -2384,10 +2494,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.567718"
+  "atualizado_em": "2026-11-23T19:35:07.040633"
  },
  {
-  "id": 211,
+  "id": 218,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1086107387",
   "url": "https://www.jeronimoburger.com.br/cardapio",
@@ -2395,10 +2505,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.567995"
+  "atualizado_em": "2026-11-23T19:35:07.041095"
  },
  {
-  "id": 212,
+  "id": 219,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1087736689",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/ponto-chic---perdizes-barra-funda/",
@@ -2406,10 +2516,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.568264"
+  "atualizado_em": "2026-11-23T19:35:07.041551"
  },
  {
-  "id": 213,
+  "id": 220,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1087736689",
   "url": "https://www.pontochicperdizes.com.br/_files/ugd/0b1a69_79e33fa0d3304cfdab9211d08bdab9cb.pdf",
@@ -2417,10 +2527,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.568553"
+  "atualizado_em": "2026-11-23T19:35:07.042015"
  },
  {
-  "id": 214,
+  "id": 221,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1087736689",
   "url": "https://www.pontochicperdizes.com.br/_files/ugd/0b1a69_e750040d11044fc0a3e06fcb7cdd7799.pdf",
@@ -2428,10 +2538,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.568840"
+  "atualizado_em": "2026-11-23T19:35:07.042458"
  },
  {
-  "id": 215,
+  "id": 222,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1096850477",
   "url": "https://www.spoleto.com.br/tabs/cardapio",
@@ -2439,10 +2549,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.569114"
+  "atualizado_em": "2026-11-23T19:35:07.042944"
  },
  {
-  "id": 216,
+  "id": 223,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1104123599",
   "url": "https://www.outback.com.br/menu-de-almoco",
@@ -2450,10 +2560,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.569383"
+  "atualizado_em": "2026-11-23T19:35:07.043400"
  },
  {
-  "id": 217,
+  "id": 224,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1104123599",
   "url": "https://www.outback.com.br/nossosprodutos/menu-principal",
@@ -2461,10 +2571,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.569694"
+  "atualizado_em": "2026-11-23T19:35:07.043873"
  },
  {
-  "id": 218,
+  "id": 225,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1148905649",
   "url": "https://www.dguests.com.br/cardapio/doryosushi",
@@ -2472,10 +2582,10 @@
   "origem": "jsonld",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:03:09.569974"
+  "atualizado_em": "2026-11-23T19:35:07.044330"
  },
  {
-  "id": 219,
+  "id": 226,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1171316458",
   "url": "https://drive.google.com/file/d/1s7GHW2xdsauEU55oIFPCojKY-nSrrKTB/view?usp=drivesdk",
@@ -2483,10 +2593,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.570246"
+  "atualizado_em": "2026-11-23T19:35:07.044768"
  },
  {
-  "id": 220,
+  "id": 227,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1171316459",
   "url": "https://deliveryapp.neemo.com.br/franquia/speranza",
@@ -2494,10 +2604,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.570533"
+  "atualizado_em": "2026-11-23T19:35:07.045243"
  },
  {
-  "id": 221,
+  "id": 228,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1171316459",
   "url": "https://l.odionisio.com/pizzaria-speranzaa",
@@ -2505,10 +2615,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.570804"
+  "atualizado_em": "2026-11-23T19:35:07.045685"
  },
  {
-  "id": 222,
+  "id": 229,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1180734344",
   "url": "https://livemenu.app/menu/64c8066fdf8c3700552da34b",
@@ -2516,10 +2626,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.571082"
+  "atualizado_em": "2026-11-23T19:35:07.046146"
  },
  {
-  "id": 223,
+  "id": 230,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1187642396",
   "url": "https://flyingsushi.com.br/cardapio-2",
@@ -2527,10 +2637,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.571369"
+  "atualizado_em": "2026-11-23T19:35:07.046583"
  },
  {
-  "id": 224,
+  "id": 231,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1187642396",
   "url": "https://flyingsushi.com.br/cardapio-2/",
@@ -2538,10 +2648,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.571670"
+  "atualizado_em": "2026-11-23T19:35:07.047043"
  },
  {
-  "id": 225,
+  "id": 232,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1214538180",
   "url": "https://thecoffee.jp/shortcut/brasil/sao-paulo/the-coffee-faria-lima/menu",
@@ -2549,10 +2659,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.571941"
+  "atualizado_em": "2026-11-23T19:35:07.047481"
  },
  {
-  "id": 226,
+  "id": 233,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1214538180",
   "url": "https://thecoffee.jp/shortcut/brasil/sao-paulo/the-coffee-moema/menu",
@@ -2560,10 +2670,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.572220"
+  "atualizado_em": "2026-11-23T19:35:07.047952"
  },
  {
-  "id": 227,
+  "id": 234,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1214538180",
   "url": "https://thecoffee.jp/shortcut/brasil/sao-paulo/the-coffee-pinheiros/menu",
@@ -2571,10 +2681,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.572511"
+  "atualizado_em": "2026-11-23T19:35:07.048390"
  },
  {
-  "id": 228,
+  "id": 235,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1217908989",
   "url": "https://lellis.com.br/cardapio-cwb-jun-2026/",
@@ -2582,10 +2692,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.572788"
+  "atualizado_em": "2026-11-23T19:35:07.048841"
  },
  {
-  "id": 229,
+  "id": 236,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1217908989",
   "url": "https://www.lellis.com.br/cardapio-sp-jun-2026/",
@@ -2593,10 +2703,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.573056"
+  "atualizado_em": "2026-11-23T19:35:07.049282"
  },
  {
-  "id": 230,
+  "id": 237,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1217908989",
   "url": "https://www.lellis.com.br/cardapios/",
@@ -2604,10 +2714,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.573335"
+  "atualizado_em": "2026-11-23T19:35:07.049717"
  },
  {
-  "id": 231,
+  "id": 238,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1218157405",
   "url": "https://www.starbucks.com.br/cardapio/",
@@ -2615,10 +2725,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.573629"
+  "atualizado_em": "2026-11-23T19:35:07.050176"
  },
  {
-  "id": 232,
+  "id": 239,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1219671767",
   "url": "https://wecoffee.com.br/cardapio-digital",
@@ -2626,10 +2736,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.573902"
+  "atualizado_em": "2026-11-23T19:35:07.050610"
  },
  {
-  "id": 233,
+  "id": 240,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1219671767",
   "url": "https://wecoffee.com.br/cardapio-digital/analia-franco/",
@@ -2637,10 +2747,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.574170"
+  "atualizado_em": "2026-11-23T19:35:07.051068"
  },
  {
-  "id": 234,
+  "id": 241,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1219671767",
   "url": "https://wecoffee.com.br/cardapio-digital/liberdade/",
@@ -2648,10 +2758,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.574459"
+  "atualizado_em": "2026-11-23T19:35:07.051506"
  },
  {
-  "id": 235,
+  "id": 242,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1221374247",
   "url": "https://www.pizzariacasella.com.br/menu",
@@ -2659,10 +2769,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.574746"
+  "atualizado_em": "2026-11-23T19:35:07.051965"
  },
  {
-  "id": 236,
+  "id": 243,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1225208591",
   "url": "https://www.thegoodcopdonut.com/_files/ugd/8afe4e_72dbc9c22124471c99eec5018b0d458e.pdf",
@@ -2670,10 +2780,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.575017"
+  "atualizado_em": "2026-11-23T19:35:07.052397"
  },
  {
-  "id": 237,
+  "id": 244,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1225726934",
   "url": "https://www.sushimarvegano.com.br/cardapio",
@@ -2681,10 +2791,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.575287"
+  "atualizado_em": "2026-11-23T19:35:07.052860"
  },
  {
-  "id": 238,
+  "id": 245,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1228465378",
   "url": "https://pateo-sp.leadsfood.app/menu",
@@ -2692,10 +2802,10 @@
   "origem": "jsonld",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:03:09.575606"
+  "atualizado_em": "2026-11-23T19:35:07.053296"
  },
  {
-  "id": 239,
+  "id": 246,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1228465378",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/pateo-sabor-paulista-jardim-paulista/cca77075-ab44-458e-8ef3-7511c1240a63",
@@ -2703,10 +2813,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.575898"
+  "atualizado_em": "2026-11-23T19:35:07.053729"
  },
  {
-  "id": 240,
+  "id": 247,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1229455890",
   "url": "https://margherita.com.br/cardapio/",
@@ -2714,10 +2824,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.576179"
+  "atualizado_em": "2026-11-23T19:35:07.054185"
  },
  {
-  "id": 241,
+  "id": 248,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1229455890",
   "url": "https://margheritadelivery.wabiz.delivery/",
@@ -2725,10 +2835,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.576472"
+  "atualizado_em": "2026-11-23T19:35:07.054614"
  },
  {
-  "id": 242,
+  "id": 249,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1271254778",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/a-casa-do-porco-republica/f34186af-ac6b-44a7-8319-d53aab067372",
@@ -2736,10 +2846,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.576758"
+  "atualizado_em": "2026-11-23T19:35:07.055073"
  },
  {
-  "id": 243,
+  "id": 250,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1271254778",
   "url": "https://www.qrmenu.net.br/casadoporco/",
@@ -2747,10 +2857,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.577052"
+  "atualizado_em": "2026-11-23T19:35:07.055506"
  },
  {
-  "id": 244,
+  "id": 251,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1327957623",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/happyauer---salgados-e-doces-vila-leopoldina/7e873e4d-b940-4727-8fae-16b83eb0b7c0",
@@ -2758,10 +2868,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.577334"
+  "atualizado_em": "2026-11-23T19:35:07.055961"
  },
  {
-  "id": 245,
+  "id": 252,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1353488907",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/hospedaria----itaim-vila-nova-conceicao/96b9be2d-3f5b-47c3-99a5-aa31bd313626?prato=38560543",
@@ -2769,10 +2879,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.577631"
+  "atualizado_em": "2026-11-23T19:35:07.056401"
  },
  {
-  "id": 246,
+  "id": 253,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1353488907",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/hospedaria-mooca/6090cef5-9156-4897-8c06-b3239d0bdc31?utm_medium=share",
@@ -2780,10 +2890,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.577903"
+  "atualizado_em": "2026-11-23T19:35:07.056851"
  },
  {
-  "id": 247,
+  "id": 254,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1376188419",
   "url": "https://menu.getinapp.com.br/store/VPzz2DPQ/1",
@@ -2791,10 +2901,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.578173"
+  "atualizado_em": "2026-11-23T19:35:07.057303"
  },
  {
-  "id": 248,
+  "id": 255,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1421737373",
   "url": "https://phdrone.com.br/wp-content/uploads/2026/09/aa43ae27-0144-4443-a804-cbf2da55047f.pdf",
@@ -2802,10 +2912,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.578459"
+  "atualizado_em": "2026-11-23T19:35:07.057745"
  },
  {
-  "id": 249,
+  "id": 256,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1421737373",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/good-market--burgers--sandwiches-jardins/c4bb7386-d704-4e0d-826b-820137d78eca",
@@ -2813,10 +2923,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.578745"
+  "atualizado_em": "2026-11-23T19:35:07.058222"
  },
  {
-  "id": 250,
+  "id": 257,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1421737373",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/good-market--pizzas--pasta-jardins/234c7dfa-c3c5-4c8a-9708-45566e093f56",
@@ -2824,10 +2934,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.579020"
+  "atualizado_em": "2026-11-23T19:35:07.058658"
  },
  {
-  "id": 251,
+  "id": 258,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1442932704",
   "url": "https://achapa.com.br/cardapio/",
@@ -2835,10 +2945,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.579288"
+  "atualizado_em": "2026-11-23T19:35:07.059130"
  },
  {
-  "id": 252,
+  "id": 259,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1442932704",
   "url": "https://achapa.ifood.com.br/?gclid=CJOWjZvY1NQCFQsGkQodsb0I9A",
@@ -2846,10 +2956,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.579613"
+  "atualizado_em": "2026-11-23T19:35:07.059569"
  },
  {
-  "id": 253,
+  "id": 260,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/1442932704",
   "url": "https://livemenu.app/menu/629e4334ca923600110830fd",
@@ -2857,10 +2967,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.579917"
+  "atualizado_em": "2026-11-23T19:35:07.060028"
  },
  {
-  "id": 254,
+  "id": 261,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/222065667",
   "url": "https://pracasaolourenco.com.br/menu-bar/",
@@ -2868,10 +2978,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.580203"
+  "atualizado_em": "2026-11-23T19:35:07.060465"
  },
  {
-  "id": 255,
+  "id": 262,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/242397151",
   "url": "http://www.restaurantespot.com.br/cardapio/#entradas",
@@ -2879,10 +2989,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.580508"
+  "atualizado_em": "2026-11-23T19:35:07.060917"
  },
  {
-  "id": 256,
+  "id": 263,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/242397151",
   "url": "http://www.restaurantespot.com.br/cardapio/#especiais",
@@ -2890,10 +3000,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.580793"
+  "atualizado_em": "2026-11-23T19:35:07.061357"
  },
  {
-  "id": 257,
+  "id": 264,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/242397151",
   "url": "http://www.restaurantespot.com.br/cardapio/#saladas",
@@ -2901,10 +3011,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.581075"
+  "atualizado_em": "2026-11-23T19:35:07.061818"
  },
  {
-  "id": 258,
+  "id": 265,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/304375141",
   "url": "https://www.dguests.com/cardapio/saobentoitaim",
@@ -2912,10 +3022,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.581362"
+  "atualizado_em": "2026-11-23T19:35:07.062264"
  },
  {
-  "id": 259,
+  "id": 266,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/304375141",
   "url": "https://www.dguests.com/cardapio/saobentosantoandre",
@@ -2923,10 +3033,10 @@
   "origem": "jsonld",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:03:09.581667"
+  "atualizado_em": "2026-11-23T19:35:07.062697"
  },
  {
-  "id": 260,
+  "id": 267,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/304375141",
   "url": "https://www.dguests.com/cardapio/saobentovilamadalena",
@@ -2934,10 +3044,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.581940"
+  "atualizado_em": "2026-11-23T19:35:07.063163"
  },
  {
-  "id": 261,
+  "id": 268,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/380629725",
   "url": "http://nouzin.com.br",
@@ -2945,10 +3055,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.582209"
+  "atualizado_em": "2026-11-23T19:35:07.063601"
  },
  {
-  "id": 262,
+  "id": 269,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/380629725",
   "url": "https://nou.com.br/menu",
@@ -2956,10 +3066,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.582489"
+  "atualizado_em": "2026-11-23T19:35:07.064059"
  },
  {
-  "id": 263,
+  "id": 270,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/414738188",
   "url": "https://restaurantemaracuja.com.br/Menu/cardapionovo.pdf",
@@ -2967,10 +3077,32 @@
   "origem": "jsonld",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:03:09.582776"
+  "atualizado_em": "2026-11-23T19:35:07.064499"
  },
  {
-  "id": 264,
+  "id": 304,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/416295991",
+  "url": "https://www.bigkahunaburger.com.br/menu/cardapiobaconday.pdf",
+  "plataforma": "pdf",
+  "origem": "link_site",
+  "itens": [],
+  "status": "provavel",
+  "atualizado_em": "2026-11-23T20:04:40.128855"
+ },
+ {
+  "id": 303,
+  "lugar_fonte": "osm",
+  "lugar_fonte_id": "way/416295991",
+  "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/big-kahuna-burger-jardim-paulista/6bddae64-a73d-4b99-bd63-98218f9423d8",
+  "plataforma": "ifood",
+  "origem": "link_site",
+  "itens": [],
+  "status": "provavel",
+  "atualizado_em": "2026-11-23T20:04:40.128328"
+ },
+ {
+  "id": 271,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/421150784",
   "url": "https://m.odionisio.com/solar-da-republica",
@@ -2978,10 +3110,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.583057"
+  "atualizado_em": "2026-11-23T19:35:07.064963"
  },
  {
-  "id": 265,
+  "id": 272,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/427410157",
   "url": "https://acasamadal.saipos.com/home",
@@ -2989,10 +3121,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.583338"
+  "atualizado_em": "2026-11-23T19:35:07.065401"
  },
  {
-  "id": 266,
+  "id": 273,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/427410157",
   "url": "https://cardapioacasamadal.saipos.com/a-casa-madal/table/drrmxpm",
@@ -3000,10 +3132,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.583644"
+  "atualizado_em": "2026-11-23T19:35:07.065852"
  },
  {
-  "id": 267,
+  "id": 274,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/440962614",
   "url": "https://chefbenon.com.br/Cardapio%20novo%20(1).pdf",
@@ -3011,10 +3143,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.583913"
+  "atualizado_em": "2026-11-23T19:35:07.066290"
  },
  {
-  "id": 268,
+  "id": 275,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/458971453",
   "url": "https://www.rascal.com.br/restaurante/cardapio-e-bebidas-rascal-guarulhos/",
@@ -3022,10 +3154,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.584184"
+  "atualizado_em": "2026-11-23T19:35:07.066729"
  },
  {
-  "id": 269,
+  "id": 276,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/458971453",
   "url": "https://www.rascal.com.br/restaurante/cardapio-e-bebidas-rascal-rio-de-janeiro/",
@@ -3033,10 +3165,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.584475"
+  "atualizado_em": "2026-11-23T19:35:07.067202"
  },
  {
-  "id": 270,
+  "id": 277,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/458971453",
   "url": "https://www.rascal.com.br/restaurante/cardapio-e-bebidas-rascal-sao-paulo/",
@@ -3044,10 +3176,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.584754"
+  "atualizado_em": "2026-11-23T19:35:07.067657"
  },
  {
-  "id": 271,
+  "id": 278,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/520830534",
   "url": "https://www.mcdonalds.com.br/cardapio",
@@ -3055,10 +3187,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.585024"
+  "atualizado_em": "2026-11-23T19:35:07.068126"
  },
  {
-  "id": 272,
+  "id": 279,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/521407735",
   "url": "https://koi.com.br/cardapio-koi/",
@@ -3066,10 +3198,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.585291"
+  "atualizado_em": "2026-11-23T19:35:07.068565"
  },
  {
-  "id": 273,
+  "id": 280,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/521407735",
   "url": "https://loja.neemo.com.br/koirestaurante",
@@ -3077,10 +3209,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.585589"
+  "atualizado_em": "2026-11-23T19:35:07.069020"
  },
  {
-  "id": 274,
+  "id": 281,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/553187300",
   "url": "https://app.orbitaa.com.br/menu/sisenor",
@@ -3088,10 +3220,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.585867"
+  "atualizado_em": "2026-11-23T19:35:07.069463"
  },
  {
-  "id": 275,
+  "id": 282,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/619055861",
   "url": "https://www.mcdonalds.com.br/cardapio",
@@ -3099,10 +3231,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.586137"
+  "atualizado_em": "2026-11-23T19:35:07.069917"
  },
  {
-  "id": 276,
+  "id": 283,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/621005163",
   "url": "https://mocoto.com.br/menu-vcl/",
@@ -3110,10 +3242,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.586421"
+  "atualizado_em": "2026-11-23T19:35:07.070351"
  },
  {
-  "id": 277,
+  "id": 284,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/621005163",
   "url": "https://mocoto.com.br/menu-vmd/",
@@ -3121,10 +3253,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.586724"
+  "atualizado_em": "2026-11-23T19:35:07.070782"
  },
  {
-  "id": 278,
+  "id": 285,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/621005163",
   "url": "https://mocoto.com.br/menu-vmden/",
@@ -3132,10 +3264,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.586998"
+  "atualizado_em": "2026-11-23T19:35:07.071238"
  },
  {
-  "id": 279,
+  "id": 286,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/685336152",
   "url": "https://menu.getin.app/pt-br/qDk75N14/menus/d1VWG76v",
@@ -3143,10 +3275,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.587265"
+  "atualizado_em": "2026-11-23T19:35:07.071668"
  },
  {
-  "id": 280,
+  "id": 287,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/685336152",
   "url": "https://menu.getinapp.com.br/pt-br/qDk75N14",
@@ -3154,10 +3286,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.587583"
+  "atualizado_em": "2026-11-23T19:35:07.072135"
  },
  {
-  "id": 281,
+  "id": 288,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/685336152",
   "url": "https://ruella.com.br/menu-ruella/",
@@ -3165,10 +3297,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.587880"
+  "atualizado_em": "2026-11-23T19:35:07.072569"
  },
  {
-  "id": 282,
+  "id": 289,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/696032967",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/tembui-restaurante-pinheiros/ed774e0b-4223-4ce7-a948-e1d64fd33098",
@@ -3176,10 +3308,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.588156"
+  "atualizado_em": "2026-11-23T19:35:07.073026"
  },
  {
-  "id": 283,
+  "id": 290,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/714052636",
   "url": "https://pizzariadodudu.com.br/menu/",
@@ -3187,10 +3319,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.588443"
+  "atualizado_em": "2026-11-23T19:35:07.073464"
  },
  {
-  "id": 284,
+  "id": 291,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/714052636",
   "url": "https://pizzariadodudu.wabiz.delivery/",
@@ -3198,10 +3330,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.588726"
+  "atualizado_em": "2026-11-23T19:35:07.073925"
  },
  {
-  "id": 285,
+  "id": 292,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/714078089",
   "url": "https://jardineiragrill.com.br/buffet/",
@@ -3209,10 +3341,10 @@
   "origem": "jsonld",
   "itens": [],
   "status": "confirmado",
-  "atualizado_em": "2026-11-23T16:03:09.589005"
+  "atualizado_em": "2026-11-23T19:35:07.074368"
  },
  {
-  "id": 286,
+  "id": 293,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/732230696",
   "url": "https://www.ifood.com.br/delivery/sao-paulo-sp/torta-no-quintal-vila-nova-conceicao/351bb612-58dc-45df-9ddd-fe84fd846cf1",
@@ -3220,10 +3352,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.589279"
+  "atualizado_em": "2026-11-23T19:35:07.074817"
  },
  {
-  "id": 287,
+  "id": 294,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/998395941",
   "url": "https://www.rinconcitoperuano.com.br/files/menu-rinconcito-peruano.pdf",
@@ -3231,10 +3363,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.589584"
+  "atualizado_em": "2026-11-23T19:35:07.075271"
  },
  {
-  "id": 288,
+  "id": 295,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/998395941",
   "url": "https://www.rinconcitoperuano.com.br/menu-restaurante/17/pr",
@@ -3242,10 +3374,10 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.589869"
+  "atualizado_em": "2026-11-23T19:35:07.075713"
  },
  {
-  "id": 289,
+  "id": 296,
   "lugar_fonte": "osm",
   "lugar_fonte_id": "way/998395941",
   "url": "https://www.rinconcitoperuano.com.br/menu-restaurante/18/pr",
@@ -3253,6 +3385,6 @@
   "origem": "link_site",
   "itens": [],
   "status": "provavel",
-  "atualizado_em": "2026-11-23T16:03:09.590095"
+  "atualizado_em": "2026-11-23T19:35:07.076087"
  }
 ]
