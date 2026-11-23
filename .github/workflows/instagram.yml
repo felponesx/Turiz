@@ -1,8 +1,5 @@
 name: Bot de instagram
 on:
-  workflow_run:
-    workflows: ["Bot de imagens"]
-    types: [completed]
   workflow_dispatch:
     inputs:
       limite_sites:
@@ -10,12 +7,12 @@ on:
         default: ""
 permissions:
   contents: write
+  actions: write      # para disparar o próximo bot da cadeia
 concurrency:
   group: dados
   cancel-in-progress: false
 jobs:
   instagram:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
     runs-on: ubuntu-latest
     env:
       TURIZ_STATUS_PUBLICAR: "1"            # painel de bots: publica o progresso no branch bot-status
@@ -35,3 +32,8 @@ jobs:
         if: always()
         run: |
           scripts/commitar_dados.sh "dados: instagram $(date -u +%F)" data/redes_sociais.json
+      - name: Disparar o próximo bot da cadeia (cardapios)
+        if: always() && !cancelled()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run cardapios.yml --ref main || echo "não consegui disparar o próximo bot"

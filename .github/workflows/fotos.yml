@@ -1,17 +1,14 @@
 name: Bot de fotos (miniaturas)
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Bot de cardapios"]
-    types: [completed]
 permissions:
   contents: write
+  actions: write      # para disparar o próximo bot da cadeia
 concurrency:
   group: dados
   cancel-in-progress: false
 jobs:
   fotos:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
     runs-on: ubuntu-latest
     env:
       TURIZ_STATUS_PUBLICAR: "1"            # painel de bots: publica o progresso no branch bot-status
@@ -28,3 +25,8 @@ jobs:
         if: always()
         run: |
           scripts/commitar_dados.sh "dados: fotos $(date -u +%F)" data/fotos
+      - name: Disparar o próximo bot da cadeia (google)
+        if: always() && !cancelled()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run google.yml --ref main || echo "não consegui disparar o próximo bot"

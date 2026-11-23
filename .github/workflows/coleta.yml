@@ -9,6 +9,7 @@ on:
         default: "osm sites ticketmaster"
 permissions:
   contents: write
+  actions: write      # para disparar o próximo bot da cadeia
 concurrency:
   group: dados
   cancel-in-progress: false
@@ -35,3 +36,8 @@ jobs:
       - name: Commitar dados
         run: |
           scripts/commitar_dados.sh "dados: coleta $(date -u +%F)" data/
+      - name: Disparar o próximo bot da cadeia (enderecos)
+        if: always() && !cancelled()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run enderecos.yml --ref main || echo "não consegui disparar o próximo bot"

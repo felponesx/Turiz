@@ -1,8 +1,5 @@
 name: Bot do Google Places
 on:
-  workflow_run:
-    workflows: ["Bot de fotos (miniaturas)"]
-    types: [completed]
   workflow_dispatch:
 permissions:
   contents: write
@@ -11,7 +8,6 @@ concurrency:
   cancel-in-progress: false
 jobs:
   google:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
     runs-on: ubuntu-latest
     env:
       TURIZ_STATUS_PUBLICAR: "1"
