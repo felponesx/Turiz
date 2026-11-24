@@ -23,17 +23,18 @@
    "criada_em": "2026-11-24T01:52:02+00:00",
    "programada_para": null,
    "iniciada_em": "2026-11-24T01:52:02+00:00",
-   "finalizada_em": null,
-   "duracao_s": null,
+   "finalizada_em": "2026-11-24T01:53:08+00:00",
+   "duracao_s": 66,
    "tentativas": 1,
    "max_tentativas": 3,
-   "estado": "executando",
+   "estado": "concluida",
    "resultado": null,
    "erro": null,
    "logs": [
     "01:52:02 criada (painel, prioridade alta)",
     "01:52:02 iniciada (tentativa 1)",
-    "01:52:02 execução 45308195082"
+    "01:52:02 execução 45308195082",
+    "01:53:08 concluída"
    ],
    "contagens": {
     "captados": 0,
