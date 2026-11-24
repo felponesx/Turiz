@@ -1,0 +1,22 @@
+name: Gatilho do Core
+# O cron */10 do nucleo.yml não foi ativado pelo GitHub (workflow novo de alta frequência). Este gatilho horário
+# (e o final do workflow de eventos, a cada 6 h) acordam o Core com um ciclo. Não faz mais nada.
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+permissions:
+  actions: write
+concurrency:
+  group: nucleo-gatilho
+  cancel-in-progress: false
+jobs:
+  acordar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Disparar um ciclo do Core
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run nucleo.yml --ref main

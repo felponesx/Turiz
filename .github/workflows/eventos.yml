@@ -17,6 +17,7 @@ on:
         default: false
 permissions:
   contents: write
+  actions: write      # para acordar o Core (nucleo.yml) ao terminar
 concurrency:
   group: dados
   cancel-in-progress: false
@@ -51,3 +52,8 @@ jobs:
         if: always()
         run: |
           scripts/commitar_dados.sh "dados: eventos $(date -u +%F-%H%M)" data/
+      - name: Acordar o Core (um ciclo do despachante)
+        if: always() && !cancelled()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run nucleo.yml --ref main || echo "não consegui acordar o Core"
