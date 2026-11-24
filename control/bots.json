@@ -1,0 +1,589 @@
+{
+ "gerado_em": "2026-11-24T01:48:13+00:00",
+ "timezone": "America/Sao_Paulo",
+ "bots": [
+  {
+   "id": "osm",
+   "encadeia": true,
+   "entradas": {
+    "fontes": "osm"
+   },
+   "nome": "Restaurantes e bares",
+   "fonte": "OpenStreetMap",
+   "grupo": "Lugares",
+   "icone": "pin",
+   "descricao": "Varre São Paulo em regiões e capta restaurantes, lanchonetes, cafés e bares com nome, endereço, telefone, site e horário.",
+   "workflow": "coleta.yml",
+   "agenda": "segunda 03:00 (Brasília)",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "receita",
+   "nome": "Lugares da Receita Federal",
+   "fonte": "Receita + IBGE (dados abertos)",
+   "grupo": "Lugares",
+   "icone": "building",
+   "descricao": "Amplia a base com bares e restaurantes ativos em São Paulo (sem CNPJ, sem MEI) e coordenadas do IBGE.",
+   "workflow": "receita.yml",
+   "agenda": "dia 20 de cada mês",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "sites",
+   "encadeia": true,
+   "entradas": {
+    "fontes": "sites"
+   },
+   "nome": "Lugares em sites",
+   "fonte": "Sites (JSON-LD)",
+   "grupo": "Lugares",
+   "icone": "globe",
+   "descricao": "Lê dados estruturados de restaurantes e bares publicados em sites listados em sources.yml.",
+   "workflow": "coleta.yml",
+   "agenda": "junto com a coleta semanal",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "google",
+   "nome": "Google Places",
+   "fonte": "Google Places API",
+   "grupo": "Lugares",
+   "icone": "star",
+   "descricao": "Capta lugares com nota e número de avaliações. Só roda com a chave GOOGLE_PLACES_API_KEY (Places API ativada e faturamento).",
+   "workflow": "google.yml",
+   "agenda": "segunda, depois da coleta",
+   "requer": [
+    "GOOGLE_PLACES_API_KEY"
+   ],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "enderecos",
+   "encadeia": true,
+   "nome": "Endereços",
+   "fonte": "Nominatim (OpenStreetMap)",
+   "grupo": "Enriquecimento",
+   "icone": "map",
+   "descricao": "Completa bairro, CEP e rua pelas coordenadas. Nunca inventa número de casa.",
+   "workflow": "enderecos.yml",
+   "agenda": "depois da coleta semanal",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "imagens",
+   "encadeia": true,
+   "nome": "Imagens dos lugares",
+   "fonte": "Wikimedia Commons + sites",
+   "grupo": "Enriquecimento",
+   "icone": "image",
+   "descricao": "Reúne referências de fotos (link, autor, licença) do Commons e da imagem de capa do site de cada lugar.",
+   "workflow": "imagens.yml",
+   "agenda": "depois dos endereços",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "instagram",
+   "encadeia": true,
+   "nome": "Redes sociais",
+   "fonte": "Sites e OpenStreetMap",
+   "grupo": "Enriquecimento",
+   "icone": "share",
+   "descricao": "Liga cada lugar ao perfil de Instagram (e outras redes) publicado pelo próprio lugar. Não raspa redes sociais.",
+   "workflow": "instagram.yml",
+   "agenda": "depois das imagens",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "cardapios",
+   "encadeia": true,
+   "nome": "Cardápios",
+   "fonte": "Sites dos lugares",
+   "grupo": "Enriquecimento",
+   "icone": "menu",
+   "descricao": "Acha o cardápio oficial no site de cada lugar (itens e preços quando o site publica).",
+   "workflow": "cardapios.yml",
+   "agenda": "depois das redes sociais",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "fotos",
+   "encadeia": true,
+   "nome": "Fotos (miniaturas)",
+   "fonte": "Imagens captadas",
+   "grupo": "Enriquecimento",
+   "icone": "photo",
+   "descricao": "Baixa e reduz as fotos de lugares e eventos para o app não depender do site de origem.",
+   "workflow": "fotos.yml",
+   "agenda": "depois dos cardápios",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "fotos_exemplo",
+   "nome": "Fotos ilustrativas",
+   "fonte": "Wikimedia Commons",
+   "grupo": "Enriquecimento",
+   "icone": "photo",
+   "descricao": "Fotos de licença livre por tema (pizza, show, bar...) para lugares e eventos sem foto própria.",
+   "workflow": "fotos-exemplo.yml",
+   "agenda": "sob demanda",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "eventos",
+   "entradas": {
+    "forcar": "true"
+   },
+   "nome": "Eventos",
+   "fonte": "Sites, Ticketmaster e feeds",
+   "grupo": "Eventos",
+   "icone": "calendar",
+   "descricao": "Capta eventos com data, local, preço e foto de todas as fontes cadastradas, tira duplicados e guarda o histórico.",
+   "workflow": "eventos.yml",
+   "agenda": "a cada 6 horas",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "turiz_app",
+   "nome": "App Turiz",
+   "fonte": "Atualização automática",
+   "grupo": "Sistema Turiz",
+   "icone": "rocket",
+   "descricao": "Pega tudo que os bots captaram e atualiza os dados dentro do app Turiz, sem aprovação. Roda numa tarefa agendada do Claude (não no GitHub), por isso o resultado chega como notificação no celular em vez de aparecer aqui em tempo real.",
+   "workflow": null,
+   "agenda": "todo dia 11:07 (Brasília)",
+   "requer": [],
+   "externo": true,
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  }
+ ]
+}
