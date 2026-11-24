@@ -9,6 +9,9 @@
   {
    "id": "osm",
    "encadeia": true,
+   "entradas": {
+    "fontes": "osm"
+   },
    "nome": "Restaurantes e bares",
    "fonte": "OpenStreetMap",
    "grupo": "Lugares",
@@ -38,6 +41,9 @@
   {
    "id": "sites",
    "encadeia": true,
+   "entradas": {
+    "fontes": "sites"
+   },
    "nome": "Lugares em sites",
    "fonte": "Sites (JSON-LD)",
    "grupo": "Lugares",
@@ -52,7 +58,6 @@
   },
   {
    "id": "google",
-   "encadeia": true,
    "nome": "Google Places",
    "fonte": "Google Places API",
    "grupo": "Lugares",
@@ -158,6 +163,9 @@
   },
   {
    "id": "eventos",
+   "entradas": {
+    "forcar": "true"
+   },
    "nome": "Eventos",
    "fonte": "Sites, Ticketmaster e feeds",
    "grupo": "Eventos",

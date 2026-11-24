@@ -4,6 +4,9 @@ on:
     - cron: "0 6 * * 1"   # segundas, 06:00 UTC
   workflow_dispatch:
     inputs:
+      encadear:
+        description: "Disparar o próximo bot da cadeia ao terminar (o Core passa false)"
+        default: "true"
       fontes:
         description: "Fontes (osm google eventbrite sites ticketmaster)"
         default: "osm sites ticketmaster"
@@ -37,7 +40,7 @@ jobs:
         run: |
           scripts/commitar_dados.sh "dados: coleta $(date -u +%F)" data/
       - name: Disparar o próximo bot da cadeia (enderecos)
-        if: always() && !cancelled()
+        if: always() && !cancelled() && inputs.encadear != 'false'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run enderecos.yml --ref main || echo "não consegui disparar o próximo bot"

@@ -2,6 +2,9 @@ name: Bot de enderecos
 on:
   workflow_dispatch:
     inputs:
+      encadear:
+        description: "Disparar o próximo bot da cadeia ao terminar (o Core passa false)"
+        default: "true"
       max_minutos:
         description: "Tempo máximo da execução em minutos"
         default: "150"
@@ -30,7 +33,7 @@ jobs:
         run: |
           scripts/commitar_dados.sh "dados: enderecos completados $(date -u +%F)" data/lugares.json data/eventos.json
       - name: Disparar o próximo bot da cadeia (imagens)
-        if: always() && !cancelled()
+        if: always() && !cancelled() && inputs.encadear != 'false'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run imagens.yml --ref main || echo "não consegui disparar o próximo bot"

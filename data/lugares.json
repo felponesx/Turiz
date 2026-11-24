@@ -704,7 +704,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "didiopizzaria@gmail.com",
    "internet_access": "wlan"
   },
   "atualizado_em": "2026-11-24T00:00:29.133973"
@@ -726,8 +725,7 @@
   "horario": "Mo-Su 11:00-02:00",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "rita.dim@hotmail.com"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.134189"
  },
@@ -1244,7 +1242,6 @@
   "extra": {
    "delivery": "yes",
    "takeaway": "yes",
-   "email": "trabalheconosco@br.mcd.com",
    "drive_through": "yes",
    "outdoor_seating": "yes",
    "wheelchair": "yes",
@@ -6491,7 +6488,6 @@
   "extra": {
    "nominatim": "ok",
    "contact:facebook": "https://www.facebook.com/pg/mazzojana/",
-   "email": "jararacasbutanta@gmail.com",
    "payment:credit_cards": "yes"
   },
   "atualizado_em": "2026-11-24T00:00:29.188958"
@@ -8077,9 +8073,7 @@
   "site": "https://www.happyauer.com.br",
   "horario": "Tu-Sa 11:00-20:30; Su 16:30-21:00",
   "nota": null,
-  "extra": {
-   "email": "contato@happyauer.com.br"
-  },
+  "extra": {},
   "atualizado_em": "2026-11-24T00:00:29.204696"
  },
  {
@@ -8909,8 +8903,7 @@
   "horario": "",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "degasrestaurante@gmail.com"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.212455"
  },
@@ -9431,8 +9424,7 @@
   "horario": "",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "contato@washoi.com.br"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.217361"
  },
@@ -12765,8 +12757,7 @@
   "horario": "Tu-Sa 12:00-00:00; Su 12:00-20:00",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "ocatarinabar@yahoo.com.br"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.249460"
  },
@@ -13146,7 +13137,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "contact:email": "sanmichelli@ig.com.br",
    "wheelchair": "yes",
    "internet_access": "wlan"
   },
@@ -14146,8 +14136,7 @@
   "horario": "Th-Sa 20:00-02:00",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "contato@jazznosfundos.net"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.262994"
  },
@@ -14169,7 +14158,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "kanji@kanjisushi.com.br",
    "internet_access": "no"
   },
   "atualizado_em": "2026-11-24T00:00:29.263197"
@@ -14277,8 +14265,7 @@
   "horario": "Mo-Sa 11:30-16:00",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "casaportuguesa@casaportuguesa.com.br"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.264233"
  },
@@ -14584,8 +14571,7 @@
   "extra": {
    "contact:instagram": "@casajaya",
    "nominatim": "ok",
-   "contact:facebook": "https://www.facebook.com/casajaya/",
-   "contact:email": "contato@casajaya.com.br"
+   "contact:facebook": "https://www.facebook.com/casajaya/"
   },
   "atualizado_em": "2026-11-24T00:00:29.267122"
  },
@@ -16232,7 +16218,6 @@
   "extra": {
    "takeaway": "yes",
    "nominatim": "ok",
-   "contact:email": "franscafe@franscafe.com.br",
    "brand": "Fran's Café"
   },
   "atualizado_em": "2026-11-24T00:00:29.282844"
@@ -19119,7 +19104,6 @@
   "horario": "24/7",
   "nota": null,
   "extra": {
-   "email": "comercial@estadaolanches.com.br",
    "wikimedia_commons": "Category:Bar Estadão",
    "wikidata": "Q16496717"
   },
@@ -19188,7 +19172,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "pchun9696@gmail.com",
    "internet_access": "wlan"
   },
   "atualizado_em": "2026-11-24T00:00:29.312646"
@@ -19790,8 +19773,7 @@
   "horario": "12:00-23:00",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "empanadasbar@empanadasbar.com.br"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.318525"
  },
@@ -20102,7 +20084,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "mkt@loxdeli.com.br",
    "internet_access": "wlan"
   },
   "atualizado_em": "2026-11-24T00:00:29.321409"
@@ -20125,8 +20106,7 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "contact:facebook": "https://pt-br.facebook.com/BarAmigosdoZe",
-   "contact:email": "baz.brasil@gmail.com"
+   "contact:facebook": "https://pt-br.facebook.com/BarAmigosdoZe"
   },
   "atualizado_em": "2026-11-24T00:00:29.321645"
  },
@@ -20788,7 +20768,6 @@
   "extra": {
    "contact:instagram": "eapsp",
    "nominatim": "ok",
-   "email": "contato@eapsp.com.br",
    "website:menu": "https://eapsp.com.br/"
   },
   "atualizado_em": "2026-11-24T00:00:29.327873"
@@ -21247,7 +21226,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "paodequeijo@paodequeijohaddocklobo.com.br",
    "internet_access": "wlan"
   },
   "atualizado_em": "2026-11-24T00:00:29.332195"
@@ -23394,7 +23372,6 @@
   "horario": "Mo-Th 11:30-00:30, Fr-Sa 11:30-01:30, Su 12:00-00:30",
   "nota": null,
   "extra": {
-   "email": "janaina.bonafe@thefifties.com.br",
    "wheelchair": "yes",
    "payment:credit_cards": "yes",
    "operator": "Janaina Bonafe"
@@ -23940,8 +23917,7 @@
   "horario": "",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "reservas@tabernadaesquina.com"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.357700"
  },
@@ -25764,7 +25740,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "cafeteneriffe@gmail.com",
    "internet_access": "wlan",
    "operator": "Nevenka e Hélio"
   },
@@ -26291,7 +26266,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "contato@paulistaburger.com.br",
    "outdoor_seating": "no",
    "smoking": "no"
   },
@@ -29141,7 +29115,6 @@
    "diet:vegan": "yes",
    "diet:vegetarian": "yes",
    "contact:facebook": "afigueirarubaiyat",
-   "email": "figueira@rubaiyat.com.br",
    "wheelchair": "yes",
    "reservation": "recommended",
    "internet_access": "yes",
@@ -31132,7 +31105,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "aeroporto@jucalemao.com.br",
    "internet_access": "wlan"
   },
   "atualizado_em": "2026-11-24T00:00:29.425298"
@@ -31476,7 +31448,6 @@
    "contact:instagram": "shoshana_delishop",
    "nominatim": "ok",
    "contact:facebook": "ShoshanaDelishop",
-   "email": "shoshanadelishop@gmail.com",
    "internet_access": "wlan"
   },
   "atualizado_em": "2026-11-24T00:00:29.428432"
@@ -35365,8 +35336,7 @@
    "delivery": "yes",
    "diet:vegan": "only",
    "nominatim": "ok",
-   "contact:facebook": "https://www.facebook.com/animalchef",
-   "contact:email": "contato@animalchef.com.br"
+   "contact:facebook": "https://www.facebook.com/animalchef"
   },
   "atualizado_em": "2026-11-24T00:00:29.464609"
  },
@@ -35390,8 +35360,7 @@
    "contact:instagram": "https://www.instagram.com/restaurantetasteandsee",
    "diet:vegan": "only",
    "nominatim": "ok",
-   "contact:facebook": "https://www.facebook.com/tasteandseerestaurante",
-   "contact:email": "contato@tasteandsee.com.br"
+   "contact:facebook": "https://www.facebook.com/tasteandseerestaurante"
   },
   "atualizado_em": "2026-11-24T00:00:29.464812"
  },
@@ -35441,7 +35410,6 @@
    "diet:vegan": "only",
    "nominatim": "ok",
    "contact:facebook": "https://www.facebook.com/urbacozinhavegana/",
-   "email": "urba.cozinha.vegana@gmail.com",
    "outdoor_seating": "yes"
   },
   "atualizado_em": "2026-11-24T00:00:29.465263"
@@ -35506,7 +35474,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "contato@letsbeer.com.br",
    "wheelchair": "no"
   },
   "atualizado_em": "2026-11-24T00:00:29.465898"
@@ -35549,8 +35516,7 @@
   "horario": "Tu-Su 12:00-22:00",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "amazoniasoulsp@gmail.com"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.466322"
  },
@@ -38260,8 +38226,7 @@
   "horario": "Tu 18:00-24:00,00:00-01:00; We-Th 17:30-24:00,00:00-01:00; Fr 17:00-24:00,00:00-01:00; Sa 13:00-24:00,00:00-01:00; Su 15:00-24:00,00:00-01:00",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "reservas.vo@eutuelesbar.com.br"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.493099"
  },
@@ -38459,8 +38424,7 @@
   "horario": "",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "losteriadopiero@uol.com.br"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.494956"
  },
@@ -39794,7 +39758,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "biobarista@Gmail.com",
    "internet_access": "wlan"
   },
   "atualizado_em": "2026-11-24T00:00:29.507498"
@@ -44646,7 +44609,6 @@
   "horario": "Tu-Su 19:30-02:00",
   "nota": null,
   "extra": {
-   "email": "atendimento@bourbonstreet.com.br",
    "operator": "Edgard Radesca",
    "start_date": "1993-12-13"
   },
@@ -45109,7 +45071,6 @@
   "extra": {
    "contact:instagram": "kidoairaku_japanesecuisine",
    "nominatim": "ok",
-   "email": "administracao@kidoairaku.com.br",
    "website:menu": "https://menu.getinapp.com.br/store/3P4x3rPn/1"
   },
   "atualizado_em": "2026-11-24T00:00:29.557738"
@@ -45485,7 +45446,6 @@
   "horario": "",
   "nota": null,
   "extra": {
-   "email": "contato@cervejariadogma.com.br",
    "description": "Pub"
   },
   "atualizado_em": "2026-11-24T00:00:29.561197"
@@ -45550,9 +45510,7 @@
   "site": "http://www.samosa.com.br/",
   "horario": "Di-So 12:00-16:00 Di-So 19:00-23:00",
   "nota": null,
-  "extra": {
-   "email": "nils.btcmap@email3.33mail.com"
-  },
+  "extra": {},
   "atualizado_em": "2026-11-24T00:00:29.561794"
  },
  {
@@ -45915,8 +45873,7 @@
   "horario": "",
   "nota": null,
   "extra": {
-   "nominatim": "ok",
-   "email": "miski@miski.com.br"
+   "nominatim": "ok"
   },
   "atualizado_em": "2026-11-24T00:00:29.564882"
  },
@@ -48107,8 +48064,7 @@
   "horario": "Su-Fr 09:00-18:30; Sa 09:00-17:30",
   "nota": null,
   "extra": {
-   "contact:instagram": "uokmercearia",
-   "email": "uokmercearia@gmail.com"
+   "contact:instagram": "uokmercearia"
   },
   "atualizado_em": "2026-11-24T00:00:29.585318"
  },
@@ -52170,7 +52126,6 @@
    "takeaway": "yes",
    "diet:vegan": "yes",
    "diet:vegetarian": "yes",
-   "email": "ciaev@uol.com.br",
    "diet:halal": "no",
    "diet:kosher": "no",
    "diet:gluten_free": "yes",
@@ -60444,7 +60399,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "contact:email": "quichecia@quichecia.com.br",
    "capacity": "30"
   },
   "atualizado_em": "2026-11-24T00:00:29.699921"
@@ -60492,7 +60446,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "contato@gsbg.com.br",
    "wheelchair": "yes",
    "smoking": "isolated"
   },
@@ -60918,7 +60871,6 @@
   "horario": "Mo-Sa 12:00-23:00; Su 12:00-18:00",
   "nota": null,
   "extra": {
-   "contact:email": "paraiso@novilhodeprata.com.br",
    "capacity": "300"
   },
   "atualizado_em": "2026-11-24T00:00:29.704263"
@@ -61351,7 +61303,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "contato@restaurantemaracuja.com.br",
    "internet_access": "wlan"
   },
   "atualizado_em": "2026-11-24T00:00:29.708122"
@@ -63829,7 +63780,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "bartainersp@gmail.com",
    "image": "https://scontent.fgru5-1.fna.fbcdn.net/v/t1.0-9/13769586_584916811681545_3177275089171351659_n.png?oh=2bfbaa3a489ad0cd499d40383fe1b421&oe=58CC76C2",
    "operator": "BarTainerSP"
   },
@@ -65316,9 +65266,7 @@
   "site": "https://www.bourbonstreet.com.br",
   "horario": "Tu-Su 19:30-02:00",
   "nota": null,
-  "extra": {
-   "email": "atendimento@bourbonstreet.com.br"
-  },
+  "extra": {},
   "atualizado_em": "2026-11-24T00:00:29.745571"
  },
  {
@@ -65982,9 +65930,7 @@
   "site": "",
   "horario": "",
   "nota": null,
-  "extra": {
-   "email": "alamirat@alamirat.com.br"
-  },
+  "extra": {},
   "atualizado_em": "2026-11-24T00:00:29.752054"
  },
  {
@@ -66028,7 +65974,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "info@pizzariaurca.com.br",
    "outdoor_seating": "no"
   },
   "atualizado_em": "2026-11-24T00:00:29.752464"
@@ -67921,9 +67866,7 @@
   "site": "http://www.sushishima.com.br/",
   "horario": "",
   "nota": null,
-  "extra": {
-   "email": "contato@sushishima.com.br"
-  },
+  "extra": {},
   "atualizado_em": "2026-11-24T00:00:29.770931"
  },
  {
@@ -69018,7 +68961,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "contact:email": "moema@outback.com.br",
    "wheelchair": "no",
    "brand": "Outback Steakhouse",
    "operator": "Outback Steakhouse"
@@ -73561,9 +73503,7 @@
   "site": "http://www.pateosaborpaulista.com.br",
   "horario": "Mo-Su 12:00-20:00",
   "nota": null,
-  "extra": {
-   "email": "contato@pateosaborpaulista.com.br"
-  },
+  "extra": {},
   "atualizado_em": "2026-11-24T00:00:29.826479"
  },
  {
@@ -73721,7 +73661,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "email": "contato@manteigarialisboa.com",
    "internet_access": "wlan"
   },
   "atualizado_em": "2026-11-24T00:00:29.827911"
@@ -74727,8 +74666,7 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "contact:facebook": "https://www.facebook.com/ABCbailao",
-   "contact:email": "abcbailao@gmail.com"
+   "contact:facebook": "https://www.facebook.com/ABCbailao"
   },
   "atualizado_em": "2026-11-24T00:00:29.837605"
  },
@@ -77916,7 +77854,6 @@
   "nota": null,
   "extra": {
    "nominatim": "ok",
-   "contact:email": "dominatrixaugusta@gmail.com",
    "outdoor_seating": "no",
    "wheelchair": "limited",
    "smoking": "outside"
@@ -80655,8 +80592,7 @@
    "contact:instagram": "veganpoint.tatuape",
    "diet:vegan": "only",
    "nominatim": "ok",
-   "contact:facebook": "veganpoint.tatuape",
-   "contact:email": "veganpoint.tatuape@gmail.com"
+   "contact:facebook": "veganpoint.tatuape"
   },
   "atualizado_em": "2026-11-24T00:00:29.894677"
  },
@@ -85540,9 +85476,7 @@
   "site": "https://aquariusrockbar.com.br/",
   "horario": "",
   "nota": null,
-  "extra": {
-   "email": "contato@aquariusrockbar.com.br"
-  },
+  "extra": {},
   "atualizado_em": "2026-11-24T00:00:29.940792"
  },
  {
@@ -87304,8 +87238,7 @@
   "extra": {
    "diet:vegan": "only",
    "nominatim": "ok",
-   "contact:facebook": "https://www.facebook.com/sharanamrestauranteveg/",
-   "email": "sharanamburguer@gmail.com"
+   "contact:facebook": "https://www.facebook.com/sharanamrestauranteveg/"
   },
   "atualizado_em": "2026-11-24T00:00:29.957671"
  },
@@ -88222,7 +88155,6 @@
   "extra": {
    "contact:instagram": "esfihayamadijan",
    "nominatim": "ok",
-   "email": "esfihayamadijan@hotmail.com",
    "internet_access": "wlan"
   },
   "atualizado_em": "2026-11-24T00:00:29.966776"
@@ -566110,7 +566042,6 @@
   "horario": "Fr-Sa 22:00-05:00",
   "nota": null,
   "extra": {
-   "email": "contato@terracountrysp.com.br",
    "wheelchair": "yes",
    "smoking": "yes",
    "operator": "Terra Country Interlagos",
@@ -566505,7 +566436,6 @@
   "horario": "24/7",
   "nota": null,
   "extra": {
-   "email": "xerazade.mohamed@gmail.com",
    "internet_access": "wlan",
    "nominatim": "ok"
   },

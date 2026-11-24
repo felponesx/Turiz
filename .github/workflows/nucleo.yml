@@ -1,0 +1,24 @@
+name: TURIZ Core (despachante)
+on:
+  schedule:
+    - cron: "*/10 * * * *"      # um ciclo a cada 10 min: reconcilia, agenda e dispara tarefas
+  workflow_dispatch:
+permissions:
+  contents: write               # grava o estado no branch bot-control
+  actions: write                # inicia/cancela execuções dos bots
+concurrency:
+  group: nucleo
+  cancel-in-progress: false
+jobs:
+  ciclo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install httpx
+      - name: Ciclo do Core
+        run: python -m core.despachante

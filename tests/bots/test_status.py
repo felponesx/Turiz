@@ -156,3 +156,30 @@ def test_batimento_mantem_o_bot_vivo_sem_progresso(tmp_path):
         depois = json.load(open(tmp_path / "receita.json"))["atualizado_em"]
     assert depois > antes
     assert json.load(open(tmp_path / "receita.json"))["estado"] == "concluido"
+
+
+def test_guarda_de_pausa_do_core(tmp_path, monkeypatch):
+    import httpx
+    monkeypatch.setenv("TURIZ_STATUS_PUBLICAR", "1")
+
+    def cliente(cfg, codigo=200):
+        return httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(codigo, json=cfg)))
+    assert status.pausado("osm", cliente({"global": {"pausado": True}, "bots": {}})) == (True, "Automação pausada no painel (pausa geral)")
+    assert status.pausado("osm", cliente({"global": {"pausado": False}, "bots": {"osm": {"ativo": False}}}))[0] is True
+    assert status.pausado("imagens", cliente({"global": {"pausado": False}, "bots": {"osm": {"ativo": False}}}))[0] is False
+    assert status.pausado("osm", cliente({}, 404)) == (False, "")                     # Core ainda não existe: segue
+    monkeypatch.setattr(status.httpx, "get", lambda *a, **k: (_ for _ in ()).throw(httpx.ConnectError("sem rede")))
+    assert status.pausado("osm") == (False, "")                                       # sem rede: não pausa
+    monkeypatch.delenv("TURIZ_STATUS_PUBLICAR")
+    assert status.pausado("osm", cliente({"global": {"pausado": True}})) == (False, "")   # fora do GitHub Actions nunca pausa
+
+
+def test_bot_pausado_encerra_com_sucesso_e_registra(tmp_path, monkeypatch):
+    monkeypatch.setattr(status, "pausado", lambda b, cliente=None: (True, "Bot desligado no painel"))
+    executou = []
+    with pytest.raises(SystemExit) as e:
+        with bot("imagens", publicador=None, pasta=str(tmp_path)):
+            executou.append(1)
+    assert e.value.code == 0 and executou == []
+    d = json.load(open(tmp_path / "imagens.json"))
+    assert d["estado"] == "pausado" and "desligado" in d["mensagem"]

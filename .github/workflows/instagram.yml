@@ -2,6 +2,9 @@ name: Bot de instagram
 on:
   workflow_dispatch:
     inputs:
+      encadear:
+        description: "Disparar o próximo bot da cadeia ao terminar (o Core passa false)"
+        default: "true"
       limite_sites:
         description: "Máximo de sites a visitar (vazio = todos)"
         default: ""
@@ -33,7 +36,7 @@ jobs:
         run: |
           scripts/commitar_dados.sh "dados: instagram $(date -u +%F)" data/redes_sociais.json
       - name: Disparar o próximo bot da cadeia (cardapios)
-        if: always() && !cancelled()
+        if: always() && !cancelled() && inputs.encadear != 'false'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run cardapios.yml --ref main || echo "não consegui disparar o próximo bot"

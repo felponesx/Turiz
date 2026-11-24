@@ -11,7 +11,8 @@ TIPO = {"restaurant": "restaurante", "fast_food": "restaurante", "cafe": "restau
 
 
 # Tags do OSM guardadas em `extra` (o que o app pode usar: contato, acessibilidade, pagamento, cardápio...).
-TAGS_EXTRA = ("contact:instagram", "contact:facebook", "contact:whatsapp", "contact:email", "email", "delivery", "takeaway",
+# NUNCA coletar e-mail (`email`, `contact:email`): regra de privacidade do projeto (veja scripts/verificar_privacidade.py).
+TAGS_EXTRA = ("contact:instagram", "contact:facebook", "contact:whatsapp", "delivery", "takeaway",
               "drive_through", "diet:vegan", "diet:vegetarian", "diet:halal", "diet:kosher", "diet:gluten_free",
               "image", "wikimedia_commons", "wikidata", "outdoor_seating", "wheelchair", "reservation", "internet_access",
               "smoking", "payment:credit_cards", "payment:debit_cards", "payment:pix", "brand", "operator", "description",

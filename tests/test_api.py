@@ -134,3 +134,12 @@ def test_instagram_vinculos_e_verificacao():
     r3 = ig.verificar("outro", "Restaurante Totalmente Diferente", "", "t", "1", httpx.Client(transport=httpx.MockTransport(
         lambda r: httpx.Response(200, json={"business_discovery": {"username": "zzzqqq", "name": "Loja de Pneus"}}))))
     assert r3["confere"] is False
+
+
+def test_osm_nunca_coleta_email():
+    from app.sources import osm
+    el = {"type": "node", "id": 7, "lat": -23.5, "lon": -46.6, "tags": {"name": "Bar X", "amenity": "bar", "email": "dono@exemplo.com",
+                                                                       "contact:email": "a@b.com", "contact:instagram": "barx", "phone": "+55 11 99999-9999"}}
+    r = osm.normalizar(el)
+    assert "email" not in r["extra"] and "contact:email" not in r["extra"] and r["extra"]["contact:instagram"] == "barx"
+    assert "@" not in json.dumps(r["extra"]) if (json := __import__("json")) else True

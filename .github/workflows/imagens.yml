@@ -2,6 +2,9 @@ name: Bot de imagens
 on:
   workflow_dispatch:
     inputs:
+      encadear:
+        description: "Disparar o próximo bot da cadeia ao terminar (o Core passa false)"
+        default: "true"
       fontes:
         description: "Fontes (commons site)"
         default: "commons site"
@@ -34,7 +37,7 @@ jobs:
         run: |
           scripts/commitar_dados.sh "dados: imagens $(date -u +%F)" data/imagens.json
       - name: Disparar o próximo bot da cadeia (instagram)
-        if: always() && !cancelled()
+        if: always() && !cancelled() && inputs.encadear != 'false'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run instagram.yml --ref main || echo "não consegui disparar o próximo bot"

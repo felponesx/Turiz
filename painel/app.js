@@ -60,7 +60,7 @@ let avisoTimer;
 function aviso(txt) { const a = document.getElementById("aviso"); a.textContent = txt; a.classList.add("on"); clearTimeout(avisoTimer); avisoTimer = setTimeout(() => a.classList.remove("on"), 3800); }
 
 /* ---------- estado dos bots ---------- */
-const ROTULO = { externo: "Automático", rodando: "Rodando", concluido: "Concluído", avisos: "Concluído com avisos", erro: "Erro", aguardando_credencial: "Aguardando chave", aguardando_config: "Aguardando ajuste", semsinal: "Sem sinal", nunca: "Ainda não rodou", ocioso: "Parado" };
+const ROTULO = { pausado: "Pausado", externo: "Automático", rodando: "Rodando", concluido: "Concluído", avisos: "Concluído com avisos", erro: "Erro", aguardando_credencial: "Aguardando chave", aguardando_config: "Aguardando ajuste", semsinal: "Sem sinal", nunca: "Ainda não rodou", ocioso: "Parado" };
 const ST = {};                // id -> status do bot (ou null = nunca rodou)
 let redeErro = false, ultimaBusca = 0, buscando = false;
 

@@ -277,6 +277,34 @@ class _Tee:
         return getattr(self.destino, nome)
 
 
+def pausado(bot_id: str, cliente=None) -> tuple[bool, str]:
+    """Consulta o Core (control/config.json no branch público bot-control): pausa geral ou bot desligado => (True, motivo).
+    Só vale no GitHub Actions (mesmo opt-in da publicação de status). Qualquer falha de rede NÃO pausa (o bot segue)."""
+    if os.getenv("TURIZ_STATUS_PUBLICAR") != "1":
+        return False, ""
+    repo = os.getenv("GITHUB_REPOSITORY") or os.getenv("TURIZ_STATUS_REPO") or "felponesx/Turiz"
+    try:
+        r = (cliente or httpx).get(f"https://raw.githubusercontent.com/{repo}/bot-control/control/config.json", params={"t": int(time.time())}, timeout=10)
+        if r.status_code != 200:
+            return False, ""
+        cfg = r.json()
+    except Exception:  # noqa: BLE001 - sem rede/sem Core: segue normalmente
+        return False, ""
+    if (cfg.get("global") or {}).get("pausado"):
+        return True, "Automação pausada no painel (pausa geral)"
+    if ((cfg.get("bots") or {}).get(bot_id) or {}).get("ativo") is False:
+        return True, "Bot desligado no painel"
+    return False, ""
+
+
+def registrar_pausa(bot_id: str, motivo: str, publicador="auto", pasta="status"):
+    """Deixa o status do bot como "pausado" (o painel mostra) sem executar nada."""
+    rep = Reporter(bot_id, criar_publicador() if publicador == "auto" else publicador, pasta=pasta)
+    rep.iniciar()
+    rep.finalizar("pausado", motivo)
+    print(f"[core] {bot_id}: {motivo}; nada foi executado")
+
+
 def criar_publicador():
     token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
     if os.getenv("TURIZ_STATUS_PUBLICAR") == "1" and token:
@@ -286,8 +314,14 @@ def criar_publicador():
 
 
 @contextlib.contextmanager
-def bot(bot_id, publicador="auto", pasta="status", espelhar_saida=True, batimento_s=60, **kw):
-    """Contexto de um bot: inicia, captura a saída, finaliza com o estado certo e propaga erros reais."""
+def bot(bot_id, publicador="auto", pasta="status", espelhar_saida=True, batimento_s=60, verificar_pausa=True, **kw):
+    """Contexto de um bot: inicia, captura a saída, finaliza com o estado certo e propaga erros reais.
+    Se o Core mandou pausar (geral ou só este bot), registra "pausado" e encerra o script com sucesso (a cadeia continua)."""
+    if verificar_pausa:
+        em_pausa, motivo = pausado(bot_id)
+        if em_pausa:
+            registrar_pausa(bot_id, motivo, publicador, pasta)
+            raise SystemExit(0)
     rep = Reporter(bot_id, criar_publicador() if publicador == "auto" else publicador, pasta=pasta, **kw)
     rep.iniciar()
     original = sys.stdout

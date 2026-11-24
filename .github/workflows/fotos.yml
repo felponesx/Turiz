@@ -1,6 +1,10 @@
 name: Bot de fotos (miniaturas)
 on:
   workflow_dispatch:
+    inputs:
+      encadear:
+        description: "Disparar o próximo bot da cadeia ao terminar (o Core passa false)"
+        default: "true"
 permissions:
   contents: write
   actions: write      # para disparar o próximo bot da cadeia
@@ -26,7 +30,7 @@ jobs:
         run: |
           scripts/commitar_dados.sh "dados: fotos $(date -u +%F)" data/fotos
       - name: Disparar o próximo bot da cadeia (google)
-        if: always() && !cancelled()
+        if: always() && !cancelled() && inputs.encadear != 'false'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run google.yml --ref main || echo "não consegui disparar o próximo bot"

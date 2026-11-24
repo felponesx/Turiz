@@ -12,7 +12,7 @@ from app.db import Base, SessionLocal, engine
 from app.ingest import upsert
 from app.models import Evento, Lugar
 from app.sources import eventbrite, google_places, osm, sites, ticketmaster, vincular
-from bots.status import Pular, bot, aguardar_credencial
+from bots.status import Pular, aguardar_credencial, bot, pausado, registrar_pausa
 
 # Centros aproximados para varrer SP no Google (raio de 1,5 km cada ~ grade de 3 km).
 def centros_padrao():
@@ -46,8 +46,13 @@ def main():
     with SessionLocal() as db:
         falhas = []
         for f in a.fontes:
+            if f in ("osm", "sites", "google"):
+                em_pausa, motivo = pausado(f)
+                if em_pausa:                       # pausa do Core: pula só esta fonte e segue com as outras
+                    registrar_pausa(f, motivo)
+                    continue
             try:
-                with (bot(f) if f in ("osm", "sites", "google") else contextlib.nullcontext()) as rep:
+                with (bot(f, verificar_pausa=False) if f in ("osm", "sites", "google") else contextlib.nullcontext()) as rep:
                     cb = rep.callback() if rep else None
                     _fonte(f, a, db, rep, cb)
             except Exception as exc:  # cada fonte é independente
