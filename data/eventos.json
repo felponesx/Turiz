@@ -376,7 +376,7 @@
   "lugar_fonte_id": "",
   "categoria": "musica",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34147-20260908140310.webp",
-  "preco_min": 253.0,
+  "preco_min": 264.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34147/ingressos-para-amor-musica-e-axe-apresenta-saulo-fernandes",
   "nome_norm": "amor musica e axe apresenta saulo fernandes",
@@ -391,9 +391,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:17.814483",
+  "visto_em": "2026-11-24T10:03:40.120396",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:17.814699"
+  "atualizado_em": "2026-11-24T10:03:40.120915"
  },
  {
   "id": 12,
@@ -427,9 +427,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:38.216477",
+  "visto_em": "2026-11-24T10:04:01.521969",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:38.216704"
+  "atualizado_em": "2026-11-24T10:04:01.522178"
  },
  {
   "id": 13,
@@ -463,9 +463,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:41.303561",
+  "visto_em": "2026-11-24T10:04:04.055177",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:41.303774"
+  "atualizado_em": "2026-11-24T10:04:04.055373"
  },
  {
   "id": 14,
@@ -499,9 +499,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:43.982423",
+  "visto_em": "2026-11-24T10:04:06.572307",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:43.982635"
+  "atualizado_em": "2026-11-24T10:04:06.572534"
  },
  {
   "id": 15,
@@ -535,9 +535,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:46.458665",
+  "visto_em": "2026-11-24T10:04:08.809805",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:46.458885"
+  "atualizado_em": "2026-11-24T10:04:08.810010"
  },
  {
   "id": 16,
@@ -571,9 +571,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:48.667660",
+  "visto_em": "2026-11-24T10:04:11.118493",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:48.667875"
+  "atualizado_em": "2026-11-24T10:04:11.118719"
  },
  {
   "id": 17,
@@ -679,9 +679,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:50.942462",
+  "visto_em": "2026-11-24T10:04:13.363330",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:50.942677"
+  "atualizado_em": "2026-11-24T10:04:13.363569"
  },
  {
   "id": 20,
@@ -715,9 +715,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:53.683342",
+  "visto_em": "2026-11-24T10:04:15.563514",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:53.683552"
+  "atualizado_em": "2026-11-24T10:04:15.563720"
  },
  {
   "id": 21,
@@ -751,9 +751,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:56.009721",
+  "visto_em": "2026-11-24T10:04:17.795629",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:56.009935"
+  "atualizado_em": "2026-11-24T10:04:17.795833"
  },
  {
   "id": 22,
@@ -931,9 +931,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:02.095373",
+  "visto_em": "2026-11-24T10:03:23.807713",
   "extra": {},
-  "atualizado_em": "2026-11-23T18:39:57.550848"
+  "atualizado_em": "2026-11-24T10:03:23.808252"
  },
  {
   "id": 27,
@@ -967,9 +967,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:08.782894",
+  "visto_em": "2026-11-24T10:03:30.702385",
   "extra": {},
-  "atualizado_em": "2026-11-23T09:27:08.783114"
+  "atualizado_em": "2026-11-24T10:03:30.702633"
  },
  {
   "id": 28,
@@ -1003,9 +1003,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-23T09:27:11.054212",
+  "visto_em": "2026-11-24T10:03:33.002378",
   "extra": {},
-  "atualizado_em": "2026-11-23T18:39:57.550848"
+  "atualizado_em": "2026-11-24T10:03:33.002609"
  },
  {
   "id": 29,
@@ -1183,11 +1183,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:02.000758",
-  "visto_em": "2026-11-23T09:27:15.504046",
+  "visto_em": "2026-11-24T10:03:37.596583",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:27:15.504284"
+  "atualizado_em": "2026-11-24T10:03:37.596794"
  },
  {
   "id": 34,
@@ -1373,11 +1373,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:46:33.187276",
-  "visto_em": "2026-11-23T09:27:27.035656",
+  "visto_em": "2026-11-24T10:03:49.776003",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:27:27.035883"
+  "atualizado_em": "2026-11-24T10:03:49.776213"
  },
  {
   "id": 39,
@@ -1411,11 +1411,11 @@
   "local_id": 14,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:33.586411",
-  "visto_em": "2026-11-23T09:27:58.210913",
+  "visto_em": "2026-11-24T10:04:20.585712",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:27:58.211124"
+  "atualizado_em": "2026-11-24T10:04:20.585921"
  },
  {
   "id": 40,
@@ -1449,11 +1449,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:36.065377",
-  "visto_em": "2026-11-23T09:28:00.388532",
+  "visto_em": "2026-11-24T10:04:22.835801",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T18:39:57.550849"
+  "atualizado_em": "2026-11-24T10:04:22.836005"
  },
  {
   "id": 41,
@@ -1639,11 +1639,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:00.241349",
-  "visto_em": "2026-11-23T09:28:02.679880",
+  "visto_em": "2026-11-24T10:04:25.087115",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:02.680091"
+  "atualizado_em": "2026-11-24T10:04:25.087321"
  },
  {
   "id": 46,
@@ -1677,11 +1677,11 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:02.513812",
-  "visto_em": "2026-11-23T09:28:04.846621",
+  "visto_em": "2026-11-24T10:04:27.299557",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:04.846855"
+  "atualizado_em": "2026-11-24T10:04:27.299776"
  },
  {
   "id": 47,
@@ -1715,11 +1715,11 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:04.787535",
-  "visto_em": "2026-11-23T09:28:07.164933",
+  "visto_em": "2026-11-24T10:04:29.550290",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:07.165143"
+  "atualizado_em": "2026-11-24T10:04:29.550530"
  },
  {
   "id": 48,
@@ -1890,7 +1890,7 @@
   "lugar_fonte_id": "",
   "categoria": "shows",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34529-20261117210708.webp",
-  "preco_min": 86.25,
+  "preco_min": 103.5,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34529/ingressos-para-gravacao-do-dvd-mariana-fagundes-com-part-de-lauana-prado-e-natanzinho-lima",
   "nome_norm": "gravacao do dvd mariana fagundes com part de lauana prado e natanzinho lima",
@@ -1905,11 +1905,11 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": "2026-11-18T07:41:42.971185",
-  "visto_em": "2026-11-23T09:26:59.922402",
+  "visto_em": "2026-11-24T10:03:21.579834",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:26:59.923124"
+  "atualizado_em": "2026-11-24T10:03:21.581495"
  },
  {
   "id": 53,
@@ -2095,11 +2095,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-19T20:46:44.783824",
-  "visto_em": "2026-11-23T09:27:31.550517",
+  "visto_em": "2026-11-24T10:03:54.364128",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:27:31.550728"
+  "atualizado_em": "2026-11-24T10:03:54.364337"
  },
  {
   "id": 58,
@@ -2285,11 +2285,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:04.946110",
-  "visto_em": "2026-11-23T09:28:09.565306",
+  "visto_em": "2026-11-24T10:04:31.812305",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T18:39:57.550850"
+  "atualizado_em": "2026-11-24T10:04:31.812532"
  },
  {
   "id": 63,
@@ -2323,11 +2323,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:07.158982",
-  "visto_em": "2026-11-23T09:27:33.775596",
+  "visto_em": "2026-11-24T10:03:56.608679",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:27:33.775810"
+  "atualizado_em": "2026-11-24T10:03:56.608884"
  },
  {
   "id": 64,
@@ -2361,11 +2361,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:09.415626",
-  "visto_em": "2026-11-23T09:28:11.807576",
+  "visto_em": "2026-11-24T10:04:34.050341",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:11.807787"
+  "atualizado_em": "2026-11-24T10:04:34.050569"
  },
  {
   "id": 65,
@@ -2383,8 +2383,8 @@
   "lugar_fonte": "",
   "lugar_fonte_id": "",
   "categoria": "shows",
-  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34209-20260924144814.webp",
-  "preco_min": 96.0,
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34209-20261123150313.webp",
+  "preco_min": 72.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34209/ingressos-para-festa-do-branco-com-joelma",
   "nome_norm": "festa do branco com joelma",
@@ -2399,11 +2399,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:11.651000",
-  "visto_em": "2026-11-23T09:28:13.983205",
+  "visto_em": "2026-11-24T10:04:36.269086",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:13.983427"
+  "atualizado_em": "2026-11-24T10:04:36.269943"
  },
  {
   "id": 66,
@@ -2437,11 +2437,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:13.833835",
-  "visto_em": "2026-11-23T09:28:16.260770",
+  "visto_em": "2026-11-24T10:04:38.467593",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T18:39:57.550851"
+  "atualizado_em": "2026-11-24T10:04:38.467808"
  },
  {
   "id": 67,
@@ -2475,11 +2475,11 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:16.016488",
-  "visto_em": "2026-11-23T09:28:18.778819",
+  "visto_em": "2026-11-24T10:04:40.978175",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T18:39:57.550851"
+  "atualizado_em": "2026-11-24T10:04:40.978406"
  },
  {
   "id": 68,
@@ -2665,11 +2665,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:50:57.230516",
-  "visto_em": "2026-11-23T09:28:20.989473",
+  "visto_em": "2026-11-24T10:04:43.214842",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T18:39:57.550852"
+  "atualizado_em": "2026-11-24T10:04:43.215043"
  },
  {
   "id": 73,
@@ -2703,11 +2703,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:50:59.859246",
-  "visto_em": "2026-11-23T09:28:23.207695",
+  "visto_em": "2026-11-24T10:04:45.505140",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:23.207909"
+  "atualizado_em": "2026-11-24T10:04:45.505344"
  },
  {
   "id": 74,
@@ -2741,11 +2741,11 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:51:03.568204",
-  "visto_em": "2026-11-23T09:28:25.486507",
+  "visto_em": "2026-11-24T10:04:47.689109",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:25.486722"
+  "atualizado_em": "2026-11-24T10:04:47.689314"
  },
  {
   "id": 75,
@@ -2779,11 +2779,11 @@
   "local_id": 25,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:51:06.318665",
-  "visto_em": "2026-11-23T09:28:27.675219",
+  "visto_em": "2026-11-24T10:04:49.996231",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:27.675431"
+  "atualizado_em": "2026-11-24T10:04:49.996438"
  },
  {
   "id": 76,
@@ -2817,11 +2817,11 @@
   "local_id": 26,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:51:08.682641",
-  "visto_em": "2026-11-23T09:28:29.912576",
+  "visto_em": "2026-11-24T10:04:52.186154",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-23T09:28:29.912788"
+  "atualizado_em": "2026-11-24T10:04:52.186362"
  },
  {
   "id": 77,
