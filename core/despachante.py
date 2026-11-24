@@ -4,6 +4,7 @@ Um ciclo: (1) reconcilia tarefas em execução com o GitHub; (2) expira o que fi
 (4) dispara as próximas tarefas respeitando pausa, concorrência e dependências; (5) publica o resumo para o painel.
 Efeitos externos (disparar/cancelar execuções) acontecem DEPOIS de a tarefa ser reservada na fila (no máximo uma vez)."""
 import argparse
+import json
 import os
 import random
 import sys
@@ -59,6 +60,11 @@ def _reconciliar(fila, cfg, agora, estados, achados, ler_status, rng, ack):
             t["run_id"] = rid
         decorrido = (agora - parse(t["iniciada_em"])).total_seconds() / 60
         st = estados.get(rid) if rid else None
+        if t.get("cancelar_pedido"):                 # pedido do painel: cancela a execução no GitHub e fecha a tarefa
+            if rid:
+                ack["cancelar"].append(rid)
+            F.cancelar(t, agora)
+            continue
         limite = cfg["bots"].get(t["bot"], {}).get("limites", {}).get("max_minutos", 180)
         if st == "sucesso":
             res, cont, msg = _classificar(ler_status(t["bot"]))
@@ -250,6 +256,7 @@ def _estavel(antigo: dict, novo: dict, agora: datetime) -> dict:
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Um ciclo do TURIZ Core")
     ap.add_argument("--local", help="pasta com os arquivos de controle (teste/simulação, sem GitHub)")
+    ap.add_argument("--comando", help="comando do painel em JSON (padrão: variável TURIZ_COMANDO)")
     a = ap.parse_args(argv)
     from bots import registry
     registro = registry.BOTS
@@ -264,9 +271,28 @@ def main(argv=None):
         store, lanc = GitHubStore(repo, token), Lancador(repo, token)
         leitor = GitHubStore(repo, token, branch="bot-status")
         ler = lambda bot: (leitor.ler(f"status/{bot}.json") or (None,))[0]   # noqa: E731
-    r = ciclo(store, lanc, registro, agora_utc(), ler_status=ler)
+    agora, codigo = agora_utc(), 0
+    bruto = (a.comando if a.comando is not None else os.getenv("TURIZ_COMANDO", "")).strip()
+    if bruto:
+        from .comandos import ErroComando, aplicar
+        try:
+            msg = aplicar(store, json.loads(bruto), registro, agora)
+            print("comando:", msg)
+            _registrar_comando(store, True, msg, agora)
+        except (ErroComando, ValueError) as exc:
+            print("comando REJEITADO:", exc)
+            _registrar_comando(store, False, str(exc), agora)
+            codigo = 2
+    r = ciclo(store, lanc, registro, agora, ler_status=ler)      # aplica o efeito já neste ciclo (ex.: iniciar a tarefa pedida)
     print("ciclo:", r)
-    return 0
+    return codigo
+
+
+def _registrar_comando(store, ok: bool, msg: str, agora):
+    def fn(f):
+        f["meta"]["ultimo_comando"] = {"ok": ok, "mensagem": msg[:300], "em": iso(agora)}
+        return f
+    atualizar(store, FILA, fn, F.vazia, "core: resultado do comando")
 
 
 if __name__ == "__main__":

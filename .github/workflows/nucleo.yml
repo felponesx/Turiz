@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: "*/10 * * * *"      # um ciclo a cada 10 min: reconcilia, agenda e dispara tarefas
   workflow_dispatch:
+    inputs:
+      comando:
+        description: "Comando do painel (JSON validado pelo Core). Vazio = só um ciclo"
+        default: ""
 permissions:
   contents: write               # grava o estado no branch bot-control
   actions: write                # inicia/cancela execuções dos bots
@@ -21,4 +25,6 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install httpx
       - name: Ciclo do Core
+        env:
+          TURIZ_COMANDO: ${{ inputs.comando }}      # via variável de ambiente (nunca interpolado no shell)
         run: python -m core.despachante
