@@ -1,6 +1,6 @@
 {
  "global": {
-  "pausado": true,
+  "pausado": false,
   "max_concorrencia": 1,
   "timezone": "America/Sao_Paulo",
   "ttl_espera_horas": 24,
