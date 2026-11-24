@@ -1,0 +1,62 @@
+# Configuração da Cobertura Geográfica (Fase 5). Mude aqui sem mexer no código; um teste confere que os pesos somam 100.
+pesos_cobertura:      # score de cobertura 0–100 (independente da confiabilidade individual da Fase 4)
+  densidade: 20
+  diversidade: 25
+  confiabilidade: 15
+  precisao: 15
+  experiencias: 15
+  atualidade: 10
+pesos_prioridade:     # prioridade de coleta 0–100
+  lacuna: 30
+  ausentes: 25
+  quantidade: 15
+  confiabilidade: 10
+  potencial: 10
+  tempo: 10
+faixas: [[80, muito_boa], [65, boa], [45, moderada], [25, baixa], [0, critica]]
+minimo_lugares_para_avaliar: 5      # abaixo disso o distrito fica "desconhecida" (falta informação, não é "sem gastronomia")
+margem_fronteira_m: {preciso: 25, aproximado: 150}
+densidade:
+  meta_percentil: 90                # meta = percentil dos distritos já cobertos (relativa, nunca um número fixo para a cidade)
+  area_max_km2: 12                  # distritos enormes/rurais não são medidos pela área inteira
+atualidade_dias: {otima: 90, aceitavel: 365}
+intervalos_dias: {critica: 3, baixa: 7, moderada: 14, boa: 30, muito_boa: 60, desconhecida: 7}
+potencial_categorias_ausentes_min_cidade: 5      # categoria só conta como "ausente" no distrito se existe em ≥N lugares na cidade
+scanners:             # disponível = já existe e roda; planejado = ainda não construído (nada é ativado nesta fase)
+  geo: {nome: "Geo Scanner", disponivel: true}
+  web: {nome: "Web Scanner", disponivel: false}
+  instagram: {nome: "Instagram Scanner", disponivel: false}
+  enriquecimento: {nome: "Enriquecimento", disponivel: false}
+  location_check: {nome: "Location Check", disponivel: true}
+  revisor: {nome: "Revisor", disponivel: true}
+categorias:           # extensível: acrescente uma linha. Um lugar pode ter várias categorias. nome = palavras no nome (sem acento).
+  restaurante:   {rotulo: "Restaurantes", tipos: [restaurante], excluir_cnae: ["5611203"]}
+  bar:           {rotulo: "Bares", tipos: [bar], cnae: ["5611204", "5611205"]}
+  lanchonete:    {rotulo: "Lanchonetes", cnae: ["5611203"], culinarias: [Lanchonete, sandwich, fast_food, hot_dog]}
+  cafeteria:     {rotulo: "Cafeterias", culinarias: [coffee_shop, tea], nome: [cafe, cafeteria, coffee]}
+  padaria:       {rotulo: "Padarias", nome: [padaria, panificadora, boulangerie]}
+  doceria:       {rotulo: "Docerias", culinarias: [cake, donut, dessert], nome: [doceria, confeitaria, brigadeiro, chocolate, bolos, patisserie]}
+  sorveteria:    {rotulo: "Sorveterias", culinarias: [ice_cream, "açaí"], nome: [sorveteria, gelateria, sorvete, acai]}
+  hamburgueria:  {rotulo: "Hamburguerias", culinarias: [burger], nome: [hamburg, burger]}
+  pizzaria:      {rotulo: "Pizzarias", culinarias: [pizza], nome: [pizza, pizzaria]}
+  japonesa:      {rotulo: "Comida japonesa", culinarias: [japanese, sushi, ramen, poke], nome: [sushi, japones, temaki, ramen, yakisoba, nikkei]}
+  coreana:       {rotulo: "Comida coreana", culinarias: [korean], nome: [coreano, coreana, korean, kimchi]}
+  chinesa:       {rotulo: "Comida chinesa", culinarias: [chinese], nome: [chines, chinesa, china in]}
+  italiana:      {rotulo: "Comida italiana", culinarias: [italian], nome: [cantina, trattoria, italian, massas, pasta]}
+  mexicana:      {rotulo: "Comida mexicana", culinarias: [mexican, tex-mex], nome: [mexican, taqueria, taco]}
+  arabe:         {rotulo: "Comida árabe", culinarias: [arab, middle_eastern, lebanese, sfiha, "árabe"], nome: [arabe, esfiha, sfiha, libanes, kebab]}
+  brasileira:    {rotulo: "Comida brasileira regional", culinarias: [brazilian, regional, mineira], nome: [feijoada, mineira, caipira, comida caseira, self service, por quilo]}
+  nordestina:    {rotulo: "Comida nordestina", culinarias: [nordestina], nome: [nordest, baiana, sertao, tapioca]}
+  vegetariana:   {rotulo: "Vegetariana e vegana", extra: ["diet:vegan", "diet:vegetarian"], nome: [vegan, vegetarian, veg ]}
+  churrascaria:  {rotulo: "Churrascarias", culinarias: [steak_house, barbecue, grill, steak], nome: [churrasc, rodizio, parrilla, steakhouse, grill]}
+  street_food:   {rotulo: "Street food", culinarias: [pastel, empanada, hot_dog], nome: [food truck, foodtruck, pastelaria, espetinho, tapiocaria, creperia], experiencia: true}
+  mercado:       {rotulo: "Mercados gastronômicos", nome: [mercado, emporio, feira, mercadao, food hall], experiencia: true}
+  tematico:      {rotulo: "Restaurantes temáticos", nome: [tematico, medieval, cabaret, imersiv, themed], experiencia: true}
+  experiencia:   {rotulo: "Experiências gastronômicas", nome: [degustacao, chef table, speakeasy, escondido, harmonizacao, experience, rooftop], experiencia: true}
+  diferenciado:  {rotulo: "Estabelecimentos diferenciados", nome: [cervejaria, brewery, wine bar, vinheria, adega, rooftop, speakeasy, gastrobar], experiencia: true}
+diversidade:
+  riqueza_alvo_fracao: 0.8                  # riqueza alvo = 80% das categorias que existem na cidade
+  presenca_minima: 2                        # uma categoria só 'está presente' no distrito com ≥2 lugares (1 pode ser ruído)
+  pesos: {riqueza: 0.5, equilibrio: 0.3, especificidade: 0.2}
+  genericas: [restaurante, bar, lanchonete]  # categorias 'de tipo': catálogo só com elas é pouco informativo
+experiencias_alvo: 3                        # nº de categorias de experiência presentes para pontuar o máximo

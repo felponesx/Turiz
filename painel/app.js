@@ -396,7 +396,7 @@ function telaMais() {
     item("#/dados", "Banco de dados", "O que cada bot já guardou no sistema Turiz"), item("#/eventos", "Eventos", "Eventos captados, fontes e situação"),
     item("#/historico", "Histórico", "Execuções passadas de todos os bots"), item("#/logs", "Logs", "Registro de cada bot"), item("#/fontes", "Fontes", "Fontes de eventos e adicionar sites"),
     item("#/custos", "Custos e consumo", "Tempo de execução e limites medidos"), item("#/ajustes", "Configurações", "Conexão, token e regras gerais do Core"),
-    item("#/em-breve/descobertas", "Descobertas", "Perfis e lugares novos — próxima fase", "em-breve"), item("#/revisao", "Revisão", REV ? `${num(REV.aguardando_revisao)} lugares para revisar · score médio ${String(REV.medias.confiabilidade).replace(".", ",")}` : "Score, duplicados e localização"));
+    item("#/em-breve/descobertas", "Descobertas", "Perfis e lugares novos — próxima fase", "em-breve"), item("#/cobertura", "Cobertura geográfica", COB.resumo ? `${COB.resumo.distritos_mapeados} distritos · score médio ${String(COB.resumo.score_medio).replace(".", ",")}` : "Mapa, lacunas e prioridades de coleta"), item("#/revisao", "Revisão", REV ? `${num(REV.aguardando_revisao)} lugares para revisar · score médio ${String(REV.medias.confiabilidade).replace(".", ",")}` : "Score, duplicados e localização"));
 }
 const FAIXA_ROT = { alta: "Alta (90–100)", confiavel: "Confiável (75–89)", necessita_revisao: "Necessita revisão (50–74)", baixa_confianca: "Baixa confiança (25–49)", nao_confirmado: "Não confirmado (0–24)" };
 const FLAG_ROT = { coordenadas_invalidas: "Coordenadas inválidas", fora_da_area: "Fora da área de São Paulo", coordenada_aproximada: "Coordenada aproximada", endereco_incompleto: "Sem rua", sem_numero: "Sem número", sem_bairro: "Sem bairro", sem_cep: "Sem CEP", cep_invalido: "CEP inválido", cep_fora_de_sp: "CEP fora de SP capital" };
@@ -413,6 +413,107 @@ function telaRevisao() {
   raiz.append(secao("Duplicidade", Object.keys(REV.duplicidade).length ? linhas(REV.duplicidade, DUP_ROT) : h("div", { class: "vazio", text: "Nenhum par encontrado." })));
   raiz.append(secao("Por fonte", h("div", { class: "lista" }, Object.entries(REV.por_fonte).map(([f, c]) => h("div", { style: "display:block" }, h("b", { text: f }), h("div", { class: "minis" }, Object.entries(c).map(([k, v]) => h("span", {}, `${FAIXA_ROT[k] || k} `, h("b", { text: num(v) }))))))))); 
   raiz.append(h("p", { class: "dica", text: `Gerado em ${dh(REV.gerado_em)}. O score soma: fontes independentes (até ${REV.config.pesos.fontes}), nome (${REV.config.pesos.nome}), localização (${REV.config.pesos.geo}), endereço (${REV.config.pesos.endereco}), foto rastreável (${REV.config.pesos.visual}) e atualidade (${REV.config.pesos.atualidade}). Fontes copiadas entre si contam uma vez só; faltar Instagram, cardápio ou telefone não tira pontos. A lista caso a caso e os botões Aprovar/Rejeitar ainda não existem.` }));
+  return raiz;
+}
+
+/* ---------- Inteligência → Cobertura geográfica ---------- */
+const COB = { carregado: false, carregando: false, erro: null, resumo: null, bairros: null, metricas: null, categorias: null, prioridades: null, historico: null };
+const FILTRO_COB = { zona: null, status: null };
+const CV_ROT = { muito_boa: "Muito boa", boa: "Boa", moderada: "Moderada", baixa: "Baixa", critica: "Crítica", desconhecida: "Desconhecida" };
+const TERR_ROT = { confirmed: "Confirmado", probable: "Provável", approximate: "Aproximado", unknown: "Desconhecido", boundary_conflict: "Perto da divisa" };
+const SCANNER_ROT = (s) => s.nome + (s.disponivel ? "" : " (ainda não existe)");
+async function lerGz(caminho) {
+  const base = PARAMS.get("base"); let url, init = { cache: "no-store" };
+  if (base) url = base + caminho.split("/").pop();
+  else if (cfg.token) { url = `https://api.github.com/repos/${cfg.repo}/contents/${caminho}?ref=${cfg.dados}`; init.headers = { Authorization: `Bearer ${cfg.token}`, Accept: "application/vnd.github.raw+json" }; }
+  else url = `https://raw.githubusercontent.com/${cfg.repo}/${cfg.dados}/${caminho}?t=${Date.now()}`;
+  const r = await fetch(url, init);
+  if (r.status === 404) return null;
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  if (typeof DecompressionStream === "undefined") throw new Error("Este navegador não abre arquivos .gz");
+  return new Response(r.body.pipeThrough(new DecompressionStream("gzip"))).json();
+}
+async function carregarCobertura() {
+  if (COB.carregando || COB.carregado) return; COB.carregando = true;
+  try {
+    const [resumo, bairros, metricas, categorias, prioridades, historico] = await Promise.all([lerJson(cfg.dados, "data/coverage_summary.json", PARAMS.get("base")),
+      ...["neighborhoods", "metrics", "categories", "priorities", "history"].map((n) => lerGz(`data/coverage_${n}.json.gz`))]);
+    Object.assign(COB, { resumo, bairros, metricas, categorias, prioridades, historico, carregado: !!(resumo && bairros && metricas), erro: resumo ? null : "nao-gerado" });
+  } catch (e) { COB.erro = String(e.message || e); }
+  COB.carregando = false; desenhar();
+}
+const mCob = (id) => ((COB.metricas && COB.metricas.metricas) || []).find((m) => m.id === id);
+const bCob = (id) => ((COB.bairros && COB.bairros.distritos) || []).find((b) => b.id === id);
+const rotCat = (c) => ({ eventos: "Eventos gastronômicos" }[c]) || (COB.resumo && (COB.resumo.categorias_rotulos || {})[c]) || bonito(c);
+function mapaSvg(onClick) {
+  const ds = COB.bairros.distritos, NS = "http://www.w3.org/2000/svg";
+  let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  for (const d of ds) for (const pol of d.geometry) for (const [x, y] of pol[0]) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+  const k = Math.cos((-23.55 * Math.PI) / 180), K = 1000 / ((x1 - x0) * k), H = (y1 - y0) * K;
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", `0 0 1000 ${H.toFixed(0)}`); svg.setAttribute("class", "mapa-cv"); svg.setAttribute("role", "group"); svg.setAttribute("aria-label", "Mapa de cobertura dos distritos de São Paulo");
+  for (const d of ds) {
+    const m = mCob(d.id) || { status: "desconhecida" };
+    const p = document.createElementNS(NS, "path");
+    p.setAttribute("d", d.geometry.map((pol) => pol.map((anel) => "M" + anel.map(([x, y]) => `${((x - x0) * k * K).toFixed(1)},${((y1 - y) * K).toFixed(1)}`).join("L") + "Z").join("")).join(""));
+    p.setAttribute("fill-rule", "evenodd"); p.setAttribute("class", `cv cv-${m.status}` + (FILTRO_COB.zona && d.zone !== FILTRO_COB.zona || FILTRO_COB.status && m.status !== FILTRO_COB.status ? " apagado" : ""));
+    p.setAttribute("tabindex", "0"); p.setAttribute("role", "link");
+    const rot = `${d.name}, zona ${d.zone}: cobertura ${CV_ROT[m.status].toLowerCase()}` + (m.coverage_score != null ? `, score ${m.coverage_score}` : "");
+    p.setAttribute("aria-label", rot);
+    const t = document.createElementNS(NS, "title"); t.textContent = rot; p.append(t);
+    p.addEventListener("click", () => onClick(d.id)); p.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(d.id); } });
+    svg.append(p);
+  }
+  return svg;
+}
+function telaCobertura() {
+  const raiz = h("div", {}, h("a", { class: "voltar", href: "#/mais" }, icone("back"), "Mais"), h("h2", { style: "margin:8px 0", text: "Cobertura geográfica" }));
+  if (!COB.carregado) { carregarCobertura(); return raiz.append(h("div", { class: "aviso-caixa", text: COB.erro === "nao-gerado" ? "A análise de cobertura ainda não foi gerada. Abra Bots → Cobertura geográfica → Executar agora." : COB.erro ? "Não consegui carregar a cobertura: " + COB.erro : "Carregando o mapa e os indicadores…" })) || raiz; }
+  const r = COB.resumo, ms = COB.metricas.metricas;
+  raiz.append(h("p", { class: "dica", style: "margin-top:0", text: r.situacao }));
+  raiz.append(h("div", { class: "kpis g4" }, kpi("Distritos mapeados", r.distritos_mapeados, "fonte oficial da Prefeitura"), kpi("Pesquisados", r.distritos_pesquisados, "nenhuma busca por distrito ainda"), kpi("Score médio", String(r.score_medio).replace(".", ","), "de 100"),
+    kpi("Lugares analisados", r.lugares_total), kpi("Confiáveis", r.lugares_confiaveis, "score ≥ 75"), kpi("Aguardando revisão", r.lugares_aguardando_revisao), kpi("Categorias", r.categorias_identificadas), kpi("Bairro confirmado", 0, "sem malha oficial de bairros")));
+  const mk = (campo, itens) => h("div", { class: "filtros", role: "group", "aria-label": "Filtro " + campo }, h("button", { "aria-pressed": FILTRO_COB[campo] == null, onclick: () => { FILTRO_COB[campo] = null; desenhar(); } }, "Todos"),
+    ...itens.map(([v, t, n]) => h("button", { "aria-pressed": FILTRO_COB[campo] === v, onclick: () => { FILTRO_COB[campo] = FILTRO_COB[campo] === v ? null : v; desenhar(); } }, n != null ? `${t} (${n})` : t)));
+  raiz.append(secao("Mapa", mk("status", Object.keys(CV_ROT).map((k) => [k, CV_ROT[k], r.faixas[k] || 0])), mk("zona", ["Centro", "Norte", "Sul", "Leste", "Oeste"].map((z) => [z, z, r.por_zona[z].distritos])), h("div", { class: "mapa-caixa" }, mapaSvg((id) => { location.hash = "#/cobertura/" + id; })),
+    h("p", { class: "dica", text: "Toque num distrito para abrir. A cor indica a faixa; o nome da faixa também aparece nos filtros e nas listas." })));
+  const linha = (m) => h("a", { class: "linha-cv", href: "#/cobertura/" + m.id }, h("span", {}, h("b", { text: m.nome }), h("small", { text: ` ${m.zona} · ${num(m.lugares)} lugares` })), h("span", { class: `chip cvchip-${m.status}`, text: `${CV_ROT[m.status]} · ${m.score}` }));
+  raiz.append(secao("Maiores lacunas de cobertura", h("div", { class: "lista" }, r.maiores_lacunas.map(linha))));
+  raiz.append(secao("Mais bem cobertos", h("div", { class: "lista" }, r.melhores.map(linha))));
+  raiz.append(secao("Para onde ir primeiro", h("div", { class: "lista" }, r.regioes_para_explorar.map((x) => h("a", { class: "linha-cv", href: "#/cobertura/" + x.id, style: "display:block" }, h("b", { text: `Prioridade ${x.prioridade} — ${x.nome}` }), h("small", { style: "display:block", text: x.motivo }))))));
+  raiz.append(secao("Categorias menos encontradas", h("div", { class: "lista" }, r.categorias_menos_encontradas.map((c) => h("div", {}, h("span", { text: c.rotulo }), h("b", { text: num(c.lugares) + " lugares" }))))));
+  raiz.append(secao("Scanners sugeridos", h("div", { class: "lista" }, r.scanners_sugeridos.map((s) => h("div", {}, h("span", { text: s.nome }), h("small", { text: s.disponivel ? `${s.distritos} dos 5 distritos prioritários` : `${s.distritos} dos 5 · ainda não construído` }))))));
+  if (r.comparacao) raiz.append(secao("Desde o snapshot anterior", h("p", { class: "dica", text: `${r.comparacao.de} → ${r.comparacao.para}: ${r.comparacao.melhoraram.length} distritos melhoraram, ${r.comparacao.pioraram.length} pioraram, ${num(r.comparacao.novos_lugares)} lugares novos.` })));
+  else raiz.append(secao("Evolução", h("p", { class: "dica", text: "O histórico começou agora. A comparação aparece a partir do segundo dia de análise." })));
+  raiz.append(h("p", { class: "dica", text: "Limites: " + r.limites.join(" ") + ` Dados geográficos: ${r.fonte_geografica}. Gerado em ${dh(r.gerado_em)}.` }));
+  return raiz;
+}
+function detalheCobertura(id) {
+  const raiz = h("div", {}, h("a", { class: "voltar", href: "#/cobertura" }, icone("back"), "Cobertura"));
+  if (!COB.carregado) { carregarCobertura(); return raiz.append(h("div", { class: "aviso-caixa", text: "Carregando…" })) || raiz; }
+  const b = bCob(id), m = mCob(id);
+  if (!b || !m) return raiz.append(h("div", { class: "vazio", text: "Distrito não encontrado." })) || raiz;
+  const cats = COB.categorias.categorias.filter((c) => c.neighborhood_id === id), pri = COB.prioridades.prioridades.filter((p) => p.neighborhood_id === id);
+  const pd = pri.find((p) => p.category == null);
+  raiz.append(h("h2", { style: "margin:8px 0 2px", text: b.name }), h("div", { class: "linha-chips" }, chip(`Zona ${b.zone}`), chip(b.subprefecture ? "Subprefeitura " + b.subprefecture : "Subprefeitura —"), h("span", { class: `chip cvchip-${m.status}`, text: `Cobertura ${CV_ROT[m.status].toLowerCase()}${m.coverage_score != null ? " · " + m.coverage_score : ""}` })));
+  raiz.append(h("div", { class: "kpis g4", style: "margin-top:10px" }, kpi("Lugares", m.total_places), kpi("Publicáveis", m.publishable_places), kpi("Para revisar", m.review_places), kpi("Baixa confiança", m.low_confidence_places),
+    kpi("Localização aproximada", m.approximate_location_places), kpi("Sem bairro confirmado", m.unconfirmed_neighborhood_places, "distrito é o nível oficial"), kpi("Diversidade", String(m.diversity_score).replace(".", ","), `${m.category_count} categorias`), kpi("Prioridade de coleta", pd ? pd.priority_score : "—")));
+  if (m.coverage_score == null) raiz.append(h("div", { class: "aviso-caixa", text: "Poucos dados para avaliar. Isso é falta de informação, não ausência de gastronomia." }));
+  else raiz.append(secao("Como o score foi composto", h("div", { class: "barras-dia" }, Object.entries(m.componentes).map(([k, v]) => h("div", {}, h("span", { text: ({ densidade: "Densidade", diversidade: "Diversidade", confiabilidade: "Confiabilidade", precisao: "Precisão", experiencias: "Experiências", atualidade: "Atualidade" })[k] }), h("i", { style: `width:${Math.max(2, v * 100)}%` }), h("b", { style: "color:var(--ink)", text: `${Math.round(v * 100)}%` })))), h("p", { class: "dica", text: `Densidade ${String(m.density_per_km2).replace(".", ",")} lugares/km² (meta relativa da cidade ${String(COB.metricas.meta_densidade_por_km2).replace(".", ",")}). Concentração: ${m.dominant_category ? rotCat(m.dominant_category) + ", índice " + String(m.concentration_index).replace(".", ",") : "—"}.` })));
+  const presentes = cats.filter((c) => c.place_count > 0).sort((a, c) => c.place_count - a.place_count), falta = cats.filter((c) => c.place_count === 0);
+  const maxc = Math.max(1, ...presentes.map((c) => c.place_count));
+  raiz.append(secao("Categorias presentes", presentes.length ? h("div", { class: "barras-dia" }, presentes.map((c) => h("div", {}, h("span", { text: rotCat(c.category) }), h("i", { style: `width:${Math.max(2, (c.place_count / maxc) * 100)}%` }), h("b", { style: "color:var(--ink)", text: num(c.place_count) })))) : h("div", { class: "vazio", text: "Nenhuma categoria detectada." })));
+  raiz.append(secao("Categorias ausentes", falta.length ? h("div", { class: "linha-chips" }, falta.map((c) => chip(rotCat(c.category)))) : h("div", { class: "vazio", text: "Nenhuma categoria da cidade está ausente aqui." })));
+  if (pd) raiz.append(secao("Recomendação de coleta", h("div", { class: "lista" }, h("div", { style: "display:block" }, h("b", { text: `Prioridade ${pd.priority_score}` }), h("small", { style: "display:block", text: pd.priority_reason }), h("small", { style: "display:block", text: "Objetivo: " + pd.objective }), h("small", { style: "display:block", text: "Scanners: " + pd.recommended_scanners.map(SCANNER_ROT).join(", ") })))));
+  const lac = pri.filter((p) => p.category).slice(0, 6);
+  if (lac.length) raiz.append(secao("Possíveis lacunas por categoria", h("div", { class: "lista" }, lac.map((p) => h("div", { style: "display:block" }, h("b", { text: `${rotCat(p.category)} · ${p.priority_score}` }), h("small", { style: "display:block", text: p.priority_reason }))))));
+  const hist = COB.historico.snapshots.filter((s) => s.distritos[id]);
+  raiz.append(secao("Histórico", hist.length ? h("div", { class: "lista" }, hist.slice(-8).reverse().map((s) => h("div", {}, h("span", { text: s.snapshot_date }), h("small", { text: `${num(s.distritos[id].total_places)} lugares · cobertura ${s.distritos[id].coverage_score ?? "—"}` })))) : h("div", { class: "vazio", text: "Sem snapshots." }),
+    h("p", { class: "dica", text: COB.historico.buscas.filter((x) => x.neighborhood_id === id).length ? "" : "Nenhuma busca por distrito foi feita ainda." })));
+  raiz.append(h("div", { class: "acoes" },
+    h("button", { class: "btn", onclick: () => comando({ acao: "enfileirar", bot: "cobertura", prioridade: "normal" }) }, icone("refresh"), "Atualizar análise"),
+    h("button", { class: "btn", onclick: () => { const blob = new Blob([JSON.stringify({ distrito: { ...b, geometry: undefined }, metricas: m, categorias: cats, prioridades: pri, historico: hist }, null, 1)], { type: "application/json" }); const a = h("a", { href: URL.createObjectURL(blob), download: `cobertura-${id}.json` }); document.body.append(a); a.click(); a.remove(); } }, icone("ext"), "Exportar dados")));
+  raiz.append(h("p", { class: "dica", text: "Pesquisar o distrito ou uma categoria só será possível quando existirem scanners que aceitem distrito como alvo; nesta fase a cobertura só recomenda e nada é disparado." }));
   return raiz;
 }
 function telaEmBreve(nome) {
@@ -539,14 +640,14 @@ function telaAjustes() {
 
 /* ---------- rotas ---------- */
 const rota = () => { const p = location.hash.replace(/^#\/?/, "").split("/"); return { tela: p[0] || "geral", id: p[1] }; };
-const TITULOS = { geral: "Visão geral", bots: "Bots", agenda: "Agendamentos", fila: "Fila de tarefas", mais: "Mais", dados: "Banco de dados", eventos: "Eventos", historico: "Histórico", logs: "Logs", fontes: "Fontes", custos: "Custos e consumo", ajustes: "Configurações", revisao: "Revisão", "em-breve": "Em breve" };
+const TITULOS = { geral: "Visão geral", bots: "Bots", agenda: "Agendamentos", fila: "Fila de tarefas", mais: "Mais", dados: "Banco de dados", eventos: "Eventos", historico: "Histórico", logs: "Logs", fontes: "Fontes", custos: "Custos e consumo", ajustes: "Configurações", revisao: "Revisão", cobertura: "Cobertura geográfica", "em-breve": "Em breve" };
 function desenhar() {
   const r = rota();
-  const aba = { bot: "bots", dados: "mais", eventos: "mais", historico: "mais", logs: "mais", fontes: "mais", custos: "mais", ajustes: "mais", "em-breve": "mais", revisao: "mais" }[r.tela] || r.tela;
+  const aba = { bot: "bots", dados: "mais", eventos: "mais", historico: "mais", logs: "mais", fontes: "mais", custos: "mais", ajustes: "mais", "em-breve": "mais", revisao: "mais", cobertura: "mais" }[r.tela] || r.tela;
   document.querySelectorAll(".abas a").forEach((a) => a.setAttribute("aria-current", a.dataset.tela === aba ? "page" : "false"));
   const caixa = document.getElementById("log-caixa"), colado = caixa && caixa.scrollTop + caixa.clientHeight >= caixa.scrollHeight - 8, y = window.scrollY;
-  const telas = { revisao: telaRevisao, geral: telaGeral, bots: telaBots, agenda: telaAgenda, fila: telaFila, mais: telaMais, dados: telaDados, eventos: telaEventos, historico: telaHistorico, fontes: telaFontes, custos: telaCustos, ajustes: telaAjustes };
-  const tela = r.tela === "bot" ? detalheBot(r.id) : r.tela === "logs" ? telaLogs(r.id) : r.tela === "em-breve" ? telaEmBreve(r.id) : (telas[r.tela] || telaGeral)();
+  const telas = { cobertura: telaCobertura, revisao: telaRevisao, geral: telaGeral, bots: telaBots, agenda: telaAgenda, fila: telaFila, mais: telaMais, dados: telaDados, eventos: telaEventos, historico: telaHistorico, fontes: telaFontes, custos: telaCustos, ajustes: telaAjustes };
+  const tela = r.tela === "bot" ? detalheBot(r.id) : r.tela === "logs" ? telaLogs(r.id) : r.tela === "em-breve" ? telaEmBreve(r.id) : r.tela === "cobertura" && r.id ? detalheCobertura(r.id) : (telas[r.tela] || telaGeral)();
   $main.replaceChildren(tela);
   const nova = document.getElementById("log-caixa"); if (nova && colado !== false) nova.scrollTop = nova.scrollHeight;
   window.scrollTo(0, y);

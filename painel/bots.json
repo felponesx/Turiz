@@ -3,6 +3,7 @@
   "Lugares",
   "Enriquecimento",
   "Revisão",
+  "Inteligência",
   "Eventos",
   "Sistema Turiz"
  ],
@@ -212,6 +213,22 @@
    "saidas": [
     "data/revisao.json.gz",
     "data/revisao_resumo.json"
+   ]
+  },
+  {
+   "id": "cobertura",
+   "nome": "Cobertura geográfica",
+   "fonte": "Distritos oficiais (GeoSampa)",
+   "grupo": "Inteligência",
+   "icone": "map",
+   "descricao": "Mede a cobertura de cada distrito de São Paulo (quantidade, diversidade, confiabilidade, precisão) e gera a fila de prioridades de coleta. Só recomenda: não dispara outros bots.",
+   "workflow": "cobertura.yml",
+   "agenda": "diário, depois da revisão",
+   "requer": [],
+   "saidas": [
+    "data/coverage_summary.json",
+    "data/coverage_metrics.json.gz",
+    "data/coverage_priorities.json.gz"
    ]
   },
   {

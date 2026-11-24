@@ -3,7 +3,7 @@
 import json
 import sys
 
-GRUPOS = ["Lugares", "Enriquecimento", "Revisão", "Eventos", "Sistema Turiz"]
+GRUPOS = ["Lugares", "Enriquecimento", "Revisão", "Inteligência", "Eventos", "Sistema Turiz"]
 
 BOTS = [
     {"id": "osm", "encadeia": True, "entradas": {"fontes": "osm"}, "nome": "Restaurantes e bares", "fonte": "OpenStreetMap", "grupo": "Lugares", "icone": "pin",
@@ -45,6 +45,9 @@ BOTS = [
     {"id": "revisor", "entradas": {"etapa": "score"}, "nome": "Revisor", "fonte": "Base de lugares", "grupo": "Revisão", "icone": "check",
      "descricao": "Dá a cada lugar um score de confiabilidade (0–100) e uma completude, contando só fontes independentes. Lugares duvidosos ficam marcados como não publicáveis.",
      "workflow": "revisao.yml", "agenda": "diário, depois das coletas", "requer": [], "saidas": ["data/revisao.json.gz", "data/revisao_resumo.json"]},
+    {"id": "cobertura", "nome": "Cobertura geográfica", "fonte": "Distritos oficiais (GeoSampa)", "grupo": "Inteligência", "icone": "map",
+     "descricao": "Mede a cobertura de cada distrito de São Paulo (quantidade, diversidade, confiabilidade, precisão) e gera a fila de prioridades de coleta. Só recomenda: não dispara outros bots.",
+     "workflow": "cobertura.yml", "agenda": "diário, depois da revisão", "requer": [], "saidas": ["data/coverage_summary.json", "data/coverage_metrics.json.gz", "data/coverage_priorities.json.gz"]},
     {"id": "eventos", "entradas": {"forcar": "true"}, "nome": "Eventos", "fonte": "Sites, Ticketmaster e feeds", "grupo": "Eventos", "icone": "calendar",
      "descricao": "Capta eventos com data, local, preço e foto de todas as fontes cadastradas, tira duplicados e guarda o histórico.",
      "workflow": "eventos.yml", "agenda": "a cada 6 horas", "requer": [], "saidas": ["data/eventos_v2.json.gz", "data/eventos.json"]},

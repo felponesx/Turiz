@@ -1,5 +1,5 @@
 /* Guarda só o próprio app (casca) para abrir rápido e offline; os status vêm sempre da rede. */
-const V = "turiz-bots-v3";
+const V = "turiz-bots-v4";
 const CASCA = ["./", "index.html", "estilo.css", "app.js", "bots.js", "manifest.webmanifest", "icone.svg", "icone-192.png"];
 self.addEventListener("install", (e) => { e.waitUntil(caches.open(V).then((c) => c.addAll(CASCA)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== V).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });

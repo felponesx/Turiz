@@ -1,0 +1,32 @@
+name: Cobertura geográfica
+on:
+  workflow_dispatch:
+    inputs:
+      encadear:
+        description: "Sem efeito (a cobertura não dispara outros bots)"
+        default: "false"
+  schedule:
+    - cron: "10 10 * * *"     # diário, 07:10 em Brasília, depois da revisão (06:40)
+permissions:
+  contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
+jobs:
+  cobertura:
+    runs-on: ubuntu-latest
+    env:
+      TURIZ_STATUS_PUBLICAR: "1"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Calcular cobertura (só gera inteligência; não dispara scanners)
+        run: python coletar_cobertura.py
+      - name: Commitar resultados
+        if: always()
+        run: |
+          scripts/commitar_dados.sh "dados: cobertura geográfica $(date -u +%F)" data/coverage_neighborhoods.json.gz data/coverage_metrics.json.gz data/coverage_categories.json.gz data/coverage_priorities.json.gz data/coverage_history.json.gz data/coverage_places.json.gz data/coverage_summary.json
