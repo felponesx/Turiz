@@ -138,3 +138,19 @@ def test_cli_registra_resultado_e_rejeita_comando_ruim(tmp_path, monkeypatch, ca
     meta = ArquivoStore(pasta).ler(C.FILA)[0]["meta"]["ultimo_comando"]
     assert meta["ok"] is False and "bot desconhecido" in meta["mensagem"]
     assert D.main(["--local", pasta, "--comando", "{isto não é json"]) == 2
+
+
+def test_contrato_painel_core_payloads_reais_do_painel_sao_aceitos(st):
+    """Payloads copiados do que o painel envia (capturados no teste de navegador)."""
+    payloads = [
+        {"acao": "enfileirar", "bot": "a", "prioridade": "alta"},
+        {"acao": "config_bot", "bot": "a", "campos": {"ativo": True, "gerenciado": False, "prioridade": "alta", "agenda": {"tipo": "semanal", "horas": ["07:30", "19:00"], "dias": [0]},
+                                                       "max_tentativas": 3, "limites": {"max_minutos": 180, "lote": None}, "regiao": None, "categorias": [], "reprocessar": "ignorar_existentes"}},
+        {"acao": "config_bot", "bot": "b", "campos": {"agenda": {"tipo": "intervalo", "minutos": 360}, "gerenciado": True}},
+        {"acao": "config_bot", "bot": "b", "campos": {"agenda": {"tipo": "apos", "bots": ["a"]}}},
+        {"acao": "config_global", "campos": {"max_concorrencia": 2, "ttl_espera_horas": 24, "retencao_dias": 14}},
+        {"acao": "pausar_tudo"}, {"acao": "retomar_tudo"}, {"acao": "executar_todos"}, {"acao": "cancelar_fila"}, {"acao": "limpar"},
+    ]
+    for p in payloads:
+        C.aplicar(st, p, REG, T0)          # nenhum levanta ErroComando
+    assert cfg(st)["bots"]["a"]["agenda"]["dias"] == [0] and cfg(st)["bots"]["b"]["agenda"] == {"tipo": "apos", "bots": ["a"]}
