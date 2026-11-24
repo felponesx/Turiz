@@ -1,0 +1,52 @@
+name: Geo Scanner (descoberta por distrito)
+on:
+  workflow_dispatch:
+    inputs:
+      distrito:
+        description: "Código do distrito (opcional, só dígitos)"
+        default: ""
+      categoria:
+        description: "Categoria (opcional, ex.: padaria)"
+        default: ""
+      max_tarefas:
+        description: "Máximo de buscas nesta execução"
+        default: "6"
+      encadear:
+        description: "Sem efeito (o Geo Scanner não encadeia outros bots)"
+        default: "false"
+  schedule:
+    - cron: "0 5 * * *"       # diário, 02:00 em Brasília
+permissions:
+  contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
+jobs:
+  geo:
+    runs-on: ubuntu-latest
+    env:
+      TURIZ_STATUS_PUBLICAR: "1"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Pesquisar (só grava descobertas; não altera lugares.json)
+        env:
+          DISTRITO: ${{ inputs.distrito }}
+          CATEGORIA: ${{ inputs.categoria }}
+          MAX: ${{ inputs.max_tarefas || '6' }}
+        run: |
+          case "$DISTRITO" in ""|*[!0-9]*) [ -z "$DISTRITO" ] || { echo "distrito inválido"; exit 2; };; esac
+          case "$CATEGORIA" in *[!a-z_]*) echo "categoria inválida"; exit 2;; esac
+          case "$MAX" in ""|*[!0-9]*) echo "max inválido"; exit 2;; esac
+          python coletar_geo.py --max-tarefas "$MAX" --distrito "$DISTRITO" --categoria "$CATEGORIA"
+      - name: Recalcular a cobertura com o novo histórico
+        if: always()
+        run: python coletar_cobertura.py
+      - name: Commitar resultados
+        if: always()
+        run: |
+          scripts/commitar_dados.sh "dados: geo scanner $(date -u +%F)" data/descobertas.json.gz data/coverage_history.json.gz data/coverage_neighborhoods.json.gz data/coverage_metrics.json.gz data/coverage_categories.json.gz data/coverage_priorities.json.gz data/coverage_places.json.gz data/coverage_summary.json

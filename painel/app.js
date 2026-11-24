@@ -396,7 +396,7 @@ function telaMais() {
     item("#/dados", "Banco de dados", "O que cada bot já guardou no sistema Turiz"), item("#/eventos", "Eventos", "Eventos captados, fontes e situação"),
     item("#/historico", "Histórico", "Execuções passadas de todos os bots"), item("#/logs", "Logs", "Registro de cada bot"), item("#/fontes", "Fontes", "Fontes de eventos e adicionar sites"),
     item("#/custos", "Custos e consumo", "Tempo de execução e limites medidos"), item("#/ajustes", "Configurações", "Conexão, token e regras gerais do Core"),
-    item("#/em-breve/descobertas", "Descobertas", "Perfis e lugares novos — próxima fase", "em-breve"), item("#/cobertura", "Cobertura geográfica", COB.resumo ? `${COB.resumo.distritos_mapeados} distritos · score médio ${String(COB.resumo.score_medio).replace(".", ",")}` : "Mapa, lacunas e prioridades de coleta"), item("#/revisao", "Revisão", REV ? `${num(REV.aguardando_revisao)} lugares para revisar · score médio ${String(REV.medias.confiabilidade).replace(".", ",")}` : "Score, duplicados e localização"));
+    item("#/descobertas", "Descobertas", "Lugares novos achados pelo Geo Scanner"), item("#/cobertura", "Cobertura geográfica", COB.resumo ? `${COB.resumo.distritos_mapeados} distritos · score médio ${String(COB.resumo.score_medio).replace(".", ",")}` : "Mapa, lacunas e prioridades de coleta"), item("#/revisao", "Revisão", REV ? `${num(REV.aguardando_revisao)} lugares para revisar · score médio ${String(REV.medias.confiabilidade).replace(".", ",")}` : "Score, duplicados e localização"));
 }
 const FAIXA_ROT = { alta: "Alta (90–100)", confiavel: "Confiável (75–89)", necessita_revisao: "Necessita revisão (50–74)", baixa_confianca: "Baixa confiança (25–49)", nao_confirmado: "Não confirmado (0–24)" };
 const FLAG_ROT = { coordenadas_invalidas: "Coordenadas inválidas", fora_da_area: "Fora da área de São Paulo", coordenada_aproximada: "Coordenada aproximada", endereco_incompleto: "Sem rua", sem_numero: "Sem número", sem_bairro: "Sem bairro", sem_cep: "Sem CEP", cep_invalido: "CEP inválido", cep_fora_de_sp: "CEP fora de SP capital" };
@@ -506,14 +506,42 @@ function detalheCobertura(id) {
   raiz.append(secao("Categorias ausentes", falta.length ? h("div", { class: "linha-chips" }, falta.map((c) => chip(rotCat(c.category)))) : h("div", { class: "vazio", text: "Nenhuma categoria da cidade está ausente aqui." })));
   if (pd) raiz.append(secao("Recomendação de coleta", h("div", { class: "lista" }, h("div", { style: "display:block" }, h("b", { text: `Prioridade ${pd.priority_score}` }), h("small", { style: "display:block", text: pd.priority_reason }), h("small", { style: "display:block", text: "Objetivo: " + pd.objective }), h("small", { style: "display:block", text: "Scanners: " + pd.recommended_scanners.map(SCANNER_ROT).join(", ") })))));
   const lac = pri.filter((p) => p.category).slice(0, 6);
-  if (lac.length) raiz.append(secao("Possíveis lacunas por categoria", h("div", { class: "lista" }, lac.map((p) => h("div", { style: "display:block" }, h("b", { text: `${rotCat(p.category)} · ${p.priority_score}` }), h("small", { style: "display:block", text: p.priority_reason }))))));
+  if (lac.length) raiz.append(secao("Possíveis lacunas por categoria", h("div", { class: "lista" }, lac.map((p) => h("div", { style: "display:block" }, h("b", { text: `${rotCat(p.category)} · ${p.priority_score}` }), h("small", { style: "display:block", text: p.priority_reason }),
+    pesquisaveis.has(p.category) ? h("button", { class: "btn", style: "margin-top:6px", onclick: () => comando({ acao: "enfileirar", bot: "geo_scanner", prioridade: "normal", parametros: { distrito: id, categoria: p.category, max_tarefas: "1" } }, { confirmar: `Pesquisar ${rotCat(p.category)} em ${b.name} no OpenStreetMap?` }) }, icone("play"), "Pesquisar esta categoria") : h("small", { style: "display:block", text: "Sem fonte automática para esta categoria ainda." }))))));
   const hist = COB.historico.snapshots.filter((s) => s.distritos[id]);
   raiz.append(secao("Histórico", hist.length ? h("div", { class: "lista" }, hist.slice(-8).reverse().map((s) => h("div", {}, h("span", { text: s.snapshot_date }), h("small", { text: `${num(s.distritos[id].total_places)} lugares · cobertura ${s.distritos[id].coverage_score ?? "—"}` })))) : h("div", { class: "vazio", text: "Sem snapshots." }),
-    h("p", { class: "dica", text: COB.historico.buscas.filter((x) => x.neighborhood_id === id).length ? "" : "Nenhuma busca por distrito foi feita ainda." })));
+    (() => { const bs = COB.historico.buscas.filter((x) => x.neighborhood_id === id).slice(-6).reverse(); return bs.length ? h("div", { class: "lista" }, bs.map((x) => h("div", {}, h("span", { text: `${(x.search_started_at || "").slice(0, 10)} · ${rotCat(x.category)}` }), h("small", { text: x.status === "concluida" ? `${x.results_found} achados · ${x.new_places} novos` : "falhou" })))) : h("p", { class: "dica", text: "Nenhuma busca por distrito foi feita aqui ainda." }); })()));
+  const pesquisaveis = new Set(COB.resumo.geo_categorias || []);
   raiz.append(h("div", { class: "acoes" },
+    h("button", { class: "btn prim", onclick: () => comando({ acao: "enfileirar", bot: "geo_scanner", prioridade: "normal", parametros: { distrito: id, max_tarefas: "3" } }, { confirmar: `Pesquisar ${b.name} no OpenStreetMap? Roda até 3 buscas das categorias mais prioritárias; o resultado vira descoberta aguardando validação.` }) }, icone("play"), "Pesquisar este distrito"),
     h("button", { class: "btn", onclick: () => comando({ acao: "enfileirar", bot: "cobertura", prioridade: "normal" }) }, icone("refresh"), "Atualizar análise"),
     h("button", { class: "btn", onclick: () => { const blob = new Blob([JSON.stringify({ distrito: { ...b, geometry: undefined }, metricas: m, categorias: cats, prioridades: pri, historico: hist }, null, 1)], { type: "application/json" }); const a = h("a", { href: URL.createObjectURL(blob), download: `cobertura-${id}.json` }); document.body.append(a); a.click(); a.remove(); } }, icone("ext"), "Exportar dados")));
-  raiz.append(h("p", { class: "dica", text: "Pesquisar o distrito ou uma categoria só será possível quando existirem scanners que aceitem distrito como alvo; nesta fase a cobertura só recomenda e nada é disparado." }));
+  raiz.append(h("p", { class: "dica", text: "A cobertura só recomenda. Pesquisar dispara apenas o Geo Scanner (OpenStreetMap), com confirmação; Web e Instagram ainda não existem." }));
+  return raiz;
+}
+
+/* ---------- Descobertas ---------- */
+const DESC = { carregado: false, carregando: false, erro: null, lista: [] };
+const FILTRO_DESC = { status: null, zona: null };
+async function carregarDescobertas() {
+  if (DESC.carregando || DESC.carregado) return; DESC.carregando = true;
+  try { const o = await lerGz("data/descobertas.json.gz"); DESC.lista = o ? o.descobertas : []; DESC.carregado = true; DESC.erro = o ? null : "nao-gerado"; if (!COB.carregado) await carregarCobertura(); } catch (e) { DESC.erro = String(e.message || e); }
+  DESC.carregando = false; desenhar();
+}
+function telaDescobertas() {
+  const raiz = h("div", {}, h("a", { class: "voltar", href: "#/mais" }, icone("back"), "Mais"), h("h2", { style: "margin:8px 0", text: "Descobertas" }));
+  if (!DESC.carregado) { carregarDescobertas(); return raiz.append(h("div", { class: "aviso-caixa", text: DESC.erro === "nao-gerado" ? "Nenhuma descoberta ainda. Abra Bots → Geo Scanner → Executar agora." : DESC.erro ? "Não consegui carregar: " + DESC.erro : "Carregando…" })) || raiz; }
+  const l = DESC.lista, r = COB.resumo;
+  const filtradas = l.filter((x) => (!FILTRO_DESC.status || x.status === FILTRO_DESC.status) && (!FILTRO_DESC.zona || x.zona === FILTRO_DESC.zona)).sort((a, b) => b.descoberto_em.localeCompare(a.descoberto_em));
+  raiz.append(h("div", { class: "kpis g4" }, kpi("Descobertas", l.length), kpi("Novas", l.filter((x) => x.status === "novo").length), kpi("Possível duplicado", l.filter((x) => x.status === "possivel_duplicado").length),
+    kpi("Buscas feitas", r && r.buscas ? r.buscas.total : "—"), kpi("Buscas com falha", r && r.buscas ? r.buscas.falhas : "—"), kpi("Distritos pesquisados", r ? r.distritos_pesquisados : "—", "de 96")));
+  const mk = (campo, itens) => h("div", { class: "filtros", role: "group" }, h("button", { "aria-pressed": FILTRO_DESC[campo] == null, onclick: () => { FILTRO_DESC[campo] = null; desenhar(); } }, "Todos"), ...itens.map(([v, t]) => h("button", { "aria-pressed": FILTRO_DESC[campo] === v, onclick: () => { FILTRO_DESC[campo] = FILTRO_DESC[campo] === v ? null : v; desenhar(); } }, t)));
+  raiz.append(secao("Filtros", mk("status", [["novo", "Novas"], ["possivel_duplicado", "Possível duplicado"]]), mk("zona", ["Centro", "Norte", "Sul", "Leste", "Oeste"].map((z) => [z, z]))));
+  const rotD = (id) => { const b = bCob(id); return b ? b.name : id; };
+  raiz.append(secao(`Mais recentes (${num(filtradas.length)})`, filtradas.length ? h("div", { class: "lista" }, filtradas.slice(0, 80).map((x) => h("div", { style: "display:block" },
+    h("b", { text: x.nome }), h("small", { style: "display:block", text: `${rotD(x.distrito)} · zona ${x.zona} · ${x.categorias.map(rotCat).join(", ")}` }),
+    h("div", { class: "linha-chips" }, chip(x.status === "novo" ? "Nova" : "Possível duplicado", x.status === "novo" ? "ok" : "warn"), chip("Aguardando validação"), /^(node|way|relation)\/\d+$/.test(x.fonte_id) ? h("a", { href: `https://www.openstreetmap.org/${x.fonte_id}`, target: "_blank", rel: "noopener", class: "chip ouro", text: "ver no OpenStreetMap" }) : null)))) : h("div", { class: "vazio", text: "Nenhuma descoberta com esses filtros." })));
+  raiz.append(h("p", { class: "dica", text: "Descobertas são lugares que o Geo Scanner achou no OpenStreetMap e que ainda não estão na base. Nenhuma é publicada no app automaticamente: ficam aguardando validação. Os botões Aprovar, Rejeitar e Vincular ainda não existem." }));
   return raiz;
 }
 function telaEmBreve(nome) {
@@ -640,13 +668,13 @@ function telaAjustes() {
 
 /* ---------- rotas ---------- */
 const rota = () => { const p = location.hash.replace(/^#\/?/, "").split("/"); return { tela: p[0] || "geral", id: p[1] }; };
-const TITULOS = { geral: "Visão geral", bots: "Bots", agenda: "Agendamentos", fila: "Fila de tarefas", mais: "Mais", dados: "Banco de dados", eventos: "Eventos", historico: "Histórico", logs: "Logs", fontes: "Fontes", custos: "Custos e consumo", ajustes: "Configurações", revisao: "Revisão", cobertura: "Cobertura geográfica", "em-breve": "Em breve" };
+const TITULOS = { geral: "Visão geral", bots: "Bots", agenda: "Agendamentos", fila: "Fila de tarefas", mais: "Mais", dados: "Banco de dados", eventos: "Eventos", historico: "Histórico", logs: "Logs", fontes: "Fontes", custos: "Custos e consumo", ajustes: "Configurações", revisao: "Revisão", cobertura: "Cobertura geográfica", descobertas: "Descobertas", "em-breve": "Em breve" };
 function desenhar() {
   const r = rota();
-  const aba = { bot: "bots", dados: "mais", eventos: "mais", historico: "mais", logs: "mais", fontes: "mais", custos: "mais", ajustes: "mais", "em-breve": "mais", revisao: "mais", cobertura: "mais" }[r.tela] || r.tela;
+  const aba = { bot: "bots", dados: "mais", eventos: "mais", historico: "mais", logs: "mais", fontes: "mais", custos: "mais", ajustes: "mais", "em-breve": "mais", revisao: "mais", cobertura: "mais", descobertas: "mais" }[r.tela] || r.tela;
   document.querySelectorAll(".abas a").forEach((a) => a.setAttribute("aria-current", a.dataset.tela === aba ? "page" : "false"));
   const caixa = document.getElementById("log-caixa"), colado = caixa && caixa.scrollTop + caixa.clientHeight >= caixa.scrollHeight - 8, y = window.scrollY;
-  const telas = { cobertura: telaCobertura, revisao: telaRevisao, geral: telaGeral, bots: telaBots, agenda: telaAgenda, fila: telaFila, mais: telaMais, dados: telaDados, eventos: telaEventos, historico: telaHistorico, fontes: telaFontes, custos: telaCustos, ajustes: telaAjustes };
+  const telas = { descobertas: telaDescobertas, cobertura: telaCobertura, revisao: telaRevisao, geral: telaGeral, bots: telaBots, agenda: telaAgenda, fila: telaFila, mais: telaMais, dados: telaDados, eventos: telaEventos, historico: telaHistorico, fontes: telaFontes, custos: telaCustos, ajustes: telaAjustes };
   const tela = r.tela === "bot" ? detalheBot(r.id) : r.tela === "logs" ? telaLogs(r.id) : r.tela === "em-breve" ? telaEmBreve(r.id) : r.tela === "cobertura" && r.id ? detalheCobertura(r.id) : (telas[r.tela] || telaGeral)();
   $main.replaceChildren(tela);
   const nova = document.getElementById("log-caixa"); if (nova && colado !== false) nova.scrollTop = nova.scrollHeight;

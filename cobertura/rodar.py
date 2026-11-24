@@ -25,12 +25,17 @@ def rodar(rep=None, dados=DADOS, agora=None):
     terr = analise.associar(lugares, g["distritos"], cfg)
     erros = terr.pop("_erros")
     p(2, 6, atual="Calculando cobertura e diversidade")
-    res = analise.calcular(lugares, terr, rev, eventos, g, cfg, agora)
+    hist_ant = execucao.ler(dados, "coverage_history", {}) or {}
+    res = analise.calcular(lugares, terr, rev, eventos, g, cfg, agora, hist_ant.get("buscas", []))
     p(4, 6, atual="Gerando prioridades e histórico")
     data_str = agora.astimezone(execucao.TZ).date().isoformat()
-    hist = execucao.atualizar_historico(execucao.ler(dados, "coverage_history", {}), execucao.fazer_snapshot(res, data_str))
+    hist = execucao.atualizar_historico(hist_ant, execucao.fazer_snapshot(res, data_str))
     resumo = execucao.resumo(res, g, cfg, terr, rev, lugares, agora)
     resumo["comparacao"] = execucao.comparar(hist)
+    resumo["distritos_pesquisados"] = sum(1 for m in res["metricas"] if m["last_search_at"])
+    desc = (execucao.ler(dados, "descobertas", {}) or {}).get("descobertas", [])
+    resumo["descobertas"] = {"total": len(desc), "novas": sum(1 for x in desc if x["status"] == "novo"), "possiveis_duplicados": sum(1 for x in desc if x["status"] == "possivel_duplicado")}
+    resumo["buscas"] = {"total": len(hist["buscas"]), "falhas": sum(1 for b in hist["buscas"] if b.get("status") == "falhou")}
     resumo["erros_de_registro"] = len(erros)
     bairros = [{"id": d["codigo"], "name": d["nome"], "normalized_name": d["nome_norm"], "district": d["nome"], "zone": d["zona"], "subprefecture": geo.nome_bonito(d["subprefeitura"]) if d.get("subprefeitura") else None,
                 "city": "São Paulo", "state": "SP", "area_km2": d.get("area_km2"), "neighborhood": None, "neighborhood_status": "unknown", "geometry": d["poligonos"], "source": "GeoSampa/Prefeitura de São Paulo",

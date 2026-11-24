@@ -305,3 +305,20 @@ def test_ciclo_sem_novidade_nao_gera_gravacoes(tmp_path):
     assert store.n == antes                             # nenhum commit extra: só o batimento a cada 30 min
     D.ciclo(store, lanc, REG, T0 + timedelta(minutes=31))
     assert store.n > antes
+
+
+
+def test_parametros_da_tarefa_viram_entradas_so_se_declarados_e_validos(ctx):
+    store, lanc = ctx
+    reg = REG + [{"id": "g", "nome": "G", "grupo": "Lugares", "workflow": "g.yml", "agenda": "x", "descricao": "", "requer": [], "parametros_entrada": {"distrito": "[0-9]{1,3}", "categoria": "[a-z_]{1,40}"}}]
+    enfileirar(store, "g", parametros={"distrito": "35", "categoria": "padaria", "outro": "x", "max": "1;rm"})
+    D.ciclo(store, lanc, reg, T0)
+    assert lanc.disparos == [("g.yml", {"distrito": "35", "categoria": "padaria"}, 1001)]        # 'outro' não é declarado: ignorado
+
+
+def test_parametro_fora_da_regra_nao_e_enviado(ctx):
+    store, lanc = ctx
+    reg = [{"id": "g", "nome": "G", "grupo": "Lugares", "workflow": "g.yml", "agenda": "x", "descricao": "", "requer": [], "parametros_entrada": {"distrito": "[0-9]{1,3}"}}]
+    enfileirar(store, "g", parametros={"distrito": "1; rm -rf /"})
+    D.ciclo(store, lanc, reg, T0)
+    assert lanc.disparos == [("g.yml", {}, 1001)]

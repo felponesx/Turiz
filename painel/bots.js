@@ -232,6 +232,26 @@ window.BOTS_REGISTRY = {
    ]
   },
   {
+   "id": "geo_scanner",
+   "parametros_entrada": {
+    "distrito": "[0-9]{1,3}",
+    "categoria": "[a-z_]{1,40}",
+    "max_tarefas": "[0-9]{1,2}"
+   },
+   "nome": "Geo Scanner",
+   "fonte": "OpenStreetMap (Overpass)",
+   "grupo": "Inteligência",
+   "icone": "pin",
+   "descricao": "Pesquisa no OpenStreetMap os distritos e categorias mais prioritários da cobertura e guarda o que achou como descoberta (aguardando validação). Nunca altera os lugares existentes.",
+   "workflow": "geo-scanner.yml",
+   "agenda": "diário 02:00 (Brasília)",
+   "requer": [],
+   "saidas": [
+    "data/descobertas.json.gz",
+    "data/coverage_history.json.gz"
+   ]
+  },
+  {
    "id": "eventos",
    "entradas": {
     "forcar": "true"

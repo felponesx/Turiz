@@ -60,3 +60,30 @@ diversidade:
   pesos: {riqueza: 0.5, equilibrio: 0.3, especificidade: 0.2}
   genericas: [restaurante, bar, lanchonete]  # categorias 'de tipo': catálogo só com elas é pouco informativo
 experiencias_alvo: 3                        # nº de categorias de experiência presentes para pontuar o máximo
+geo_scanner:          # Fase 6. Filtros do OpenStreetMap por categoria (só categorias com filtro são pesquisadas)
+  max_tarefas: 6                  # buscas (distrito × categoria) por execução
+  pausa_s: 5                      # espera entre consultas ao Overpass
+  max_falhas_seguidas: 3          # para tudo se o Overpass não responde
+  backoff_sem_novidade_max: 3     # sem lugares novos: o intervalo dobra a cada busca vazia, até 2^3
+  minimo_horas_entre_buscas: 1    # nem em execução manual repete antes disso
+  filtros:
+    padaria: ['["shop"="bakery"]']
+    doceria: ['["shop"~"^(confectionery|pastry|chocolate)$"]']
+    sorveteria: ['["amenity"="ice_cream"]', '["shop"="ice_cream"]']
+    cafeteria: ['["amenity"="cafe"]']
+    bar: ['["amenity"~"^(bar|pub|biergarten)$"]']
+    mercado: ['["amenity"~"^(marketplace|food_court)$"]']
+    diferenciado: ['["craft"="brewery"]', '["microbrewery"="yes"]', '["shop"="wine"]']
+    street_food: ['["amenity"="fast_food"]["cuisine"~"hot_dog|pastel|empanada|kebab|crepe|tapioca"]', '["amenity"="fast_food"]["mobile"="yes"]']
+    japonesa: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"japanese|sushi|ramen"]']
+    coreana: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"korean"]']
+    chinesa: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"chinese"]']
+    italiana: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"italian|pasta"]']
+    mexicana: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"mexican|tex-mex"]']
+    arabe: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"arab|lebanese|middle_eastern|sfiha"]']
+    pizzaria: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"pizza"]']
+    hamburgueria: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"burger"]']
+    churrascaria: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"steak_house|barbecue|grill"]']
+    vegetariana: ['["amenity"~"^(restaurant|fast_food|cafe)$"]["diet:vegan"~"yes|only"]', '["amenity"~"^(restaurant|fast_food|cafe)$"]["diet:vegetarian"~"yes|only"]']
+    nordestina: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"nordest|regional"]']
+    brasileira: ['["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"brazilian|regional|mineira"]']

@@ -22,7 +22,7 @@ def associar(lugares, distritos, cfg) -> dict:
     return out
 
 
-def calcular(lugares, territorio, revisao, eventos, geo_dados, cfg, agora=None) -> dict:
+def calcular(lugares, territorio, revisao, eventos, geo_dados, cfg, agora=None, buscas=()) -> dict:
     agora = agora or datetime.now(timezone.utc)
     distritos = geo_dados["distritos"]
     defs = cfg["categorias"]
@@ -33,6 +33,12 @@ def calcular(lugares, territorio, revisao, eventos, geo_dados, cfg, agora=None) 
         t = territorio.get(l["id"])
         if t and t["distrito"]:
             por_d[t["distrito"]].append(l)
+    ultima_busca, ultima_busca_cat = {}, {}
+    for b in buscas:
+        if b.get("status") == "concluida" and b.get("search_started_at"):
+            k = b["neighborhood_id"]
+            ultima_busca[k] = max(ultima_busca.get(k, ""), b["search_started_at"])
+            ultima_busca_cat[(k, b["category"])] = max(ultima_busca_cat.get((k, b["category"]), ""), b["search_started_at"])
     cats_do = {l["id"]: categorias_do_lugar(l, defs) for l in lugares}
     # eventos gastronômicos por distrito (só os que têm coordenada)
     ev_d = Counter()
@@ -95,7 +101,7 @@ def calcular(lugares, territorio, revisao, eventos, geo_dados, cfg, agora=None) 
              "quality_score": round(100 * (0.5 * comp["confiabilidade"] + 0.5 * comp["precisao"])), "location_score": round(100 * comp["precisao"]),
              "coverage_score": cov, "coverage_status": status, "componentes": {k: round(v, 3) for k, v in comp.items()},
              "density_per_km2": round(b["dens"], 2), "expected_places": round(esperado_total), "ausentes": len(ausentes), "missing_categories": sorted(ausentes),
-             "confiabilidade_media": round(conf, 1), "last_data_update": ultima, "status": status, "faixas_fase4": dict(faixas)}
+             "confiabilidade_media": round(conf, 1), "last_data_update": ultima, "last_search_at": ultima_busca.get(cod), "status": status, "faixas_fase4": dict(faixas)}
         metricas.append(m)
         for c in cats_cidade:
             ls_c = [l for l in ls if c in cats_do[l["id"]]]
@@ -105,7 +111,7 @@ def calcular(lugares, territorio, revisao, eventos, geo_dados, cfg, agora=None) 
             categorias_linhas.append({"id": f"{cod}:{c}", "neighborhood_id": cod, "category": c, "place_count": nc,
                                       "reliable_count": sum(1 for s in sc if s >= 75), "publishable_count": sum(1 for l in ls_c if rev.get(l["id"], {}).get("p")),
                                       "expected_count": round(esp_c, 1), "category_coverage_score": round(100 * min(1.0, nc / esp_c)),
-                                      "mean_confidence": round(sum(sc) / len(sc), 1) if sc else None, "last_searched_at": None})
+                                      "mean_confidence": round(sum(sc) / len(sc), 1) if sc else None, "last_searched_at": ultima_busca_cat.get((cod, c))})
     dens_rank = [m["density_per_km2"] for m in metricas]
     prios = _prioridades(metricas, categorias_linhas, base, cfg, dens_rank, agora, distritos)
     return {"metricas": metricas, "categorias": categorias_linhas, "prioridades": prios, "meta_densidade": round(meta, 2), "categorias_cidade": dict(cidade), "cats_cidade": cats_cidade}
@@ -118,8 +124,9 @@ def _prioridades(metricas, cat_linhas, base, cfg, dens_rank, agora, distritos):
         d = dnome[m["id"]]
         cov = m["coverage_score"]
         dias = idade_dias(m["last_data_update"], agora)
+        dias_busca = idade_dias(m["last_search_at"], agora)       # tempo desde a última PESQUISA por distrito (nunca pesquisado = 100%)
         intervalo = cfg["intervalos_dias"][m["status"]]
-        tempo = 1.0 if dias is None else min(1.0, dias / (3 * intervalo))
+        tempo = 1.0 if dias_busca is None else min(1.0, dias_busca / (3 * intervalo))
         esperado = max(1, m["expected_places"])
         n_cidade = max(1, len(set(m["missing_categories"])) + m["category_count"])
         comp = {"lacuna": 1.0 if cov is None else 1 - cov / 100, "ausentes": m["ausentes"] / n_cidade,
@@ -159,6 +166,7 @@ def _motivo(m, dias, d):
     if m["total_places"] and m["confiabilidade_media"] < 70:
         partes.append("confiabilidade média baixa")
     partes.append("dados nunca atualizados" if dias is None else f"dados atualizados há {dias} dias")
+    partes.append("distrito ainda não pesquisado" if not m["last_search_at"] else "última pesquisa em " + m["last_search_at"][:10])
     return ", ".join(partes)
 
 

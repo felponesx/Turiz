@@ -112,10 +112,10 @@ def resumo(res, geo_dados, cfg, terr, rev, lugares, agora):
             "categorias_menos_encontradas": [{"categoria": c, "rotulo": rotulo(c), "lugares": n} for c, n in cidade_pouco], "categorias_com_mais_distritos_sem": cats_ausentes,
             "regioes_para_explorar": [{"id": p["neighborhood_id"], "nome": dn[p["neighborhood_id"]]["nome"], "prioridade": p["priority_score"], "motivo": p["priority_reason"]} for p in dist_prior],
             "scanners_sugeridos": [{"id": i, "nome": cfg["scanners"][i]["nome"], "disponivel": cfg["scanners"][i]["disponivel"], "distritos": n} for i, n in scanners.most_common()],
-            "categorias_rotulos": {**{k: v.get("rotulo", k) for k, v in cfg["categorias"].items()}, "eventos": "Eventos gastronômicos"}, "por_zona": por_zona, "meta_densidade_por_km2": res["meta_densidade"], "fonte_geografica": geo_dados["fonte"], "fonte_baixada_em": geo_dados["baixado_em"],
+            "categorias_rotulos": {**{k: v.get("rotulo", k) for k, v in cfg["categorias"].items()}, "eventos": "Eventos gastronômicos"}, "geo_categorias": sorted(cfg.get("geo_scanner", {}).get("filtros", {})), "por_zona": por_zona, "meta_densidade_por_km2": res["meta_densidade"], "fonte_geografica": geo_dados["fonte"], "fonte_baixada_em": geo_dados["baixado_em"],
             "config": {"pesos_cobertura": cfg["pesos_cobertura"], "pesos_prioridade": cfg["pesos_prioridade"], "faixas": cfg["faixas"], "intervalos_dias": cfg["intervalos_dias"]},
             "limites": ["Não existe malha oficial de bairros: a unidade é o distrito (96); o bairro permanece desconhecido e o nome escrito no cadastro é só 'declarado'.",
-                        "Nenhuma pesquisa por distrito foi feita ainda; o histórico de buscas começa vazio e os scanners não são ativados nesta fase.",
+                        "Só o Geo Scanner (OpenStreetMap) pesquisa por distrito; Web, Instagram e Social ainda não existem. O que ele acha fica como descoberta aguardando validação e não entra nos números de cobertura.",
                         "As categorias vêm do cadastro (tipo, culinária, CNAE e palavras do nome); o que o cadastro não diz não é detectado."]}
 
 

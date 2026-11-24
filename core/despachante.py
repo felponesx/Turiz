@@ -3,6 +3,7 @@
 Um ciclo: (1) reconcilia tarefas em execução com o GitHub; (2) expira o que ficou velho na fila; (3) agenda o que está devido;
 (4) dispara as próximas tarefas respeitando pausa, concorrência e dependências; (5) publica o resumo para o painel.
 Efeitos externos (disparar/cancelar execuções) acontecem DEPOIS de a tarefa ser reservada na fila (no máximo uma vez)."""
+import re
 import argparse
 import json
 import os
@@ -192,6 +193,10 @@ def ciclo(store, lancador, registro, agora: datetime, rng=random, ler_status=lam
             if not meta.get("workflow"):
                 raise RuntimeError("bot sem workflow para disparar")
             entradas = dict(meta.get("entradas", {}))
+            for k, rx in (meta.get("parametros_entrada") or {}).items():       # só parâmetros declarados no registro e que casam com a regra
+                v = str((t.get("parametros") or {}).get(k, ""))
+                if v and re.fullmatch(rx, v):
+                    entradas[k] = v
             if meta.get("encadeia"):
                 entradas["encadear"] = "false"      # tarefa do Core não deve disparar a cadeia antiga
             resultados[tid] = ("ok", lancador.disparar(meta["workflow"], entradas))
