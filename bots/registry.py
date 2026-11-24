@@ -3,7 +3,7 @@
 import json
 import sys
 
-GRUPOS = ["Lugares", "Enriquecimento", "Eventos", "Sistema Turiz"]
+GRUPOS = ["Lugares", "Enriquecimento", "Revisão", "Eventos", "Sistema Turiz"]
 
 BOTS = [
     {"id": "osm", "encadeia": True, "entradas": {"fontes": "osm"}, "nome": "Restaurantes e bares", "fonte": "OpenStreetMap", "grupo": "Lugares", "icone": "pin",
@@ -36,6 +36,15 @@ BOTS = [
     {"id": "fotos_exemplo", "nome": "Fotos ilustrativas", "fonte": "Wikimedia Commons", "grupo": "Enriquecimento", "icone": "photo",
      "descricao": "Fotos de licença livre por tema (pizza, show, bar...) para lugares e eventos sem foto própria.",
      "workflow": "fotos-exemplo.yml", "agenda": "sob demanda", "requer": [], "saidas": ["data/fotos_exemplo/"]},
+    {"id": "deduplicador", "entradas": {"etapa": "dedup"}, "nome": "Deduplicador", "fonte": "Base de lugares", "grupo": "Revisão", "icone": "copy",
+     "descricao": "Acha lugares repetidos (mesmo nome no mesmo ponto, mesmo telefone/site) e relaciona ao registro principal, sem apagar nada. Unidades diferentes de uma rede nunca são unidas.",
+     "workflow": "revisao.yml", "agenda": "diário, depois das coletas", "requer": [], "saidas": ["data/duplicados.json.gz"]},
+    {"id": "location_check", "entradas": {"etapa": "local"}, "nome": "Location Check", "fonte": "Base de lugares", "grupo": "Revisão", "icone": "pin",
+     "descricao": "Confere coordenadas, área de cobertura, CEP, bairro e rua. Só aponta problemas; nunca inventa endereço.",
+     "workflow": "revisao.yml", "agenda": "diário, depois das coletas", "requer": [], "saidas": ["data/localizacao.json.gz"]},
+    {"id": "revisor", "entradas": {"etapa": "score"}, "nome": "Revisor", "fonte": "Base de lugares", "grupo": "Revisão", "icone": "check",
+     "descricao": "Dá a cada lugar um score de confiabilidade (0–100) e uma completude, contando só fontes independentes. Lugares duvidosos ficam marcados como não publicáveis.",
+     "workflow": "revisao.yml", "agenda": "diário, depois das coletas", "requer": [], "saidas": ["data/revisao.json.gz", "data/revisao_resumo.json"]},
     {"id": "eventos", "entradas": {"forcar": "true"}, "nome": "Eventos", "fonte": "Sites, Ticketmaster e feeds", "grupo": "Eventos", "icone": "calendar",
      "descricao": "Capta eventos com data, local, preço e foto de todas as fontes cadastradas, tira duplicados e guarda o histórico.",
      "workflow": "eventos.yml", "agenda": "a cada 6 horas", "requer": [], "saidas": ["data/eventos_v2.json.gz", "data/eventos.json"]},

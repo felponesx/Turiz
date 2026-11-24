@@ -2,6 +2,7 @@
  "grupos": [
   "Lugares",
   "Enriquecimento",
+  "Revisão",
   "Eventos",
   "Sistema Turiz"
  ],
@@ -159,6 +160,58 @@
    "requer": [],
    "saidas": [
     "data/fotos_exemplo/"
+   ]
+  },
+  {
+   "id": "deduplicador",
+   "entradas": {
+    "etapa": "dedup"
+   },
+   "nome": "Deduplicador",
+   "fonte": "Base de lugares",
+   "grupo": "Revisão",
+   "icone": "copy",
+   "descricao": "Acha lugares repetidos (mesmo nome no mesmo ponto, mesmo telefone/site) e relaciona ao registro principal, sem apagar nada. Unidades diferentes de uma rede nunca são unidas.",
+   "workflow": "revisao.yml",
+   "agenda": "diário, depois das coletas",
+   "requer": [],
+   "saidas": [
+    "data/duplicados.json.gz"
+   ]
+  },
+  {
+   "id": "location_check",
+   "entradas": {
+    "etapa": "local"
+   },
+   "nome": "Location Check",
+   "fonte": "Base de lugares",
+   "grupo": "Revisão",
+   "icone": "pin",
+   "descricao": "Confere coordenadas, área de cobertura, CEP, bairro e rua. Só aponta problemas; nunca inventa endereço.",
+   "workflow": "revisao.yml",
+   "agenda": "diário, depois das coletas",
+   "requer": [],
+   "saidas": [
+    "data/localizacao.json.gz"
+   ]
+  },
+  {
+   "id": "revisor",
+   "entradas": {
+    "etapa": "score"
+   },
+   "nome": "Revisor",
+   "fonte": "Base de lugares",
+   "grupo": "Revisão",
+   "icone": "check",
+   "descricao": "Dá a cada lugar um score de confiabilidade (0–100) e uma completude, contando só fontes independentes. Lugares duvidosos ficam marcados como não publicáveis.",
+   "workflow": "revisao.yml",
+   "agenda": "diário, depois das coletas",
+   "requer": [],
+   "saidas": [
+    "data/revisao.json.gz",
+    "data/revisao_resumo.json"
    ]
   },
   {

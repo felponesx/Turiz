@@ -1,0 +1,39 @@
+name: Revisão (deduplicador, location check, revisor)
+on:
+  workflow_dispatch:
+    inputs:
+      etapa:
+        description: "tudo, dedup, local ou score"
+        default: "tudo"
+      encadear:
+        description: "Sem efeito (o Review não encadeia outros bots)"
+        default: "false"
+  schedule:
+    - cron: "40 9 * * *"     # diário, 06:40 em Brasília, depois das coletas da madrugada
+permissions:
+  contents: write
+concurrency:
+  group: dados
+  cancel-in-progress: false
+jobs:
+  revisao:
+    runs-on: ubuntu-latest
+    env:
+      TURIZ_STATUS_PUBLICAR: "1"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Revisar lugares
+        env:
+          ETAPA: ${{ inputs.etapa || 'tudo' }}
+        run: |
+          case "$ETAPA" in tudo|dedup|local|score) ;; *) echo "etapa inválida"; exit 2;; esac
+          python revisar.py --etapa "$ETAPA"
+      - name: Commitar resultados
+        if: always()
+        run: |
+          scripts/commitar_dados.sh "dados: revisão $(date -u +%F)" data/duplicados.json.gz data/localizacao.json.gz data/revisao.json.gz data/revisao_resumo.json

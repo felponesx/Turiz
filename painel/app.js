@@ -45,6 +45,7 @@ const ICONES = {
   rocket: '<path d="M5 19c0-4 1-7 4-10s7-4.5 10-4.5c0 3-1.5 7-4.5 10s-6 4-9.5 4.5zM9.5 14.5l-3 3M14.5 9.5a1.3 1.3 0 1 0 0 .01"/>',
   back: '<path d="M15 5l-7 7 7 7"/>', play: '<path d="M8 5l11 7-11 7z"/>', stop: '<rect x="6" y="6" width="12" height="12" rx="2"/>',
   pause: '<path d="M8 5v14M16 5v14"/>', ext: '<path d="M14 4h6v6M20 4l-9 9M18 14v5H5V6h5"/>', next: '<path d="M9 5l7 7-7 7"/>',
+  copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>', check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
   refresh: '<path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/>',
 };
 function icone(nome) { const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("class", "i"); s.setAttribute("aria-hidden", "true"); s.innerHTML = ICONES[nome] || ICONES.globe; return s; }
@@ -69,6 +70,7 @@ function aviso(txt) { const a = document.getElementById("aviso"); a.textContent 
 /* ---------- dados ---------- */
 const ROTULO = { pausado: "Pausado", externo: "Automático", rodando: "Rodando", concluido: "Concluído", avisos: "Concluído com avisos", erro: "Erro", aguardando_credencial: "Aguardando chave", aguardando_config: "Aguardando ajuste", semsinal: "Sem sinal", nunca: "Ainda não rodou", ocioso: "Parado" };
 const ST = {};                                        // id -> status do bot (ou null)
+let REV = null;                                       // resumo do Review (data/revisao_resumo.json), ou null
 const CTL = { bots: null, fila: null, resumo: null, config: null };
 let redeErro = false, ultimaBusca = 0, buscando = false, ctlOk = false;
 
@@ -104,6 +106,7 @@ async function atualizar(manual) {
       if (!ST[b.id] && b.externo) ST[b.id] = { estado: "externo", percentual: 0, mensagem: "Roda sozinho todo dia às 11:07 (Brasília) e avisa por notificação no celular." };
     } catch { falhas++; }
   }));
+  try { REV = await lerJson(cfg.dados, "data/revisao_resumo.json", PARAMS.get("base")); } catch { /* ainda não gerado */ }
   const ctlBase = PARAMS.get("ctl");
   try {
     const [bots, fila, resumo, config] = await Promise.all(["bots", "fila", "resumo", "config"].map((n) => lerJson(cfg.ctl, `control/${n}.json`, ctlBase)));
@@ -228,7 +231,7 @@ function telaGeral() {
     kpi("Tarefas na fila", (CTL.resumo && CTL.resumo.fila && CTL.resumo.fila.na_fila) ?? 0), kpi("Dead-letter", (CTL.resumo && CTL.resumo.fila && CTL.resumo.fila.dead_letter) ?? 0)));
   raiz.append(secao("Captação de hoje (horário de Brasília)", h("div", { class: "kpis g4" },
     kpi("Captados", soma("captados")), kpi("Registros novos", soma("novos")), kpi("Atualizados", soma("atualizados")), kpi("Duplicados", soma("duplicados"), "eventos"),
-    kpi("Aguardando revisão", "—", "chega com o Revisor"), kpi("Eventos no sistema", totEv ?? "—"), kpi("Última execução", ultimo ? dh(ultimo) : "—"), kpi("Próxima (Core)", proximas[0] ? dh(proximas[0]) : "—", proximas[0] ? quando(proximas[0]) : "só horários fixos"))));
+    kpi("Aguardando revisão", REV ? REV.aguardando_revisao : "—", REV ? "score abaixo de 75" : "o Revisor ainda não rodou"), kpi("Eventos no sistema", totEv ?? "—"), kpi("Última execução", ultimo ? dh(ultimo) : "—"), kpi("Próxima (Core)", proximas[0] ? dh(proximas[0]) : "—", proximas[0] ? quando(proximas[0]) : "só horários fixos"))));
   const duracaoHoje = deHoje.reduce((a, x) => a + Math.max(0, (new Date(x.fim) - new Date(x.inicio)) / 1000), 0);
   raiz.append(secao("Controles rápidos", h("div", { class: "acoes", style: "margin-top:0" },
     h("button", { class: "btn prim", onclick: () => comando({ acao: "executar_todos" }, { confirmar: "Executar todos os bots ativos, em sequência? Isso leva horas." }) }, icone("play"), "Executar todos"),
@@ -393,11 +396,28 @@ function telaMais() {
     item("#/dados", "Banco de dados", "O que cada bot já guardou no sistema Turiz"), item("#/eventos", "Eventos", "Eventos captados, fontes e situação"),
     item("#/historico", "Histórico", "Execuções passadas de todos os bots"), item("#/logs", "Logs", "Registro de cada bot"), item("#/fontes", "Fontes", "Fontes de eventos e adicionar sites"),
     item("#/custos", "Custos e consumo", "Tempo de execução e limites medidos"), item("#/ajustes", "Configurações", "Conexão, token e regras gerais do Core"),
-    item("#/em-breve/descobertas", "Descobertas", "Perfis e lugares novos — próxima fase", "em-breve"), item("#/em-breve/revisao", "Revisão", "Score, duplicados e validação — próxima fase", "em-breve"));
+    item("#/em-breve/descobertas", "Descobertas", "Perfis e lugares novos — próxima fase", "em-breve"), item("#/revisao", "Revisão", REV ? `${num(REV.aguardando_revisao)} lugares para revisar · score médio ${String(REV.medias.confiabilidade).replace(".", ",")}` : "Score, duplicados e localização"));
+}
+const FAIXA_ROT = { alta: "Alta (90–100)", confiavel: "Confiável (75–89)", necessita_revisao: "Necessita revisão (50–74)", baixa_confianca: "Baixa confiança (25–49)", nao_confirmado: "Não confirmado (0–24)" };
+const FLAG_ROT = { coordenadas_invalidas: "Coordenadas inválidas", fora_da_area: "Fora da área de São Paulo", coordenada_aproximada: "Coordenada aproximada", endereco_incompleto: "Sem rua", sem_numero: "Sem número", sem_bairro: "Sem bairro", sem_cep: "Sem CEP", cep_invalido: "CEP inválido", cep_fora_de_sp: "CEP fora de SP capital" };
+const DUP_ROT = { duplicado_confirmado: "Duplicados confirmados", possivel_duplicado: "Possíveis duplicados", unidade_diferente: "Unidades diferentes (não unidas)" };
+function telaRevisao() {
+  const raiz = h("div", {}, h("a", { class: "voltar", href: "#/mais" }, icone("back"), "Mais"), h("h2", { style: "margin:8px 0", text: "Revisão" }));
+  if (!REV) return raiz.append(h("div", { class: "aviso-caixa", text: "O Revisor ainda não rodou. Abra Bots → Revisor → Executar agora. Nenhum número aparece antes de haver dados reais." })) || raiz;
+  raiz.append(h("div", { class: "kpis g4" }, kpi("Lugares analisados", REV.total), kpi("Publicáveis", REV.publicaveis, "score ≥ " + REV.config.minimo_para_publicar), kpi("Para revisar", REV.aguardando_revisao),
+    kpi("Confiabilidade média", String(REV.medias.confiabilidade).replace(".", ","), "de 100"), kpi("Completude média", String(REV.medias.completude).replace(".", ","), "de 100"), kpi("Duplicados ligados", REV.duplicados_relacionados)));
+  const max = Math.max(1, ...Object.values(REV.faixas));
+  const linhas = (obj, rot) => h("div", { class: "barras-dia" }, Object.entries(obj).sort((a, b) => b[1] - a[1]).map(([k, v]) => h("div", {}, h("span", { text: rot[k] || bonito(k) }), h("i", { style: `width:${Math.max(2, (v / Math.max(1, ...Object.values(obj))) * 100)}%` }), h("b", { style: "color:var(--ink)", text: num(v) }))));
+  raiz.append(secao("Confiabilidade (0–100)", linhas(REV.faixas, FAIXA_ROT)));
+  raiz.append(secao("Problemas de localização", Object.keys(REV.flags).length ? linhas(REV.flags, FLAG_ROT) : h("div", { class: "vazio", text: "Nenhum problema encontrado." })));
+  raiz.append(secao("Duplicidade", Object.keys(REV.duplicidade).length ? linhas(REV.duplicidade, DUP_ROT) : h("div", { class: "vazio", text: "Nenhum par encontrado." })));
+  raiz.append(secao("Por fonte", h("div", { class: "lista" }, Object.entries(REV.por_fonte).map(([f, c]) => h("div", { style: "display:block" }, h("b", { text: f }), h("div", { class: "minis" }, Object.entries(c).map(([k, v]) => h("span", {}, `${FAIXA_ROT[k] || k} `, h("b", { text: num(v) }))))))))); 
+  raiz.append(h("p", { class: "dica", text: `Gerado em ${dh(REV.gerado_em)}. O score soma: fontes independentes (até ${REV.config.pesos.fontes}), nome (${REV.config.pesos.nome}), localização (${REV.config.pesos.geo}), endereço (${REV.config.pesos.endereco}), foto rastreável (${REV.config.pesos.visual}) e atualidade (${REV.config.pesos.atualidade}). Fontes copiadas entre si contam uma vez só; faltar Instagram, cardápio ou telefone não tira pontos. A lista caso a caso e os botões Aprovar/Rejeitar ainda não existem.` }));
+  return raiz;
 }
 function telaEmBreve(nome) {
   const t = { descobertas: ["Descobertas", "Aqui aparecerão os estabelecimentos e perfis novos achados pelos scanners (Instagram, Geo, Web e Social), com a origem e a cobertura por região e categoria."],
-    revisao: ["Revisão", "Aqui ficarão os registros com score de confiabilidade (0–100), possíveis duplicados e dados duvidosos antes de irem para o app."] }[nome] || ["Em breve", ""];
+  }[nome] || ["Em breve", ""];
   return h("div", {}, h("a", { class: "voltar", href: "#/mais" }, icone("back"), "Mais"), h("h2", { style: "margin:8px 0", text: t[0] }), h("div", { class: "aviso-caixa", text: t[1] + " Esta etapa ainda não foi construída; nenhum número é mostrado até haver dados reais." }));
 }
 function telaDados() {
@@ -519,13 +539,13 @@ function telaAjustes() {
 
 /* ---------- rotas ---------- */
 const rota = () => { const p = location.hash.replace(/^#\/?/, "").split("/"); return { tela: p[0] || "geral", id: p[1] }; };
-const TITULOS = { geral: "Visão geral", bots: "Bots", agenda: "Agendamentos", fila: "Fila de tarefas", mais: "Mais", dados: "Banco de dados", eventos: "Eventos", historico: "Histórico", logs: "Logs", fontes: "Fontes", custos: "Custos e consumo", ajustes: "Configurações", "em-breve": "Em breve" };
+const TITULOS = { geral: "Visão geral", bots: "Bots", agenda: "Agendamentos", fila: "Fila de tarefas", mais: "Mais", dados: "Banco de dados", eventos: "Eventos", historico: "Histórico", logs: "Logs", fontes: "Fontes", custos: "Custos e consumo", ajustes: "Configurações", revisao: "Revisão", "em-breve": "Em breve" };
 function desenhar() {
   const r = rota();
-  const aba = { bot: "bots", dados: "mais", eventos: "mais", historico: "mais", logs: "mais", fontes: "mais", custos: "mais", ajustes: "mais", "em-breve": "mais" }[r.tela] || r.tela;
+  const aba = { bot: "bots", dados: "mais", eventos: "mais", historico: "mais", logs: "mais", fontes: "mais", custos: "mais", ajustes: "mais", "em-breve": "mais", revisao: "mais" }[r.tela] || r.tela;
   document.querySelectorAll(".abas a").forEach((a) => a.setAttribute("aria-current", a.dataset.tela === aba ? "page" : "false"));
   const caixa = document.getElementById("log-caixa"), colado = caixa && caixa.scrollTop + caixa.clientHeight >= caixa.scrollHeight - 8, y = window.scrollY;
-  const telas = { geral: telaGeral, bots: telaBots, agenda: telaAgenda, fila: telaFila, mais: telaMais, dados: telaDados, eventos: telaEventos, historico: telaHistorico, fontes: telaFontes, custos: telaCustos, ajustes: telaAjustes };
+  const telas = { revisao: telaRevisao, geral: telaGeral, bots: telaBots, agenda: telaAgenda, fila: telaFila, mais: telaMais, dados: telaDados, eventos: telaEventos, historico: telaHistorico, fontes: telaFontes, custos: telaCustos, ajustes: telaAjustes };
   const tela = r.tela === "bot" ? detalheBot(r.id) : r.tela === "logs" ? telaLogs(r.id) : r.tela === "em-breve" ? telaEmBreve(r.id) : (telas[r.tela] || telaGeral)();
   $main.replaceChildren(tela);
   const nova = document.getElementById("log-caixa"); if (nova && colado !== false) nova.scrollTop = nova.scrollHeight;
