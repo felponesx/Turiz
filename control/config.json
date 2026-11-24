@@ -1,0 +1,244 @@
+{
+ "global": {
+  "pausado": false,
+  "max_concorrencia": 1,
+  "timezone": "America/Sao_Paulo",
+  "ttl_espera_horas": 24,
+  "retencao_dias": 14,
+  "retry": {
+   "base_s": 120,
+   "teto_s": 3600,
+   "jitter": 0.25
+  }
+ },
+ "bots": {
+  "osm": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "receita": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "sites": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "google": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "enderecos": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "imagens": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "instagram": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "cardapios": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "fotos": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "fotos_exemplo": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "eventos": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  },
+  "turiz_app": {
+   "ativo": true,
+   "gerenciado": false,
+   "prioridade": "normal",
+   "agenda": {
+    "tipo": "manual"
+   },
+   "depende_de": [],
+   "max_tentativas": 3,
+   "limites": {
+    "max_minutos": 180,
+    "lote": null
+   },
+   "parametros": {},
+   "regiao": null,
+   "categorias": [],
+   "reprocessar": "ignorar_existentes",
+   "regras_revisao": {}
+  }
+ }
+}
