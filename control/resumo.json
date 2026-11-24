@@ -1,0 +1,25 @@
+{
+ "gerado_em": "2026-11-24T01:48:13+00:00",
+ "global": {
+  "pausado": false,
+  "max_concorrencia": 1,
+  "timezone": "America/Sao_Paulo",
+  "ttl_espera_horas": 24,
+  "retencao_dias": 14,
+  "retry": {
+   "base_s": 120,
+   "teto_s": 3600,
+   "jitter": 0.25
+  }
+ },
+ "fila": {
+  "por_estado": {},
+  "ativas_por_prioridade": {},
+  "ativas_por_bot": {},
+  "na_fila": 0,
+  "executando": 0,
+  "dead_letter": 0
+ },
+ "externos_ocupados": [],
+ "ultimo_ciclo": "2026-11-24T01:48:13+00:00"
+}
