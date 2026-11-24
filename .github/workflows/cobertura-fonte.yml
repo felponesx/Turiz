@@ -1,4 +1,4 @@
-name: Cobertura - baixar distritos (IBGE)
+name: Cobertura - baixar distritos (GeoSampa)
 on:
   workflow_dispatch:
 permissions:
@@ -17,4 +17,4 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python scripts/baixar_distritos.py
       - run: |
-          scripts/commitar_dados.sh "dados: distritos de São Paulo (IBGE)" data/geo/distritos_sp.json.gz
+          scripts/commitar_dados.sh "dados: distritos de São Paulo (GeoSampa)" data/geo/distritos_sp.json.gz

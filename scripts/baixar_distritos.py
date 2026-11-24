@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-"""Baixa os 96 distritos do município de São Paulo (IBGE, malha oficial + nomes) e grava data/geo/distritos_sp.json.gz.
-Fonte: servicodados.ibge.gov.br (API de malhas v3 e de localidades v1). Geometria simplificada a ~10 m.
-Só o IBGE oficial entra aqui: nada de nomes de bairro inventados."""
+"""Baixa os 96 distritos oficiais de São Paulo (GeoSampa/Prefeitura, WFS) e grava data/geo/distritos_sp.json.gz.
+Geometria simplificada a ~10 m. Só dado oficial entra aqui: nada de nomes de bairro inventados."""
 import gzip
 import json
 import sys
@@ -9,10 +8,13 @@ from datetime import datetime, timezone
 
 import httpx
 
-COD_SP = "3550308"
-URL_MALHA = f"https://servicodados.ibge.gov.br/api/v3/malhas/municipios/{COD_SP}"
-URL_NOMES = f"https://servicodados.ibge.gov.br/api/v1/localidades/municipios/{COD_SP}/distritos"
+WFS = "https://wfs.geosampa.prefeitura.sp.gov.br/geoserver/ows"
 SAIDA = "data/geo/distritos_sp.json.gz"
+
+
+def wfs(c, camada):
+    r = c.get(WFS, params={"service": "WFS", "version": "1.0.0", "request": "GetFeature", "typeName": camada, "outputFormat": "application/json", "srsName": "EPSG:4326"})
+    return r.raise_for_status().json()["features"]
 
 
 def simplificar(anel, tol=0.0001):
@@ -49,22 +51,25 @@ def poligonos(geom):
 
 
 def main():
-    with httpx.Client(timeout=120, follow_redirects=True, headers={"User-Agent": "turiz-cobertura"}) as c:
-        nomes = {str(d["id"]): d["nome"] for d in c.get(URL_NOMES).raise_for_status().json()}
-        malha = c.get(URL_MALHA, params={"intrarregiao": "distrito", "qualidade": "intermediaria", "formato": "application/vnd.geo+json"}).raise_for_status().json()
+    with httpx.Client(timeout=180, follow_redirects=True, headers={"User-Agent": "turiz-cobertura"}) as c:
+        dist = wfs(c, "geoportal:distrito_municipal")
+        subs = {f["properties"]["cd_identificador_subprefeitura"]: f["properties"] for f in wfs(c, "geoportal:subprefeitura")}
     feats = []
-    for f in malha["features"]:
-        cod = str(f["properties"].get("codarea") or f["properties"].get("id"))
+    for f in dist:
+        p = f["properties"]
         pols = [[simplificar([[round(x, 5), round(y, 5)] for x, y in anel]) for anel in pol] for pol in poligonos(f["geometry"])]
-        feats.append({"codigo": cod, "nome": nomes.get(cod), "poligonos": pols})
-    sem_nome = [f["codigo"] for f in feats if not f["nome"]]
-    if len(feats) < 90 or sem_nome:
-        sys.exit(f"malha inesperada: {len(feats)} distritos, sem nome: {sem_nome}")
-    obj = {"fonte": "IBGE — malha municipal v3 (intrarregiao=distrito) + localidades v1", "baixado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-           "municipio": "São Paulo", "uf": "SP", "distritos": sorted(feats, key=lambda f: f["codigo"])}
+        sub = subs.get(p.get("cd_identificador_subprefeitura")) or {}
+        feats.append({"codigo": str(p["cd_distrito_municipal"]), "nome_oficial": p["nm_distrito_municipal"], "sigla": p.get("sg_distrito_municipal"),
+                      "zona": p.get("nm_regiao_05"), "subprefeitura": sub.get("nm_subprefeitura"), "area_km2": p.get("qt_area_quilometro"), "poligonos": pols})
+    zonas = {f["zona"] for f in feats}
+    if len(feats) != 96 or not zonas <= {"Centro", "Norte", "Sul", "Leste", "Oeste"} or None in zonas:
+        sys.exit(f"dados inesperados: {len(feats)} distritos, zonas {zonas}")
+    obj = {"fonte": "Prefeitura de São Paulo — GeoSampa (WFS): distrito_municipal e subprefeitura; zona = campo oficial nm_regiao_05",
+           "baixado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"), "municipio": "São Paulo", "uf": "SP",
+           "distritos": sorted(feats, key=lambda f: f["codigo"])}
     with open(SAIDA, "wb") as raw, gzip.GzipFile(fileobj=raw, mode="wb", compresslevel=9, mtime=0) as g:
         g.write(json.dumps(obj, ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
-    print(f"{len(feats)} distritos gravados em {SAIDA}")
+    print(f"{len(feats)} distritos; zonas {sorted(zonas)}; gravados em {SAIDA}")
 
 
 if __name__ == "__main__":
