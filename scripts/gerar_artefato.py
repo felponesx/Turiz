@@ -34,7 +34,7 @@ def main(saida):
         raw = baixar("bot-control", f"control/{nome}.json")
         if raw:
             open(f"{saida}/c/{nome}.json", "wb").write(raw)
-    for nome in ("coverage_summary.json", "revisao_resumo.json"):
+    for nome in ("coverage_summary.json", "revisao_resumo.json", "app_atualizacoes.json"):
         open(f"{saida}/d/{nome}", "wb").write(open(f"data/{nome}", "rb").read())
     for nome in ("coverage_neighborhoods", "coverage_metrics", "coverage_categories", "coverage_priorities", "coverage_history", "descobertas"):
         p = f"data/{nome}.json.gz"

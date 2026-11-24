@@ -396,7 +396,7 @@ function telaMais() {
     item("#/dados", "Banco de dados", "O que cada bot já guardou no sistema Turiz"), item("#/eventos", "Eventos", "Eventos captados, fontes e situação"),
     item("#/historico", "Histórico", "Execuções passadas de todos os bots"), item("#/logs", "Logs", "Registro de cada bot"), item("#/fontes", "Fontes", "Fontes de eventos e adicionar sites"),
     item("#/custos", "Custos e consumo", "Tempo de execução e limites medidos"), item("#/ajustes", "Configurações", "Conexão, token e regras gerais do Core"),
-    item("#/descobertas", "Descobertas", "Lugares novos achados pelo Geo Scanner"), item("#/cobertura", "Cobertura geográfica", COB.resumo ? `${COB.resumo.distritos_mapeados} distritos · score médio ${String(COB.resumo.score_medio).replace(".", ",")}` : "Mapa, lacunas e prioridades de coleta"), item("#/revisao", "Revisão", REV ? `${num(REV.aguardando_revisao)} lugares para revisar · score médio ${String(REV.medias.confiabilidade).replace(".", ",")}` : "Score, duplicados e localização"));
+    item("#/descobertas", "Descobertas", "Lugares novos achados pelo Geo Scanner"), item("#/atualizacao", "Atualização do sistema", ATU.lista[0] ? `App v${ATU.lista[0].versao} · ${dh(ATU.lista[0].quando)}` : "O que já foi enviado ao app Turiz"), item("#/cobertura", "Cobertura geográfica", COB.resumo ? `${COB.resumo.distritos_mapeados} distritos · score médio ${String(COB.resumo.score_medio).replace(".", ",")}` : "Mapa, lacunas e prioridades de coleta"), item("#/revisao", "Revisão", REV ? `${num(REV.aguardando_revisao)} lugares para revisar · score médio ${String(REV.medias.confiabilidade).replace(".", ",")}` : "Score, duplicados e localização"));
 }
 const FAIXA_ROT = { alta: "Alta (90–100)", confiavel: "Confiável (75–89)", necessita_revisao: "Necessita revisão (50–74)", baixa_confianca: "Baixa confiança (25–49)", nao_confirmado: "Não confirmado (0–24)" };
 const FLAG_ROT = { coordenadas_invalidas: "Coordenadas inválidas", fora_da_area: "Fora da área de São Paulo", coordenada_aproximada: "Coordenada aproximada", endereco_incompleto: "Sem rua", sem_numero: "Sem número", sem_bairro: "Sem bairro", sem_cep: "Sem CEP", cep_invalido: "CEP inválido", cep_fora_de_sp: "CEP fora de SP capital" };
@@ -650,6 +650,35 @@ function telaChatBot(id) {
   marcarVisto(id);
   return raiz;
 }
+
+/* ---------- Atualização do sistema: o que já foi enviado ao app Turiz e o que ainda não entra ---------- */
+const ATU = { carregado: false, carregando: false, lista: [], erro: null };
+async function carregarAtualizacao() {
+  if (ATU.carregando || ATU.carregado) return; ATU.carregando = true;
+  try { const o = await lerJson(cfg.dados, "data/app_atualizacoes.json", PARAMS.get("base")); ATU.lista = o || []; ATU.carregado = true; if (!COB.carregado) await carregarCobertura(); if (!DESC.carregado) await carregarDescobertas(); }
+  catch (e) { ATU.erro = String(e.message || e); }
+  ATU.carregando = false; desenhar();
+}
+const ROT_TOT = { lugares: "Lugares", eventos: "Eventos", lugares_com_imagem: "Com imagem", lugares_com_rede: "Com rede social", lugares_com_cardapio: "Com cardápio" };
+function telaAtualizacao() {
+  const raiz = h("div", {}, h("a", { class: "voltar", href: "#/mais" }, icone("back"), "Mais"), h("h2", { style: "margin:8px 0", text: "Atualização do sistema" }));
+  if (!ATU.carregado) { carregarAtualizacao(); return raiz.append(h("div", { class: "aviso-caixa", text: ATU.erro ? "Não consegui carregar: " + ATU.erro : "Carregando…" })) || raiz; }
+  const l = ATU.lista, u = l[0];
+  if (!u) return raiz.append(h("div", { class: "vazio", text: "Nenhuma atualização do app registrada ainda." })) || raiz;
+  raiz.append(h("div", { class: "cartao-atu" }, h("div", { class: "linha-chips" }, chip(u.estado === "publicado" ? "Publicado" : u.estado, u.estado === "publicado" ? "ok" : "warn"), chip("App versão " + u.versao, "ouro")),
+    h("b", { class: "grande", text: dh(u.quando) }), h("small", { text: u.origem }), h("p", { class: "dica", text: u.resumo })));
+  raiz.append(secao("O que foi enviado ao app", h("div", { class: "kpis g4" }, Object.entries(u.totais).map(([k, v]) => kpi(ROT_TOT[k] || bonito(k), v)))));
+  const ant = l[1];
+  if (ant) { const dif = Object.entries(u.totais).map(([k, v]) => [k, v - (ant.totais[k] || 0)]).filter(([, d]) => d); raiz.append(secao("Mudou desde o envio anterior", dif.length ? h("div", { class: "lista" }, dif.map(([k, d]) => h("div", {}, h("span", { text: ROT_TOT[k] || k }), h("b", { text: (d > 0 ? "+" : "") + num(d) })))) : h("p", { class: "dica", text: `Nada mudou em relação à versão ${ant.versao} (${dh(ant.quando)}).` }))); }
+  const r = COB.resumo, rv = REV, nd = DESC.lista || [];
+  raiz.append(secao("Ainda fora do app, por regra", h("div", { class: "lista" },
+    h("div", { style: "display:block" }, h("b", { text: `${num(nd.length)} descobertas do Geo Scanner` }), h("small", { style: "display:block", text: "Achadas no OpenStreetMap e aguardando validação do Revisor. Não entram no app." })),
+    rv ? h("div", { style: "display:block" }, h("b", { text: `${num(rv.aguardando_revisao)} lugares abaixo de 75 pontos` }), h("small", { style: "display:block", text: "Já estão no app como antes. O filtro de publicação pela nota só será ligado na Fase 9." })) : null,
+    r ? h("div", { style: "display:block" }, h("b", { text: "Cobertura geográfica" }), h("small", { style: "display:block", text: "Análise interna do painel. Não vai para o app." })) : null)));
+  raiz.append(secao("Histórico de envios", h("div", { class: "lista" }, l.map((x) => h("div", { style: "display:block" }, h("b", { text: `Versão ${x.versao} · ${dh(x.quando)}` }), h("small", { style: "display:block", text: `${x.origem} · ${num(x.totais.lugares)} lugares, ${num(x.totais.eventos)} eventos` }))))));
+  raiz.append(h("p", { class: "dica", text: "A tarefa diária atualiza o app às 11:07 (Brasília), sem aprovação, trocando só os dados e nunca o visual. O app Turiz abre a versão mais recente pelo mesmo link." }));
+  return raiz;
+}
 function telaEmBreve(nome) {
   const t = { descobertas: ["Descobertas", "Aqui aparecerão os estabelecimentos e perfis novos achados pelos scanners (Instagram, Geo, Web e Social), com a origem e a cobertura por região e categoria."],
   }[nome] || ["Em breve", ""];
@@ -774,15 +803,15 @@ function telaAjustes() {
 
 /* ---------- rotas ---------- */
 const rota = () => { const p = location.hash.replace(/^#\/?/, "").split("/"); return { tela: p[0] || "geral", id: p[1] }; };
-const TITULOS = { geral: "Visão geral", bots: "Bots", agenda: "Agendamentos", fila: "Fila de tarefas", mais: "Mais", dados: "Banco de dados", eventos: "Eventos", historico: "Histórico", logs: "Logs", fontes: "Fontes", custos: "Custos e consumo", ajustes: "Configurações", revisao: "Revisão", chat: "Conversas", cobertura: "Cobertura geográfica", descobertas: "Descobertas", "em-breve": "Em breve" };
+const TITULOS = { geral: "Visão geral", bots: "Bots", agenda: "Agendamentos", fila: "Fila de tarefas", mais: "Mais", dados: "Banco de dados", eventos: "Eventos", historico: "Histórico", logs: "Logs", fontes: "Fontes", custos: "Custos e consumo", ajustes: "Configurações", revisao: "Revisão", atualizacao: "Atualização do sistema", chat: "Conversas", cobertura: "Cobertura geográfica", descobertas: "Descobertas", "em-breve": "Em breve" };
 const ChatEstado = { id: null, colado: true };
 function desenhar() {
   const r = rota();
   ChatEstado.colado = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 140;
-  const aba = { bot: "bots", dados: "mais", eventos: "mais", historico: "mais", logs: "mais", fontes: "mais", custos: "mais", ajustes: "mais", "em-breve": "mais", revisao: "mais", cobertura: "mais", descobertas: "mais" }[r.tela] || r.tela;
+  const aba = { bot: "bots", dados: "mais", eventos: "mais", historico: "mais", logs: "mais", fontes: "mais", custos: "mais", ajustes: "mais", "em-breve": "mais", revisao: "mais", cobertura: "mais", descobertas: "mais", atualizacao: "mais" }[r.tela] || r.tela;
   document.querySelectorAll(".abas a").forEach((a) => a.setAttribute("aria-current", a.dataset.tela === aba ? "page" : "false"));
   const caixa = document.getElementById("log-caixa"), colado = caixa && caixa.scrollTop + caixa.clientHeight >= caixa.scrollHeight - 8, y = window.scrollY;
-  const telas = { chat: telaChat, descobertas: telaDescobertas, cobertura: telaCobertura, revisao: telaRevisao, geral: telaGeral, bots: telaBots, agenda: telaAgenda, fila: telaFila, mais: telaMais, dados: telaDados, eventos: telaEventos, historico: telaHistorico, fontes: telaFontes, custos: telaCustos, ajustes: telaAjustes };
+  const telas = { atualizacao: telaAtualizacao, chat: telaChat, descobertas: telaDescobertas, cobertura: telaCobertura, revisao: telaRevisao, geral: telaGeral, bots: telaBots, agenda: telaAgenda, fila: telaFila, mais: telaMais, dados: telaDados, eventos: telaEventos, historico: telaHistorico, fontes: telaFontes, custos: telaCustos, ajustes: telaAjustes };
   const tela = r.tela === "bot" ? detalheBot(r.id) : r.tela === "logs" ? telaLogs(r.id) : r.tela === "em-breve" ? telaEmBreve(r.id) : r.tela === "cobertura" && r.id ? detalheCobertura(r.id) : r.tela === "chat" && r.id ? telaChatBot(r.id) : (telas[r.tela] || telaGeral)();
   $main.replaceChildren(tela);
   const nova = document.getElementById("log-caixa"); if (nova && colado !== false) nova.scrollTop = nova.scrollHeight;

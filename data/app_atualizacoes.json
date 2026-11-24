@@ -1,0 +1,8 @@
+[
+ {"quando": "2026-11-24T14:12:25Z", "origem": "manual (pedido do dono)", "versao": 37, "estado": "publicado",
+  "totais": {"lugares": 24090, "eventos": 35, "lugares_com_imagem": 136, "lugares_com_rede": 263, "lugares_com_cardapio": 173},
+  "resumo": "App publicado com os dados do dia. O script de validação saiu com código 0 (sem recusa). Os status no painel do bot não puderam ser gravados, o que não afeta a publicação."},
+ {"quando": "2026-11-24T14:08:22Z", "origem": "tarefa diária (11:07 Brasília)", "versao": 36, "estado": "publicado",
+  "totais": {"lugares": 24090, "eventos": 35, "lugares_com_imagem": 136, "lugares_com_rede": 263, "lugares_com_cardapio": 173},
+  "resumo": "App publicado com os dados do dia. O script de validação saiu com código 0 (sem recusa)."}
+]

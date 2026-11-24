@@ -196,3 +196,6 @@ meta[name=theme-color]{}
 .chat-acoes .btn{flex:1;justify-content:center;min-height:44px;padding:0 10px;font-size:.85rem}
 @media (prefers-reduced-motion:reduce){.av-rodando::after,.digitando-ponto i{animation:none}}
 @media (min-width:700px){.chat,.chat-lista{max-width:640px;margin:0 auto}.chat-acoes{left:50%;right:auto;transform:translateX(-50%);width:640px}}
+
+.cartao-atu{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;margin-top:6px}
+.cartao-atu .grande{font-size:1.3rem}.cartao-atu small{color:var(--mut)}
