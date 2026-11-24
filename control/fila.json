@@ -32,7 +32,8 @@
    "erro": null,
    "logs": [
     "01:52:02 criada (painel, prioridade alta)",
-    "01:52:02 iniciada (tentativa 1)"
+    "01:52:02 iniciada (tentativa 1)",
+    "01:52:02 execução 45308195082"
    ],
    "contagens": {
     "captados": 0,
@@ -41,7 +42,7 @@
     "duplicados": 0,
     "rejeitados": 0
    },
-   "run_id": null,
+   "run_id": 45308195082,
    "chave": "5cb310468f3ed14d"
   }
  ],
