@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-24T01:53:08+00:00",
+ "gerado_em": "2026-11-24T11:41:16+00:00",
  "timezone": "America/Sao_Paulo",
  "bots": [
   {
@@ -453,6 +453,255 @@
    "descricao": "Fotos de licença livre por tema (pizza, show, bar...) para lugares e eventos sem foto própria.",
    "workflow": "fotos-exemplo.yml",
    "agenda": "sob demanda",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "deduplicador",
+   "entradas": {
+    "etapa": "dedup"
+   },
+   "nome": "Deduplicador",
+   "fonte": "Base de lugares",
+   "grupo": "Revisão",
+   "icone": "copy",
+   "descricao": "Acha lugares repetidos (mesmo nome no mesmo ponto, mesmo telefone/site) e relaciona ao registro principal, sem apagar nada. Unidades diferentes de uma rede nunca são unidas.",
+   "workflow": "revisao.yml",
+   "agenda": "diário, depois das coletas",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "location_check",
+   "entradas": {
+    "etapa": "local"
+   },
+   "nome": "Location Check",
+   "fonte": "Base de lugares",
+   "grupo": "Revisão",
+   "icone": "pin",
+   "descricao": "Confere coordenadas, área de cobertura, CEP, bairro e rua. Só aponta problemas; nunca inventa endereço.",
+   "workflow": "revisao.yml",
+   "agenda": "diário, depois das coletas",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "revisor",
+   "entradas": {
+    "etapa": "score"
+   },
+   "nome": "Revisor",
+   "fonte": "Base de lugares",
+   "grupo": "Revisão",
+   "icone": "check",
+   "descricao": "Dá a cada lugar um score de confiabilidade (0–100) e uma completude, contando só fontes independentes. Lugares duvidosos ficam marcados como não publicáveis.",
+   "workflow": "revisao.yml",
+   "agenda": "diário, depois das coletas",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "cobertura",
+   "nome": "Cobertura geográfica",
+   "fonte": "Distritos oficiais (GeoSampa)",
+   "grupo": "Inteligência",
+   "icone": "map",
+   "descricao": "Mede a cobertura de cada distrito de São Paulo (quantidade, diversidade, confiabilidade, precisão) e gera a fila de prioridades de coleta. Só recomenda: não dispara outros bots.",
+   "workflow": "cobertura.yml",
+   "agenda": "diário, depois da revisão",
+   "requer": [],
+   "config": {
+    "ativo": true,
+    "gerenciado": false,
+    "prioridade": "normal",
+    "agenda": {
+     "tipo": "manual"
+    },
+    "depende_de": [],
+    "max_tentativas": 3,
+    "limites": {
+     "max_minutos": 180,
+     "lote": null
+    },
+    "parametros": {},
+    "regiao": null,
+    "categorias": [],
+    "reprocessar": "ignorar_existentes",
+    "regras_revisao": {}
+   },
+   "agenda_texto": "Só manual",
+   "proxima_execucao": null,
+   "ativas": 0,
+   "estatisticas": {
+    "execucoes": 0,
+    "sucessos": 0,
+    "falhas": 0,
+    "duracao_media_s": null,
+    "contagens": {
+     "captados": 0,
+     "novos": 0,
+     "atualizados": 0,
+     "duplicados": 0,
+     "rejeitados": 0
+    },
+    "ultima": null
+   }
+  },
+  {
+   "id": "geo_scanner",
+   "parametros_entrada": {
+    "distrito": "[0-9]{1,3}",
+    "categoria": "[a-z_]{1,40}",
+    "max_tarefas": "[0-9]{1,2}"
+   },
+   "nome": "Geo Scanner",
+   "fonte": "OpenStreetMap (Overpass)",
+   "grupo": "Inteligência",
+   "icone": "pin",
+   "descricao": "Pesquisa no OpenStreetMap os distritos e categorias mais prioritários da cobertura e guarda o que achou como descoberta (aguardando validação). Nunca altera os lugares existentes.",
+   "workflow": "geo-scanner.yml",
+   "agenda": "diário 02:00 (Brasília)",
    "requer": [],
    "config": {
     "ativo": true,
