@@ -2,6 +2,7 @@
 """Baixa os 96 distritos oficiais de São Paulo (GeoSampa/Prefeitura, WFS) e grava data/geo/distritos_sp.json.gz.
 Geometria simplificada a ~10 m. Só dado oficial entra aqui: nada de nomes de bairro inventados."""
 import gzip
+import os
 import json
 import sys
 from datetime import datetime, timezone
@@ -67,6 +68,7 @@ def main():
     obj = {"fonte": "Prefeitura de São Paulo — GeoSampa (WFS): distrito_municipal e subprefeitura; zona = campo oficial nm_regiao_05",
            "baixado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"), "municipio": "São Paulo", "uf": "SP",
            "distritos": sorted(feats, key=lambda f: f["codigo"])}
+    os.makedirs(os.path.dirname(SAIDA), exist_ok=True)
     with open(SAIDA, "wb") as raw, gzip.GzipFile(fileobj=raw, mode="wb", compresslevel=9, mtime=0) as g:
         g.write(json.dumps(obj, ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
     print(f"{len(feats)} distritos; zonas {sorted(zonas)}; gravados em {SAIDA}")
