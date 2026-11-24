@@ -22,7 +22,7 @@ def main():
     a = ap.parse_args()
     with bot("geo_scanner") as rep:
         rep.progresso(0, 0, atual="Escolhendo distritos e categorias pela fila de prioridades")
-        res = scanner.executar(DADOS, config("cobertura_config.yml"), lambda q: osm._post(q, tentativas=3), max_tarefas=a.max_tarefas,
+        res = scanner.executar(DADOS, config("cobertura_config.yml"), lambda q: osm._post(q, tentativas=3, timeout=150), max_tarefas=a.max_tarefas,
                                distrito=a.distrito or None, categoria=a.categoria or None, rep=rep, max_minutos=a.max_minutos)
         rep.definir(descobertas=res["descobertas_total"], buscas_feitas=res["feitas"], falhas=res["falhas"])
         if not res["tarefas"]:

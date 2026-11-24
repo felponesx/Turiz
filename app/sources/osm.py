@@ -103,11 +103,11 @@ def coletar(amenities=("restaurant", "fast_food", "cafe", "bar", "pub", "nightcl
     return list(vistos.values())
 
 
-def _post(q, tentativas=6):
+def _post(q, tentativas=6, timeout=300):
     erro = None
     for i in range(tentativas):
         try:
-            r = httpx.post(MIRRORS[i % len(MIRRORS)], data={"data": q}, timeout=300,
+            r = httpx.post(MIRRORS[i % len(MIRRORS)], data={"data": q}, timeout=timeout,
                            headers={"User-Agent": "guia-sp-api/1.0"})
             r.raise_for_status()
             return r.json()
