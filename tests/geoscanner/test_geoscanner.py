@@ -189,3 +189,14 @@ def test_workflow_e_registro_do_geo_scanner():
     assert b["workflow"] == "geo-scanner.yml" and set(b["parametros_entrada"]) == {"distrito", "categoria", "max_tarefas"}
     wf = open(".github/workflows/geo-scanner.yml", encoding="utf-8").read()
     assert "gh workflow" not in wf and "actions: write" not in wf and "${{ inputs.distrito }}" in wf and "run: python coletar_geo.py" not in wf   # entradas passam por env, nunca interpoladas no shell
+
+
+def test_alvo_manual_usa_toda_lacuna_do_distrito_mesmo_fora_das_400_maiores(tmp_path):
+    d = montar(tmp_path)
+    execucao.gravar(str(d), "coverage_priorities", {"prioridades": [{"id": "9:*", "neighborhood_id": "9", "category": None, "priority_score": 50}]})   # fila sem linhas do distrito 1
+    cats = [{"id": "1:padaria", "neighborhood_id": "1", "category": "padaria", "place_count": 0, "expected_count": 5.0}, {"id": "1:doceria", "neighborhood_id": "1", "category": "doceria", "place_count": 1, "expected_count": 5.0},
+            {"id": "1:bar", "neighborhood_id": "1", "category": "bar", "place_count": 9, "expected_count": 5.0}]
+    execucao.gravar(str(d), "coverage_categories", {"categorias_cidade": {}, "categorias": cats})
+    r = rodar_geo(d, post_ok([]), distrito="1", max_tarefas=2)
+    assert r["tarefas"] == 2 and r["feitas"] == 2
+    assert rodar_geo(d, post_ok([]), max_tarefas=2)["tarefas"] == 0                       # sem alvo manual, a fila pública vazia não gera busca

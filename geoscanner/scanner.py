@@ -155,6 +155,11 @@ def executar(dados, cfg, post, agora=None, max_tarefas=None, distrito=None, cate
     mets = (execucao.ler(dados, "coverage_metrics", {}) or {}).get("metricas", [])
     if not prios:
         raise RuntimeError("Sem fila de prioridades: rode a cobertura geográfica antes.")
+    if distrito or categoria:       # alvo manual: a fila pública guarda só as 400 maiores prioridades; aqui vale toda lacuna do distrito
+        ja = {p["id"] for p in prios}
+        for c in (execucao.ler(dados, "coverage_categories", {}) or {}).get("categorias", []):
+            if c["id"] not in ja and c["place_count"] < c["expected_count"] and (not distrito or c["neighborhood_id"] == distrito) and (not categoria or c["category"] == categoria):
+                prios.append({"id": c["id"], "neighborhood_id": c["neighborhood_id"], "category": c["category"], "priority_score": round(100 * (1 - c["place_count"] / c["expected_count"]))})
     hist = execucao.ler(dados, "coverage_history", {}) or {"snapshots": [], "buscas": []}
     descobertas = execucao.ler(dados, "descobertas", {}) or {"descobertas": []}
     tarefas = escolher_tarefas(prios, mets, hist.get("buscas", []), cfg, agora, max_tarefas or gs["max_tarefas"], filtros, forcar or bool(distrito or categoria), distrito, categoria)
