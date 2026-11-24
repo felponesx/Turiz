@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-24T01:52:02+00:00",
+ "gerado_em": "2026-11-24T01:53:08+00:00",
  "timezone": "America/Sao_Paulo",
  "bots": [
   {
@@ -232,12 +232,12 @@
    },
    "agenda_texto": "Só manual",
    "proxima_execucao": null,
-   "ativas": 1,
+   "ativas": 0,
    "estatisticas": {
-    "execucoes": 0,
-    "sucessos": 0,
+    "execucoes": 1,
+    "sucessos": 1,
     "falhas": 0,
-    "duracao_media_s": null,
+    "duracao_media_s": 66,
     "contagens": {
      "captados": 0,
      "novos": 0,
@@ -245,7 +245,11 @@
      "duplicados": 0,
      "rejeitados": 0
     },
-    "ultima": null
+    "ultima": {
+     "estado": "concluida",
+     "finalizada_em": "2026-11-24T01:53:08+00:00",
+     "erro": null
+    }
    }
   },
   {
