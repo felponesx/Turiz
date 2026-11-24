@@ -16,4 +16,5 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install -r requirements.txt
       - run: python scripts/baixar_distritos.py
-      - run: scripts/commitar_dados.sh "dados: distritos de São Paulo (IBGE)" data/geo/distritos_sp.json.gz
+      - run: |
+          scripts/commitar_dados.sh "dados: distritos de São Paulo (IBGE)" data/geo/distritos_sp.json.gz
