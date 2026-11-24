@@ -544,6 +544,112 @@ function telaDescobertas() {
   raiz.append(h("p", { class: "dica", text: "Descobertas são lugares que o Geo Scanner achou no OpenStreetMap e que ainda não estão na base. Nenhuma é publicada no app automaticamente: ficam aguardando validação. Os botões Aprovar, Rejeitar e Vincular ainda não existem." }));
   return raiz;
 }
+
+/* ---------- Chat: monitor no estilo Telegram (conversa por bot + feed geral). Só mostra o que os bots e o Core registraram de verdade ---------- */
+const CHAVE_VISTO = "turiz-chat-visto", CHAVE_INI = "turiz-chat-inicio";
+const lerVisto = () => { try { return JSON.parse(localStorage.getItem(CHAVE_VISTO) || "{}"); } catch { return {}; } };
+let VISTO = lerVisto();
+try { if (!localStorage.getItem(CHAVE_INI)) localStorage.setItem(CHAVE_INI, new Date().toISOString()); } catch { /* sem armazenamento */ }
+const INICIO_CHAT = (() => { try { return localStorage.getItem(CHAVE_INI) || ""; } catch { return ""; } })();
+function marcarVisto(id) { VISTO[id] = new Date().toISOString(); try { localStorage.setItem(CHAVE_VISTO, JSON.stringify(VISTO)); } catch { /* sem armazenamento */ } }
+const RES_CONT = { captados: "captados", novos: "novos", atualizados: "atualizados", duplicados: "duplicados", falhas: "falhas" };
+function resumoContagem(c) { return Object.entries(c || {}).filter(([, v]) => v).slice(0, 4).map(([k, v]) => `${num(v)} ${(RES_CONT[k] || k.replace(/_/g, " "))}`).join(" · "); }
+function mensagensBot(id) {
+  const m = [], s = ST[id];
+  if (s) {
+    for (const x of s.historico || []) {
+      if (!x.fim) continue;
+      const resumo = resumoContagem(x.contagem), d = x.inicio ? Math.max(0, Math.round((new Date(x.fim) - new Date(x.inicio)) / 1000)) : null;
+      m.push({ bot: id, t: x.fim, tipo: x.estado === "erro" ? "erro" : x.estado === "avisos" ? "aviso" : "ok", txt: `${ROTULO[x.estado] || x.estado}${resumo ? " — " + resumo : ""}${d != null ? " · " + duracao(d) : ""}${x.mensagem ? "\n" + x.mensagem : ""}`, link: seguro(x.run_url) });
+    }
+    if (s.iniciado_em) m.push({ bot: id, t: s.iniciado_em, tipo: "info", txt: "Execução iniciada" });
+    for (const l of s.log || []) {
+      const t = l.txt || "";
+      if (!l.t || t === "início") continue;
+      m.push({ bot: id, t: l.t, tipo: /^AVISO/i.test(t) ? "aviso" : /^(ERRO|FALHA)/i.test(t) ? "erro" : "info", txt: t.replace(/^AVISO:\s*/i, "") });
+    }
+    for (const l of s.itens || []) if (l.t && l.txt) m.push({ bot: id, t: l.t, tipo: "item", txt: l.txt });
+  }
+  for (const x of tarefas().filter((x) => x.bot === id).slice(-8)) {
+    if (x.criada_em) m.push({ bot: id, t: x.criada_em, tipo: "core", txt: `Core: tarefa criada (${x.origem || "—"}, prioridade ${PRIO[x.prioridade] || x.prioridade})` });
+    if (x.iniciada_em) m.push({ bot: id, t: x.iniciada_em, tipo: "core", txt: `Core: tarefa iniciada (tentativa ${x.tentativas})` });
+    if (x.finalizada_em) m.push({ bot: id, t: x.finalizada_em, tipo: "core", txt: `Core: tarefa ${(x.estado || "").replace(/_/g, " ")}${x.erro ? " — " + String(x.erro).slice(0, 120) : ""}` });
+  }
+  return m.filter((x) => x.t && !isNaN(new Date(x.t))).sort((a, b) => new Date(a.t) - new Date(b.t));
+}
+const diaRot = (iso) => { const d = FMT_DIA.format(new Date(iso)), hoje = FMT_DIA.format(new Date()), ontem = FMT_DIA.format(new Date(Date.now() - 864e5)); return d === hoje ? "Hoje" : d === ontem ? "Ontem" : d; };
+const hm = (iso) => { try { return new Date(iso).toLocaleTimeString("pt-BR", { timeZone: TZ, hour: "2-digit", minute: "2-digit" }); } catch { return ""; } };
+function avatar(b, e) { return h("div", { class: `avatar av-${e}` }, icone(b.icone)); }
+function statusLinha(b) {
+  const s = ST[b.id], e = efetivo(s);
+  if (e === "rodando") return `rodando · ${s.percentual ?? 0}%${s.atual ? " · " + s.atual : ""}`;
+  if (e === "nunca") return "ainda não rodou";
+  if (s && s.finalizado_em) return `${(ROTULO[e] || e).toLowerCase()} · ${quando(s.finalizado_em)}`;
+  return (ROTULO[e] || e).toLowerCase();
+}
+function atualizarPontinho() {
+  const pt = document.getElementById("pt-chat"); if (!pt) return;
+  const nao = REG.bots.some((b) => mensagensBot(b.id).some((x) => x.t > Math.max(VISTO[b.id] || "", INICIO_CHAT) && x.tipo !== "core" && x.tipo !== "info"));
+  pt.hidden = !nao || rota().tela === "chat";
+}
+function telaChat() {
+  const raiz = h("div", { class: "chat-lista" });
+  const bots = REG.bots.map((b) => ({ b, e: efetivo(ST[b.id]), msgs: mensagensBot(b.id) }));
+  const rodando = bots.filter((x) => x.e === "rodando");
+  raiz.append(h("div", { class: "agora" }, h("small", { text: rodando.length ? `Rodando agora (${rodando.length})` : "Nenhum bot rodando agora" }),
+    rodando.length ? h("div", { class: "stories" }, rodando.map(({ b }) => h("a", { href: "#/chat/" + b.id, class: "story" }, h("div", { class: "anel", style: `--p:${ST[b.id].percentual || 0}` }, avatar(b, "rodando")), h("span", { text: b.nome.split(" ")[0] }), h("b", { text: (ST[b.id].percentual || 0) + "%" })))) : null));
+  const todas = bots.flatMap((x) => x.msgs);
+  const ultG = todas.filter((x) => x.tipo !== "info").sort((a, b) => new Date(b.t) - new Date(a.t))[0];
+  const naoLidasG = todas.filter((x) => x.t > Math.max(VISTO.todos || "", INICIO_CHAT) && x.tipo !== "core").length;
+  const linha = (href, av, nome, prev, t, nao, extra) => h("a", { class: "conversa", href }, av, h("div", { class: "corpo" }, h("div", { class: "l1" }, h("b", { text: nome }), h("time", { text: t ? (diaRot(t) === "Hoje" ? hm(t) : diaRot(t)) : "" })), h("div", { class: "l2" }, h("span", { class: "prev " + (extra || ""), text: prev }), nao ? h("i", { class: "nao", text: nao > 99 ? "99+" : String(nao) }) : null)));
+  raiz.append(linha("#/chat/todos", h("div", { class: "avatar av-todos" }, icone("share")), "Todos os bots", ultG ? `${meta(ultG.bot).nome}: ${ultG.txt.split("\n")[0]}` : "Sem atividade registrada ainda", ultG && ultG.t, naoLidasG));
+  const ordem = [...bots].sort((a, b) => (b.e === "rodando") - (a.e === "rodando") || (new Date((b.msgs.at(-1) || {}).t || 0) - new Date((a.msgs.at(-1) || {}).t || 0)));
+  for (const { b, e, msgs } of ordem) {
+    const ult = msgs.filter((x) => x.tipo !== "core").at(-1) || msgs.at(-1), vistoDesde = Math.max(VISTO[b.id] || "", INICIO_CHAT) || "";
+    const nao = msgs.filter((x) => x.t > vistoDesde && x.tipo !== "core" && x.tipo !== "info").length;
+    raiz.append(linha("#/chat/" + b.id, avatar(b, e), b.nome, e === "rodando" ? `✎ ${statusLinha(b)}` : ult ? ult.txt.split("\n")[0] : statusLinha(b), ult && ult.t, nao, e === "rodando" ? "digitando" : e === "erro" ? "erro" : ""));
+  }
+  raiz.append(h("p", { class: "dica", style: "padding:10px 16px", text: "Cada bot tem uma conversa com o que ele registrou. As mensagens vêm dos status e do Core; nada é inventado. Atualiza sozinho a cada poucos segundos." }));
+  return raiz;
+}
+function telaChatBot(id) {
+  const todos = id === "todos", b = todos ? { id, nome: "Todos os bots", icone: "share" } : REG.bots.find((x) => x.id === id);
+  if (!b) return h("div", { class: "vazio", text: "Conversa não encontrada." });
+  const s = ST[id], e = todos ? (REG.bots.some((x) => efetivo(ST[x.id]) === "rodando") ? "rodando" : "ocioso") : efetivo(s);
+  const msgs = todos ? REG.bots.flatMap((x) => mensagensBot(x.id)).filter((x) => x.tipo !== "core" && x.tipo !== "info").sort((a, c) => new Date(a.t) - new Date(c.t)).slice(-150) : mensagensBot(id);
+  const sub = todos ? `${REG.bots.filter((x) => efetivo(ST[x.id]) === "rodando").length} rodando agora` : statusLinha(b);
+  const raiz = h("div", { class: "chat" });
+  raiz.append(h("div", { class: "chat-cab" }, h("a", { class: "volta", href: "#/chat", "aria-label": "Voltar às conversas" }, icone("back")), todos ? h("div", { class: "avatar av-todos pq" }, icone("share")) : h("div", { class: `avatar pq av-${e}` }, icone(b.icone)),
+    h("div", { class: "quem" }, h("b", { text: b.nome }), h("small", { class: e === "rodando" ? "digitando" : "", text: sub })), todos ? null : h("a", { class: "icone-btn", href: "#/bot/" + id, "aria-label": "Detalhes e configuração" }, icone("next"))));
+  const fio = h("div", { class: "fio" });
+  let dia = "", ultimoBot = "";
+  if (!msgs.length) fio.append(h("div", { class: "sistema", text: "Nenhuma mensagem ainda. Quando este bot rodar, tudo aparece aqui." }));
+  for (const x of msgs) {
+    const d = diaRot(x.t);
+    if (d !== dia) { fio.append(h("div", { class: "dia" }, h("span", { text: d }))); dia = d; ultimoBot = ""; }
+    if (x.tipo === "core") { fio.append(h("div", { class: "sistema" }, h("span", { text: `${hm(x.t)} · ${x.txt}` }))); continue; }
+    const cab = todos && x.bot !== ultimoBot ? h("div", { class: "de", text: meta(x.bot).nome }) : null;
+    ultimoBot = x.bot;
+    fio.append(h("div", { class: `bolha ${x.tipo}` }, cab, h("div", { class: "txt", text: x.txt }), x.link ? h("a", { href: x.link, target: "_blank", rel: "noopener", class: "lk", text: "abrir execução no GitHub" }) : null, h("time", { text: hm(x.t) })));
+  }
+  if (!todos && s && e === "rodando") {
+    fio.append(h("div", { class: "bolha cartao est-rodando" }, h("div", { class: "de", text: "Ao vivo" }), h("div", { class: "txt", text: s.atual || s.etapa || "Trabalhando…" }), barra(s.percentual || 0),
+      h("div", { class: "pct" }, h("b", { text: `${s.percentual || 0}%` }), s.total ? h("span", { text: ` · ${num(s.feitos)} de ${num(s.total)}` }) : null), minis(s.contagem), h("div", { class: "digitando-ponto", "aria-hidden": "true" }, h("i"), h("i"), h("i"))));
+  } else if (!todos && e === "erro" && s) {
+    fio.append(h("div", { class: "bolha erro" }, h("div", { class: "txt", text: s.mensagem || "O bot terminou com erro." }), h("time", { text: hm(s.finalizado_em || s.atualizado_em) })));
+  }
+  fio.append(h("div", { id: "chat-fim" }));
+  raiz.append(fio);
+  if (!todos) {
+    const c = conf(id), g = global();
+    raiz.append(h("div", { class: "chat-acoes" },
+      meta(id).workflow ? h("button", { class: "btn prim", disabled: g.pausado || c.ativo === false, onclick: () => comando({ acao: "enfileirar", bot: id, prioridade: "alta" }) }, icone("play"), "Executar") : null,
+      h("button", { class: "btn", onclick: () => comando({ acao: "config_bot", bot: id, campos: { ativo: c.ativo === false } }, { confirmar: c.ativo === false ? null : "Desligar este bot? Ele não inicia mais (nem pelo horário fixo)." }) }, icone(c.ativo === false ? "play" : "pause"), c.ativo === false ? "Ligar" : "Desligar"),
+      h("a", { class: "btn", href: "#/logs/" + id }, "Logs")));
+  }
+  marcarVisto(id);
+  return raiz;
+}
 function telaEmBreve(nome) {
   const t = { descobertas: ["Descobertas", "Aqui aparecerão os estabelecimentos e perfis novos achados pelos scanners (Instagram, Geo, Web e Social), com a origem e a cobertura por região e categoria."],
   }[nome] || ["Em breve", ""];
@@ -668,23 +774,28 @@ function telaAjustes() {
 
 /* ---------- rotas ---------- */
 const rota = () => { const p = location.hash.replace(/^#\/?/, "").split("/"); return { tela: p[0] || "geral", id: p[1] }; };
-const TITULOS = { geral: "Visão geral", bots: "Bots", agenda: "Agendamentos", fila: "Fila de tarefas", mais: "Mais", dados: "Banco de dados", eventos: "Eventos", historico: "Histórico", logs: "Logs", fontes: "Fontes", custos: "Custos e consumo", ajustes: "Configurações", revisao: "Revisão", cobertura: "Cobertura geográfica", descobertas: "Descobertas", "em-breve": "Em breve" };
+const TITULOS = { geral: "Visão geral", bots: "Bots", agenda: "Agendamentos", fila: "Fila de tarefas", mais: "Mais", dados: "Banco de dados", eventos: "Eventos", historico: "Histórico", logs: "Logs", fontes: "Fontes", custos: "Custos e consumo", ajustes: "Configurações", revisao: "Revisão", chat: "Conversas", cobertura: "Cobertura geográfica", descobertas: "Descobertas", "em-breve": "Em breve" };
+const ChatEstado = { id: null, colado: true };
 function desenhar() {
   const r = rota();
+  ChatEstado.colado = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 140;
   const aba = { bot: "bots", dados: "mais", eventos: "mais", historico: "mais", logs: "mais", fontes: "mais", custos: "mais", ajustes: "mais", "em-breve": "mais", revisao: "mais", cobertura: "mais", descobertas: "mais" }[r.tela] || r.tela;
   document.querySelectorAll(".abas a").forEach((a) => a.setAttribute("aria-current", a.dataset.tela === aba ? "page" : "false"));
   const caixa = document.getElementById("log-caixa"), colado = caixa && caixa.scrollTop + caixa.clientHeight >= caixa.scrollHeight - 8, y = window.scrollY;
-  const telas = { descobertas: telaDescobertas, cobertura: telaCobertura, revisao: telaRevisao, geral: telaGeral, bots: telaBots, agenda: telaAgenda, fila: telaFila, mais: telaMais, dados: telaDados, eventos: telaEventos, historico: telaHistorico, fontes: telaFontes, custos: telaCustos, ajustes: telaAjustes };
-  const tela = r.tela === "bot" ? detalheBot(r.id) : r.tela === "logs" ? telaLogs(r.id) : r.tela === "em-breve" ? telaEmBreve(r.id) : r.tela === "cobertura" && r.id ? detalheCobertura(r.id) : (telas[r.tela] || telaGeral)();
+  const telas = { chat: telaChat, descobertas: telaDescobertas, cobertura: telaCobertura, revisao: telaRevisao, geral: telaGeral, bots: telaBots, agenda: telaAgenda, fila: telaFila, mais: telaMais, dados: telaDados, eventos: telaEventos, historico: telaHistorico, fontes: telaFontes, custos: telaCustos, ajustes: telaAjustes };
+  const tela = r.tela === "bot" ? detalheBot(r.id) : r.tela === "logs" ? telaLogs(r.id) : r.tela === "em-breve" ? telaEmBreve(r.id) : r.tela === "cobertura" && r.id ? detalheCobertura(r.id) : r.tela === "chat" && r.id ? telaChatBot(r.id) : (telas[r.tela] || telaGeral)();
   $main.replaceChildren(tela);
   const nova = document.getElementById("log-caixa"); if (nova && colado !== false) nova.scrollTop = nova.scrollHeight;
-  window.scrollTo(0, y);
+  const fim = document.getElementById("chat-fim");
+  if (fim) { if (ChatEstado.id !== r.id || ChatEstado.colado) fim.scrollIntoView({ block: "end" }); else window.scrollTo(0, y); ChatEstado.id = r.id; }
+  else { window.scrollTo(0, y); ChatEstado.id = null; }
+  atualizarPontinho();
   document.getElementById("titulo").textContent = r.tela === "bot" ? meta(r.id).nome : (TITULOS[r.tela] || "Bot Control");
 }
 window.addEventListener("hashchange", () => { window.scrollTo(0, 0); desenhar(); if (!["ajustes"].includes(rota().tela)) atualizar(); });
 document.getElementById("btn-atualizar").addEventListener("click", () => atualizar(true));
 document.addEventListener("visibilitychange", () => { if (!document.hidden) atualizar(); });
-setInterval(() => { if (!document.hidden && Date.now() - ultimaBusca >= (algumRodando() || ["bot", "fila"].includes(rota().tela) ? 8000 : 45000)) atualizar(); }, 4000);
+setInterval(() => { if (!document.hidden && Date.now() - ultimaBusca >= (algumRodando() || ["bot", "fila", "chat"].includes(rota().tela) ? 6000 : 45000)) atualizar(); }, 4000);
 
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(() => {});
 $main.replaceChildren(h("p", { class: "carregando", text: "Carregando os bots…" }));
