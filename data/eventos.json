@@ -391,9 +391,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:03:40.120396",
+  "visto_em": "2026-11-25T21:49:34.661029",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:03:40.120915"
+  "atualizado_em": "2026-11-25T21:49:34.661197"
  },
  {
   "id": 12,
@@ -427,9 +427,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:04:01.521969",
+  "visto_em": "2026-11-25T21:50:00.001887",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:04:01.522178"
+  "atualizado_em": "2026-11-25T21:50:00.002054"
  },
  {
   "id": 13,
@@ -463,9 +463,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:04:04.055177",
+  "visto_em": "2026-11-25T21:50:02.444758",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:04:04.055373"
+  "atualizado_em": "2026-11-25T21:50:02.444926"
  },
  {
   "id": 14,
@@ -499,9 +499,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:04:06.572307",
+  "visto_em": "2026-11-25T21:50:04.660418",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:04:06.572534"
+  "atualizado_em": "2026-11-25T21:50:04.660605"
  },
  {
   "id": 15,
@@ -535,9 +535,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:04:08.809805",
+  "visto_em": "2026-11-25T21:50:06.893354",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:04:08.810010"
+  "atualizado_em": "2026-11-25T21:50:06.893542"
  },
  {
   "id": 16,
@@ -571,9 +571,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:04:11.118493",
+  "visto_em": "2026-11-25T21:50:09.061169",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:04:11.118719"
+  "atualizado_em": "2026-11-25T21:50:09.061334"
  },
  {
   "id": 17,
@@ -679,9 +679,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:04:13.363330",
+  "visto_em": "2026-11-25T21:50:11.250775",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:04:13.363569"
+  "atualizado_em": "2026-11-25T21:50:11.250942"
  },
  {
   "id": 20,
@@ -715,9 +715,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:04:15.563514",
+  "visto_em": "2026-11-25T21:50:13.530701",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:04:15.563720"
+  "atualizado_em": "2026-11-25T21:50:13.530868"
  },
  {
   "id": 21,
@@ -751,9 +751,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:04:17.795629",
+  "visto_em": "2026-11-25T21:50:15.746053",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:04:17.795833"
+  "atualizado_em": "2026-11-25T21:50:15.746217"
  },
  {
   "id": 22,
@@ -931,9 +931,9 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:03:23.807713",
+  "visto_em": "2026-11-25T21:49:18.759721",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:03:23.808252"
+  "atualizado_em": "2026-11-25T21:49:18.760285"
  },
  {
   "id": 27,
@@ -967,9 +967,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:03:30.702385",
+  "visto_em": "2026-11-25T21:49:25.494768",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:03:30.702633"
+  "atualizado_em": "2026-11-25T21:49:25.494943"
  },
  {
   "id": 28,
@@ -1003,9 +1003,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-24T10:03:33.002378",
+  "visto_em": "2026-11-25T21:49:28.038763",
   "extra": {},
-  "atualizado_em": "2026-11-24T10:03:33.002609"
+  "atualizado_em": "2026-11-25T21:49:28.038936"
  },
  {
   "id": 29,
@@ -1183,11 +1183,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:02.000758",
-  "visto_em": "2026-11-24T10:03:37.596583",
+  "visto_em": "2026-11-25T21:49:32.386296",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:03:37.596794"
+  "atualizado_em": "2026-11-25T21:49:32.386479"
  },
  {
   "id": 34,
@@ -1373,11 +1373,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:46:33.187276",
-  "visto_em": "2026-11-24T10:03:49.776003",
+  "visto_em": "2026-11-25T21:49:48.844825",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:03:49.776213"
+  "atualizado_em": "2026-11-25T21:49:48.844995"
  },
  {
   "id": 39,
@@ -1411,11 +1411,11 @@
   "local_id": 14,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:33.586411",
-  "visto_em": "2026-11-24T10:04:20.585712",
+  "visto_em": "2026-11-25T21:49:36.850129",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:20.585921"
+  "atualizado_em": "2026-11-25T21:49:36.850305"
  },
  {
   "id": 40,
@@ -1449,11 +1449,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:36.065377",
-  "visto_em": "2026-11-24T10:04:22.835801",
+  "visto_em": "2026-11-25T21:50:18.592024",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:22.836005"
+  "atualizado_em": "2026-11-25T21:50:18.592190"
  },
  {
   "id": 41,
@@ -1639,11 +1639,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:00.241349",
-  "visto_em": "2026-11-24T10:04:25.087115",
+  "visto_em": "2026-11-25T21:50:20.910011",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:25.087321"
+  "atualizado_em": "2026-11-25T21:50:20.910179"
  },
  {
   "id": 46,
@@ -1677,11 +1677,11 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:02.513812",
-  "visto_em": "2026-11-24T10:04:27.299557",
+  "visto_em": "2026-11-25T21:50:23.133935",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:27.299776"
+  "atualizado_em": "2026-11-25T21:50:23.134101"
  },
  {
   "id": 47,
@@ -1715,11 +1715,11 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:04.787535",
-  "visto_em": "2026-11-24T10:04:29.550290",
+  "visto_em": "2026-11-25T21:50:25.442949",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:29.550530"
+  "atualizado_em": "2026-11-25T21:50:25.443115"
  },
  {
   "id": 48,
@@ -2095,11 +2095,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-19T20:46:44.783824",
-  "visto_em": "2026-11-24T10:03:54.364128",
+  "visto_em": "2026-11-25T21:49:53.206499",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:03:54.364337"
+  "atualizado_em": "2026-11-25T21:49:53.206675"
  },
  {
   "id": 58,
@@ -2285,11 +2285,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:04.946110",
-  "visto_em": "2026-11-24T10:04:31.812305",
+  "visto_em": "2026-11-25T21:50:27.658406",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:31.812532"
+  "atualizado_em": "2026-11-25T21:50:27.658586"
  },
  {
   "id": 63,
@@ -2323,11 +2323,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:07.158982",
-  "visto_em": "2026-11-24T10:03:56.608679",
+  "visto_em": "2026-11-25T21:49:55.383060",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:03:56.608884"
+  "atualizado_em": "2026-11-25T21:49:55.383234"
  },
  {
   "id": 64,
@@ -2361,11 +2361,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:09.415626",
-  "visto_em": "2026-11-24T10:04:34.050341",
+  "visto_em": "2026-11-25T21:49:41.243214",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:34.050569"
+  "atualizado_em": "2026-11-25T21:49:41.243378"
  },
  {
   "id": 65,
@@ -2399,11 +2399,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:11.651000",
-  "visto_em": "2026-11-24T10:04:36.269086",
+  "visto_em": "2026-11-25T21:50:30.045835",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:36.269943"
+  "atualizado_em": "2026-11-25T21:50:30.046002"
  },
  {
   "id": 66,
@@ -2437,11 +2437,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:13.833835",
-  "visto_em": "2026-11-24T10:04:38.467593",
+  "visto_em": "2026-11-25T21:50:32.249026",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:38.467808"
+  "atualizado_em": "2026-11-25T21:50:32.249192"
  },
  {
   "id": 67,
@@ -2475,11 +2475,11 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:16.016488",
-  "visto_em": "2026-11-24T10:04:40.978175",
+  "visto_em": "2026-11-25T21:50:34.449294",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:40.978406"
+  "atualizado_em": "2026-11-25T21:50:34.449459"
  },
  {
   "id": 68,
@@ -2650,7 +2650,7 @@
   "lugar_fonte_id": "node/2981644654",
   "categoria": "shows",
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34178-20260915101242.webp",
-  "preco_min": 102.0,
+  "preco_min": 96.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34178/ingressos-para-deixa-arder-let-it-burn-chico-chico-show-de-encerramento",
   "nome_norm": "deixa arder let it burn chico chico show de encerramento",
@@ -2665,11 +2665,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:50:57.230516",
-  "visto_em": "2026-11-24T10:04:43.214842",
+  "visto_em": "2026-11-25T21:50:36.723790",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:43.215043"
+  "atualizado_em": "2026-11-25T21:50:36.775127"
  },
  {
   "id": 73,
@@ -2703,11 +2703,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:50:59.859246",
-  "visto_em": "2026-11-24T10:04:45.505140",
+  "visto_em": "2026-11-25T21:50:39.594837",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:45.505344"
+  "atualizado_em": "2026-11-25T21:50:39.595003"
  },
  {
   "id": 74,
@@ -2725,7 +2725,7 @@
   "lugar_fonte": "",
   "lugar_fonte_id": "",
   "categoria": "shows",
-  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34515-20261117142725.webp",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34515-20261125152258.webp",
   "preco_min": 69.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34515/ingressos-para-mari-fernandez",
@@ -2741,11 +2741,11 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:51:03.568204",
-  "visto_em": "2026-11-24T10:04:47.689109",
+  "visto_em": "2026-11-25T21:50:41.843986",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:47.689314"
+  "atualizado_em": "2026-11-25T21:50:41.844412"
  },
  {
   "id": 75,
@@ -2779,11 +2779,11 @@
   "local_id": 25,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:51:06.318665",
-  "visto_em": "2026-11-24T10:04:49.996231",
+  "visto_em": "2026-11-25T21:50:44.347961",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:49.996438"
+  "atualizado_em": "2026-11-25T21:50:44.348127"
  },
  {
   "id": 76,
@@ -2817,11 +2817,11 @@
   "local_id": 26,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:51:08.682641",
-  "visto_em": "2026-11-24T10:04:52.186154",
+  "visto_em": "2026-11-25T21:50:46.534773",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-24T10:04:52.186362"
+  "atualizado_em": "2026-11-25T21:50:46.534937"
  },
  {
   "id": 77,
@@ -3278,5 +3278,43 @@
    "prioridade": 40
   },
   "atualizado_em": "2026-11-25T08:48:47.419699"
+ },
+ {
+  "id": 89,
+  "fonte": "ticket360",
+  "fonte_id": "093965f551cf40c979b1",
+  "titulo": "Carol Biazin Odeio Muito a Despedida",
+  "descricao": "Carol Biazin apresenta “Odeio Muito a Despedida” no Espaço Unimed, em dezembro Show em São Paulo marca o início da despedida da era “No Escuro”, uma das fases mais importantes da carreira da artista Carol Biazin chega ao Espaço Unimed, em São Paulo, no dia 20 de dezembro, com o show “Odeio Muito a Despedida”. A…",
+  "inicio": "2026-12-20T23:00:00",
+  "fim": "2026-12-21T11:00:00",
+  "local_nome": "Espaço Unimed",
+  "endereco": "Rua Tagipuru, 795, São Paulo",
+  "lat": -23.527600841437025,
+  "lon": -46.667878583035034,
+  "url": "https://www.ticket360.com.br/evento/33934/ingressos-para-carol-biazin-odeio-muito-a-despedida",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/33934-20260811163250.webp",
+  "preco_min": 132.0,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/33934/ingressos-para-carol-biazin-odeio-muito-a-despedida",
+  "nome_norm": "carol biazin odeio muito a despedida",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/33934/ingressos-para-carol-biazin-odeio-muito-a-despedida",
+  "local_id": 1,
+  "organizador_id": null,
+  "coletado_em": "2026-11-25T21:50:49.237860",
+  "visto_em": "2026-11-25T21:50:49.239124",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-25T21:50:49.241878"
  }
 ]
