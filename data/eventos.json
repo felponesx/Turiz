@@ -3110,7 +3110,7 @@
   "gratuito": false,
   "ingresso_url": "",
   "nome_norm": "congresso internacional a era bim",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -3125,7 +3125,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-24T00:01:08.913010"
+  "atualizado_em": "2026-11-26T08:34:22.936963"
  },
  {
   "id": 85,
