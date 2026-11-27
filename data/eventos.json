@@ -391,9 +391,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:49:34.661029",
+  "visto_em": "2026-11-27T08:47:08.687309",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:49:34.661197"
+  "atualizado_em": "2026-11-27T08:47:08.687541"
  },
  {
   "id": 12,
@@ -427,9 +427,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:50:00.001887",
+  "visto_em": "2026-11-27T08:47:37.521268",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:50:00.002054"
+  "atualizado_em": "2026-11-27T08:47:37.521567"
  },
  {
   "id": 13,
@@ -463,9 +463,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:50:02.444758",
+  "visto_em": "2026-11-27T08:47:40.016118",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:50:02.444926"
+  "atualizado_em": "2026-11-27T08:47:40.016332"
  },
  {
   "id": 14,
@@ -499,9 +499,9 @@
   "local_id": 8,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:50:04.660418",
+  "visto_em": "2026-11-27T08:47:42.319114",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:50:04.660605"
+  "atualizado_em": "2026-11-27T08:47:42.319329"
  },
  {
   "id": 15,
@@ -535,9 +535,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:50:06.893354",
+  "visto_em": "2026-11-27T08:47:44.644568",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:50:06.893542"
+  "atualizado_em": "2026-11-27T08:47:44.644793"
  },
  {
   "id": 16,
@@ -571,9 +571,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:50:09.061169",
+  "visto_em": "2026-11-27T08:47:46.972512",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:50:09.061334"
+  "atualizado_em": "2026-11-27T08:47:46.972728"
  },
  {
   "id": 17,
@@ -679,9 +679,9 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:50:11.250775",
+  "visto_em": "2026-11-27T08:47:49.296749",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:50:11.250942"
+  "atualizado_em": "2026-11-27T08:47:49.296989"
  },
  {
   "id": 20,
@@ -715,9 +715,9 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:50:13.530701",
+  "visto_em": "2026-11-27T08:47:51.608060",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:50:13.530868"
+  "atualizado_em": "2026-11-27T08:47:51.608277"
  },
  {
   "id": 21,
@@ -751,9 +751,9 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:50:15.746053",
+  "visto_em": "2026-11-27T08:47:53.941478",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:50:15.746217"
+  "atualizado_em": "2026-11-27T08:47:53.941703"
  },
  {
   "id": 22,
@@ -954,9 +954,9 @@
   "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34193-20260916134853.webp",
   "preco_min": null,
   "gratuito": false,
-  "ingresso_url": "",
+  "ingresso_url": "https://www.ticket360.com.br/evento/34193/ingressos-para-pablo-netto-brito-silfarley-e-simone-morena",
   "nome_norm": "pablo netto brito silfarley e simone morena",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -967,9 +967,9 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:49:25.494768",
+  "visto_em": "2026-11-27T08:46:57.740807",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:49:25.494943"
+  "atualizado_em": "2026-11-27T08:48:30.066654"
  },
  {
   "id": 28,
@@ -992,7 +992,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34043/ingressos-para-falamansa-show-de-despedida-da-turne-universos",
   "nome_norm": "falamansa show de despedida da turne universos",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -1003,9 +1003,9 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": null,
-  "visto_em": "2026-11-25T21:49:28.038763",
+  "visto_em": "2026-11-27T08:47:01.130476",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:49:28.038936"
+  "atualizado_em": "2026-11-27T08:48:30.066656"
  },
  {
   "id": 29,
@@ -1183,11 +1183,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-14T00:27:02.000758",
-  "visto_em": "2026-11-25T21:49:32.386296",
+  "visto_em": "2026-11-27T08:47:06.397114",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:49:32.386479"
+  "atualizado_em": "2026-11-27T08:47:06.397334"
  },
  {
   "id": 34,
@@ -1373,11 +1373,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:46:33.187276",
-  "visto_em": "2026-11-25T21:49:48.844825",
+  "visto_em": "2026-11-27T08:47:13.302999",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:49:48.844995"
+  "atualizado_em": "2026-11-27T08:47:13.303242"
  },
  {
   "id": 39,
@@ -1411,11 +1411,11 @@
   "local_id": 14,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:33.586411",
-  "visto_em": "2026-11-25T21:49:36.850129",
+  "visto_em": "2026-11-27T08:47:10.950351",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:49:36.850305"
+  "atualizado_em": "2026-11-27T08:47:10.950563"
  },
  {
   "id": 40,
@@ -1449,11 +1449,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-15T06:47:36.065377",
-  "visto_em": "2026-11-25T21:50:18.592024",
+  "visto_em": "2026-11-27T08:47:56.206765",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:18.592190"
+  "atualizado_em": "2026-11-27T08:47:56.206997"
  },
  {
   "id": 41,
@@ -1639,11 +1639,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:00.241349",
-  "visto_em": "2026-11-25T21:50:20.910011",
+  "visto_em": "2026-11-27T08:47:59.199082",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:20.910179"
+  "atualizado_em": "2026-11-27T08:47:59.199301"
  },
  {
   "id": 46,
@@ -1677,11 +1677,11 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:02.513812",
-  "visto_em": "2026-11-25T21:50:23.133935",
+  "visto_em": "2026-11-27T08:48:01.514749",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:23.134101"
+  "atualizado_em": "2026-11-27T08:48:01.514962"
  },
  {
   "id": 47,
@@ -1715,11 +1715,11 @@
   "local_id": 2,
   "organizador_id": null,
   "coletado_em": "2026-11-16T22:18:04.787535",
-  "visto_em": "2026-11-25T21:50:25.442949",
+  "visto_em": "2026-11-27T08:48:03.854733",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:25.443115"
+  "atualizado_em": "2026-11-27T08:48:03.854978"
  },
  {
   "id": 48,
@@ -2095,11 +2095,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-19T20:46:44.783824",
-  "visto_em": "2026-11-25T21:49:53.206499",
+  "visto_em": "2026-11-27T08:47:28.195232",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:49:53.206675"
+  "atualizado_em": "2026-11-27T08:47:28.195488"
  },
  {
   "id": 58,
@@ -2285,11 +2285,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:04.946110",
-  "visto_em": "2026-11-25T21:50:27.658406",
+  "visto_em": "2026-11-27T08:48:06.129874",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:27.658586"
+  "atualizado_em": "2026-11-27T08:48:06.130108"
  },
  {
   "id": 63,
@@ -2323,11 +2323,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:07.158982",
-  "visto_em": "2026-11-25T21:49:55.383060",
+  "visto_em": "2026-11-27T08:47:30.526843",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:49:55.383234"
+  "atualizado_em": "2026-11-27T08:47:30.527071"
  },
  {
   "id": 64,
@@ -2361,11 +2361,11 @@
   "local_id": 3,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:09.415626",
-  "visto_em": "2026-11-25T21:49:41.243214",
+  "visto_em": "2026-11-27T08:47:17.870658",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:49:41.243378"
+  "atualizado_em": "2026-11-27T08:47:17.870873"
  },
  {
   "id": 65,
@@ -2399,11 +2399,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:11.651000",
-  "visto_em": "2026-11-25T21:50:30.045835",
+  "visto_em": "2026-11-27T08:48:08.453667",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:30.046002"
+  "atualizado_em": "2026-11-27T08:48:08.453895"
  },
  {
   "id": 66,
@@ -2437,11 +2437,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:13.833835",
-  "visto_em": "2026-11-25T21:50:32.249026",
+  "visto_em": "2026-11-27T08:48:10.741772",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:32.249192"
+  "atualizado_em": "2026-11-27T08:48:10.741988"
  },
  {
   "id": 67,
@@ -2475,11 +2475,11 @@
   "local_id": 5,
   "organizador_id": null,
   "coletado_em": "2026-11-21T07:24:16.016488",
-  "visto_em": "2026-11-25T21:50:34.449294",
+  "visto_em": "2026-11-27T08:47:35.152243",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:34.449459"
+  "atualizado_em": "2026-11-27T08:47:35.152456"
  },
  {
   "id": 68,
@@ -2665,11 +2665,11 @@
   "local_id": 7,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:50:57.230516",
-  "visto_em": "2026-11-25T21:50:36.723790",
+  "visto_em": "2026-11-27T08:48:13.030426",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:36.775127"
+  "atualizado_em": "2026-11-27T08:48:13.030640"
  },
  {
   "id": 73,
@@ -2687,7 +2687,7 @@
   "lugar_fonte": "",
   "lugar_fonte_id": "",
   "categoria": "shows",
-  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34544-20261119134730.webp",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34544-20261126145607.webp",
   "preco_min": 60.0,
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/34544/ingressos-para-ultima-do-ano-com-xand-aviao-e-mari-fernandez",
@@ -2703,11 +2703,11 @@
   "local_id": 6,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:50:59.859246",
-  "visto_em": "2026-11-25T21:50:39.594837",
+  "visto_em": "2026-11-27T08:48:15.377168",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:39.595003"
+  "atualizado_em": "2026-11-27T08:48:15.377684"
  },
  {
   "id": 74,
@@ -2741,11 +2741,11 @@
   "local_id": 9,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:51:03.568204",
-  "visto_em": "2026-11-25T21:50:41.843986",
+  "visto_em": "2026-11-27T08:48:17.720038",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:41.844412"
+  "atualizado_em": "2026-11-27T08:48:17.720263"
  },
  {
   "id": 75,
@@ -2779,11 +2779,11 @@
   "local_id": 25,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:51:06.318665",
-  "visto_em": "2026-11-25T21:50:44.347961",
+  "visto_em": "2026-11-27T08:48:20.008127",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:44.348127"
+  "atualizado_em": "2026-11-27T08:48:20.008340"
  },
  {
   "id": 76,
@@ -2817,11 +2817,11 @@
   "local_id": 26,
   "organizador_id": null,
   "coletado_em": "2026-11-22T19:51:08.682641",
-  "visto_em": "2026-11-25T21:50:46.534773",
+  "visto_em": "2026-11-27T08:48:22.291756",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:46.534937"
+  "atualizado_em": "2026-11-27T08:48:22.292185"
  },
  {
   "id": 77,
@@ -3148,7 +3148,7 @@
   "gratuito": false,
   "ingresso_url": "",
   "nome_norm": "e mob salao da mobilidade verde cidades inteligentes",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -3163,7 +3163,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-25T08:48:20.334426"
+  "atualizado_em": "2026-11-27T08:48:30.066657"
  },
  {
   "id": 86,
@@ -3186,7 +3186,7 @@
   "gratuito": false,
   "ingresso_url": "",
   "nome_norm": "congresso brasileiro de prevencao e tratamento de feridas",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -3201,7 +3201,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-25T08:48:26.613133"
+  "atualizado_em": "2026-11-27T08:48:30.066658"
  },
  {
   "id": 87,
@@ -3311,11 +3311,11 @@
   "local_id": 1,
   "organizador_id": null,
   "coletado_em": "2026-11-25T21:50:49.237860",
-  "visto_em": "2026-11-25T21:50:49.239124",
+  "visto_em": "2026-11-27T08:48:24.608910",
   "extra": {
    "prioridade": 50
   },
-  "atualizado_em": "2026-11-25T21:50:49.241878"
+  "atualizado_em": "2026-11-27T08:48:24.609133"
  },
  {
   "id": 90,
@@ -3338,7 +3338,7 @@
   "gratuito": false,
   "ingresso_url": "",
   "nome_norm": "case 26 conferencia anual de startups e empreendedorismo",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -3353,7 +3353,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-26T21:42:37.410540"
+  "atualizado_em": "2026-11-27T08:48:30.066658"
  },
  {
   "id": 91,
@@ -3376,7 +3376,7 @@
   "gratuito": false,
   "ingresso_url": "",
   "nome_norm": "simposio brasileiro einstein de atencao domiciliar",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -3391,7 +3391,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-26T21:42:43.550632"
+  "atualizado_em": "2026-11-27T08:48:30.066659"
  },
  {
   "id": 92,
@@ -3414,7 +3414,7 @@
   "gratuito": false,
   "ingresso_url": "",
   "nome_norm": "olimpiada ibero americana de biologia",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -3429,7 +3429,7 @@
   "extra": {
    "prioridade": 40
   },
-  "atualizado_em": "2026-11-26T21:42:49.575025"
+  "atualizado_em": "2026-11-27T08:48:30.066660"
  },
  {
   "id": 93,
@@ -3468,5 +3468,43 @@
    "prioridade": 40
   },
   "atualizado_em": "2026-11-26T21:43:04.038419"
+ },
+ {
+  "id": 94,
+  "fonte": "ticket360",
+  "fonte_id": "210b585689c1d2334b13",
+  "titulo": "Mundo Torajo Especial de Natal",
+  "descricao": "Mundo Torajo apresenta \"Uma Viagem ao Mundo de Frutas\" no Juventus Live Hall Prepare-se para viver uma aventura inesquecível em uma edição ESPECIAL DE NATAL do novo show do Mundo Torajo! Dessa vez, Torajo embarca em uma viagem pelo planeta VERADE, o incrível mundo de frutas. Ao lado de toda a turma, ele vai explorar…",
+  "inicio": "2026-12-20T22:30:00",
+  "fim": "2026-12-21T10:30:00",
+  "local_nome": "Juventus Live Hall",
+  "endereco": "Rua Juventus, 690, São Paulo",
+  "lat": -23.5721551484822,
+  "lon": -46.58899952548829,
+  "url": "https://www.ticket360.com.br/evento/34255/ingressos-para-mundo-torajo-especial-de-natal",
+  "lugar_fonte": "",
+  "lugar_fonte_id": "",
+  "categoria": "shows",
+  "imagem_url": "https://images.ticket360.com.br/images.ticket360/eventos/principal/34255-20261001143017.webp",
+  "preco_min": null,
+  "gratuito": false,
+  "ingresso_url": "https://www.ticket360.com.br/evento/34255/ingressos-para-mundo-torajo-especial-de-natal",
+  "nome_norm": "mundo torajo especial de natal",
+  "status": "agendado",
+  "fuso": "",
+  "data_incerta": false,
+  "preco_max": null,
+  "moeda": "",
+  "classificacao_indicativa": "",
+  "acessibilidade": "",
+  "url_oficial": "https://www.ticket360.com.br/evento/34255/ingressos-para-mundo-torajo-especial-de-natal",
+  "local_id": 3,
+  "organizador_id": null,
+  "coletado_em": "2026-11-27T08:48:26.914372",
+  "visto_em": "2026-11-27T08:48:26.915999",
+  "extra": {
+   "prioridade": 50
+  },
+  "atualizado_em": "2026-11-27T08:48:26.921613"
  }
 ]
