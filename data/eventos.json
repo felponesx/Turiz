@@ -920,7 +920,7 @@
   "gratuito": false,
   "ingresso_url": "https://www.ticket360.com.br/evento/33871/ingressos-para-maiara-e-maraisa",
   "nome_norm": "maiara maraisa",
-  "status": "agendado",
+  "status": "encerrado",
   "fuso": "",
   "data_incerta": false,
   "preco_max": null,
@@ -933,7 +933,7 @@
   "coletado_em": null,
   "visto_em": "2026-11-25T21:49:18.759721",
   "extra": {},
-  "atualizado_em": "2026-11-25T21:49:18.760285"
+  "atualizado_em": "2026-11-27T21:26:43.272718"
  },
  {
   "id": 27,
