@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-26T23:59:48+00:00",
+ "gerado_em": "2026-11-27T02:45:38+00:00",
  "global": {
   "pausado": false,
   "max_concorrencia": 1,
@@ -23,5 +23,5 @@
   "dead_letter": 0
  },
  "externos_ocupados": [],
- "ultimo_ciclo": "2026-11-26T23:59:48+00:00"
+ "ultimo_ciclo": "2026-11-27T02:45:38+00:00"
 }
